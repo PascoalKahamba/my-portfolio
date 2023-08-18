@@ -1,4 +1,4 @@
-import { Box } from "@mantine/core";
+import { Box, MantineProvider } from "@mantine/core";
 import React from "react";
 import HeaderMegaMenu from "./header";
 import FooterLinks from "./footer";
@@ -12,11 +12,11 @@ const Layout = ({ children }: LayoutProps) => {
     { title: "Kahamba", links: [{ label: "Ndonid", link: "Pascoal" }] },
   ];
   return (
-    <Box component="section">
+    <MantineProvider theme={{ colorScheme: "dark" }}>
       <HeaderMegaMenu />
       {children}
       <FooterLinks data={footLinks} />
-    </Box>
+    </MantineProvider>
   );
 };
 
