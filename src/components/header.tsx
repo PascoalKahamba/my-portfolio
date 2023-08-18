@@ -82,9 +82,10 @@ export default function HeaderMegaMenu() {
           <Box component="div" className="flex gap-2">
             <Image
               src="/my-photo.jpg"
-              width={30}
+              width={theme.breakpoints.xs}
               height={30}
               alt="my photo profile"
+              className={theme.breakpoints.xl}
             />
             <div>
               <h2>Pascoal Kahamba</h2>
