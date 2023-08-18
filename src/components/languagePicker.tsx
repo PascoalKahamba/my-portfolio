@@ -8,7 +8,6 @@ import {
   rem,
 } from "@mantine/core";
 import { ChevronDownIcon } from "lucide-react";
-// import Image from "next/image";
 
 const data = [
   { label: "English", image: "/english.jpg" },
@@ -44,7 +43,7 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
 
   label: {
     fontWeight: "bold",
-    color: "#fff",
+    color: theme.colorScheme === "dark" ? theme.white : theme.colors.dark[4],
     fontSize: theme.fontSizes.sm,
   },
 

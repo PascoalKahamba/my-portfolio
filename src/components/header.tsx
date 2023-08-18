@@ -1,6 +1,7 @@
 import { createStyles, Header, Group, Button, Box, rem } from "@mantine/core";
 import Image from "next/image";
 import LanguagePicker from "./languagePicker";
+import { SwitchToggle } from "./switchToggle";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -84,7 +85,6 @@ export default function HeaderMegaMenu() {
               width={30}
               height={30}
               alt="my photo profile"
-              className="block "
             />
             <div>
               <h2>Pascoal Kahamba</h2>
@@ -116,7 +116,7 @@ export default function HeaderMegaMenu() {
 
           <Group className={classes.hiddenMobile}>
             <LanguagePicker />
-            <Button>Sign up</Button>
+            <SwitchToggle />
           </Group>
         </Group>
       </Header>
