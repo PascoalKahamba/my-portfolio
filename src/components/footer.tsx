@@ -6,7 +6,8 @@ import {
   Group,
   rem,
 } from "@mantine/core";
-import { Youtube, Instagram, Twitter, Home } from "lucide-react";
+import { CalendarHeartIcon, PhoneCallIcon, WheatOffIcon } from "lucide-react";
+import { UserButton } from "./userButton";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -34,6 +35,7 @@ const useStyles = createStyles((theme) => ({
 
   description: {
     marginTop: rem(5),
+    fontWeight: 500,
 
     [theme.fn.smallerThan("sm")]: {
       marginTop: theme.spacing.xs,
@@ -145,27 +147,31 @@ export default function FooterLinks({ data }: FooterLinksProps) {
     <footer className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-          <Home size={30} />
+          <UserButton
+            name="Pascoal Kahamba"
+            image="/my-photo.jpg"
+            skill="Desenvolvedor Front-End"
+          />
           <Text size="xs" color="dimmed" className={classes.description}>
-            Build fully functional accessible web applications faster than ever
+            Projetado e Desenvolvido por Pascoal Kahamba
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
       </Container>
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">
-          © 2020 mantine.dev. All rights reserved.
+          © 2020 - Todos os direitos reservados.
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
           <ActionIcon size="lg">
-            <Twitter size="1.05rem" />
+            <WheatOffIcon size="1.05rem" />
           </ActionIcon>
           <ActionIcon size="lg">
-            <Youtube size="1.05rem" />
+            <PhoneCallIcon size="1.05rem" />
           </ActionIcon>
           <ActionIcon size="lg">
-            <Instagram size="1.05rem" />
+            <CalendarHeartIcon size="1.05rem" />
           </ActionIcon>
         </Group>
       </Container>

@@ -4,6 +4,7 @@ import {
   Group,
   Avatar,
   Text,
+  px,
   createStyles,
 } from "@mantine/core";
 
@@ -12,6 +13,12 @@ const useStyles = createStyles((theme) => ({
     display: "block",
     cursor: "context-menu",
     color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
+  },
+  profile: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 6,
   },
 }));
 
@@ -26,8 +33,8 @@ export function UserButton({ image, name, skill, ...others }: UserButtonProps) {
 
   return (
     <UnstyledButton className={classes.user} {...others}>
-      <Group>
-        <Avatar src={image} radius="xl" />
+      <Group className={classes.profile}>
+        <Avatar src={image} radius="xl" size={40} />
 
         <div style={{ flex: 1 }}>
           <Text size="sm" weight={500}>

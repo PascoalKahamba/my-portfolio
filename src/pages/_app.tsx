@@ -1,6 +1,7 @@
 // _app.tsx file
 import { useState } from "react";
 import NextApp, { AppProps, AppContext } from "next/app";
+import Head from "next/head";
 import { getCookie, setCookie } from "cookies-next";
 import {
   MantineProvider,
@@ -26,20 +27,30 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   };
 
   return (
-    <ColorSchemeProvider
-      colorScheme={colorScheme}
-      toggleColorScheme={toggleColorScheme}
-    >
-      <MantineProvider
-        theme={{ colorScheme }}
-        withGlobalStyles
-        withNormalizeCSS
+    <>
+      <Head>
+        <title>Pascoal Kahamba</title>
+        <link rel="shortcut icon" href="/my-photo.jpg" />
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
+      <ColorSchemeProvider
+        colorScheme={colorScheme}
+        toggleColorScheme={toggleColorScheme}
       >
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </MantineProvider>
-    </ColorSchemeProvider>
+        <MantineProvider
+          theme={{ colorScheme }}
+          withGlobalStyles
+          withNormalizeCSS
+        >
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </MantineProvider>
+      </ColorSchemeProvider>
+    </>
   );
 }
 
