@@ -1,7 +1,17 @@
-import { createStyles, Header, Group, Button, Box, rem } from "@mantine/core";
+import {
+  createStyles,
+  Header,
+  Group,
+  Button,
+  Box,
+  rem,
+  px,
+} from "@mantine/core";
 import Image from "next/image";
 import LanguagePicker from "./languagePicker";
 import { SwitchToggle } from "./switchToggle";
+import { UserButton } from "./userButton";
+import { useRef } from "react";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -29,34 +39,18 @@ const useStyles = createStyles((theme) => ({
           : theme.colors.gray[0],
     }),
   },
-
-  subLink: {
-    width: "100%",
-    padding: `${theme.spacing.xs} ${theme.spacing.md}`,
-    borderRadius: theme.radius.md,
-
-    ...theme.fn.hover({
-      backgroundColor:
-        theme.colorScheme === "dark"
-          ? theme.colors.dark[7]
-          : theme.colors.gray[0],
-    }),
-
-    "&:active": theme.activeStyles,
+  headerElement: {
+    position: "fixed",
+    top: px(0),
+    zIndex: 100,
   },
 
-  dropdownFooter: {
-    backgroundColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[7]
-        : theme.colors.gray[0],
-    margin: `calc(${theme.spacing.md} * -1)`,
-    marginTop: theme.spacing.sm,
-    padding: `${theme.spacing.md} calc(${theme.spacing.md} * 2)`,
-    paddingBottom: theme.spacing.xl,
-    borderTop: `${rem(1)} solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[1]
-    }`,
+  headerChild: {
+    position: "relative",
+    top: px(0),
+    bottom: px(0),
+    right: px(0),
+    left: px(0),
   },
 
   hiddenMobile: {
@@ -77,21 +71,17 @@ export default function HeaderMegaMenu() {
 
   return (
     <Box pb={120}>
-      <Header height={60} px="md">
-        <Group position="apart" sx={{ height: "100%" }}>
-          <Box component="div" className="flex gap-2">
-            <Image
-              src="/my-photo.jpg"
-              width={theme.breakpoints.xs}
-              height={30}
-              alt="my photo profile"
-              className={theme.breakpoints.xl}
-            />
-            <div>
-              <h2>Pascoal Kahamba</h2>
-              <span>Front-End Developer</span>
-            </div>
-          </Box>
+      <Header height={50} px="md" className={classes.headerElement}>
+        <Group
+          position="apart"
+          sx={{ height: "100%" }}
+          className={classes.headerChild}
+        >
+          <UserButton
+            name="Pascoal Kahamba"
+            image="/my-photo.jpg"
+            skill="Desenvolvedor Front-End"
+          />
 
           <Group
             sx={{ height: "100%" }}
@@ -99,19 +89,19 @@ export default function HeaderMegaMenu() {
             className={classes.hiddenMobile}
           >
             <a href="#" className={classes.link}>
-              Home
+              Página Inicial
             </a>
             <a href="#" className={classes.link}>
-              Contato
+              Sobre
+            </a>
+            <a href="#" className={classes.link}>
+              Jornada
             </a>
             <a href="#" className={classes.link}>
               Projetos
             </a>
             <a href="#" className={classes.link}>
-              Learn
-            </a>
-            <a href="#" className={classes.link}>
-              Academy
+              Contatos
             </a>
           </Group>
 

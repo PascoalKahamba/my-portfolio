@@ -1,9 +1,5 @@
 import { useState } from "react";
-import {
-  MantineProvider,
-  ColorSchemeProvider,
-  ColorScheme,
-} from "@mantine/core";
+import { MantineProvider, Box, ColorScheme } from "@mantine/core";
 import HeaderMegaMenu from "./header";
 import FooterLinks from "./footer";
 
@@ -12,27 +8,15 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
-  const toggleColorScheme = (value?: ColorScheme) =>
-    setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
   const footLinks = [
     { title: "Kahamba", links: [{ label: "Ndonid", link: "Pascoal" }] },
   ];
   return (
-    <ColorSchemeProvider
-      colorScheme={colorScheme}
-      toggleColorScheme={toggleColorScheme}
-    >
-      <MantineProvider
-        theme={{ colorScheme }}
-        withGlobalStyles
-        withNormalizeCSS
-      >
-        <HeaderMegaMenu />
-        {children}
-        <FooterLinks data={footLinks} />
-      </MantineProvider>
-    </ColorSchemeProvider>
+    <Box component="section">
+      <HeaderMegaMenu />
+      {children}
+      <FooterLinks data={footLinks} />
+    </Box>
   );
 };
 
