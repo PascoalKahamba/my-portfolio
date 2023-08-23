@@ -2,48 +2,50 @@ import {
   createStyles,
   Header,
   Group,
-  Button,
+  Anchor,
   Box,
   rem,
   px,
 } from "@mantine/core";
-import Image from "next/image";
 import LanguagePicker from "./languagePicker";
 import ActionToggle from "./actionToggle";
 import UserButton from "./userButton";
-import { useRef } from "react";
+import { useState } from "react";
 
 const useStyles = createStyles((theme) => ({
-  link: {
-    display: "flex",
-    alignItems: "center",
-    height: "100%",
-    paddingLeft: theme.spacing.md,
-    paddingRight: theme.spacing.md,
-    textDecoration: "none",
-    color: theme.colorScheme === "dark" ? theme.white : theme.black,
-    fontWeight: 500,
-    fontSize: theme.fontSizes.sm,
-
-    [theme.fn.smallerThan("sm")]: {
-      height: rem(42),
-      display: "flex",
-      alignItems: "center",
-      width: "100%",
-    },
-
-    ...theme.fn.hover({
-      backgroundColor:
-        theme.colorScheme === "dark"
-          ? theme.colors.dark[6]
-          : theme.colors.gray[0],
-    }),
-  },
   headerElement: {
     position: "fixed",
     with: "100%",
     top: px(0),
     zIndex: 100,
+  },
+
+  mainLinks: {
+    marginRight: `calc(${theme.spacing.sm} * -1)`,
+  },
+
+  mainLink: {
+    fontSize: rem(13),
+    color: theme.colorScheme === "dark" ? theme.white : theme.colors.gray[6],
+    padding: `${rem(20)} ${theme.spacing.sm}`,
+    fontWeight: 500,
+    borderBottom: `${rem(1)} solid transparent`,
+    transition: "border-color 100ms ease, color 100ms ease",
+
+    "&:hover": {
+      color: theme.colorScheme === "dark" ? theme.white : theme.black,
+      backgroundColor:
+        theme.colorScheme === "dark"
+          ? theme.colors.dark[6]
+          : theme.colors.gray[0],
+      textDecoration: "none",
+    },
+  },
+
+  mainLinkActive: {
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
+    borderBottomColor:
+      theme.colors[theme.primaryColor][theme.colorScheme === "dark" ? 5 : 6],
   },
 
   headerChild: {
@@ -67,8 +69,34 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function HeaderMegaMenu() {
-  const { classes, theme } = useStyles();
+interface LinkProps {
+  label: string;
+  link: string;
+}
+
+interface HeaderMegaMenuProps {
+  mainLinks: LinkProps[];
+}
+
+export default function HeaderMegaMenu({ mainLinks }: HeaderMegaMenuProps) {
+  const [active, setActive] = useState(0);
+  const { classes, cx } = useStyles();
+
+  const mainItems = mainLinks.map((item, index) => (
+    <Anchor<"a">
+      href={item.link}
+      key={item.label}
+      className={cx(classes.mainLink, {
+        [classes.mainLinkActive]: index === active,
+      })}
+      onClick={(event) => {
+        event.preventDefault();
+        setActive(index);
+      }}
+    >
+      {item.label}
+    </Anchor>
+  ));
 
   return (
     <Box pb={120}>
@@ -83,29 +111,7 @@ export default function HeaderMegaMenu() {
             image="/my-photo.jpg"
             skill="Desenvolvedor Front-End"
           />
-
-          <Group
-            sx={{ height: "100%" }}
-            spacing={0}
-            className={classes.hiddenMobile}
-          >
-            <a href="#" className={classes.link}>
-              Página Inicial
-            </a>
-            <a href="#" className={classes.link}>
-              Sobre
-            </a>
-            <a href="#" className={classes.link}>
-              Jornada
-            </a>
-            <a href="#" className={classes.link}>
-              Projetos
-            </a>
-            <a href="#" className={classes.link}>
-              Contatos
-            </a>
-          </Group>
-
+          <Group className={classes.mainLinks}>{mainItems}</Group>
           <Group className={classes.hiddenMobile}>
             <LanguagePicker />
             <ActionToggle />

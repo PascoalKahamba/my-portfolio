@@ -37,6 +37,29 @@ const footLinks = [
   },
 ];
 
+const mainLinks = [
+  {
+    label: "Página Inicial",
+    link: "#",
+  },
+  {
+    label: "Sobre",
+    link: "#",
+  },
+  {
+    label: "Jornada",
+    link: "#",
+  },
+  {
+    label: "Projetos",
+    link: "#",
+  },
+  {
+    label: "Contatos",
+    link: "#",
+  },
+];
+
 const useStyles = createStyles((theme) => ({
   layout: {
     padding: "0px 6rem",
@@ -47,7 +70,7 @@ const Layout = ({ children }: LayoutProps) => {
   const { classes } = useStyles();
   return (
     <Box component="section" className={classes.layout}>
-      <HeaderMegaMenu />
+      <HeaderMegaMenu mainLinks={mainLinks} />
       {children}
       <FooterLinks data={footLinks} />
     </Box>
