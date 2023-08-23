@@ -28,7 +28,12 @@ interface UserButtonProps extends UnstyledButtonProps {
   skill: string;
 }
 
-export function UserButton({ image, name, skill, ...others }: UserButtonProps) {
+export default function UserButton({
+  image,
+  name,
+  skill,
+  ...others
+}: UserButtonProps) {
   const { classes } = useStyles();
 
   return (

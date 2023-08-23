@@ -11,7 +11,7 @@ import { ChevronDownIcon } from "lucide-react";
 
 const data = [
   { label: "English", image: "/english.jpg" },
-  { label: "Portugue", image: "/portugue.jpg" },
+  { label: "Português", image: "/portugue.jpg" },
 ];
 
 const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
@@ -20,6 +20,7 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+
     padding: `${theme.spacing.xs} ${theme.spacing.md}`,
     borderRadius: theme.radius.md,
     border: `${rem(1)} none ${
@@ -28,7 +29,7 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
     transition: "background-color 150ms ease",
     backgroundColor:
       theme.colorScheme === "dark"
-        ? theme.colors.dark[opened ? 5 : 6]
+        ? "dark"
         : opened
         ? theme.colors.gray[0]
         : theme.white,

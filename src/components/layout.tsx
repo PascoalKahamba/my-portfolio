@@ -1,4 +1,4 @@
-import { Box } from "@mantine/core";
+import { Box, createStyles } from "@mantine/core";
 import HeaderMegaMenu from "./header";
 import FooterLinks from "./footer";
 
@@ -37,9 +37,16 @@ const footLinks = [
   },
 ];
 
+const useStyles = createStyles((theme) => ({
+  layout: {
+    padding: "0px 6rem",
+  },
+}));
+
 const Layout = ({ children }: LayoutProps) => {
+  const { classes } = useStyles();
   return (
-    <Box component="section">
+    <Box component="section" className={classes.layout}>
       <HeaderMegaMenu />
       {children}
       <FooterLinks data={footLinks} />

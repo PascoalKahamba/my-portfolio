@@ -9,8 +9,8 @@ import {
 } from "@mantine/core";
 import Image from "next/image";
 import LanguagePicker from "./languagePicker";
-import { SwitchToggle } from "./switchToggle";
-import { UserButton } from "./userButton";
+import ActionToggle from "./actionToggle";
+import UserButton from "./userButton";
 import { useRef } from "react";
 
 const useStyles = createStyles((theme) => ({
@@ -41,16 +41,17 @@ const useStyles = createStyles((theme) => ({
   },
   headerElement: {
     position: "fixed",
+    with: "100%",
     top: px(0),
     zIndex: 100,
   },
 
   headerChild: {
-    position: "relative",
-    top: px(0),
-    bottom: px(0),
-    right: px(0),
-    left: px(0),
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
+    flexWrap: "nowrap",
+    with: "100%",
   },
 
   hiddenMobile: {
@@ -71,7 +72,7 @@ export default function HeaderMegaMenu() {
 
   return (
     <Box pb={120}>
-      <Header height={50} px="md" className={classes.headerElement}>
+      <Header height={60} px="md" className={classes.headerElement}>
         <Group
           position="apart"
           sx={{ height: "100%" }}
@@ -107,7 +108,7 @@ export default function HeaderMegaMenu() {
 
           <Group className={classes.hiddenMobile}>
             <LanguagePicker />
-            <SwitchToggle />
+            <ActionToggle />
           </Group>
         </Group>
       </Header>

@@ -6,8 +6,9 @@ import {
   Group,
   rem,
 } from "@mantine/core";
-import { CalendarHeartIcon, PhoneCallIcon, WheatOffIcon } from "lucide-react";
-import { UserButton } from "./userButton";
+import { CalendarDaysIcon, PhoneCallIcon, WheatOffIcon } from "lucide-react";
+import UserButton from "./userButton";
+import { FaWhatsapp } from "react-icons/fa";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -15,9 +16,7 @@ const useStyles = createStyles((theme) => ({
     paddingTop: `calc(${theme.spacing.xl} * 2)`,
     paddingBottom: `calc(${theme.spacing.xl} * 2)`,
     backgroundColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[6]
-        : theme.colors.gray[0],
+      theme.colorScheme === "dark" ? "dark" : theme.colors.gray[0],
     borderTop: `${rem(1)} solid ${
       theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]
     }`,
@@ -165,13 +164,13 @@ export default function FooterLinks({ data }: FooterLinksProps) {
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
           <ActionIcon size="lg">
-            <WheatOffIcon size="1.05rem" />
+            <FaWhatsapp size="1.05rem" />
           </ActionIcon>
           <ActionIcon size="lg">
             <PhoneCallIcon size="1.05rem" />
           </ActionIcon>
           <ActionIcon size="lg">
-            <CalendarHeartIcon size="1.05rem" />
+            <CalendarDaysIcon size="1.05rem" />
           </ActionIcon>
         </Group>
       </Container>
