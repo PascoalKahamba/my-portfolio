@@ -6,7 +6,7 @@ import {
   Group,
   rem,
 } from "@mantine/core";
-import { GithubIcon } from "lucide-react";
+import { GithubIcon, DownloadIcon } from "lucide-react";
 import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
@@ -14,7 +14,7 @@ const useStyles = createStyles((theme) => ({
     position: "relative",
     boxSizing: "border-box",
     backgroundColor:
-      theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.white,
+      theme.colorScheme === "dark" ? theme.black[0] : theme.white,
   },
 
   inner: {
@@ -140,6 +140,7 @@ export default function IndexPage() {
             className={classes.control}
             variant="gradient"
             gradient={{ from: "blue", to: "cyan" }}
+            leftIcon={<DownloadIcon size={20} />}
           >
             Baixar CV
           </Button>
@@ -147,7 +148,7 @@ export default function IndexPage() {
           <Button
             component="a"
             target="_blank"
-            href="https://github.com/mantinedev/mantine"
+            href="https://github.com/PascoalKahamba"
             size="xl"
             variant="default"
             className={classes.control}
