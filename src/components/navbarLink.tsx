@@ -6,20 +6,19 @@ import {
   UnstyledButton,
   createStyles,
   Stack,
+  Box,
   rem,
 } from "@mantine/core";
 import {
-  IconHome2,
-  IconGauge,
-  IconDeviceDesktopAnalytics,
-  IconFingerprint,
-  IconCalendarStats,
-  IconUser,
-  IconSettings,
-  IconLogout,
-  IconSwitchHorizontal,
-} from "@tabler/icons-react";
-import { MantineLogo } from "@mantine/ds";
+  TwitterIcon,
+  InstagramIcon,
+  GithubIcon,
+  HomeIcon,
+  LinkedinIcon,
+  FacebookIcon,
+  LucideIcon,
+} from "lucide-react";
+import { ClassNames } from "@emotion/react";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -42,12 +41,26 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
+  navContanier: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    msAlignSelf: "end",
+    padding: rem(0),
+    position: "fixed",
+    backgroundColor: "transparent",
+    width: rem(890),
+    height: "100vh",
+    zIndex: 9999,
+  },
+
+  navbar: {
+    border: "none",
+    backgroundColor: "transparent",
+  },
+
   active: {
     "&, &:hover": {
-      backgroundColor: theme.fn.variant({
-        variant: "light",
-        color: theme.primaryColor,
-      }).background,
       color: theme.fn.variant({ variant: "light", color: theme.primaryColor })
         .color,
     },
@@ -55,13 +68,13 @@ const useStyles = createStyles((theme) => ({
 }));
 
 interface NavbarLinkProps {
-  icon: React.FC<any>;
+  icon: LucideIcon;
   label: string;
   active?: boolean;
   onClick?(): void;
 }
 
-export default function NavbarLink({
+export function NavbarLink({
   icon: Icon,
   label,
   active,
@@ -69,55 +82,72 @@ export default function NavbarLink({
 }: NavbarLinkProps) {
   const { classes, cx } = useStyles();
   return (
-    <Tooltip label={label} position="right" transitionProps={{ duration: 0 }}>
+    <Tooltip label={label} position="right" transitionProps={{ duration: 1 }}>
       <UnstyledButton
         onClick={onClick}
         className={cx(classes.link, { [classes.active]: active })}
       >
-        <Icon size="1.2rem" stroke={1.5} />
+        <Icon size="1.2rem" />
       </UnstyledButton>
     </Tooltip>
   );
 }
 
 const mockdata = [
-  { icon: IconHome2, label: "Home" },
-  { icon: IconGauge, label: "Dashboard" },
-  { icon: IconDeviceDesktopAnalytics, label: "Analytics" },
-  { icon: IconCalendarStats, label: "Releases" },
-  { icon: IconUser, label: "Account" },
-  { icon: IconFingerprint, label: "Security" },
-  { icon: IconSettings, label: "Settings" },
+  { icon: GithubIcon, label: "Home" },
+  { icon: LinkedinIcon, label: "Dashboard" },
+  { icon: FacebookIcon, label: "Analytics" },
+  { icon: InstagramIcon, label: "Releases" },
+  { icon: TwitterIcon, label: "Account" },
 ];
 
-export function NavbarMinimal() {
+export default function NavbarMinimal() {
   const [active, setActive] = useState(2);
+  const { classes, cx } = useStyles();
 
   const links = mockdata.map((link, index) => (
-    <NavbarLink
-      {...link}
-      key={link.label}
-      active={index === active}
-      onClick={() => setActive(index)}
-    />
+    <NavbarLink {...link} key={link.label} onClick={() => setActive(index)} />
   ));
 
   return (
-    <Navbar height={750} width={{ base: 80 }} p="md">
-      <Center>
-        <MantineLogo type="mark" size={30} />
-      </Center>
-      <Navbar.Section grow mt={50}>
-        <Stack justify="center" spacing={0}>
-          {links}
-        </Stack>
-      </Navbar.Section>
-      <Navbar.Section>
-        <Stack justify="center" spacing={0}>
-          <NavbarLink icon={IconSwitchHorizontal} label="Change account" />
-          <NavbarLink icon={IconLogout} label="Logout" />
-        </Stack>
-      </Navbar.Section>
-    </Navbar>
+    <Box component="div" className={classes.navContanier}>
+      <Navbar
+        height={400}
+        width={{ base: "none" }}
+        p="ls"
+        className={classes.navbar}
+      >
+        <Navbar.Section mt={140}>
+          <Stack justify="center" spacing={0}>
+            {links}
+          </Stack>
+        </Navbar.Section>
+        <Navbar.Section>
+          <Stack justify="center" spacing={0}>
+            <NavbarLink icon={InstagramIcon} label="Change account" />
+            <NavbarLink icon={TwitterIcon} label="Logout" />
+          </Stack>
+        </Navbar.Section>
+      </Navbar>
+
+      <Navbar
+        height={400}
+        width={{ base: "none" }}
+        p="ls"
+        className={classes.navbar}
+      >
+        <Navbar.Section mt={140}>
+          <Stack justify="center" spacing={0}>
+            {links}
+          </Stack>
+        </Navbar.Section>
+        <Navbar.Section>
+          <Stack justify="center" spacing={0}>
+            <NavbarLink icon={InstagramIcon} label="Change account" />
+            <NavbarLink icon={TwitterIcon} label="Logout" />
+          </Stack>
+        </Navbar.Section>
+      </Navbar>
+    </Box>
   );
 }

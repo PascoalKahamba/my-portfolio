@@ -1,6 +1,8 @@
 import { Box, createStyles } from "@mantine/core";
 import HeaderMegaMenu from "./header";
 import FooterLinks from "./footer";
+import NavbarMinimal from "./navbarLink";
+import { PhoneOutgoing } from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -70,6 +72,7 @@ const Layout = ({ children }: LayoutProps) => {
   const { classes } = useStyles();
   return (
     <Box component="section" className={classes.layout}>
+      <NavbarMinimal />
       <HeaderMegaMenu mainLinks={mainLinks} />
       {children}
       <FooterLinks data={footLinks} />

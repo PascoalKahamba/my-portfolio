@@ -11,7 +11,9 @@ export default function ActionToggle() {
         size="lg"
         sx={(theme) => ({
           backgroundColor:
-            theme.colorScheme === "dark" ? "dark" : theme.colors.gray[0],
+            theme.colorScheme === "dark"
+              ? theme.black[0]
+              : theme.colors.gray[0],
           color:
             theme.colorScheme === "dark"
               ? theme.colors.yellow[4]
