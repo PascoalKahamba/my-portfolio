@@ -7,6 +7,7 @@ import {
   rem,
 } from "@mantine/core";
 import { GithubIcon } from "lucide-react";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -18,8 +19,8 @@ const useStyles = createStyles((theme) => ({
 
   inner: {
     position: "relative",
-    paddingTop: rem(200),
-    paddingBottom: rem(120),
+    paddingTop: rem(40),
+    paddingBottom: rem(100),
 
     [theme.fn.smallerThan("sm")]: {
       paddingBottom: rem(80),
@@ -27,9 +28,16 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
+  spanTitle: {
+    fontWeight: 600,
+    fontStyle: "italic",
+    color: theme.colors.gray[6],
+    fontSize: theme.spacing.md,
+  },
+
   title: {
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontSize: rem(62),
+    fontSize: rem(52),
     fontWeight: 900,
     lineHeight: 1.1,
     margin: 0,
@@ -39,6 +47,16 @@ const useStyles = createStyles((theme) => ({
     [theme.fn.smallerThan("sm")]: {
       fontSize: rem(42),
       lineHeight: 1.2,
+    },
+  },
+
+  links: {
+    color: theme.colors.blue[4],
+    textDecoration: "none",
+    display: "inline-block",
+
+    "&:hover": {
+      textDecoration: "underline",
     },
   },
 
@@ -79,8 +97,8 @@ export default function IndexPage() {
   return (
     <div className={classes.wrapper}>
       <Container size={700} className={classes.inner}>
+        <span className={classes.spanTitle}>Olá, meu nome é </span>
         <h1 className={classes.title}>
-          A{" "}
           <Text
             component="span"
             variant="gradient"
@@ -89,13 +107,31 @@ export default function IndexPage() {
           >
             Pascoal Kahamba
           </Text>{" "}
-          Front-End Developer
+          Desenvolvedor Front-End
         </h1>
 
         <Text className={classes.description} color="dimmed">
-          Build fully functional accessible web applications with ease – Mantine
-          includes more than 100 customizable components and hooks to cover you
-          in any situation
+          Entusiasta do desenvolvimento de software com uma paixão ardente pelo
+          aprimoramento contínuo. Especializado na criação de sistemas web de
+          alto desempenho, atualmente desempenhando o papel de{" "}
+          <Link href="https://www.alura.com.br/artigos/o-que-e-front-end-e-back-end">
+            <a className={classes.links} target="_blank">
+              Desenvolvedor Front-End
+            </a>
+          </Link>
+          . Minha abordagem se baseia na stack principal de{" "}
+          <Link href="https://pt.wikipedia.org/wiki/JavaScript">
+            <a className={classes.links} target="_blank">
+              JavaScript
+            </a>
+          </Link>{" "}
+          /
+          <Link href="https://pt.wikipedia.org/wiki/TypeScript">
+            <a className={classes.links} target="_blank">
+              TypeScript
+            </a>
+          </Link>
+          .
         </Text>
 
         <Group className={classes.controls}>
@@ -110,6 +146,7 @@ export default function IndexPage() {
 
           <Button
             component="a"
+            target="_blank"
             href="https://github.com/mantinedev/mantine"
             size="xl"
             variant="default"

@@ -16,7 +16,7 @@ const useStyles = createStyles((theme) => ({
     paddingTop: `calc(${theme.spacing.xl} * 2)`,
     paddingBottom: `calc(${theme.spacing.xl} * 2)`,
     backgroundColor:
-      theme.colorScheme === "dark" ? "dark" : theme.colors.gray[0],
+      theme.colorScheme === "dark" ? theme.black[0] : theme.white,
     borderTop: `${rem(1)} solid ${
       theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]
     }`,
