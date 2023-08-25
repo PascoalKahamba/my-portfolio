@@ -30,7 +30,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
     <>
       <Head>
         <title>Pascoal Kahamba</title>
-        <link rel="shortcut icon" href="/my-photo.jpg" />
+        <link rel="shortcut icon" href="/favicon.svg" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"

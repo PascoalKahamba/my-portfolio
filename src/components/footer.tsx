@@ -159,7 +159,7 @@ export default function FooterLinks({ data }: FooterLinksProps) {
       </Container>
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">
-          © 2020 - Todos os direitos reservados.
+          © 2023 - Todos os direitos reservados.
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>

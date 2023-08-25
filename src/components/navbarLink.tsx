@@ -8,17 +8,16 @@ import {
   Stack,
   Box,
   rem,
+  px,
 } from "@mantine/core";
 import {
   TwitterIcon,
   InstagramIcon,
   GithubIcon,
-  HomeIcon,
   LinkedinIcon,
   FacebookIcon,
   LucideIcon,
 } from "lucide-react";
-import { ClassNames } from "@emotion/react";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -43,19 +42,38 @@ const useStyles = createStyles((theme) => ({
 
   navContanier: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "space-evenly",
     alignItems: "center",
-    msAlignSelf: "end",
-    padding: rem(0),
     position: "fixed",
     backgroundColor: "transparent",
-    width: rem(890),
+    width: "100vw",
     height: "100vh",
-    zIndex: 9999,
+    zIndex: 10,
   },
 
   navbar: {
+    position: "fixed",
+    left: rem(970),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "end",
     border: "none",
+    zIndex: 999,
+    height: rem(20),
+    width: rem(20),
+    backgroundColor: "transparent",
+  },
+
+  email: {
+    position: "fixed",
+    display: "flex",
+    left: rem(43),
+    flexDirection: "column",
+    alignItems: "end",
+    border: "none",
+    zIndex: 999,
+    height: rem(20),
+    width: rem(20),
     backgroundColor: "transparent",
   },
 
@@ -110,10 +128,10 @@ export default function NavbarMinimal() {
   ));
 
   return (
-    <Box component="div" className={classes.navContanier}>
+    <Box component="div">
       <Navbar
-        height={400}
-        width={{ base: "none" }}
+        height={500}
+        width={{ base: 80 }}
         p="ls"
         className={classes.navbar}
       >
@@ -131,10 +149,10 @@ export default function NavbarMinimal() {
       </Navbar>
 
       <Navbar
-        height={400}
-        width={{ base: "none" }}
+        height={500}
+        width={{ base: 80 }}
         p="ls"
-        className={classes.navbar}
+        className={classes.email}
       >
         <Navbar.Section mt={140}>
           <Stack justify="center" spacing={0}>
