@@ -18,12 +18,12 @@ import {
   FacebookIcon,
   LucideIcon,
 } from "lucide-react";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   link: {
     width: rem(50),
     height: rem(50),
-    borderRadius: theme.radius.md,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -33,35 +33,11 @@ const useStyles = createStyles((theme) => ({
         : theme.colors.gray[7],
 
     "&:hover": {
-      backgroundColor:
+      color:
         theme.colorScheme === "dark"
-          ? theme.colors.dark[5]
-          : theme.colors.gray[0],
+          ? theme.colors.blue[5]
+          : theme.colors.blue[3],
     },
-  },
-
-  navContanier: {
-    display: "flex",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    position: "fixed",
-    backgroundColor: "transparent",
-    width: "100vw",
-    height: "100vh",
-    zIndex: 10,
-  },
-
-  navbar: {
-    position: "fixed",
-    left: rem(970),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "end",
-    border: "none",
-    zIndex: 999,
-    height: rem(20),
-    width: rem(20),
-    backgroundColor: "transparent",
   },
 
   email: {
@@ -69,12 +45,56 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
     left: rem(43),
     flexDirection: "column",
-    alignItems: "end",
+    alignItems: "center",
     border: "none",
     zIndex: 999,
     height: rem(20),
     width: rem(20),
     backgroundColor: "transparent",
+  },
+
+  emailChild: {
+    height: rem(50),
+    width: rem(50),
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textDecoration: "none",
+    transform: "rotate(90deg) translateX(-100px)",
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[0]
+        : theme.colors.gray[7],
+
+    "&:hover": {
+      color:
+        theme.colorScheme === "dark"
+          ? theme.colors.blue[5]
+          : theme.colors.blue[3],
+    },
+  },
+
+  navbar: {
+    position: "fixed",
+    left: rem(960),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    border: "none",
+    zIndex: 999,
+    height: rem(20),
+    width: rem(20),
+    backgroundColor: "transparent",
+  },
+
+  lineBottom: {
+    width: px(2),
+    height: "50vh",
+    alignSelf: "center",
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[0]
+        : theme.colors.gray[7],
   },
 
   active: {
@@ -135,16 +155,21 @@ export default function NavbarMinimal() {
         p="ls"
         className={classes.navbar}
       >
-        <Navbar.Section mt={140}>
+        <Navbar.Section mt={300}>
           <Stack justify="center" spacing={0}>
-            {links}
+            <Link href="#">
+              <a target="_blank" className={classes.emailChild}>
+                pascoalkahamba25@gmail.com
+              </a>
+            </Link>
           </Stack>
         </Navbar.Section>
         <Navbar.Section>
-          <Stack justify="center" spacing={0}>
-            <NavbarLink icon={InstagramIcon} label="Change account" />
-            <NavbarLink icon={TwitterIcon} label="Logout" />
-          </Stack>
+          <Stack
+            justify="center"
+            spacing={0}
+            className={classes.lineBottom}
+          ></Stack>
         </Navbar.Section>
       </Navbar>
 
@@ -154,16 +179,17 @@ export default function NavbarMinimal() {
         p="ls"
         className={classes.email}
       >
-        <Navbar.Section mt={140}>
+        <Navbar.Section mt={105}>
           <Stack justify="center" spacing={0}>
             {links}
           </Stack>
         </Navbar.Section>
         <Navbar.Section>
-          <Stack justify="center" spacing={0}>
-            <NavbarLink icon={InstagramIcon} label="Change account" />
-            <NavbarLink icon={TwitterIcon} label="Logout" />
-          </Stack>
+          <Stack
+            justify="center"
+            spacing={0}
+            className={classes.lineBottom}
+          ></Stack>
         </Navbar.Section>
       </Navbar>
     </Box>

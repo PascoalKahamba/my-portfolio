@@ -1,8 +1,7 @@
 import { Box, createStyles } from "@mantine/core";
 import HeaderMegaMenu from "./header";
 import FooterLinks from "./footer";
-import NavbarMinimal from "./navbarLink";
-import { PhoneOutgoing } from "lucide-react";
+import NavbarMinimal from "./navbarMinimal";
 
 interface LayoutProps {
   children: React.ReactNode;
