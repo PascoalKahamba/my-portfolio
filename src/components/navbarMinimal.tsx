@@ -1,22 +1,10 @@
-import { useState } from "react";
-import {
-  Navbar,
-  Center,
-  Tooltip,
-  UnstyledButton,
-  createStyles,
-  Stack,
-  Box,
-  rem,
-  px,
-} from "@mantine/core";
+import { Navbar, createStyles, Stack, Box, rem, px } from "@mantine/core";
 import {
   TwitterIcon,
   InstagramIcon,
   GithubIcon,
   LinkedinIcon,
   FacebookIcon,
-  LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -105,47 +93,16 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface NavbarLinkProps {
-  icon: LucideIcon;
-  label: string;
-  active?: boolean;
-  onClick?(): void;
-}
-
-export function NavbarLink({
-  icon: Icon,
-  label,
-  active,
-  onClick,
-}: NavbarLinkProps) {
-  const { classes, cx } = useStyles();
-  return (
-    <Tooltip label={label} position="right" transitionProps={{ duration: 1 }}>
-      <UnstyledButton
-        onClick={onClick}
-        className={cx(classes.link, { [classes.active]: active })}
-      >
-        <Icon size="1.2rem" />
-      </UnstyledButton>
-    </Tooltip>
-  );
-}
-
 const mockdata = [
-  { icon: GithubIcon, label: "Home" },
-  { icon: LinkedinIcon, label: "Dashboard" },
-  { icon: FacebookIcon, label: "Analytics" },
-  { icon: InstagramIcon, label: "Releases" },
-  { icon: TwitterIcon, label: "Account" },
+  { Icon: GithubIcon, link: "Home" },
+  { Icon: LinkedinIcon, link: "Dashboard" },
+  { Icon: FacebookIcon, link: "Analytics" },
+  { Icon: InstagramIcon, link: "Releases" },
+  { Icon: TwitterIcon, link: "Account" },
 ];
 
 export default function NavbarMinimal() {
-  const [active, setActive] = useState(2);
-  const { classes, cx } = useStyles();
-
-  const links = mockdata.map((link, index) => (
-    <NavbarLink {...link} key={link.label} onClick={() => setActive(index)} />
-  ));
+  const { classes } = useStyles();
 
   return (
     <Box component="div">
@@ -181,7 +138,13 @@ export default function NavbarMinimal() {
       >
         <Navbar.Section mt={105}>
           <Stack justify="center" spacing={0}>
-            {links}
+            {mockdata.map(({ Icon, link }) => (
+              <Link href={link} key={link}>
+                <a target="_blank" className={classes.link}>
+                  <Icon size="1.2rem" />
+                </a>
+              </Link>
+            ))}
           </Stack>
         </Navbar.Section>
         <Navbar.Section>
