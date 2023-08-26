@@ -6,6 +6,7 @@ import {
   LinkedinIcon,
   FacebookIcon,
 } from "lucide-react";
+import { BsDiscord } from "react-icons/bs";
 import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
@@ -94,11 +95,14 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const mockdata = [
-  { Icon: GithubIcon, link: "Home" },
-  { Icon: LinkedinIcon, link: "Dashboard" },
-  { Icon: FacebookIcon, link: "Analytics" },
-  { Icon: InstagramIcon, link: "Releases" },
-  { Icon: TwitterIcon, link: "Account" },
+  { Icon: GithubIcon, link: "https://github.com/PascoalKahamba" },
+  {
+    Icon: LinkedinIcon,
+    link: "https://www.linkedin.com/in/pascoal-kahamba-7b43bb233/",
+  },
+  { Icon: FacebookIcon, link: "https://web.facebook.com/PascoalKahamba/" },
+  { Icon: InstagramIcon, link: "https://www.instagram.com/pascoalkahamba/" },
+  { Icon: BsDiscord, link: "https://discord.com/channels/@me" },
 ];
 
 export default function NavbarMinimal() {
@@ -114,7 +118,7 @@ export default function NavbarMinimal() {
       >
         <Navbar.Section mt={300}>
           <Stack justify="center" spacing={0}>
-            <Link href="#">
+            <Link href="mailto://pascoalkahamba25@gmail.com">
               <a target="_blank" className={classes.emailChild}>
                 pascoalkahamba25@gmail.com
               </a>

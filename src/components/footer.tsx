@@ -5,10 +5,12 @@ import {
   ActionIcon,
   Group,
   rem,
+  Stack,
 } from "@mantine/core";
 import { CalendarDaysIcon, PhoneCallIcon, WheatOffIcon } from "lucide-react";
 import UserButton from "./userButton";
 import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -109,6 +111,29 @@ const useStyles = createStyles((theme) => ({
       marginTop: theme.spacing.xs,
     },
   },
+
+  socialMedia: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: rem(12),
+  },
+
+  eachSocial: {
+    display: "inline-block",
+    padding: rem(1),
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[0]
+        : theme.colors.gray[7],
+
+    "&:hover": {
+      color:
+        theme.colorScheme === "dark"
+          ? theme.colors.blue[5]
+          : theme.colors.blue[3],
+    },
+  },
 }));
 
 interface FooterLinksProps {
@@ -117,6 +142,21 @@ interface FooterLinksProps {
     links: { label: string; link: string }[];
   }[];
 }
+
+const socialMedia = [
+  {
+    Icon: FaWhatsapp,
+    link: "https://api.whatsapp.com/send?phone=941900324",
+  },
+  {
+    Icon: PhoneCallIcon,
+    link: "tel://941900324",
+  },
+  {
+    Icon: CalendarDaysIcon,
+    link: "https://calendly.com/pascoalkahamba",
+  },
+];
 
 export default function FooterLinks({ data }: FooterLinksProps) {
   const { classes } = useStyles();
@@ -163,15 +203,17 @@ export default function FooterLinks({ data }: FooterLinksProps) {
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
-          <ActionIcon size="lg">
-            <FaWhatsapp size="1.05rem" />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <PhoneCallIcon size="1.05rem" />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <CalendarDaysIcon size="1.05rem" />
-          </ActionIcon>
+          <Stack justify="center" spacing={0}>
+            <div className={classes.socialMedia}>
+              {socialMedia.map(({ Icon, link }) => (
+                <Link href={link} key={link}>
+                  <a target="_blank" className={classes.eachSocial}>
+                    <Icon size="1.05rem" />
+                  </a>
+                </Link>
+              ))}
+            </div>
+          </Stack>
         </Group>
       </Container>
     </footer>

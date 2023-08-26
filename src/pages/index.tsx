@@ -8,6 +8,8 @@ import {
 } from "@mantine/core";
 import { GithubIcon, DownloadIcon } from "lucide-react";
 import Link from "next/link";
+import { assert } from "node:console";
+import { describe } from "node:test";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -32,7 +34,7 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 600,
     fontStyle: "italic",
     color: theme.colors.gray[6],
-    fontSize: theme.spacing.md,
+    fontSize: theme.spacing.lg,
   },
 
   title: {
