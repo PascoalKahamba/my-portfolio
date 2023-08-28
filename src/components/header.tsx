@@ -11,6 +11,8 @@ import LanguagePicker from "./languagePicker";
 import ActionToggle from "./actionToggle";
 import UserButton from "./userButton";
 import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const useStyles = createStyles((theme) => ({
   headerElement: {
@@ -61,12 +63,6 @@ const useStyles = createStyles((theme) => ({
       display: "none",
     },
   },
-
-  hiddenDesktop: {
-    [theme.fn.largerThan("sm")]: {
-      display: "none",
-    },
-  },
 }));
 
 interface LinkProps {
@@ -81,6 +77,7 @@ interface HeaderMegaMenuProps {
 export default function HeaderMegaMenu({ mainLinks }: HeaderMegaMenuProps) {
   const [active, setActive] = useState(0);
   const { classes, cx } = useStyles();
+  const router = useRouter();
 
   const mainItems = mainLinks.map((item, index) => (
     <Anchor<"a">
@@ -91,6 +88,7 @@ export default function HeaderMegaMenu({ mainLinks }: HeaderMegaMenuProps) {
       })}
       onClick={(event) => {
         event.preventDefault();
+        router.push(item.link);
         setActive(index);
       }}
     >

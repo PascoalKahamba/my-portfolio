@@ -1,7 +1,7 @@
 import { Box, createStyles } from "@mantine/core";
-import HeaderMegaMenu from "./header";
-import FooterLinks from "./footer";
-import NavbarMinimal from "./navbarMinimal";
+import HeaderMegaMenu from "../components/header";
+import FooterLinks from "../components/footer";
+import NavbarMinimal from "../components/navbarMinimal";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,11 +11,11 @@ const footLinks = [
   {
     title: "Navegação",
     links: [
-      { label: "Página Inicial", link: "/" },
-      { label: "Sobre", link: "./about" },
-      { label: "Jornada", link: "./journey" },
-      { label: "Projetos", link: "./projects" },
-      { label: "Contatos", link: "./contact" },
+      { label: "Página Inicial", link: "Pascoal" },
+      { label: "Sobre", link: "Pascoal" },
+      { label: "Jornada", link: "Pascoal" },
+      { label: "Projetos", link: "Pascoal" },
+      { label: "Contatos", link: "Pascoal" },
     ],
   },
   {
@@ -41,7 +41,7 @@ const footLinks = [
 const mainLinks = [
   {
     label: "Página Inicial",
-    link: "/",
+    link: "#",
   },
   {
     label: "Sobre",
@@ -49,15 +49,15 @@ const mainLinks = [
   },
   {
     label: "Jornada",
-    link: "./journey",
+    link: "#",
   },
   {
     label: "Projetos",
-    link: "./projects",
+    link: "#",
   },
   {
     label: "Contatos",
-    link: "./contact",
+    link: "#",
   },
 ];
 

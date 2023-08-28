@@ -11,6 +11,7 @@ import { CalendarDaysIcon, PhoneCallIcon, WheatOffIcon } from "lucide-react";
 import UserButton from "./userButton";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -160,6 +161,7 @@ const socialMedia = [
 
 export default function FooterLinks({ data }: FooterLinksProps) {
   const { classes } = useStyles();
+  const router = useRouter();
 
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
@@ -168,7 +170,10 @@ export default function FooterLinks({ data }: FooterLinksProps) {
         className={classes.link}
         component="a"
         href={link.link}
-        onClick={(event) => event.preventDefault()}
+        onClick={(event) => {
+          event.preventDefault();
+          router.push(link.link);
+        }}
       >
         {link.label}
       </Text>
