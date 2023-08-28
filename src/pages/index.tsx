@@ -148,7 +148,7 @@ export default function IndexPage() {
           <Button
             component="a"
             target="_blank"
-            href="https://github.com/PascoalKahamba/my-portfolio/blob/main/public/curriculo-frontend-kahamba.pt.pdf"
+            href="/curriculo-frontend-kahamba.pt.pdf"
             download="curriculo-frontend-kahamba"
             size="xl"
             className={classes.control}
