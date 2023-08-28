@@ -6,10 +6,12 @@ import {
   Group,
   rem,
 } from "@mantine/core";
+import axios from "axios";
 import { GithubIcon, DownloadIcon } from "lucide-react";
 import Link from "next/link";
 import { assert } from "node:console";
 import { describe } from "node:test";
+import { useEffect, useState } from "react";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -96,6 +98,12 @@ const useStyles = createStyles((theme) => ({
 export default function IndexPage() {
   const { classes } = useStyles();
 
+  useEffect(() => {
+    axios.get(
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ4gbghQxKQ00p3xIvyMBXBgGmChzLSh1VQId1oyhYrgir1bkn812dc1LwOgnajgWd-Yo&usqp=CAU"
+    );
+  }, []);
+
   return (
     <div className={classes.wrapper}>
       <Container size={700} className={classes.inner}>
@@ -138,6 +146,10 @@ export default function IndexPage() {
 
         <Group className={classes.controls}>
           <Button
+            component="a"
+            target="_blank"
+            href="https://github.com/PascoalKahamba/my-portfolio/blob/main/public/curriculo-frontend-kahamba.pt.pdf"
+            download="curriculo-frontend-kahamba"
             size="xl"
             className={classes.control}
             variant="gradient"
