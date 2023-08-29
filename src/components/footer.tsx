@@ -12,6 +12,8 @@ import UserButton from "./userButton";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useAtom } from "jotai";
+import { activeAtom } from "../atoms";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -160,6 +162,7 @@ const socialMedia = [
 ];
 
 export default function FooterLinks({ data }: FooterLinksProps) {
+  const [, setActive] = useAtom(activeAtom);
   const { classes } = useStyles();
   const router = useRouter();
 
@@ -172,6 +175,7 @@ export default function FooterLinks({ data }: FooterLinksProps) {
         href={link.link}
         onClick={(event) => {
           event.preventDefault();
+          setActive(index);
           router.push(link.link);
         }}
       >

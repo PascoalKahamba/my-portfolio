@@ -21,7 +21,7 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
     justifyContent: "space-between",
     alignItems: "center",
 
-    padding: `${theme.spacing.xs} ${theme.spacing.md}`,
+    padding: `${theme.spacing.xs} ${theme.spacing.sm}`,
     borderRadius: theme.radius.md,
     border: `${rem(1)} none ${
       theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[2]
@@ -33,6 +33,10 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
         : opened
         ? theme.colors.gray[0]
         : theme.white,
+  },
+
+  menuIcon: {
+    padding: `${theme.spacing.xs} ${theme.spacing.lg}`,
   },
 
   label: {
@@ -58,6 +62,7 @@ export default function LanguagePicker() {
       }
       onClick={() => setSelected(item)}
       key={item.label}
+      className={classes.menuIcon}
     >
       {item.label}
     </Menu.Item>

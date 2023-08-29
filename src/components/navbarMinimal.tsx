@@ -31,8 +31,8 @@ const useStyles = createStyles((theme) => ({
 
   email: {
     position: "fixed",
+    right: rem(960),
     display: "flex",
-    left: rem(43),
     flexDirection: "column",
     alignItems: "center",
     border: "none",

@@ -13,6 +13,8 @@ import UserButton from "./userButton";
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useAtom } from "jotai";
+import { activeAtom } from "../atoms";
 
 const useStyles = createStyles((theme) => ({
   headerElement: {
@@ -75,7 +77,7 @@ interface HeaderMegaMenuProps {
 }
 
 export default function HeaderMegaMenu({ mainLinks }: HeaderMegaMenuProps) {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useAtom(activeAtom);
   const { classes, cx } = useStyles();
   const router = useRouter();
 

@@ -1,5 +1,5 @@
 import { atom } from "jotai";
 
-const stateAtom = atom(0);
+const activeAtom = atom(0);
 
-export { stateAtom };
+export { activeAtom };
