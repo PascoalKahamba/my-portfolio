@@ -12,6 +12,7 @@ const useStyles = createStyles((theme) => ({
   user: {
     display: "block",
     cursor: "context-menu",
+    textAlign: "right",
     color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
   },
   profile: {

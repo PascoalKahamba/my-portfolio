@@ -5,6 +5,7 @@ import {
   Button,
   Group,
   rem,
+  px,
 } from "@mantine/core";
 import axios from "axios";
 import { GithubIcon, DownloadIcon } from "lucide-react";
@@ -81,6 +82,10 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
+  buttonIcon: {
+    marginLeft: px(6),
+  },
+
   control: {
     height: rem(54),
     paddingLeft: rem(38),
@@ -154,7 +159,7 @@ export default function IndexPage() {
             className={classes.control}
             variant="gradient"
             gradient={{ from: "blue", to: "cyan" }}
-            leftIcon={<DownloadIcon size={20} />}
+            leftIcon={<DownloadIcon className={classes.buttonIcon} size={20} />}
           >
             Baixar CV
           </Button>
@@ -166,7 +171,7 @@ export default function IndexPage() {
             size="xl"
             variant="default"
             className={classes.control}
-            leftIcon={<GithubIcon size={20} />}
+            leftIcon={<GithubIcon className={classes.buttonIcon} size={20} />}
           >
             GitHub
           </Button>

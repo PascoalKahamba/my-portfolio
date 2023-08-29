@@ -1,13 +1,15 @@
-// _app.tsx file
+import { GetServerSidePropsContext } from "next";
 import { useState } from "react";
-import NextApp, { AppProps, AppContext } from "next/app";
-import Head from "next/head";
+import { AppProps } from "next/app";
 import { getCookie, setCookie } from "cookies-next";
+import Head from "next/head";
 import {
   MantineProvider,
   ColorScheme,
   ColorSchemeProvider,
 } from "@mantine/core";
+import { NotificationsProvider } from "@mantine/notifications";
+import { rtlCache } from "../../rtl-cache";
 import Layout from "../components/layout";
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
@@ -20,7 +22,6 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
     const nextColorScheme =
       value || (colorScheme === "dark" ? "light" : "dark");
     setColorScheme(nextColorScheme);
-    // when color scheme is updated save it to cookie
     setCookie("mantine-color-scheme", nextColorScheme, {
       maxAge: 60 * 60 * 24 * 30,
     });
@@ -30,12 +31,13 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
     <>
       <Head>
         <title>Pascoal Kahamba</title>
-        <link rel="shortcut icon" href="/favicon.svg" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <link rel="shortcut icon" href="/favicon.svg" />
       </Head>
+
       <ColorSchemeProvider
         colorScheme={colorScheme}
         toggleColorScheme={toggleColorScheme}
@@ -44,20 +46,19 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
           theme={{ colorScheme }}
           withGlobalStyles
           withNormalizeCSS
+          emotionCache={rtlCache}
         >
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <NotificationsProvider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </NotificationsProvider>
         </MantineProvider>
       </ColorSchemeProvider>
     </>
   );
 }
 
-App.getInitialProps = async (appContext: AppContext) => {
-  const appProps = await NextApp.getInitialProps(appContext);
-  return {
-    ...appProps,
-    colorScheme: getCookie("mantine-color-scheme", appContext.ctx) || "light",
-  };
-};
+App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
+  colorScheme: getCookie("mantine-color-scheme", ctx) || "light",
+});

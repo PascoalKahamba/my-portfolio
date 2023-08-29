@@ -44,10 +44,9 @@ const useStyles = createStyles((theme) => ({
 
   emailChild: {
     height: rem(50),
-    width: rem(50),
+    width: rem(650),
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
     textDecoration: "none",
     transform: "rotate(90deg) translateX(-100px)",
     color:
@@ -116,13 +115,15 @@ export default function NavbarMinimal() {
         p="ls"
         className={classes.navbar}
       >
-        <Navbar.Section mt={300}>
+        <Navbar.Section mt={80}>
           <Stack justify="center" spacing={0}>
-            <Link href="mailto://pascoalkahamba25@gmail.com">
-              <a target="_blank" className={classes.emailChild}>
-                pascoalkahamba25@gmail.com
-              </a>
-            </Link>
+            {mockdata.map(({ Icon, link }) => (
+              <Link href={link} key={link}>
+                <a target="_blank" className={classes.link}>
+                  <Icon size="1.2rem" />
+                </a>
+              </Link>
+            ))}
           </Stack>
         </Navbar.Section>
         <Navbar.Section>
@@ -140,15 +141,13 @@ export default function NavbarMinimal() {
         p="ls"
         className={classes.email}
       >
-        <Navbar.Section mt={105}>
+        <Navbar.Section mt={300}>
           <Stack justify="center" spacing={0}>
-            {mockdata.map(({ Icon, link }) => (
-              <Link href={link} key={link}>
-                <a target="_blank" className={classes.link}>
-                  <Icon size="1.2rem" />
-                </a>
-              </Link>
-            ))}
+            <Link href="mailto://pascoalkahamba25@gmail.com">
+              <a target="_blank" className={classes.emailChild}>
+                pascoalkahamba25@gmail.com
+              </a>
+            </Link>
           </Stack>
         </Navbar.Section>
         <Navbar.Section>
