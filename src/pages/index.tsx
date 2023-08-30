@@ -7,12 +7,9 @@ import {
   rem,
   px,
 } from "@mantine/core";
-import axios from "axios";
 import { GithubIcon, DownloadIcon } from "lucide-react";
 import Link from "next/link";
-import { assert } from "node:console";
-import { describe } from "node:test";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -103,16 +100,18 @@ const useStyles = createStyles((theme) => ({
 export default function IndexPage() {
   const { classes } = useStyles();
 
-  useEffect(() => {
-    axios.get(
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ4gbghQxKQ00p3xIvyMBXBgGmChzLSh1VQId1oyhYrgir1bkn812dc1LwOgnajgWd-Yo&usqp=CAU"
-    );
-  }, []);
+  const { locale, locales, push, pathname } = useRouter();
+  console.log(pathname);
+
+  function onChangeLocale(local: string) {
+    push("/", undefined, { locale: local });
+  }
 
   return (
     <div className={classes.wrapper}>
       <Container size={700} className={classes.inner}>
         <span className={classes.spanTitle}>Olá, meu nome é </span>
+        <h2 style={{ color: "#fff", margin: "5px" }}>{locale}</h2>
         <h1 className={classes.title}>
           <Text
             component="span"
@@ -124,6 +123,16 @@ export default function IndexPage() {
           </Text>{" "}
           Desenvolvedor Front-End
         </h1>
+        <h1>Which language do you want.?</h1>
+        {locales?.map((local) => (
+          <Button
+            key={local}
+            style={{ marginLeft: "10px" }}
+            onClick={() => onChangeLocale(local)}
+          >
+            {local}
+          </Button>
+        ))}
 
         <Text className={classes.description} color="dimmed">
           Entusiasta do desenvolvimento de software com uma paixão ardente pelo
@@ -153,7 +162,7 @@ export default function IndexPage() {
           <Button
             component="a"
             target="_blank"
-            href="/curriculo-frontend-kahamba.pt.pdf"
+            href={`/curriculo-frontend-kahamba.${locale}.pdf`}
             download="curriculo-frontend-kahamba"
             size="xl"
             className={classes.control}

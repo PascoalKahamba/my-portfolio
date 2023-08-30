@@ -9,7 +9,7 @@ import {
   ColorSchemeProvider,
 } from "@mantine/core";
 import { NotificationsProvider } from "@mantine/notifications";
-import { rtlCache } from "../rtl-cache
+import { rtlCache } from "../rtl-cache";
 import Layout from "../components/layout";
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
