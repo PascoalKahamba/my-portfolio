@@ -123,7 +123,7 @@ export default function IndexPage() {
           </Text>{" "}
           Desenvolvedor Front-End
         </h1>
-        <h1>Which language do you want.?</h1>
+        <h2>Which language do you want.?</h2>
         {locales?.map((local) => (
           <Button
             key={local}
