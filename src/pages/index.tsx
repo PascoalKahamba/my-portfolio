@@ -107,7 +107,6 @@ export default function IndexPage() {
     <div className={classes.wrapper}>
       <Container size={700} className={classes.inner}>
         <span className={classes.spanTitle}>Olá, meu nome é </span>
-        <h2 style={{ color: "#fff", margin: "5px" }}>{locale}</h2>
         <h1 className={classes.title}>
           <Text
             component="span"
@@ -119,7 +118,6 @@ export default function IndexPage() {
           </Text>{" "}
           Desenvolvedor Front-End
         </h1>
-        <h2>Which language do you want.?</h2>
 
         <Text className={classes.description} color="dimmed">
           Entusiasta do desenvolvimento de software com uma paixão ardente pelo

@@ -1,6 +1,5 @@
 import { Navbar, createStyles, Stack, Box, rem, px } from "@mantine/core";
 import {
-  TwitterIcon,
   InstagramIcon,
   GithubIcon,
   LinkedinIcon,
@@ -31,19 +30,18 @@ const useStyles = createStyles((theme) => ({
 
   email: {
     position: "fixed",
-    right: rem(960),
+    right: rem(550),
+    zIndex: 999,
+    height: rem(50),
+    width: rem(650),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     border: "none",
-    zIndex: 999,
-    height: rem(20),
-    width: rem(20),
     backgroundColor: "transparent",
   },
 
   emailChild: {
-    height: rem(50),
     width: rem(650),
     display: "flex",
     alignItems: "center",
@@ -64,14 +62,12 @@ const useStyles = createStyles((theme) => ({
 
   navbar: {
     position: "fixed",
-    left: rem(960),
+    left: rem(830),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     border: "none",
     zIndex: 999,
-    height: rem(20),
-    width: rem(20),
     backgroundColor: "transparent",
   },
 
