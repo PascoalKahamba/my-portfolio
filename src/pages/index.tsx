@@ -103,8 +103,13 @@ export default function IndexPage() {
   const { locale, locales, push, pathname } = useRouter();
   console.log(pathname);
 
+  function onChangeLanguage(local: string) {
+    push(pathname, undefined, { locale: local });
+  }
+
   return (
     <div className={classes.wrapper}>
+      <span>{locale}</span>
       <Container size={700} className={classes.inner}>
         <span className={classes.spanTitle}>Olá, meu nome é </span>
         <h1 className={classes.title}>
@@ -118,6 +123,16 @@ export default function IndexPage() {
           </Text>{" "}
           Desenvolvedor Front-End
         </h1>
+        <h2>Which language do you want.?</h2>
+        {locales?.map((local) => (
+          <Button
+            key={local}
+            onClick={() => onChangeLanguage(local)}
+            style={{ marginRight: "1em" }}
+          >
+            {local}
+          </Button>
+        ))}
 
         <Text className={classes.description} color="dimmed">
           Entusiasta do desenvolvimento de software com uma paixão ardente pelo
@@ -147,7 +162,7 @@ export default function IndexPage() {
           <Button
             component="a"
             target="_blank"
-            href={`/curriculo-frontend-kahamba.pt.pdf`}
+            href={`/curriculo-frontend-kahamba.${locale}.pdf`}
             download="curriculo-frontend-kahamba"
             size="xl"
             className={classes.control}

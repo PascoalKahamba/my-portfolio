@@ -11,7 +11,7 @@ import { ChevronDownIcon } from "lucide-react";
 
 const data = [
   { label: "English", image: "/english.jpg" },
-  { label: "Português", image: "/portugue.jpg" },
+  { label: "Portuguese", image: "/portuguese.jpg" },
 ];
 
 const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
