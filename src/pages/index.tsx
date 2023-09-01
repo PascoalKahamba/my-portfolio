@@ -124,6 +124,7 @@ export default function IndexPage() {
           Desenvolvedor Front-End
         </h1>
         <h2>Which language do you want.?</h2>
+
         {locales?.map((local) => (
           <Button
             key={local}
