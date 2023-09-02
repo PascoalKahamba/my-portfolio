@@ -3,7 +3,6 @@ import React from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
-import Link from "next/link";
 
 const About = () => {
   const { pathname, locale } = useRouter();

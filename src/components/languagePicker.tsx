@@ -20,7 +20,6 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-
     padding: `${theme.spacing.xs} ${theme.spacing.sm}`,
     borderRadius: theme.radius.md,
     border: `${rem(1)} none ${
