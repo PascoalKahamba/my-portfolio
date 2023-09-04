@@ -8,6 +8,7 @@ import {
   rem,
 } from "@mantine/core";
 import { ChevronDownIcon } from "lucide-react";
+import { useRouter } from "next/router";
 
 const data = [
   { label: "English", image: "/english.jpg" },
@@ -54,12 +55,23 @@ export default function LanguagePicker() {
   const [opened, setOpened] = useState(false);
   const { classes } = useStyles({ opened });
   const [selected, setSelected] = useState(data[0]);
+  const { push, pathname } = useRouter();
+
+  function onChangeLanguage(language: string) {
+    push(pathname, undefined, {
+      locale: language === "English" ? "en" : "pt",
+    });
+  }
+
   const items = data.map((item) => (
     <Menu.Item
       icon={
         <Image src={item.image} width={18} height={18} alt="language-image" />
       }
-      onClick={() => setSelected(item)}
+      onClick={() => {
+        setSelected(item);
+        onChangeLanguage(item.label);
+      }}
       key={item.label}
       className={classes.menuIcon}
     >

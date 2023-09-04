@@ -103,10 +103,6 @@ export default function IndexPage() {
   const { locale, locales, push, pathname } = useRouter();
   console.log(pathname);
 
-  function onChangeLanguage(local: string) {
-    push(pathname, undefined, { locale: local });
-  }
-
   return (
     <div className={classes.wrapper}>
       <span>{locale}</span>
@@ -123,18 +119,6 @@ export default function IndexPage() {
           </Text>{" "}
           Desenvolvedor Front-End
         </h1>
-        <h2>Which language do you want.?</h2>
-
-        {locales?.map((local) => (
-          <Button
-            key={local}
-            onClick={() => onChangeLanguage(local)}
-            style={{ marginRight: "1em" }}
-          >
-            {local}
-          </Button>
-        ))}
-
         <Text className={classes.description} color="dimmed">
           Entusiasta do desenvolvimento de software com uma paixão ardente pelo
           aprimoramento contínuo. Especializado na criação de sistemas web de
