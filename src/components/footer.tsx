@@ -7,8 +7,11 @@ import {
   rem,
   Stack,
 } from "@mantine/core";
-import { CalendarDaysIcon, PhoneCallIcon, WheatOffIcon } from "lucide-react";
+import { CalendarDaysIcon, PhoneCallIcon } from "lucide-react";
 import UserButton from "./userButton";
+import { UseTranslation, useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { GetStaticProps } from "next";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -165,6 +168,7 @@ export default function FooterLinks({ data }: FooterLinksProps) {
   const [, setActive] = useAtom(activeAtom);
   const { classes } = useStyles();
   const router = useRouter();
+  const { t: translate } = useTranslation("footer");
 
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
@@ -201,14 +205,14 @@ export default function FooterLinks({ data }: FooterLinksProps) {
             skill="Desenvolvedor Front-End"
           />
           <Text size="xs" color="dimmed" className={classes.description}>
-            Projetado e Desenvolvido por Pascoal Kahamba
+            {translate("description")}
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
       </Container>
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">
-          © 2023 - Todos os direitos reservados.
+          © 2023 - {translate("2023")}
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
@@ -228,3 +232,11 @@ export default function FooterLinks({ data }: FooterLinksProps) {
     </footer>
   );
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale!, ["footer"])),
+    },
+  };
+};

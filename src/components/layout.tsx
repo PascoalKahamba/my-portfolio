@@ -2,64 +2,13 @@ import { Box, createStyles } from "@mantine/core";
 import HeaderMegaMenu from "./header";
 import FooterLinks from "./footer";
 import NavbarMinimal from "./navbarMinimal";
+import { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 interface LayoutProps {
   children: React.ReactNode;
 }
-
-const footLinks = [
-  {
-    title: "Navegação",
-    links: [
-      { label: "Página Inicial", link: "/" },
-      { label: "Sobre", link: "./about" },
-      { label: "Jornada", link: "./journey" },
-      { label: "Projetos", link: "./projects" },
-      { label: "Contatos", link: "./contact" },
-    ],
-  },
-  {
-    title: "Tecnologias",
-    links: [
-      { label: "JavaScript", link: "Pascoal" },
-      { label: "TypeScript", link: "Pascoal" },
-      { label: "React.js", link: "Pascoal" },
-      { label: "Next.js", link: "Pascoal" },
-    ],
-  },
-  {
-    title: "Jornada",
-    links: [
-      { label: "2023", link: "Pascoal" },
-      { label: "2022", link: "Pascoal" },
-      { label: "2021", link: "Pascoal" },
-      { label: "2020", link: "Pascoal" },
-    ],
-  },
-];
-
-const mainLinks = [
-  {
-    label: "Página Inicial",
-    link: "/",
-  },
-  {
-    label: "Sobre",
-    link: "./about",
-  },
-  {
-    label: "Jornada",
-    link: "./journey",
-  },
-  {
-    label: "Projetos",
-    link: "./projects",
-  },
-  {
-    label: "Contatos",
-    link: "./contact",
-  },
-];
 
 const useStyles = createStyles((theme) => ({
   layout: {
@@ -69,6 +18,60 @@ const useStyles = createStyles((theme) => ({
 
 const Layout = ({ children }: LayoutProps) => {
   const { classes } = useStyles();
+  const { t: translate } = useTranslation("footer");
+
+  const footLinks = [
+    {
+      title: translate("navigation"),
+      links: [
+        { label: translate("home"), link: "/" },
+        { label: translate("about"), link: "./about" },
+        { label: translate("journey"), link: "./journey" },
+        { label: translate("projects"), link: "./projects" },
+        { label: translate("contacts"), link: "./contact" },
+      ],
+    },
+    {
+      title: translate("tecnologies"),
+      links: [
+        { label: "JavaScript", link: "Pascoal" },
+        { label: "TypeScript", link: "Pascoal" },
+        { label: "React.js", link: "Pascoal" },
+        { label: "Next.js", link: "Pascoal" },
+      ],
+    },
+    {
+      title: translate("journey"),
+      links: [
+        { label: "2023", link: "Pascoal" },
+        { label: "2022", link: "Pascoal" },
+        { label: "2021", link: "Pascoal" },
+        { label: "2020", link: "Pascoal" },
+      ],
+    },
+  ];
+  const mainLinks = [
+    {
+      label: translate("home"),
+      link: "/",
+    },
+    {
+      label: translate("about"),
+      link: "./about",
+    },
+    {
+      label: translate("journey"),
+      link: "./journey",
+    },
+    {
+      label: translate("projects"),
+      link: "./projects",
+    },
+    {
+      label: translate("contacts"),
+      link: "./contact",
+    },
+  ];
   return (
     <Box component="section" className={classes.layout}>
       <NavbarMinimal />
@@ -80,3 +83,11 @@ const Layout = ({ children }: LayoutProps) => {
 };
 
 export default Layout;
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale!, ["footer"])),
+    },
+  };
+};
