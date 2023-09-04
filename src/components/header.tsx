@@ -10,8 +10,6 @@ import {
 import LanguagePicker from "./languagePicker";
 import ActionToggle from "./actionToggle";
 import UserButton from "./userButton";
-import { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useAtom } from "jotai";
 import { activeAtom } from "../atoms";

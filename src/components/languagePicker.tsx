@@ -66,7 +66,7 @@ export default function LanguagePicker() {
   const items = data.map((item) => (
     <Menu.Item
       icon={
-        <Image src={item.image} width={18} height={18} alt="language-image" />
+        <Image src={item.image} width={16} height={16} alt="language-image" />
       }
       onClick={() => {
         setSelected(item);

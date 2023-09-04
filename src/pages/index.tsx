@@ -99,13 +99,10 @@ const useStyles = createStyles((theme) => ({
 
 export default function IndexPage() {
   const { classes } = useStyles();
-
-  const { locale, locales, push, pathname } = useRouter();
-  console.log(pathname);
+  const { locale } = useRouter();
 
   return (
     <div className={classes.wrapper}>
-      <span>{locale}</span>
       <Container size={700} className={classes.inner}>
         <span className={classes.spanTitle}>Olá, meu nome é </span>
         <h1 className={classes.title}>
