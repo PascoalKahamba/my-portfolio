@@ -31,7 +31,7 @@ const useStyles = createStyles((theme) => ({
   email: {
     position: "fixed",
     right: rem(550),
-    zIndex: 999,
+    zIndex: 0,
     height: rem(50),
     width: rem(650),
     display: "flex",
@@ -39,6 +39,10 @@ const useStyles = createStyles((theme) => ({
     alignItems: "center",
     border: "none",
     backgroundColor: "transparent",
+
+    [theme.fn.smallerThan("xs")]: {
+      width: rem(350),
+    },
   },
 
   emailChild: {
@@ -67,7 +71,7 @@ const useStyles = createStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     border: "none",
-    zIndex: 999,
+    zIndex: 666,
     backgroundColor: "transparent",
   },
 

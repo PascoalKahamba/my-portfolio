@@ -17,31 +17,16 @@ const data = [
 
 const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
   control: {
-    width: rem(150),
+    width: rem(160),
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: `${theme.spacing.xs} ${theme.spacing.sm}`,
-    borderRadius: theme.radius.md,
-    border: `${rem(1)} none ${
-      theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[2]
-    }`,
+    padding: `${theme.spacing.md} ${theme.spacing.lg}`,
     transition: "background-color 150ms ease",
-    backgroundColor:
-      theme.colorScheme === "dark"
-        ? "dark"
-        : opened
-        ? theme.colors.gray[0]
-        : theme.white,
-  },
-
-  menuIcon: {
-    padding: `${theme.spacing.xs} ${theme.spacing.lg}`,
   },
 
   label: {
-    fontWeight: "bold",
-    color: theme.colorScheme === "dark" ? theme.white : theme.colors.dark[4],
+    fontWeight: 500,
     fontSize: theme.fontSizes.sm,
   },
 
@@ -55,14 +40,7 @@ export default function LanguagePicker() {
   const [opened, setOpened] = useState(false);
   const { classes } = useStyles({ opened });
   const [selected, setSelected] = useState(data[0]);
-  const { push, pathname } = useRouter();
-
-  function onChangeLanguage(language: string) {
-    push(pathname, undefined, {
-      locale: language === "English" ? "en" : "pt",
-    });
-  }
-
+  const { pathname, push } = useRouter();
   const items = data.map((item) => (
     <Menu.Item
       icon={
@@ -73,11 +51,16 @@ export default function LanguagePicker() {
         onChangeLanguage(item.label);
       }}
       key={item.label}
-      className={classes.menuIcon}
     >
       {item.label}
     </Menu.Item>
   ));
+
+  function onChangeLanguage(language: string) {
+    push(pathname, undefined, {
+      locale: language === "English" ? "en" : "pt",
+    });
+  }
 
   return (
     <Menu
