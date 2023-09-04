@@ -8,6 +8,9 @@ import {
   px,
 } from "@mantine/core";
 import { GithubIcon, DownloadIcon } from "lucide-react";
+import { GetStaticProps } from "next";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -101,10 +104,12 @@ export default function IndexPage() {
   const { classes } = useStyles();
   const { locale } = useRouter();
 
+  const { t: translate } = useTranslation("home");
+
   return (
     <div className={classes.wrapper}>
       <Container size={700} className={classes.inner}>
-        <span className={classes.spanTitle}>Olá, meu nome é </span>
+        <span className={classes.spanTitle}>{translate("hello")}</span>
         <h1 className={classes.title}>
           <Text
             component="span"
@@ -171,3 +176,11 @@ export default function IndexPage() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale!, ["home"])),
+    },
+  };
+};

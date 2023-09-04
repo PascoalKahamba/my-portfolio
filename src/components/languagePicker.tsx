@@ -51,6 +51,7 @@ export default function LanguagePicker() {
         onChangeLanguage(item.label);
       }}
       key={item.label}
+      sx={{ textAlign: "center" }}
     >
       {item.label}
     </Menu.Item>
