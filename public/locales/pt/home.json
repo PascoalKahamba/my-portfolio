@@ -1,3 +1,7 @@
 {
-  "hello": "Olá, meu nome é"
+  "hello": "Olá, meu nome é",
+  "my-skill": "Desenvolvedor Front-End",
+  "description": "Entusiasta do desenvolvimento de software com uma paixão ardente pelo aprimoramento contínuo. Especializado na criação de sistemas web de alto desempenho, atualmente desempenhando o papel de",
+  "short-description": "Minha abordagem se baseia na stack principal de",
+  "button-name": "Baixar CV"
 }

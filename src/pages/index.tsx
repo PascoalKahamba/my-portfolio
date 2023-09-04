@@ -119,18 +119,16 @@ export default function IndexPage() {
           >
             Pascoal Kahamba
           </Text>{" "}
-          Desenvolvedor Front-End
+          {translate("my-skill")}
         </h1>
         <Text className={classes.description} color="dimmed">
-          Entusiasta do desenvolvimento de software com uma paixão ardente pelo
-          aprimoramento contínuo. Especializado na criação de sistemas web de
-          alto desempenho, atualmente desempenhando o papel de{" "}
+          {translate("description")}{" "}
           <Link href="https://www.alura.com.br/artigos/o-que-e-front-end-e-back-end">
             <a className={classes.links} target="_blank">
-              Desenvolvedor Front-End
+              {translate("my-skill")}
             </a>
           </Link>
-          . Minha abordagem se baseia na stack principal de{" "}
+          . {translate("short-description")}{" "}
           <Link href="https://pt.wikipedia.org/wiki/JavaScript">
             <a className={classes.links} target="_blank">
               JavaScript
@@ -157,7 +155,7 @@ export default function IndexPage() {
             gradient={{ from: "blue", to: "cyan" }}
             leftIcon={<DownloadIcon className={classes.buttonIcon} size={20} />}
           >
-            Baixar CV
+            {translate("button-name")}{" "}
           </Button>
 
           <Button

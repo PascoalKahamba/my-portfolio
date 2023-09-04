@@ -9,6 +9,7 @@ const About = () => {
   return (
     <div>
       <p>{translate("hello-world")}</p>
+      <p>{translate("about-me")}</p>
     </div>
   );
 };
