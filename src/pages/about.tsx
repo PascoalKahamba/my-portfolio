@@ -1,25 +1,14 @@
 import React from "react";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { GetStaticProps } from "next";
-
+import useTranslation from "next-translate/useTranslation";
 const About = () => {
-  const { t: translate } = useTranslation("about");
+  const { t, lang } = useTranslation("about");
+  const helloWorld = t("hello-world");
 
   return (
-    <div>
-      <p>{translate("hello-world")}</p>
-      <p>{translate("about-me")}</p>
+    <div data-aos="fade-right">
+      <p>{helloWorld}</p>
     </div>
   );
 };
 
 export default About;
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale!, ["about"])),
-    },
-  };
-};

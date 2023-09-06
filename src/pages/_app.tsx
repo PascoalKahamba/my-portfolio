@@ -1,8 +1,7 @@
 import { GetServerSidePropsContext } from "next";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AppProps } from "next/app";
 import { getCookie, setCookie } from "cookies-next";
-import { appWithTranslation } from "next-i18next";
 import Head from "next/head";
 import {
   MantineProvider,
@@ -12,7 +11,10 @@ import {
 import { NotificationsProvider } from "@mantine/notifications";
 import { rtlCache } from "../rtl-cache";
 import Layout from "../components/layout";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
+const THEME_COOKIES = "mantine-color-scheme";
 function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
   const [colorScheme, setColorScheme] = useState<ColorScheme>(
@@ -23,10 +25,18 @@ function App(props: AppProps & { colorScheme: ColorScheme }) {
     const nextColorScheme =
       value || (colorScheme === "dark" ? "light" : "dark");
     setColorScheme(nextColorScheme);
-    setCookie("mantine-color-scheme", nextColorScheme, {
+    setCookie(THEME_COOKIES, nextColorScheme, {
       maxAge: 60 * 60 * 24 * 30,
     });
   };
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [colorScheme]);
 
   return (
     <>
@@ -61,7 +71,7 @@ function App(props: AppProps & { colorScheme: ColorScheme }) {
 }
 
 App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
-  colorScheme: getCookie("mantine-color-scheme", ctx) || "light",
+  colorScheme: getCookie(THEME_COOKIES, ctx) || "light",
 });
 
-export default appWithTranslation(App);
+export default App;

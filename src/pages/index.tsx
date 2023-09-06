@@ -8,10 +8,8 @@ import {
   px,
 } from "@mantine/core";
 import { GithubIcon, DownloadIcon } from "lucide-react";
-import { GetStaticProps } from "next";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
+import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 
 const useStyles = createStyles((theme) => ({
@@ -102,15 +100,17 @@ const useStyles = createStyles((theme) => ({
 
 export default function IndexPage() {
   const { classes } = useStyles();
-  const { locale } = useRouter();
+  const { locale, locales } = useRouter();
 
   const { t: translate } = useTranslation("home");
 
   return (
     <div className={classes.wrapper}>
       <Container size={700} className={classes.inner}>
-        <span className={classes.spanTitle}>{translate("hello")}</span>
-        <h1 className={classes.title}>
+        <span className={classes.spanTitle} data-aos="fade-down">
+          {translate("hello")}
+        </span>
+        <h1 className={classes.title} data-aos="fade-right">
           <Text
             component="span"
             variant="gradient"
@@ -154,6 +154,7 @@ export default function IndexPage() {
             variant="gradient"
             gradient={{ from: "blue", to: "cyan" }}
             leftIcon={<DownloadIcon className={classes.buttonIcon} size={20} />}
+            data-aos="fade-right"
           >
             {translate("button-name")}{" "}
           </Button>
@@ -164,6 +165,7 @@ export default function IndexPage() {
             href="https://github.com/PascoalKahamba"
             size="xl"
             variant="default"
+            data-aos="fade-left"
             className={classes.control}
             leftIcon={<GithubIcon className={classes.buttonIcon} size={20} />}
           >
@@ -174,11 +176,3 @@ export default function IndexPage() {
     </div>
   );
 }
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale!, ["home"])),
-    },
-  };
-};

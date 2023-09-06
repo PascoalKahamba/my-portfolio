@@ -2,22 +2,18 @@ import {
   createStyles,
   Text,
   Container,
-  ActionIcon,
   Group,
   rem,
   Stack,
 } from "@mantine/core";
 import { CalendarDaysIcon, PhoneCallIcon } from "lucide-react";
 import UserButton from "./userButton";
-import { UseTranslation, useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { GetStaticProps } from "next";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useAtom } from "jotai";
 import { activeAtom } from "../atoms";
-
+import useTranslation from "next-translate/useTranslation";
 const useStyles = createStyles((theme) => ({
   footer: {
     marginTop: rem(120),
@@ -164,11 +160,42 @@ const socialMedia = [
   },
 ];
 
-export default function FooterLinks({ data }: FooterLinksProps) {
+export default function FooterLinks() {
   const [, setActive] = useAtom(activeAtom);
   const { classes } = useStyles();
-  const router = useRouter();
   const { t: translate } = useTranslation("footer");
+  const router = useRouter();
+
+  const data = [
+    {
+      title: "navigation",
+      links: [
+        { label: "home", link: "/" },
+        { label: "about", link: "./about" },
+        { label: "journey", link: "./journey" },
+        { label: "projects", link: "./projects" },
+        { label: "contacts", link: "./contacts" },
+      ],
+    },
+    {
+      title: "tecnologes",
+      links: [
+        { label: "JavaScript", link: "Pascoal" },
+        { label: "TypeScript", link: "Pascoal" },
+        { label: "React.js", link: "Pascoal" },
+        { label: "Next.js", link: "Pascoal" },
+      ],
+    },
+    {
+      title: "journey",
+      links: [
+        { label: "2023", link: "Pascoal" },
+        { label: "2022", link: "Pascoal" },
+        { label: "2021", link: "Pascoal" },
+        { label: "2020", link: "Pascoal" },
+      ],
+    },
+  ];
 
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
@@ -232,11 +259,3 @@ export default function FooterLinks({ data }: FooterLinksProps) {
     </footer>
   );
 }
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale!, ["footer"])),
-    },
-  };
-};

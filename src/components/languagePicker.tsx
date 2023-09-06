@@ -11,8 +11,8 @@ import { ChevronDownIcon } from "lucide-react";
 import { useRouter } from "next/router";
 
 const data = [
-  { label: "English", image: "/english.jpg" },
   { label: "Portuguese", image: "/portuguese.jpg" },
+  { label: "English", image: "/english.jpg" },
 ];
 
 const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({

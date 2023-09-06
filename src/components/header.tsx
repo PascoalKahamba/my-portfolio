@@ -74,10 +74,33 @@ interface HeaderMegaMenuProps {
   mainLinks: LinkProps[];
 }
 
-export default function HeaderMegaMenu({ mainLinks }: HeaderMegaMenuProps) {
+export default function HeaderMegaMenu() {
   const [active, setActive] = useAtom(activeAtom);
   const { classes, cx } = useStyles();
   const router = useRouter();
+
+  const mainLinks = [
+    {
+      label: "home",
+      link: "/",
+    },
+    {
+      label: "about",
+      link: "./about",
+    },
+    {
+      label: "journey",
+      link: "./journey",
+    },
+    {
+      label: "projects",
+      link: "./projects",
+    },
+    {
+      label: "contacts",
+      link: "./contact",
+    },
+  ];
 
   const mainItems = mainLinks.map((item, index) => (
     <Anchor<"a">
