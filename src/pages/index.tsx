@@ -119,6 +119,7 @@ export default function IndexPage() {
           >
             Pascoal Kahamba
           </Text>{" "}
+          <br />
           {translate("my-skill")}
         </h1>
         <Text className={classes.description} color="dimmed">
