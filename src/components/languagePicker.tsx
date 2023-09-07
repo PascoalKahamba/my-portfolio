@@ -10,6 +10,7 @@ import {
 import { ChevronDownIcon } from "lucide-react";
 import { useRouter } from "next/router";
 import setLanguage from "next-translate/setLanguage";
+import { persistLocaleCookie } from "../../helpers/persistLocaleCookie";
 
 const data = [
   { label: "Portuguese", image: "/portuguese.jpg" },
@@ -42,6 +43,13 @@ export default function LanguagePicker() {
   const { classes } = useStyles({ opened });
   const [selected, setSelected] = useState(data[0]);
   const { pathname, push, defaultLocale, locale, locales } = useRouter();
+
+  console.log("defaultLocale", defaultLocale);
+  console.log("locale", locale);
+
+  const localeLanguage = locale === "en" ? "English" : "Portuguese";
+  const localeImage = locale === "en" ? "/english.jpg" : "/portuguese.jpg";
+
   const items = data.map((item) => (
     <Menu.Item
       icon={
@@ -60,8 +68,8 @@ export default function LanguagePicker() {
 
   async function onChangeLanguage(language: string) {
     const locale = language === "English" ? "en" : "pt";
-
     await setLanguage(locale);
+    persistLocaleCookie(locale);
   }
 
   return (
@@ -83,6 +91,7 @@ export default function LanguagePicker() {
             />
             <span className={classes.label}>{selected.label}</span>
           </Group>
+
           <ChevronDownIcon size="1rem" className={classes.icon} />
         </UnstyledButton>
       </Menu.Target>
