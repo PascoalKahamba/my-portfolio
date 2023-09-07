@@ -13,6 +13,7 @@ import UserButton from "./userButton";
 import { useRouter } from "next/router";
 import { useAtom } from "jotai";
 import { activeAtom } from "../atoms";
+import useTranslation from "next-translate/useTranslation";
 
 const useStyles = createStyles((theme) => ({
   headerElement: {
@@ -74,33 +75,11 @@ interface HeaderMegaMenuProps {
   mainLinks: LinkProps[];
 }
 
-export default function HeaderMegaMenu() {
+export default function HeaderMegaMenu({ mainLinks }: HeaderMegaMenuProps) {
   const [active, setActive] = useAtom(activeAtom);
   const { classes, cx } = useStyles();
   const router = useRouter();
-
-  const mainLinks = [
-    {
-      label: "home",
-      link: "/",
-    },
-    {
-      label: "about",
-      link: "./about",
-    },
-    {
-      label: "journey",
-      link: "./journey",
-    },
-    {
-      label: "projects",
-      link: "./projects",
-    },
-    {
-      label: "contacts",
-      link: "./contact",
-    },
-  ];
+  const { t: translate } = useTranslation("common");
 
   const mainItems = mainLinks.map((item, index) => (
     <Anchor<"a">
@@ -130,7 +109,7 @@ export default function HeaderMegaMenu() {
           <UserButton
             name="Pascoal Kahamba"
             image="/my-photo.jpg"
-            skill="Desenvolvedor Front-End"
+            skill={translate("my-skill")}
           />
           <Group className={classes.mainLinks}>{mainItems}</Group>
           <Group className={classes.hiddenMobile}>

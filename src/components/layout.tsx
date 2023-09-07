@@ -2,7 +2,7 @@ import { Box, createStyles } from "@mantine/core";
 import HeaderMegaMenu from "./header";
 import FooterLinks from "./footer";
 import NavbarMinimal from "./navbarMinimal";
-import useMounted from "../hooks/useMounted";
+import useTranslation from "next-translate/useTranslation";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,16 +16,69 @@ const useStyles = createStyles((theme) => ({
 
 export default function Layout({ children }: LayoutProps) {
   const { classes } = useStyles();
-  const mounted = useMounted();
 
-  console.log(mounted);
+  const { t: translate } = useTranslation("common");
+
+  const mainLinks = [
+    {
+      label: translate("home"),
+      link: "/",
+    },
+    {
+      label: translate("about"),
+      link: "./about",
+    },
+    {
+      label: translate("journey"),
+      link: "./journey",
+    },
+    {
+      label: translate("projects"),
+      link: "./projects",
+    },
+    {
+      label: translate("contacts"),
+      link: "./contact",
+    },
+  ];
+
+  const data = [
+    {
+      title: translate("navigation"),
+      links: [
+        { label: translate("home"), link: "/" },
+        { label: translate("about"), link: "./about" },
+        { label: translate("journey"), link: "./journey" },
+        { label: translate("projects"), link: "./projects" },
+        { label: translate("contacts"), link: "./contacts" },
+      ],
+    },
+    {
+      title: translate("tecnologies"),
+      links: [
+        { label: "JavaScript", link: "Pascoal" },
+        { label: "TypeScript", link: "Pascoal" },
+        { label: "React.js", link: "Pascoal" },
+        { label: "Next.js", link: "Pascoal" },
+      ],
+    },
+    {
+      title: translate("journey"),
+      links: [
+        { label: "2023", link: "Pascoal" },
+        { label: "2022", link: "Pascoal" },
+        { label: "2021", link: "Pascoal" },
+        { label: "2020", link: "Pascoal" },
+      ],
+    },
+  ];
 
   return (
     <Box component="section" className={classes.layout}>
       <NavbarMinimal />
-      <HeaderMegaMenu />
+      <HeaderMegaMenu mainLinks={mainLinks} />
       {children}
-      <FooterLinks />
+      <FooterLinks data={data} />
     </Box>
   );
 }

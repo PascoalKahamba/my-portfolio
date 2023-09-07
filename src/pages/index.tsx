@@ -100,7 +100,7 @@ const useStyles = createStyles((theme) => ({
 
 export default function IndexPage() {
   const { classes } = useStyles();
-  const { locale, locales } = useRouter();
+  const { locale } = useRouter();
 
   const { t: translate } = useTranslation("home");
 

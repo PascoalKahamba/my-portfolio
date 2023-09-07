@@ -15,7 +15,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const THEME_COOKIES = "mantine-color-scheme";
-function App(props: AppProps & { colorScheme: ColorScheme }) {
+export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
   const [colorScheme, setColorScheme] = useState<ColorScheme>(
     props.colorScheme
@@ -73,5 +73,3 @@ function App(props: AppProps & { colorScheme: ColorScheme }) {
 App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
   colorScheme: getCookie(THEME_COOKIES, ctx) || "light",
 });
-
-export default App;

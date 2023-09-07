@@ -160,42 +160,11 @@ const socialMedia = [
   },
 ];
 
-export default function FooterLinks() {
+export default function FooterLinks({ data }: FooterLinksProps) {
   const [, setActive] = useAtom(activeAtom);
   const { classes } = useStyles();
-  const { t: translate } = useTranslation("footer");
+  const { t: translate } = useTranslation("common");
   const router = useRouter();
-
-  const data = [
-    {
-      title: "navigation",
-      links: [
-        { label: "home", link: "/" },
-        { label: "about", link: "./about" },
-        { label: "journey", link: "./journey" },
-        { label: "projects", link: "./projects" },
-        { label: "contacts", link: "./contacts" },
-      ],
-    },
-    {
-      title: "tecnologes",
-      links: [
-        { label: "JavaScript", link: "Pascoal" },
-        { label: "TypeScript", link: "Pascoal" },
-        { label: "React.js", link: "Pascoal" },
-        { label: "Next.js", link: "Pascoal" },
-      ],
-    },
-    {
-      title: "journey",
-      links: [
-        { label: "2023", link: "Pascoal" },
-        { label: "2022", link: "Pascoal" },
-        { label: "2021", link: "Pascoal" },
-        { label: "2020", link: "Pascoal" },
-      ],
-    },
-  ];
 
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
@@ -229,7 +198,7 @@ export default function FooterLinks() {
           <UserButton
             name="Pascoal Kahamba"
             image="/my-photo.jpg"
-            skill="Desenvolvedor Front-End"
+            skill={translate("my-skill")}
           />
           <Text size="xs" color="dimmed" className={classes.description}>
             {translate("description")}
