@@ -1,4 +1,4 @@
-import { Box, createStyles } from "@mantine/core";
+import { Box, createStyles, rem } from "@mantine/core";
 import HeaderMegaMenu from "./header";
 import FooterLinks from "./footer";
 import NavbarMinimal from "./navbarMinimal";
@@ -75,9 +75,12 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <Box component="section" className={classes.layout}>
-      <NavbarMinimal />
       <HeaderMegaMenu mainLinks={mainLinks} />
+
+      <NavbarMinimal kindOfNavbar="socialMedia" />
       {children}
+      <NavbarMinimal kindOfNavbar="email" />
+
       <FooterLinks data={data} />
     </Box>
   );

@@ -30,10 +30,8 @@ const useStyles = createStyles((theme) => ({
 
   email: {
     position: "fixed",
-    right: rem(550),
-    zIndex: 0,
-    height: rem(50),
-    width: rem(650),
+    right: rem(840),
+    zIndex: 666,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -41,7 +39,7 @@ const useStyles = createStyles((theme) => ({
     backgroundColor: "transparent",
 
     [theme.fn.smallerThan("xs")]: {
-      width: rem(350),
+      right: rem(350),
     },
   },
 
@@ -66,24 +64,17 @@ const useStyles = createStyles((theme) => ({
 
   navbar: {
     position: "fixed",
-    left: rem(830),
+    left: rem(840),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     border: "none",
     zIndex: 666,
     backgroundColor: "transparent",
-  },
 
-  flexParent: {
-    position: "fixed",
-    zIndex: 0,
-    width: "100vw",
-    height: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "center",
+    [theme.fn.smallerThan("xs")]: {
+      left: rem(350),
+    },
   },
 
   lineBottom: {
@@ -115,60 +106,66 @@ const mockdata = [
   { Icon: BsDiscord, link: "https://discord.com/channels/@me" },
 ];
 
-export default function NavbarMinimal() {
+interface KindOfNavbarProps {
+  kindOfNavbar: "email" | "socialMedia";
+}
+
+export default function NavbarMinimal({ kindOfNavbar }: KindOfNavbarProps) {
   const { classes } = useStyles();
 
   return (
     <Box component="div">
-      <Navbar
-        height={500}
-        width={{ base: 80 }}
-        p="ls"
-        className={classes.navbar}
-      >
-        <Navbar.Section mt={80}>
-          <Stack justify="center" spacing={0}>
-            {mockdata.map(({ Icon, link }) => (
-              <Link href={link} key={link}>
-                <a target="_blank" className={classes.link}>
-                  <Icon size="1.2rem" />
+      {kindOfNavbar === "socialMedia" ? (
+        <Navbar
+          height={200}
+          width={{ base: 80 }}
+          p="ls"
+          className={classes.navbar}
+        >
+          <Navbar.Section mt={80}>
+            <Stack justify="center" spacing={0}>
+              {mockdata.map(({ Icon, link }) => (
+                <Link href={link} key={link}>
+                  <a target="_blank" className={classes.link}>
+                    <Icon size="1.2rem" />
+                  </a>
+                </Link>
+              ))}
+            </Stack>
+          </Navbar.Section>
+          <Navbar.Section>
+            <Stack
+              justify="center"
+              spacing={0}
+              className={classes.lineBottom}
+            ></Stack>
+          </Navbar.Section>
+        </Navbar>
+      ) : (
+        <Navbar
+          height={200}
+          width={{ base: 80 }}
+          p="ls"
+          className={classes.email}
+        >
+          <Navbar.Section mt={300}>
+            <Stack justify="center" spacing={0}>
+              <Link href="mailto://pascoalkahamba25@gmail.com">
+                <a target="_blank" className={classes.emailChild}>
+                  pascoalkahamba25@gmail.com
                 </a>
               </Link>
-            ))}
-          </Stack>
-        </Navbar.Section>
-        <Navbar.Section>
-          <Stack
-            justify="center"
-            spacing={0}
-            className={classes.lineBottom}
-          ></Stack>
-        </Navbar.Section>
-      </Navbar>
-
-      <Navbar
-        height={500}
-        width={{ base: 80 }}
-        p="ls"
-        className={classes.email}
-      >
-        <Navbar.Section mt={300}>
-          <Stack justify="center" spacing={0}>
-            <Link href="mailto://pascoalkahamba25@gmail.com">
-              <a target="_blank" className={classes.emailChild}>
-                pascoalkahamba25@gmail.com
-              </a>
-            </Link>
-          </Stack>
-        </Navbar.Section>
-        <Navbar.Section>
-          <Stack
-            justify="center"
-            spacing={0}
-            className={classes.lineBottom}
-          ></Stack>
-        </Navbar.Section>
-      </Navbar>
+            </Stack>
+          </Navbar.Section>
+          <Navbar.Section>
+            <Stack
+              justify="center"
+              spacing={0}
+              className={classes.lineBottom}
+            ></Stack>
+          </Navbar.Section>
+        </Navbar>
+      )}
     </Box>
   );
 }
