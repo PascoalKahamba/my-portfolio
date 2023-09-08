@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   createStyles,
   UnstyledButton,
@@ -41,26 +41,31 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
 export default function LanguagePicker() {
   const [opened, setOpened] = useState(false);
   const { classes } = useStyles({ opened });
-  const [selected, setSelected] = useState(data[0]);
-  const { pathname, push, defaultLocale, locale, locales } = useRouter();
-
-  console.log("defaultLocale", defaultLocale);
-  console.log("locale", locale);
+  const [selected, setSelected] = useState({ label: "", image: "" });
+  const { locale } = useRouter();
 
   const localeLanguage = locale === "en" ? "English" : "Portuguese";
   const localeImage = locale === "en" ? "/english.jpg" : "/portuguese.jpg";
 
+  useEffect(() => {
+    setSelected({ label: localeLanguage, image: localeImage });
+  }, [localeLanguage, localeImage]);
+
   const items = data.map((item) => (
     <Menu.Item
       icon={
-        <Image src={item.image} width={16} height={16} alt="language-image" />
+        <Image src={item.image} width={20} height={12} alt="language-image" />
       }
       onClick={() => {
         setSelected(item);
         onChangeLanguage(item.label);
       }}
       key={item.label}
-      sx={{ textAlign: "center" }}
+      sx={{
+        textAlign: "center",
+        pointerEvents: item.label === selected.label ? "none" : "painted",
+        opacity: item.label === selected.label ? 0.5 : 1,
+      }}
     >
       {item.label}
     </Menu.Item>
@@ -85,8 +90,8 @@ export default function LanguagePicker() {
           <Group spacing="xs">
             <Image
               src={selected.image}
-              width={16}
-              height={16}
+              width={20}
+              height={12}
               alt="language-image"
             />
             <span className={classes.label}>{selected.label}</span>
