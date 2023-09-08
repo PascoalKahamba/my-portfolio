@@ -75,6 +75,17 @@ const useStyles = createStyles((theme) => ({
     backgroundColor: "transparent",
   },
 
+  flexParent: {
+    position: "fixed",
+    zIndex: 0,
+    width: "100vw",
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+
   lineBottom: {
     width: px(2),
     height: "50vh",
