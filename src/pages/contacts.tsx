@@ -3,9 +3,9 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 
-const Projects = () => {
+const Contact = () => {
   const { pathname } = useRouter();
-  const { t: translate } = useTranslation("projects");
+  const { t: translate } = useTranslation("contacts");
   console.log(pathname);
 
   return (
@@ -13,9 +13,9 @@ const Projects = () => {
       <Head>
         <title>{translate("page-title")} - Pascoal Kahamba</title>
       </Head>
-      <div>Journey</div>;
+      <div>Contacts</div>
     </>
   );
 };
 
-export default Projects;
+export default Contact;

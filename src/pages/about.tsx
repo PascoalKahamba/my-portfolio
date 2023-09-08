@@ -1,13 +1,18 @@
 import React from "react";
 import useTranslation from "next-translate/useTranslation";
+import Head from "next/head";
 const About = () => {
-  const { t, lang } = useTranslation("about");
-  const helloWorld = t("hello-world");
+  const { t: translate } = useTranslation("about");
 
   return (
-    <div data-aos="fade-right">
-      <p>{helloWorld}</p>
-    </div>
+    <>
+      <Head>
+        <title>{translate("page-title")} - Pascoal Kahamba</title>
+      </Head>
+      <div data-aos="fade-right">
+        <p>{translate("hello-world")}</p>
+      </div>
+    </>
   );
 };
 

@@ -6,7 +6,7 @@
     "/": ["home"],
     "/about": ["about"],
     "/projects": ["projects"],
-    "/contats": ["contats"],
+    "/contacts": ["contacts"],
     "/journey": ["journey"]
   }
 }

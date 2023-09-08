@@ -1,4 +1,4 @@
-import { Box, createStyles, rem } from "@mantine/core";
+import { Box, createStyles } from "@mantine/core";
 import HeaderMegaMenu from "./header";
 import FooterLinks from "./footer";
 import NavbarMinimal from "./navbarMinimal";
@@ -38,7 +38,7 @@ export default function Layout({ children }: LayoutProps) {
     },
     {
       label: translate("contacts"),
-      link: "./contact",
+      link: "./contacts",
     },
   ];
 

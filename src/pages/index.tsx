@@ -11,6 +11,7 @@ import { GithubIcon, DownloadIcon } from "lucide-react";
 import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -33,6 +34,7 @@ const useStyles = createStyles((theme) => ({
 
   spanTitle: {
     fontWeight: 600,
+    display: "inline-block",
     fontStyle: "italic",
     color: theme.colors.gray[6],
     fontSize: theme.spacing.lg,
@@ -105,75 +107,86 @@ export default function IndexPage() {
   const { t: translate } = useTranslation("home");
 
   return (
-    <div className={classes.wrapper}>
-      <Container size={700} className={classes.inner}>
-        <span className={classes.spanTitle} data-aos="fade-down">
-          {translate("hello")}
-        </span>
-        <h1 className={classes.title} data-aos="fade-right">
+    <>
+      <Head>
+        <title>{translate("page-title")} - Pascoal Kahamba</title>
+      </Head>
+      <div className={classes.wrapper}>
+        <Container size={700} className={classes.inner}>
+          <span className={classes.spanTitle} data-aos="fade-down">
+            {translate("hello")}
+          </span>
+          <h1 className={classes.title} data-aos="fade-right">
+            <Text
+              component="span"
+              variant="gradient"
+              gradient={{ from: "blue", to: "cyan" }}
+              inherit
+            >
+              Pascoal Kahamba
+            </Text>{" "}
+            <br />
+            {translate("my-skill")}
+          </h1>
           <Text
-            component="span"
-            variant="gradient"
-            gradient={{ from: "blue", to: "cyan" }}
-            inherit
+            className={classes.description}
+            color="dimmed"
+            data-aos="fade-up"
           >
-            Pascoal Kahamba
-          </Text>{" "}
-          <br />
-          {translate("my-skill")}
-        </h1>
-        <Text className={classes.description} color="dimmed">
-          {translate("description")}{" "}
-          <Link href="https://www.alura.com.br/artigos/o-que-e-front-end-e-back-end">
-            <a className={classes.links} target="_blank">
-              {translate("my-skill")}
-            </a>
-          </Link>
-          . {translate("short-description")}{" "}
-          <Link href="https://pt.wikipedia.org/wiki/JavaScript">
-            <a className={classes.links} target="_blank">
-              JavaScript
-            </a>
-          </Link>{" "}
-          /
-          <Link href="https://pt.wikipedia.org/wiki/TypeScript">
-            <a className={classes.links} target="_blank">
-              TypeScript
-            </a>
-          </Link>
-          .
-        </Text>
+            {translate("description")}{" "}
+            <Link href="https://www.alura.com.br/artigos/o-que-e-front-end-e-back-end">
+              <a className={classes.links} target="_blank">
+                {translate("my-skill")}
+              </a>
+            </Link>
+            . {translate("short-description")}{" "}
+            <Link href="https://pt.wikipedia.org/wiki/JavaScript">
+              <a className={classes.links} target="_blank">
+                JavaScript
+              </a>
+            </Link>{" "}
+            /
+            <Link href="https://pt.wikipedia.org/wiki/TypeScript">
+              <a className={classes.links} target="_blank">
+                TypeScript
+              </a>
+            </Link>
+            .
+          </Text>
 
-        <Group className={classes.controls}>
-          <Button
-            component="a"
-            target="_blank"
-            href={`/curriculo-frontend-kahamba.${locale}.pdf`}
-            download="curriculo-frontend-kahamba"
-            size="xl"
-            className={classes.control}
-            variant="gradient"
-            gradient={{ from: "blue", to: "cyan" }}
-            leftIcon={<DownloadIcon className={classes.buttonIcon} size={20} />}
-            data-aos="fade-right"
-          >
-            {translate("button-name")}{" "}
-          </Button>
+          <Group className={classes.controls}>
+            <Button
+              component="a"
+              target="_blank"
+              href={`/curriculo-frontend-kahamba.${locale}.pdf`}
+              download="curriculo-frontend-kahamba"
+              size="xl"
+              className={classes.control}
+              variant="gradient"
+              gradient={{ from: "blue", to: "cyan" }}
+              leftIcon={
+                <DownloadIcon className={classes.buttonIcon} size={20} />
+              }
+              data-aos="fade-right"
+            >
+              {translate("button-name")}{" "}
+            </Button>
 
-          <Button
-            component="a"
-            target="_blank"
-            href="https://github.com/PascoalKahamba"
-            size="xl"
-            variant="default"
-            data-aos="fade-left"
-            className={classes.control}
-            leftIcon={<GithubIcon className={classes.buttonIcon} size={20} />}
-          >
-            GitHub
-          </Button>
-        </Group>
-      </Container>
-    </div>
+            <Button
+              component="a"
+              target="_blank"
+              href="https://github.com/PascoalKahamba"
+              size="xl"
+              variant="default"
+              data-aos="fade-left"
+              className={classes.control}
+              leftIcon={<GithubIcon className={classes.buttonIcon} size={20} />}
+            >
+              GitHub
+            </Button>
+          </Group>
+        </Container>
+      </div>
+    </>
   );
 }

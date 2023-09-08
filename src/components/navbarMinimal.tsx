@@ -38,8 +38,8 @@ const useStyles = createStyles((theme) => ({
     border: "none",
     backgroundColor: "transparent",
 
-    [theme.fn.smallerThan("xs")]: {
-      right: rem(350),
+    [theme.fn.smallerThan("sm")]: {
+      right: rem(1200),
     },
   },
 
@@ -72,8 +72,8 @@ const useStyles = createStyles((theme) => ({
     zIndex: 666,
     backgroundColor: "transparent",
 
-    [theme.fn.smallerThan("xs")]: {
-      left: rem(350),
+    [theme.fn.smallerThan("sm")]: {
+      left: rem(1200),
     },
   },
 
@@ -117,7 +117,7 @@ export default function NavbarMinimal({ kindOfNavbar }: KindOfNavbarProps) {
     <Box component="div">
       {kindOfNavbar === "socialMedia" ? (
         <Navbar
-          height={200}
+          height={500}
           width={{ base: 80 }}
           p="ls"
           className={classes.navbar}
@@ -143,7 +143,7 @@ export default function NavbarMinimal({ kindOfNavbar }: KindOfNavbarProps) {
         </Navbar>
       ) : (
         <Navbar
-          height={200}
+          height={500}
           width={{ base: 80 }}
           p="ls"
           className={classes.email}
