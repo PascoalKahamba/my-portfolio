@@ -99,7 +99,7 @@ export default function HeaderMegaMenu({ mainLinks }: HeaderMegaMenuProps) {
   ));
 
   return (
-    <Box pb={120}>
+    <Box pb={95}>
       <Header height={60} px="md" className={classes.headerElement}>
         <Group
           position="apart"

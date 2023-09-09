@@ -1,4 +1,13 @@
-import { Navbar, createStyles, Stack, Box, rem, px } from "@mantine/core";
+import {
+  Navbar,
+  createStyles,
+  Stack,
+  Box,
+  rem,
+  px,
+  getBreakpointValue,
+  em,
+} from "@mantine/core";
 import {
   InstagramIcon,
   GithubIcon,
@@ -38,9 +47,15 @@ const useStyles = createStyles((theme) => ({
     border: "none",
     backgroundColor: "transparent",
 
-    [theme.fn.smallerThan("sm")]: {
-      right: rem(1200),
-    },
+    // [theme.fn.smallerThan("sm")]: {
+    //   right: rem(1200),
+    // },
+
+    [`@media (max-width: ${em(getBreakpointValue(theme.breakpoints.sm) - 1)})`]:
+      {
+        right: rem(1200),
+        backgroundColor: theme.colors.pink[6],
+      },
   },
 
   emailChild: {
@@ -72,9 +87,15 @@ const useStyles = createStyles((theme) => ({
     zIndex: 666,
     backgroundColor: "transparent",
 
-    [theme.fn.smallerThan("sm")]: {
-      left: rem(1200),
-    },
+    // [theme.fn.smallerThan("sm")]: {
+    //   left: rem(1200),
+    // },
+
+    [`@media (max-width: ${em(getBreakpointValue(theme.breakpoints.sm) - 1)})`]:
+      {
+        left: rem(1200),
+        backgroundColor: theme.colors.pink[6],
+      },
   },
 
   lineBottom: {

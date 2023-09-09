@@ -11,7 +11,7 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>{translate("page-title")} - Pascoal Kahamba</title>
+        <title>{translate("page-title")} | Pascoal Kahamba</title>
       </Head>
       <div>Contacts</div>
     </>

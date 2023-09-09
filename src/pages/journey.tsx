@@ -11,7 +11,7 @@ const Journey = () => {
   return (
     <>
       <Head>
-        <title>{translate("page-title")} - Pascoal Kahamba</title>
+        <title>{translate("page-title")} | Pascoal Kahamba</title>
       </Head>
       <div>Journey</div>;
     </>

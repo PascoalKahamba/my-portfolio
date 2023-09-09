@@ -109,7 +109,7 @@ export default function IndexPage() {
   return (
     <>
       <Head>
-        <title>{translate("page-title")} - Pascoal Kahamba</title>
+        <title>{translate("page-title")} | Pascoal Kahamba</title>
       </Head>
       <div className={classes.wrapper}>
         <Container size={700} className={classes.inner}>
