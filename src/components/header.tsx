@@ -11,8 +11,6 @@ import LanguagePicker from "./languagePicker";
 import ActionToggle from "./actionToggle";
 import UserButton from "./userButton";
 import { useRouter } from "next/router";
-import { useAtom } from "jotai";
-import { activeAtom } from "../atoms";
 import useTranslation from "next-translate/useTranslation";
 
 const useStyles = createStyles((theme) => ({
@@ -76,22 +74,20 @@ interface HeaderMegaMenuProps {
 }
 
 export default function HeaderMegaMenu({ mainLinks }: HeaderMegaMenuProps) {
-  const [active, setActive] = useAtom(activeAtom);
   const { classes, cx } = useStyles();
-  const router = useRouter();
+  const { push, pathname } = useRouter();
   const { t: translate } = useTranslation("common");
 
-  const mainItems = mainLinks.map((item, index) => (
+  const mainItems = mainLinks.map((item) => (
     <Anchor<"a">
       href={item.link}
       key={item.label}
       className={cx(classes.mainLink, {
-        [classes.mainLinkActive]: index === active,
+        [classes.mainLinkActive]: item.link === pathname,
       })}
       onClick={(event) => {
         event.preventDefault();
-        router.push(item.link);
-        setActive(index);
+        push(item.link);
       }}
     >
       {item.label}

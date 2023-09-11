@@ -14,6 +14,7 @@ import {
 } from "@mantine/core";
 import { DownloadIcon, PhoneCall } from "lucide-react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   flexContenier: {
@@ -27,7 +28,8 @@ const useStyles = createStyles((theme) => ({
   aboutMe: {
     display: "flex",
     justifyContent: "space-between",
-    gap: 30,
+    gap: 20,
+    flexWrap: "wrap",
   },
 
   h1Child: {
@@ -62,6 +64,16 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
+  links: {
+    color: theme.colors.blue[4],
+    textDecoration: "none",
+    display: "inline-block",
+
+    "&:hover": {
+      textDecoration: "underline",
+    },
+  },
+
   pictureDad: {
     width: rem(250),
   },
@@ -75,29 +87,36 @@ const useStyles = createStyles((theme) => ({
     marginLeft: px(6),
   },
 
-  description: {},
+  description: {
+    flex: "0 1 25rem",
+  },
 }));
 
 const About = () => {
   const { classes } = useStyles();
   const { t: translate } = useTranslation("about");
   const { locale } = useRouter();
+  const title = translate("page-title");
 
   return (
     <>
       <Head>
-        <title>{translate("page-title")} | Pascoal Kahamba</title>
+        <title>{title} | Pascoal Kahamba</title>
       </Head>
       <Box component="section" className={classes.flexContenier}>
         <div className={classes.aboutMe}>
-          <div data-aos="fade-right">
+          <div data-aos="fade-right" className={classes.description}>
             <Title order={2} mt="md" className={classes.h1Child}>
               {translate("page-title")}
             </Title>
             <div>
-              {" "}
-              <Text fz="md" c="dimmed" mt="sm">
-                {translate("hello-world")}
+              <Text fz="lg" c="dimmed" mt="sm">
+                {translate("about-me")}
+                <Link href="">
+                  <a target="_blank" className={classes.links}>
+                    {translate("my-skill")}
+                  </a>
+                </Link>
               </Text>
             </div>
 
@@ -113,7 +132,7 @@ const About = () => {
                   <PhoneCall size={12} className={classes.buttonIcon} />
                 }
               >
-                Contactar
+                {translate("contact")}
               </Button>
 
               <Button
@@ -129,7 +148,7 @@ const About = () => {
                   <DownloadIcon size={12} className={classes.buttonIcon} />
                 }
               >
-                Baixar CV{" "}
+                {translate("button-name")}
               </Button>
             </Group>
           </div>

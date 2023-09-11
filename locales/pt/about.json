@@ -1,5 +1,8 @@
 {
   "hello-world": "Está é a minha primeira frase de tradução do projeto.",
-  "about-me": "Eu sou Desenvolvedor Front-End eu amo muito esta profisao",
-  "page-title": "Sobre Mim"
+  "about-me": "Sou um cara apaixonado por desenvolvimento de software. Atualmente com foco em",
+  "page-title": "Sobre Mim",
+  "my-skill": "desenvolvimento Web Front-End.",
+  "button-name": "Baixar CV",
+  "contact": "Contactar"
 }

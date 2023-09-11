@@ -26,19 +26,19 @@ export default function Layout({ children }: LayoutProps) {
     },
     {
       label: translate("about"),
-      link: "./about",
+      link: "/about",
     },
     {
       label: translate("journey"),
-      link: "./journey",
+      link: "/journey",
     },
     {
       label: translate("projects"),
-      link: "./projects",
+      link: "/projects",
     },
     {
       label: translate("contacts"),
-      link: "./contacts",
+      link: "/contacts",
     },
   ];
 
@@ -47,10 +47,10 @@ export default function Layout({ children }: LayoutProps) {
       title: translate("navigation"),
       links: [
         { label: translate("home"), link: "/" },
-        { label: translate("about"), link: "./about" },
-        { label: translate("journey"), link: "./journey" },
-        { label: translate("projects"), link: "./projects" },
-        { label: translate("contacts"), link: "./contacts" },
+        { label: translate("about"), link: "/about" },
+        { label: translate("journey"), link: "/journey" },
+        { label: translate("projects"), link: "/projects" },
+        { label: translate("contacts"), link: "/contacts" },
       ],
     },
     {
@@ -76,11 +76,9 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <Box component="section" className={classes.layout}>
       <HeaderMegaMenu mainLinks={mainLinks} />
-
       <NavbarMinimal kindOfNavbar="socialMedia" />
       {children}
       <NavbarMinimal kindOfNavbar="email" />
-
       <FooterLinks data={data} />
     </Box>
   );

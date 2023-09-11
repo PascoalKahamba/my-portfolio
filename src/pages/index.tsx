@@ -105,11 +105,12 @@ export default function IndexPage() {
   const { locale } = useRouter();
 
   const { t: translate } = useTranslation("home");
+  const title = translate("page-title");
 
   return (
     <>
       <Head>
-        <title>{translate("page-title")} | Pascoal Kahamba</title>
+        <title>{title} | Pascoal Kahamba</title>
       </Head>
       <div className={classes.wrapper}>
         <Container size={700} className={classes.inner}>

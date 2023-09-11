@@ -17,6 +17,7 @@ import "aos/dist/aos.css";
 const THEME_COOKIES = "mantine-color-scheme";
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
+
   const [colorScheme, setColorScheme] = useState<ColorScheme>(
     props.colorScheme
   );
@@ -41,6 +42,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   return (
     <>
       <Head>
+        <title>Pascoal Kahamba</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"

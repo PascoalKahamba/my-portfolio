@@ -1,5 +1,8 @@
 {
   "hello-world": "This my first sentense of the translation on the project.",
-  "about-me": "My Web Developer I love so much this skill",
-  "page-title": "About Me"
+  "about-me": "I'm a guy in love with software development. Currently focusing on",
+  "page-title": "About Me",
+  "my-skill": "Front-End Web Development.",
+  "button-name": "Download CV",
+  "contact": "Contact"
 }
