@@ -106,7 +106,14 @@ const About = () => {
   const { t: translate } = useTranslation("about");
   const { locale } = useRouter();
 
-  const { frontendAndbackend, javascript } = translations;
+  const {
+    frontendAndbackend,
+    javascript,
+    programmingLogic,
+    html5,
+    css3,
+    visualg,
+  } = translations;
 
   return (
     <>
@@ -184,25 +191,47 @@ const About = () => {
               <a className={classes.links} target="_blank">
                 JavaScript
               </a>
+            </Link>
+            . {translate("start-study")}{" "}
+            <Link href={javascript}>
+              <a className={classes.links} target="_blank">
+                2018
+              </a>
+            </Link>
+            , {translate("during")}{" "}
+            <span className={classes.boldClass}>
+              {translate("high-school")}
+            </span>{" "}
+            {translate("when-college")}{" "}
+            <Link href={programmingLogic}>
+              <a className={classes.links} target="_blank">
+                {translate("programming-logic")}
+              </a>
+            </Link>{" "}{translate('using')}{" "}
+            <Link href={visualg}>
+              <a className={classes.links} target="_blank">
+                Visual G
+              </a>
+            </Link>
+            . {translate("short-desc")}{" "}
+            <Link href={html5}>
+              <a className={classes.links} target="_blank">
+                HTML
+              </a>
+            </Link>
+            ,{" "}
+            <Link href={css3}>
+              <a className={classes.links} target="_blank">
+                CSS
+              </a>
             </Link>{" "}
-            . Meu interesse pela programação começou em 2018, durante o Ensino
-            Médio, quando adquiri conhecimentos em Lógica de Programação usando
-            Visual G. Logo após, meu desejo por aprofundar meus conhecimentos me
-            levou a explorar tecnologias como HTML, CSS e JavaScript,
-            permitindo-me criar projetos mais atrativos e interativos. Desde
-            então, tenho continuado aprimorando minhas habilidades e
-            aperfeiçoando minha expertise no desenvolvimento Front-End.
-            <div>
-              My name is Pascoal Kahamba and I am a Front-End Web Development.
-              Focusing on JavaScript ecosystem technologies. My interest in
-              programming began in 2018, during High School, when I acquired
-              knowledge in Programming Logic using Visual G. Soon after, my
-              desire to deepen my knowledge led me to explore technologies such
-              as HTML, CSS and JavaScript, allowing me to create projects more
-              attractive and interactive. Since then, I have continued to
-              improve my skills and improve my expertise in Front-End
-              development.
-            </div>
+            {translate("and")}{" "}
+            <Link href={javascript}>
+              <a className={classes.links} target="_blank">
+                JavaScript
+              </a>
+            </Link>
+            , {translate("final-desc")}
           </Text>
         </div>
       </Box>
