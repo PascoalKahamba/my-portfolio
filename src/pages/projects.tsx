@@ -7,12 +7,11 @@ const Projects = () => {
   const { pathname } = useRouter();
   const { t: translate } = useTranslation("projects");
   console.log(pathname);
-   const title = translate("page-title");
 
   return (
     <>
       <Head>
-        <title>{title} | Pascoal Kahamba</title>
+        <title>{translate("page-title")} | Pascoal Kahamba</title>
       </Head>
       <div>Projects</div>;
     </>

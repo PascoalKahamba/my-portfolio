@@ -27,7 +27,7 @@ const useStyles = createStyles((theme) => ({
 
   aboutMe: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "center",
     gap: 20,
     flexWrap: "wrap",
   },
@@ -96,12 +96,11 @@ const About = () => {
   const { classes } = useStyles();
   const { t: translate } = useTranslation("about");
   const { locale } = useRouter();
-  const title = translate("page-title");
 
   return (
     <>
       <Head>
-        <title>{title} | Pascoal Kahamba</title>
+        <title>{translate("page-title")} | Pascoal Kahamba</title>
       </Head>
       <Box component="section" className={classes.flexContenier}>
         <div className={classes.aboutMe}>

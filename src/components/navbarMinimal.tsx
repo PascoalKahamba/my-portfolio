@@ -38,30 +38,20 @@ const useStyles = createStyles((theme) => ({
   },
 
   email: {
-    position: "fixed",
-    right: rem(840),
-    zIndex: 666,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     border: "none",
+    gap: rem(200),
     backgroundColor: "transparent",
-
-    // [theme.fn.smallerThan("sm")]: {
-    //   right: rem(1200),
-    // },
-
-    [`@media (max-width: ${em(getBreakpointValue(theme.breakpoints.sm) - 1)})`]:
-      {
-        right: rem(1200),
-        backgroundColor: theme.colors.pink[6],
-      },
   },
 
   emailChild: {
-    width: rem(650),
+    height: rem(50),
+    width: rem(50),
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
     textDecoration: "none",
     transform: "rotate(90deg) translateX(-100px)",
     color:
@@ -77,25 +67,19 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  navbar: {
+  dadElement: {
     position: "fixed",
-    left: rem(840),
+    width: rem(5),
+    height: "100vh",
+    zIndex: 666,
+  },
+
+  navbar: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     border: "none",
-    zIndex: 666,
     backgroundColor: "transparent",
-
-    // [theme.fn.smallerThan("sm")]: {
-    //   left: rem(1200),
-    // },
-
-    [`@media (max-width: ${em(getBreakpointValue(theme.breakpoints.sm) - 1)})`]:
-      {
-        left: rem(1200),
-        backgroundColor: theme.colors.pink[6],
-      },
   },
 
   lineBottom: {
@@ -135,14 +119,15 @@ export default function NavbarMinimal({ kindOfNavbar }: KindOfNavbarProps) {
   const { classes } = useStyles();
 
   return (
-    <Box component="div">
+    <Box
+      component="div"
+      className={classes.dadElement}
+      sx={
+        kindOfNavbar === "socialMedia" ? { right: rem(50) } : { left: rem(50) }
+      }
+    >
       {kindOfNavbar === "socialMedia" ? (
-        <Navbar
-          height={500}
-          width={{ base: 80 }}
-          p="ls"
-          className={classes.navbar}
-        >
+        <Navbar p="ls" className={classes.navbar}>
           <Navbar.Section mt={80}>
             <Stack justify="center" spacing={0}>
               {mockdata.map(({ Icon, link }) => (
@@ -163,13 +148,8 @@ export default function NavbarMinimal({ kindOfNavbar }: KindOfNavbarProps) {
           </Navbar.Section>
         </Navbar>
       ) : (
-        <Navbar
-          height={500}
-          width={{ base: 80 }}
-          p="ls"
-          className={classes.email}
-        >
-          <Navbar.Section mt={300}>
+        <Navbar p="ls" className={classes.email}>
+          <Navbar.Section mt={80}>
             <Stack justify="center" spacing={0}>
               <Link href="mailto://pascoalkahamba25@gmail.com">
                 <a target="_blank" className={classes.emailChild}>

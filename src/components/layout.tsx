@@ -77,8 +77,8 @@ export default function Layout({ children }: LayoutProps) {
     <Box component="section" className={classes.layout}>
       <HeaderMegaMenu mainLinks={mainLinks} />
       <NavbarMinimal kindOfNavbar="socialMedia" />
-      {children}
       <NavbarMinimal kindOfNavbar="email" />
+      {children}
       <FooterLinks data={data} />
     </Box>
   );
