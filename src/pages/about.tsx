@@ -180,7 +180,7 @@ const About = () => {
             </Link>{" "}
             {translate("focus")}
             {""}{" "}
-            <Link href={JavaScript}>
+            <Link href={javascript}>
               <a className={classes.links} target="_blank">
                 JavaScript
               </a>
