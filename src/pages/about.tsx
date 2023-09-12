@@ -15,6 +15,7 @@ import {
 import { DownloadIcon, PhoneCall } from "lucide-react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import translations from "../../locales/en/useExternalLink";
 
 const useStyles = createStyles((theme) => ({
   flexContenier: {
@@ -87,8 +88,16 @@ const useStyles = createStyles((theme) => ({
     marginLeft: px(6),
   },
 
-  description: {
+  briefDeveloper: {
     flex: "0 1 25rem",
+  },
+
+  description: {
+    color: theme.white[0],
+  },
+
+  boldClass: {
+    fontWeight: "bold",
   },
 }));
 
@@ -97,6 +106,8 @@ const About = () => {
   const { t: translate } = useTranslation("about");
   const { locale } = useRouter();
 
+  const { frontendAndbackend, javascript } = translations;
+
   return (
     <>
       <Head>
@@ -104,14 +115,14 @@ const About = () => {
       </Head>
       <Box component="section" className={classes.flexContenier}>
         <div className={classes.aboutMe}>
-          <div data-aos="fade-right" className={classes.description}>
+          <div data-aos="fade-right" className={classes.briefDeveloper}>
             <Title order={2} mt="md" className={classes.h1Child}>
               {translate("page-title")}
             </Title>
             <div>
               <Text fz="lg" c="dimmed" mt="sm">
                 {translate("about-me")}
-                <Link href="">
+                <Link href={frontendAndbackend}>
                   <a target="_blank" className={classes.links}>
                     {translate("my-skill")}
                   </a>
@@ -158,6 +169,41 @@ const About = () => {
               className={classes.picture}
             />
           </div>
+          <Text fz="xl" mt="sm" className={classes.description}>
+            {translate("my-name")}{" "}
+            <span className={classes.boldClass}>Pascoal Kahamba</span>{" "}
+            {translate("my-name1")}{" "}
+            <Link href={frontendAndbackend}>
+              <a className={classes.links} target="_blank">
+                {translate("my-skill")}
+              </a>
+            </Link>{" "}
+            {translate("focus")}
+            {""}{" "}
+            <Link href={JavaScript}>
+              <a className={classes.links} target="_blank">
+                JavaScript
+              </a>
+            </Link>{" "}
+            . Meu interesse pela programação começou em 2018, durante o Ensino
+            Médio, quando adquiri conhecimentos em Lógica de Programação usando
+            Visual G. Logo após, meu desejo por aprofundar meus conhecimentos me
+            levou a explorar tecnologias como HTML, CSS e JavaScript,
+            permitindo-me criar projetos mais atrativos e interativos. Desde
+            então, tenho continuado aprimorando minhas habilidades e
+            aperfeiçoando minha expertise no desenvolvimento Front-End.
+            <div>
+              My name is Pascoal Kahamba and I am a Front-End Web Development.
+              Focusing on JavaScript ecosystem technologies. My interest in
+              programming began in 2018, during High School, when I acquired
+              knowledge in Programming Logic using Visual G. Soon after, my
+              desire to deepen my knowledge led me to explore technologies such
+              as HTML, CSS and JavaScript, allowing me to create projects more
+              attractive and interactive. Since then, I have continued to
+              improve my skills and improve my expertise in Front-End
+              development.
+            </div>
+          </Text>
         </div>
       </Box>
     </>

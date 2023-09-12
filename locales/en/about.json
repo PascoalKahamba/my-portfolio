@@ -1,5 +1,7 @@
 {
-  "hello-world": "This my first sentense of the translation on the project.",
+  "my-name": "My name is",
+  "my-name1": " and I am a",
+  "focus": "Focusing on ecosystem technologies of",
   "about-me": "I'm a guy in love with software development. Currently focusing on",
   "page-title": "About Me",
   "my-skill": "Front-End Web Development.",
