@@ -9,7 +9,7 @@ const translations = {
   fullStack: "https://en.wikipedia.org/wiki/Full_stack",
   algorithms: "https://en.wikipedia.org/wiki/Algorithm_engineering",
   prompt: "https://en.wikipedia.org/wiki/Prompt",
-  lobito: "https://en.wikipedia.org/wiki/Lobito",
+  catumbela: "https://en.wikipedia.org/wiki/Catumbela",
   cSharp: "https://en.wikipedia.org/wiki/C_Sharp",
   graphicInterface: "https://en.wikipedia.org/wiki/Graphical_user_interface",
   php: "https://en.wikipedia.org/wiki/PHP",

@@ -95,10 +95,6 @@ const useStyles = createStyles((theme) => ({
   description: {
     color: theme.white[0],
   },
-
-  boldClass: {
-    fontWeight: "bold",
-  },
 }));
 
 const About = () => {
@@ -112,6 +108,7 @@ const About = () => {
     programmingLogic,
     html5,
     css3,
+    catumbela,
     visualg,
   } = translations;
 
@@ -177,8 +174,7 @@ const About = () => {
             />
           </div>
           <Text fz="xl" mt="sm" className={classes.description}>
-            {translate("my-name")}{" "}
-            <span className={classes.boldClass}>Pascoal Kahamba</span>{" "}
+            {translate("my-name")} <strong>Pascoal Kahamba</strong>{" "}
             {translate("my-name1")}{" "}
             <Link href={frontendAndbackend}>
               <a className={classes.links} target="_blank">
@@ -198,16 +194,14 @@ const About = () => {
                 2018
               </a>
             </Link>
-            , {translate("during")}{" "}
-            <span className={classes.boldClass}>
-              {translate("high-school")}
-            </span>{" "}
+            , {translate("during")} <strong>{translate("high-school")}</strong>{" "}
             {translate("when-college")}{" "}
             <Link href={programmingLogic}>
               <a className={classes.links} target="_blank">
                 {translate("programming-logic")}
               </a>
-            </Link>{" "}{translate('using')}{" "}
+            </Link>{" "}
+            {translate("using")}{" "}
             <Link href={visualg}>
               <a className={classes.links} target="_blank">
                 Visual G
@@ -216,13 +210,13 @@ const About = () => {
             . {translate("short-desc")}{" "}
             <Link href={html5}>
               <a className={classes.links} target="_blank">
-                HTML
+                HTML5
               </a>
             </Link>
             ,{" "}
             <Link href={css3}>
               <a className={classes.links} target="_blank">
-                CSS
+                CSS3
               </a>
             </Link>{" "}
             {translate("and")}{" "}
@@ -232,6 +226,18 @@ const About = () => {
               </a>
             </Link>
             , {translate("final-desc")}
+            <p>
+              {translate("short-born")} <strong>25/04/2002 (21 anos)</strong> ,
+              {translate("longer-born")}{" "}
+              <Link href={catumbela}>
+                <a className={classes.links} target="_blank">
+                  Angola, Benguela, Catumbela
+                </a>
+              </Link>
+              .
+            </p>
+            <p>{translate("about-job")}</p>
+            <p>{translate("my-habits")}</p>
           </Text>
         </div>
       </Box>
