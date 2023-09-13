@@ -113,10 +113,18 @@ export default function IndexPage() {
       </Head>
       <div className={classes.wrapper}>
         <Container size={700} className={classes.inner}>
-          <span className={classes.spanTitle} data-aos="fade-down">
+          <span
+            className={classes.spanTitle}
+            data-aos="fade-down"
+            data-aos-duration="1200"
+          >
             {translate("hello")}
           </span>
-          <h1 className={classes.title} data-aos="fade-right">
+          <h1
+            className={classes.title}
+            data-aos="fade-right"
+            data-aos-duration="1400"
+          >
             <Text
               component="span"
               variant="gradient"
@@ -132,6 +140,7 @@ export default function IndexPage() {
             className={classes.description}
             color="dimmed"
             data-aos="fade-up"
+            data-aos-duration="1600"
           >
             {translate("description")}{" "}
             <Link href="https://www.alura.com.br/artigos/o-que-e-front-end-e-back-end">
@@ -168,6 +177,7 @@ export default function IndexPage() {
                 <DownloadIcon className={classes.buttonIcon} size={20} />
               }
               data-aos="fade-right"
+              data-aos-duration="1400"
             >
               {translate("button-name")}{" "}
             </Button>
@@ -179,6 +189,7 @@ export default function IndexPage() {
               size="xl"
               variant="default"
               data-aos="fade-left"
+              data-aos-duration="1200"
               className={classes.control}
               leftIcon={<GithubIcon className={classes.buttonIcon} size={20} />}
             >

@@ -15,6 +15,7 @@ import {
 import { DownloadIcon, PhoneCall } from "lucide-react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import translations from "../../locales/en/useExternalLink";
 
 const useStyles = createStyles((theme) => ({
@@ -119,7 +120,11 @@ const About = () => {
       </Head>
       <Box component="section" className={classes.flexContenier}>
         <div className={classes.aboutMe}>
-          <div data-aos="fade-right" className={classes.briefDeveloper}>
+          <div
+            data-aos="fade-right"
+            className={classes.briefDeveloper}
+            data-aos-duration="1200"
+          >
             <Title order={2} mt="md" className={classes.h1Child}>
               {translate("page-title")}
             </Title>
@@ -166,7 +171,11 @@ const About = () => {
               </Button>
             </Group>
           </div>
-          <div className={classes.pictureDad} data-aos="flip-left">
+          <div
+            className={classes.pictureDad}
+            data-aos="flip-left"
+            data-aos-duration="1400"
+          >
             <Image
               src="/my-photo.jpg"
               alt="developer-picture"
