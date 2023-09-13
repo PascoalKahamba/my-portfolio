@@ -1,4 +1,4 @@
-import { Box, createStyles, rem } from "@mantine/core";
+import { Box, createStyles, rem, Image } from "@mantine/core";
 import React from "react";
 
 interface TechnologiesProps {
@@ -15,12 +15,36 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    gap: rem(30),
+  },
+
+  icons: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexWrap: "wrap",
     gap: rem(10),
   },
 
+  icon: {
+    width: rem(130),
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: rem(5),
+    padding: theme.spacing.sm,
+    borderRadius: theme.spacing.xs,
+    backgroundColor: theme.colors.dark[4],
+  },
+
   line: {
-    width: rem(5),
-    backgroundColor: theme.white,
+    width: rem(235),
+    height: rem(3),
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[0]
+        : theme.colors.gray[7],
   },
 }));
 
@@ -31,7 +55,15 @@ export default function Technologias({ job, skills }: TechnologiesProps) {
       <div className={classes.flexTitle}>
         <div className={classes.line}></div>
         <h1>{job}</h1>
-        <div></div>
+        <div className={classes.line}></div>
+      </div>
+      <div className={classes.icons}>
+        {skills.map(({ description, name, icon }) => (
+          <div key={name} className={classes.icon}>
+            <Image src={icon} alt={name} width={45} height={40} />
+            <span>{name}</span>
+          </div>
+        ))}
       </div>
     </Box>
   );

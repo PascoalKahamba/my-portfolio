@@ -17,6 +17,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import translations from "../../locales/en/useExternalLink";
+import Technologias from "../components/technologias";
 
 const useStyles = createStyles((theme) => ({
   flexContenier: {
@@ -95,8 +96,42 @@ const useStyles = createStyles((theme) => ({
 
   description: {
     color: theme.white[0],
+    flex: "0 1 50rem",
   },
 }));
+
+const frontEndSkiils = [
+  {
+    icon: "/html5.svg",
+    name: "HTML5",
+    description: "Here appears the description about icon",
+  },
+  {
+    icon: "/css.svg",
+    name: "CSS3",
+    description: "Here appears the description about icon",
+  },
+  {
+    icon: "/js.svg",
+    name: "JavaScript",
+    description: "Here appears the description about icon",
+  },
+  {
+    icon: "/typescript.svg",
+    name: "TypeScript",
+    description: "Here appears the description about icon",
+  },
+  {
+    icon: "/react.svg",
+    name: "Reactjs",
+    description: "Here appears the description about icon",
+  },
+  {
+    icon: "/nextjs-line.svg",
+    name: "Nextjs",
+    description: "Here appears the description about icon",
+  },
+];
 
 const About = () => {
   const { classes } = useStyles();
@@ -249,6 +284,7 @@ const About = () => {
             <p>{translate("my-habits")}</p>
           </Text>
         </div>
+        <Technologias job="FRONT-END" skills={frontEndSkiils} />
       </Box>
     </>
   );
