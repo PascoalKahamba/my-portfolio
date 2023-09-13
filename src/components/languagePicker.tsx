@@ -41,15 +41,13 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
 export default function LanguagePicker() {
   const [opened, setOpened] = useState(false);
   const { classes } = useStyles({ opened });
-  const [selected, setSelected] = useState({ label: "", image: "" });
   const { locale } = useRouter();
-
   const localeLanguage = locale === "en" ? "English" : "Portuguese";
   const localeImage = locale === "en" ? "/english.jpg" : "/portuguese.jpg";
-
-  useEffect(() => {
-    setSelected({ label: localeLanguage, image: localeImage });
-  }, [localeLanguage, localeImage]);
+  const [selected, setSelected] = useState({
+    label: localeLanguage,
+    image: localeImage,
+  });
 
   const items = data.map((item) => (
     <Menu.Item
