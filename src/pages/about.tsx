@@ -96,7 +96,6 @@ const useStyles = createStyles((theme) => ({
 
   description: {
     color: theme.white[0],
-    flex: "0 1 50rem",
   },
 }));
 
@@ -104,31 +103,37 @@ const frontEndSkiils = [
   {
     icon: "/html5.svg",
     name: "HTML5",
+    aosDuration: 1800,
     description: "Here appears the description about icon",
   },
   {
     icon: "/css.svg",
     name: "CSS3",
+    aosDuration: 1600,
     description: "Here appears the description about icon",
   },
   {
     icon: "/js.svg",
     name: "JavaScript",
+    aosDuration: 1400,
     description: "Here appears the description about icon",
   },
   {
     icon: "/typescript.svg",
     name: "TypeScript",
+    aosDuration: 1200,
     description: "Here appears the description about icon",
   },
   {
     icon: "/react.svg",
     name: "Reactjs",
+    aosDuration: 100,
     description: "Here appears the description about icon",
   },
   {
     icon: "/nextjs-line.svg",
     name: "Nextjs",
+    aosDuration: 800,
     description: "Here appears the description about icon",
   },
 ];
@@ -217,7 +222,9 @@ const About = () => {
               className={classes.picture}
             />
           </div>
-          <Text fz="xl" mt="sm" className={classes.description}>
+        </div>
+        <div className={classes.description}>
+          <Text fz="xl" mt="sm">
             {translate("my-name")} <strong>Pascoal Kahamba</strong>{" "}
             {translate("my-name1")}{" "}
             <Link href={frontendAndbackend}>

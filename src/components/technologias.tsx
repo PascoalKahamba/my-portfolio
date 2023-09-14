@@ -6,6 +6,7 @@ interface TechnologiesProps {
   skills: {
     icon: string;
     name: string;
+    aosDuration: number;
     description: string;
   }[];
 }
@@ -20,6 +21,7 @@ const useStyles = createStyles((theme) => ({
 
   icons: {
     display: "flex",
+    width: "100%",
     justifyContent: "center",
     alignItems: "center",
     flexWrap: "wrap",
@@ -27,15 +29,18 @@ const useStyles = createStyles((theme) => ({
   },
 
   icon: {
-    width: rem(130),
     display: "flex",
+    flex: "0 1 8rem",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     gap: rem(5),
-    padding: theme.spacing.sm,
+    padding: "1rem 5px",
     borderRadius: theme.spacing.xs,
-    backgroundColor: theme.colors.dark[4],
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[5]
+        : theme.colors.gray[7],
   },
 
   line: {
@@ -58,8 +63,13 @@ export default function Technologias({ job, skills }: TechnologiesProps) {
         <div className={classes.line}></div>
       </div>
       <div className={classes.icons}>
-        {skills.map(({ description, name, icon }) => (
-          <div key={name} className={classes.icon}>
+        {skills.map(({ description, name, icon, aosDuration }) => (
+          <div
+            key={name}
+            className={classes.icon}
+            data-aos="flip-left"
+            data-aos-duration={aosDuration}
+          >
             <Image src={icon} alt={name} width={45} height={40} />
             <span>{name}</span>
           </div>
