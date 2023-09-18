@@ -148,7 +148,8 @@ const About = () => {
   const { classes } = useStyles();
   const { t: translate } = useTranslation("about");
   const { locale } = useRouter();
-
+  const currentYear = new Date().getFullYear();
+  const myAge = currentYear - 2002;
   const {
     frontendAndbackend,
     javascript,
@@ -229,7 +230,11 @@ const About = () => {
             />
           </div>
         </div>
-        <div className={classes.description}>
+        <div
+          className={classes.description}
+          data-aos="fade-up"
+          data-aos-duration="1400"
+        >
           <Text fz="xl" mt="sm">
             {translate("my-name")} <strong>Pascoal Kahamba</strong>{" "}
             {translate("my-name1")}{" "}
@@ -284,7 +289,8 @@ const About = () => {
             </Link>
             , {translate("final-desc")}
             <p>
-              {translate("short-born")} <strong>25/04/2002 (21 anos)</strong> ,
+              {translate("short-born")}{" "}
+              <strong>25/04/2002 ( {myAge} anos)</strong> ,
               {translate("longer-born")}{" "}
               <Link href={catumbela}>
                 <a className={classes.links} target="_blank">

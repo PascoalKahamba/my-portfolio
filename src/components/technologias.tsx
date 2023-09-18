@@ -1,5 +1,6 @@
-import { Box, createStyles, rem, Image } from "@mantine/core";
-import React from "react";
+import { createStyles, Box, Image, Tooltip, rem } from "@mantine/core";
+import { useState } from "react";
+import { AlertCircleIcon } from "lucide-react";
 
 interface TechnologiesProps {
   job: string;
@@ -41,6 +42,16 @@ const useStyles = createStyles((theme) => ({
       theme.colorScheme === "dark"
         ? theme.colors.dark[5]
         : theme.colors.gray[2],
+    "&:hover": {
+      cursor: "pointer",
+      boxShadow: " 0 6px 14px 1px rgb(0 0 0 / 20%)",
+    },
+  },
+
+  flexLenged: {
+    display: "flex",
+    justifyContent: "center",
+    gap: rem(10),
   },
 
   line: {
@@ -56,26 +67,39 @@ const useStyles = createStyles((theme) => ({
 
 export default function Technologias({ job, skills }: TechnologiesProps) {
   const { classes } = useStyles();
+
+  const mySkills = skills.map(({ aosDuration, name, description, icon }) => (
+    <Tooltip
+      label={
+        <div className={classes.flexLenged}>
+          <AlertCircleIcon size="1rem" />
+          {description}
+        </div>
+      }
+      position="top"
+      withArrow
+      className={classes.icon}
+      transitionProps={{ duration: 0 }}
+      key={name}
+    >
+      <div data-aos="flip-left" data-aos-duration={aosDuration}>
+        <Image src={icon} alt={name} width={45} height={40} />
+        <span>{name}</span>
+      </div>
+    </Tooltip>
+  ));
   return (
     <Box component="section">
-      <div className={classes.flexTitle}>
+      <div
+        className={classes.flexTitle}
+        data-aos="fade-left"
+        data-aos-duration="1400"
+      >
         <div className={classes.line}></div>
         <h1>{job}</h1>
         <div className={classes.line}></div>
       </div>
-      <div className={classes.icons}>
-        {skills.map(({ description, name, icon, aosDuration }) => (
-          <div
-            key={name}
-            className={classes.icon}
-            data-aos="flip-left"
-            data-aos-duration={aosDuration}
-          >
-            <Image src={icon} alt={name} width={45} height={40} />
-            <span>{name}</span>
-          </div>
-        ))}
-      </div>
+      <div className={classes.icons}>{mySkills}</div>
     </Box>
   );
 }
