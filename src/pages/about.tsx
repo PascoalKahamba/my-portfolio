@@ -89,6 +89,12 @@ const useStyles = createStyles((theme) => ({
   buttonIcon: {
     marginLeft: px(6),
   },
+  contactButton: {
+    display: "flex",
+    justifyContent: "center",
+    textDecoration: "none",
+    alignItems: "center",
+  },
 
   briefDeveloper: {
     flex: "0 1 25rem",
@@ -180,20 +186,20 @@ const About = () => {
             </div>
 
             <Group className={classes.controls}>
-              <Button
-                component="a"
-                target="_blank"
-                href="https://github.com/PascoalKahamba"
-                size="xs"
-                variant="gradient"
-                className={classes.control}
-                leftIcon={
-                  <PhoneCall size={12} className={classes.buttonIcon} />
-                }
-              >
-                {translate("contact")}
-              </Button>
-
+              <Link href="/contacts">
+                <Button
+                  size="xs"
+                  component="a"
+                  href="/contacts"
+                  variant="gradient"
+                  className={classes.control}
+                  leftIcon={
+                    <PhoneCall size={12} className={classes.buttonIcon} />
+                  }
+                >
+                  {translate("contact")}
+                </Button>
+              </Link>
               <Button
                 component="a"
                 target="_blank"

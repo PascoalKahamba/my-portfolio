@@ -40,12 +40,13 @@ const useStyles = createStyles((theme) => ({
     backgroundColor:
       theme.colorScheme === "dark"
         ? theme.colors.dark[5]
-        : theme.colors.gray[7],
+        : theme.colors.gray[2],
   },
 
   line: {
     width: rem(235),
     height: rem(3),
+    // flex: " 1 1 40rem",
     backgroundColor:
       theme.colorScheme === "dark"
         ? theme.colors.dark[0]

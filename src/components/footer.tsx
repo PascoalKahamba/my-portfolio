@@ -162,22 +162,14 @@ const socialMedia = [
 export default function FooterLinks({ data }: FooterLinksProps) {
   const { classes } = useStyles();
   const { t: translate } = useTranslation("common");
-  const router = useRouter();
 
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
-      <Text<"a">
-        key={index}
-        className={classes.link}
-        component="a"
-        href={link.link}
-        onClick={(event) => {
-          event.preventDefault();
-          router.push(link.link);
-        }}
-      >
-        {link.label}
-      </Text>
+      <Link key={index} href={link.link}>
+        <Text<"a"> className={classes.link} component="a" href={link.link}>
+          {link.label}
+        </Text>
+      </Link>
     ));
 
     return (
@@ -203,6 +195,7 @@ export default function FooterLinks({ data }: FooterLinksProps) {
         </div>
         <div className={classes.groups}>{groups}</div>
       </Container>
+
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">
           © 2023 - {translate("2023")}

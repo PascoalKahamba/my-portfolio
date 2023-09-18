@@ -12,6 +12,7 @@ import ActionToggle from "./actionToggle";
 import UserButton from "./userButton";
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   headerElement: {
@@ -75,23 +76,21 @@ interface HeaderMegaMenuProps {
 
 export default function HeaderMegaMenu({ mainLinks }: HeaderMegaMenuProps) {
   const { classes, cx } = useStyles();
-  const { push, pathname } = useRouter();
+  const { pathname } = useRouter();
   const { t: translate } = useTranslation("common");
 
   const mainItems = mainLinks.map((item) => (
-    <Anchor<"a">
-      href={item.link}
-      key={item.label}
-      className={cx(classes.mainLink, {
-        [classes.mainLinkActive]: item.link === pathname,
-      })}
-      onClick={(event) => {
-        event.preventDefault();
-        push(item.link);
-      }}
-    >
-      {item.label}
-    </Anchor>
+    <Link key={item.label} href={item.link}>
+      <Anchor<"a">
+        href={item.link}
+        component="a"
+        className={cx(classes.mainLink, {
+          [classes.mainLinkActive]: item.link === pathname,
+        })}
+      >
+        {item.label}
+      </Anchor>
+    </Link>
   ));
 
   return (
