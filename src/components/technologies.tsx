@@ -16,7 +16,7 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    gap: rem(30),
+    gap: rem(17),
   },
 
   icons: {
@@ -57,7 +57,6 @@ const useStyles = createStyles((theme) => ({
   },
 
   line: {
-    width: rem(235),
     height: rem(3),
     // flex: " 1 1 40rem",
     backgroundColor:
@@ -110,9 +109,19 @@ export default function Technologias({ job, skills }: TechnologiesProps) {
         data-aos="fade-left"
         data-aos-duration="1400"
       >
-        <div className={classes.line}></div>
+        <div
+          className={classes.line}
+          style={
+            job === "FRONT-END" ? { width: rem(235) } : { width: rem(165) }
+          }
+        ></div>
         <h1>{job}</h1>
-        <div className={classes.line}></div>
+        <div
+          className={classes.line}
+          style={
+            job === "FRONT-END" ? { width: rem(235) } : { width: rem(165) }
+          }
+        ></div>
       </div>
       <div className={classes.icons}>{mySkills}</div>
     </Box>

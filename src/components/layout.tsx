@@ -11,6 +11,7 @@ interface LayoutProps {
 const useStyles = createStyles((theme) => ({
   layout: {
     padding: "0px 6rem",
+    overflowX: "hidden",
   },
 }));
 

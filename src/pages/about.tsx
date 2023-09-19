@@ -152,21 +152,21 @@ const About = () => {
   const otherTechnologies: typeof frontEndSkiils = [
     {
       name: "Photoshop",
-      icon: "/download.png",
+      icon: "/photoshop.svg",
       aosDuration: 1800,
-      description: "",
+      description: translate("photoshop"),
     },
     {
       name: "VS Code",
-      icon: "/vscode.jpg",
+      icon: "/vscode.svg",
       aosDuration: 1600,
-      description: "",
+      description: translate("vscode"),
     },
     {
       name: "Vercel",
       icon: "/vercel.png",
       aosDuration: 1400,
-      description: "",
+      description: translate("vercel"),
     },
   ];
 
@@ -326,6 +326,10 @@ const About = () => {
           </Text>
         </div>
         <Technologias job="FRONT-END" skills={frontEndSkiils} />
+        <Technologias
+          job={translate("other-technologies")}
+          skills={otherTechnologies}
+        />
       </Box>
     </>
   );
