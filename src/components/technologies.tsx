@@ -1,4 +1,11 @@
-import { createStyles, Box, Image, Tooltip, rem } from "@mantine/core";
+import {
+  createStyles,
+  Box,
+  Image,
+  Tooltip,
+  rem,
+  UnstyledButton,
+} from "@mantine/core";
 import { useState } from "react";
 import { AlertCircleIcon } from "lucide-react";
 
@@ -49,9 +56,12 @@ const useStyles = createStyles((theme) => ({
   },
 
   flexLenged: {
+    width: rem(230),
+    whiteSpace: "normal",
     display: "flex",
     justifyContent: "center",
-    gap: rem(10),
+    alignItems: "center",
+    gap: rem(8),
   },
 
   line: {
@@ -72,17 +82,30 @@ export default function Technologias({ job, skills }: TechnologiesProps) {
     <Tooltip
       label={
         <div className={classes.flexLenged}>
-          <AlertCircleIcon size="1rem" />
-          {description}
+          <AlertCircleIcon style={{ flex: "1 0 1.2rem" }} />
+          <span>{description}</span>
         </div>
       }
       position="top"
       withArrow
-      className={classes.icon}
+      sx={(theme) => ({
+        backgroundColor:
+          theme.colorScheme === "dark"
+            ? theme.colors.dark[5]
+            : theme.colors.gray[2],
+        color:
+          theme.colorScheme === "dark"
+            ? theme.colors.dark[0]
+            : theme.colors.gray[7],
+      })}
       transitionProps={{ duration: 0 }}
       key={name}
     >
-      <div data-aos="flip-left" data-aos-duration={aosDuration}>
+      <div
+        data-aos="flip-left"
+        data-aos-duration={aosDuration}
+        className={classes.icon}
+      >
         <Image src={icon} alt={name} width={45} height={40} />
         <span>{name}</span>
       </div>

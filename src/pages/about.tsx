@@ -17,7 +17,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import translations from "../../locales/en/useExternalLink";
-import Technologias from "../components/technologias";
+import Technologias from "../components/technologies";
 
 const useStyles = createStyles((theme) => ({
   flexContenier: {
@@ -105,49 +105,49 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const frontEndSkiils = [
-  {
-    icon: "/html5.svg",
-    name: "HTML5",
-    aosDuration: 1800,
-    description: "Here appears the description about icon",
-  },
-  {
-    icon: "/css.svg",
-    name: "CSS3",
-    aosDuration: 1600,
-    description: "Here appears the description about icon",
-  },
-  {
-    icon: "/js.svg",
-    name: "JavaScript",
-    aosDuration: 1400,
-    description: "Here appears the description about icon",
-  },
-  {
-    icon: "/typescript.svg",
-    name: "TypeScript",
-    aosDuration: 1200,
-    description: "Here appears the description about icon",
-  },
-  {
-    icon: "/react.svg",
-    name: "Reactjs",
-    aosDuration: 100,
-    description: "Here appears the description about icon",
-  },
-  {
-    icon: "/nextjs-line.svg",
-    name: "Nextjs",
-    aosDuration: 800,
-    description: "Here appears the description about icon",
-  },
-];
-
 const About = () => {
   const { classes } = useStyles();
   const { t: translate } = useTranslation("about");
   const { locale } = useRouter();
+
+  const frontEndSkiils = [
+    {
+      icon: "/html5.svg",
+      name: "HTML5",
+      aosDuration: 1800,
+      description: translate("HTMLdesc"),
+    },
+    {
+      icon: "/css.svg",
+      name: "CSS3",
+      aosDuration: 1600,
+      description: translate("CSS3desc"),
+    },
+    {
+      icon: "/js.svg",
+      name: "JavaScript",
+      aosDuration: 1400,
+      description: translate("javascript"),
+    },
+    {
+      icon: "/typescript.svg",
+      name: "TypeScript",
+      aosDuration: 1200,
+      description: translate("typescript"),
+    },
+    {
+      icon: "/react.svg",
+      name: "Reactjs",
+      aosDuration: 100,
+      description: translate("reactjs"),
+    },
+    {
+      icon: "/nextjs-line.svg",
+      name: "Nextjs",
+      aosDuration: 800,
+      description: translate("nextjs"),
+    },
+  ];
   const currentYear = new Date().getFullYear();
   const myAge = currentYear - 2002;
   const {
