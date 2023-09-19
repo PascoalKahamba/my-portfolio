@@ -50,6 +50,7 @@ const useStyles = createStyles((theme) => ({
 
   flexDad: {
     display: "flex",
+    gap: rem(6),
   },
 
   emailChild: {
@@ -174,7 +175,7 @@ export default function NavbarMinimal({ kindOfNavbar }: KindOfNavbarProps) {
               ></Stack>
             </Navbar.Section>
           </Navbar>
-          <ScrollControl />
+          {/* <ScrollControl /> */}
         </div>
       )}
     </Box>

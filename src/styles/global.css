@@ -1,3 +1,7 @@
 boby {
   display: grid;
 }
+
+ html{
+      scroll-behavior: smooth;
+    }

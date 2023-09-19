@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { AppProps } from "next/app";
 import { getCookie, setCookie } from "cookies-next";
 import Head from "next/head";
+import "../styles/global.css";
 import {
   MantineProvider,
   ColorScheme,

@@ -5,9 +5,11 @@ import { createStyles, rem } from "@mantine/core";
 const useStyles = createStyles((theme) => ({
   upIcon: {
     backgroundColor: theme.colors.blue[0],
-    padding: theme.spacing.xl,
+    padding: theme.spacing.lg,
     borderRadius: theme.spacing.xs,
-    minHeight: rem(3),
+    alignSelf: "center",
+    marginTop: rem(250),
+    height: rem(10),
   },
 }));
 
