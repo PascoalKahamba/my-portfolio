@@ -148,6 +148,28 @@ const About = () => {
       description: translate("nextjs"),
     },
   ];
+
+  const otherTechnologies: typeof frontEndSkiils = [
+    {
+      name: "Photoshop",
+      icon: "/download.png",
+      aosDuration: 1800,
+      description: "",
+    },
+    {
+      name: "VS Code",
+      icon: "/vscode.jpg",
+      aosDuration: 1600,
+      description: "",
+    },
+    {
+      name: "Vercel",
+      icon: "/vercel.png",
+      aosDuration: 1400,
+      description: "",
+    },
+  ];
+
   const currentYear = new Date().getFullYear();
   const myAge = currentYear - 2002;
   const {

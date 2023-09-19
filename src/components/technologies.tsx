@@ -1,12 +1,4 @@
-import {
-  createStyles,
-  Box,
-  Image,
-  Tooltip,
-  rem,
-  UnstyledButton,
-} from "@mantine/core";
-import { useState } from "react";
+import { createStyles, Box, Image, Tooltip, rem } from "@mantine/core";
 import { AlertCircleIcon } from "lucide-react";
 
 interface TechnologiesProps {
@@ -86,7 +78,7 @@ export default function Technologias({ job, skills }: TechnologiesProps) {
           <span>{description}</span>
         </div>
       }
-      position="top"
+      position="bottom"
       withArrow
       sx={(theme) => ({
         backgroundColor:
