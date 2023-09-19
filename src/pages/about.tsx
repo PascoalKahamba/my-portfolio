@@ -151,16 +151,16 @@ const About = () => {
 
   const otherTechnologies: typeof frontEndSkiils = [
     {
-      name: "Photoshop",
-      icon: "/photoshop.svg",
-      aosDuration: 1800,
-      description: translate("photoshop"),
-    },
-    {
       name: "VS Code",
       icon: "/vscode.svg",
-      aosDuration: 1600,
+      aosDuration: 1800,
       description: translate("vscode"),
+    },
+    {
+      name: "Photoshop",
+      icon: "/photoshop.svg",
+      aosDuration: 1600,
+      description: translate("photoshop"),
     },
     {
       name: "Vercel",
@@ -181,6 +181,8 @@ const About = () => {
     catumbela,
     visualg,
   } = translations;
+
+  console.log(innerHeight);
 
   return (
     <>

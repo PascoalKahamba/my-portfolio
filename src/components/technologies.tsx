@@ -103,7 +103,7 @@ export default function Technologias({ job, skills }: TechnologiesProps) {
     </Tooltip>
   ));
   return (
-    <Box component="section">
+    <Box component="section" style={{ width: "100%" }}>
       <div
         className={classes.flexTitle}
         data-aos="fade-left"
