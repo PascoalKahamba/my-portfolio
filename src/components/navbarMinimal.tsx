@@ -1,13 +1,4 @@
-import {
-  Navbar,
-  createStyles,
-  Stack,
-  Box,
-  rem,
-  px,
-  getBreakpointValue,
-  em,
-} from "@mantine/core";
+import { Navbar, createStyles, Stack, Box, rem, px } from "@mantine/core";
 import {
   InstagramIcon,
   GithubIcon,
@@ -16,7 +7,6 @@ import {
 } from "lucide-react";
 import { BsDiscord } from "react-icons/bs";
 import Link from "next/link";
-import ScrollControl from "./scrollControl";
 import useMounted from "../hooks/useMounted";
 
 const useStyles = createStyles((theme) => ({
@@ -46,11 +36,6 @@ const useStyles = createStyles((theme) => ({
     border: "none",
     gap: rem(200),
     backgroundColor: "transparent",
-  },
-
-  flexDad: {
-    display: "flex",
-    gap: rem(6),
   },
 
   emailChild: {
@@ -156,27 +141,24 @@ export default function NavbarMinimal({ kindOfNavbar }: KindOfNavbarProps) {
           </Navbar.Section>
         </Navbar>
       ) : (
-        <div className={classes.flexDad}>
-          <Navbar p="ls" className={classes.email}>
-            <Navbar.Section mt={80}>
-              <Stack justify="center" spacing={0}>
-                <Link href="mailto://pascoalkahamba25@gmail.com">
-                  <a target="_blank" className={classes.emailChild}>
-                    pascoalkahamba25@gmail.com
-                  </a>
-                </Link>
-              </Stack>
-            </Navbar.Section>
-            <Navbar.Section>
-              <Stack
-                justify="center"
-                spacing={0}
-                className={classes.lineBottom}
-              ></Stack>
-            </Navbar.Section>
-          </Navbar>
-          {/* <ScrollControl /> */}
-        </div>
+        <Navbar p="ls" className={classes.email}>
+          <Navbar.Section mt={80}>
+            <Stack justify="center" spacing={0}>
+              <Link href="mailto://pascoalkahamba25@gmail.com">
+                <a target="_blank" className={classes.emailChild}>
+                  pascoalkahamba25@gmail.com
+                </a>
+              </Link>
+            </Stack>
+          </Navbar.Section>
+          <Navbar.Section>
+            <Stack
+              justify="center"
+              spacing={0}
+              className={classes.lineBottom}
+            ></Stack>
+          </Navbar.Section>
+        </Navbar>
       )}
     </Box>
   );

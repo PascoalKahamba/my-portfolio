@@ -102,6 +102,7 @@ export default function Technologias({ job, skills }: TechnologiesProps) {
       </div>
     </Tooltip>
   ));
+  
   return (
     <Box component="section" style={{ width: "100%" }}>
       <div

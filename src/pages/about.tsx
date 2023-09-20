@@ -182,7 +182,7 @@ const About = () => {
     visualg,
   } = translations;
 
-  console.log(innerHeight);
+ 
 
   return (
     <>

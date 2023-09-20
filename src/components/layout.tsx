@@ -3,6 +3,8 @@ import HeaderMegaMenu from "./header";
 import FooterLinks from "./footer";
 import NavbarMinimal from "./navbarMinimal";
 import useTranslation from "next-translate/useTranslation";
+import ScrollControl from "./scrollControl";
+import useMounted from "../hooks/useMounted";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -73,6 +75,7 @@ export default function Layout({ children }: LayoutProps) {
       ],
     },
   ];
+  const mounted = useMounted();
 
   return (
     <Box component="section" className={classes.layout}>
@@ -81,6 +84,7 @@ export default function Layout({ children }: LayoutProps) {
       <NavbarMinimal kindOfNavbar="email" />
       {children}
       <FooterLinks data={data} />
+      {mounted && <ScrollControl />}
     </Box>
   );
 }
