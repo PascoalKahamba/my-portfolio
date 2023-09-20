@@ -3,6 +3,8 @@ import React from "react";
 
 interface MainTitleProps {
   title: string;
+  dataAos?: string;
+  dataAosDuration?: number;
 }
 
 const useStyles = createStyles((theme) => ({
@@ -18,10 +20,20 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function MainTitle({ title }: MainTitleProps) {
+export default function MainTitle({
+  title,
+  dataAos,
+  dataAosDuration,
+}: MainTitleProps) {
   const { classes } = useStyles();
   return (
-    <Title order={2} mt="md" className={classes.title}>
+    <Title
+      order={2}
+      mt="md"
+      className={classes.title}
+      data-aos={dataAos}
+      data-aos-duration={dataAosDuration}
+    >
       {title}
     </Title>
   );

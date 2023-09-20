@@ -24,6 +24,8 @@ interface GlobalTitleProps {
   width: number;
 }
 
+const otherTechnologies = "OUTRAS-TECNOLOGIAS" || "eie";
+
 export default function GlobalTitle({ title, width }: GlobalTitleProps) {
   const { classes } = useStyles();
   return (
@@ -32,19 +34,9 @@ export default function GlobalTitle({ title, width }: GlobalTitleProps) {
       data-aos="fade-left"
       data-aos-duration="1400"
     >
-      <div
-        className={classes.line}
-        style={
-          title !== "FRONT-END" ? { width: rem(width) } : { width: rem(235) }
-        }
-      ></div>
+      <div className={classes.line} style={{ width: rem(width) }}></div>
       <h1>{title}</h1>
-      <div
-        className={classes.line}
-        style={
-          title !== "FRONT-END" ? { width: rem(width) } : { width: rem(235) }
-        }
-      ></div>
+      <div className={classes.line} style={{ width: rem(width) }}></div>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import GlobalTitle from "./globalTitle";
 
 interface TechnologiesProps {
   job: string;
+  width: number;
   skills: {
     icon: string;
     name: string;
@@ -51,7 +52,11 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function Technologias({ job, skills }: TechnologiesProps) {
+export default function Technologias({
+  job,
+  skills,
+  width,
+}: TechnologiesProps) {
   const { classes } = useStyles();
 
   const mySkills = skills.map(({ aosDuration, name, description, icon }) => (
@@ -90,7 +95,7 @@ export default function Technologias({ job, skills }: TechnologiesProps) {
 
   return (
     <Box component="section" style={{ width: "100%" }}>
-      <GlobalTitle title={job} width={165} />
+      <GlobalTitle title={job} width={width} />
       <div className={classes.icons}>{mySkills}</div>
     </Box>
   );

@@ -7,7 +7,6 @@ import {
   Group,
   Image,
   Text,
-  Title,
   createStyles,
   px,
   rem,
@@ -186,7 +185,7 @@ const About = () => {
           >
             <MainTitle title={translate("page-title")} />
             <div>
-              <Text fz="lg" c="dimmed" mt="sm">
+              <Text fz="lg" mt="sm">
                 {translate("about-me")}
                 <Link href={frontendAndbackend}>
                   <a target="_blank" className={classes.links}>
@@ -313,10 +312,11 @@ const About = () => {
             <p>{translate("my-habits")}</p>
           </Text>
         </div>
-        <Technologias job="FRONT-END" skills={frontEndSkiils} />
+        <Technologias job="FRONT-END" skills={frontEndSkiils} width={250} />
         <Technologias
           job={translate("other-technologies")}
           skills={otherTechnologies}
+          width={165}
         />
       </Box>
     </>
