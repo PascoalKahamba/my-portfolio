@@ -15,7 +15,6 @@ const useStyles = createStyles((theme) => ({
 interface GlobalTitleProps {
   title: string;
   width: number;
-  leftWidth: number;
 }
 
 export default function GlobalTitle({ title, width }: GlobalTitleProps) {
@@ -25,14 +24,14 @@ export default function GlobalTitle({ title, width }: GlobalTitleProps) {
       <div
         className={classes.line}
         style={
-          title === "FRONT-END" ? { width: rem(width) } : { width: rem(width) }
+          title !== "FRONT-END" ? { width: rem(width) } : { width: rem(235) }
         }
       ></div>
       <h1>{title}</h1>
       <div
         className={classes.line}
         style={
-          title === "FRONT-END" ? { width: rem(width) } : { width: rem(width) }
+          title !== "FRONT-END" ? { width: rem(width) } : { width: rem(235) }
         }
       ></div>
     </>

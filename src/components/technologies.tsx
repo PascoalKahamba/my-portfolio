@@ -1,5 +1,6 @@
 import { createStyles, Box, Image, Tooltip, rem } from "@mantine/core";
 import { AlertCircleIcon } from "lucide-react";
+import GlobalTitle from "./globalTitle";
 
 interface TechnologiesProps {
   job: string;
@@ -102,7 +103,7 @@ export default function Technologias({ job, skills }: TechnologiesProps) {
       </div>
     </Tooltip>
   ));
-  
+
   return (
     <Box component="section" style={{ width: "100%" }}>
       <div
@@ -110,19 +111,7 @@ export default function Technologias({ job, skills }: TechnologiesProps) {
         data-aos="fade-left"
         data-aos-duration="1400"
       >
-        <div
-          className={classes.line}
-          style={
-            job === "FRONT-END" ? { width: rem(235) } : { width: rem(165) }
-          }
-        ></div>
-        <h1>{job}</h1>
-        <div
-          className={classes.line}
-          style={
-            job === "FRONT-END" ? { width: rem(235) } : { width: rem(165) }
-          }
-        ></div>
+        <GlobalTitle title={job} width={165} />
       </div>
       <div className={classes.icons}>{mySkills}</div>
     </Box>
