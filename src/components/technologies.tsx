@@ -13,13 +13,6 @@ interface TechnologiesProps {
 }
 
 const useStyles = createStyles((theme) => ({
-  flexTitle: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: rem(17),
-  },
-
   icons: {
     display: "flex",
     width: "100%",
@@ -97,13 +90,7 @@ export default function Technologias({ job, skills }: TechnologiesProps) {
 
   return (
     <Box component="section" style={{ width: "100%" }}>
-      <div
-        className={classes.flexTitle}
-        data-aos="fade-left"
-        data-aos-duration="1400"
-      >
-        <GlobalTitle title={job} width={165} />
-      </div>
+      <GlobalTitle title={job} width={165} />
       <div className={classes.icons}>{mySkills}</div>
     </Box>
   );
