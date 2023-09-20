@@ -13,7 +13,7 @@ const Journey = () => {
       <Head>
         <title>{translate("page-title")} | Pascoal Kahamba</title>
       </Head>
-      <div>Journey</div>;
+      <div>Journey</div>
     </>
   );
 };

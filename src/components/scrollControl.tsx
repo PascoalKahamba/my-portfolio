@@ -40,7 +40,7 @@ export default function ScrollControl() {
         <div
           className={classes.upIcon}
           data-aos="fade-up"
-          data-aos-duration="1200"
+          data-aos-duration="1000"
         >
           <ArrowUpIcon
             onClick={() => window.scrollTo(heightBody, 0)}
