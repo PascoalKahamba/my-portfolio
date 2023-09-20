@@ -56,15 +56,6 @@ const useStyles = createStyles((theme) => ({
     alignItems: "center",
     gap: rem(8),
   },
-
-  line: {
-    height: rem(3),
-    // flex: " 1 1 40rem",
-    backgroundColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[0]
-        : theme.colors.gray[7],
-  },
 }));
 
 export default function Technologias({ job, skills }: TechnologiesProps) {

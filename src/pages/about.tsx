@@ -18,6 +18,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import translations from "../../locales/en/useExternalLink";
 import Technologias from "../components/technologies";
+import MainTitle from "../components/mainTitle";
 
 const useStyles = createStyles((theme) => ({
   flexContenier: {
@@ -33,17 +34,6 @@ const useStyles = createStyles((theme) => ({
     justifyContent: "center",
     gap: 20,
     flexWrap: "wrap",
-  },
-
-  h1Child: {
-    "&::after": {
-      content: '""',
-      display: "block",
-      backgroundColor: theme.colors.gray[5],
-      width: rem(45),
-      height: rem(2),
-      marginTop: theme.spacing.sm,
-    },
   },
 
   controls: {
@@ -182,8 +172,6 @@ const About = () => {
     visualg,
   } = translations;
 
- 
-
   return (
     <>
       <Head>
@@ -196,9 +184,7 @@ const About = () => {
             className={classes.briefDeveloper}
             data-aos-duration="1200"
           >
-            <Title order={2} mt="md" className={classes.h1Child}>
-              {translate("page-title")}
-            </Title>
+            <MainTitle title={translate("page-title")} />
             <div>
               <Text fz="lg" c="dimmed" mt="sm">
                 {translate("about-me")}
