@@ -1,4 +1,4 @@
-import { Box, Text, createStyles } from "@mantine/core";
+import { Box, Text, createStyles, rem } from "@mantine/core";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -10,7 +10,9 @@ import MyTimeline from "../components/myTimeline";
 
 const useStyles = createStyles((theme) => ({
   description: {
-    color: theme.white[5],
+    width: rem(750),
+    margin: "0 auto",
+    whiteSpace: "normal",
   },
 
   links: {

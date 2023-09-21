@@ -1,5 +1,6 @@
 import { Timeline, Text, createStyles, Box, Title, rem } from "@mantine/core";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
+import YearTitle from "./yearTitle";
 
 const useStyles = createStyles((theme) => ({
   timeline: {
@@ -8,23 +9,13 @@ const useStyles = createStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-
-  year: {
-    display: "flex",
-    alignItems: "center",
-    gap: rem(180),
-  },
 }));
 
 export default function MyTimeline() {
   const { classes } = useStyles();
   return (
     <Box component="section" className={classes.timeline}>
-      <div className={classes.year}>
-        <ArrowLeftIcon />
-        <h1>2020</h1>
-        <ArrowRightIcon />
-      </div>
+      <YearTitle year="2020" />
       <Timeline bulletSize={24} lineWidth={5} align="right">
         <Timeline.Item title="New branch">
           <Text c="dimmed" size="sm">
