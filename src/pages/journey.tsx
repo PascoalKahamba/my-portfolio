@@ -6,6 +6,7 @@ import React from "react";
 import MainTitle from "../components/mainTitle";
 import Link from "next/link";
 import GlobalTitle from "../components/globalTitle";
+import MyTimeline from "../components/myTimeline";
 
 const useStyles = createStyles((theme) => ({
   description: {
@@ -35,7 +36,11 @@ const Journey = () => {
         <title>{translate("page-title")} | Pascoal Kahamba</title>
       </Head>
       <Box component="section">
-        <MainTitle title="Jornada" dataAos="zoom-in" dataAosDuration={1200} />
+        <MainTitle
+          title={translate("page-title")}
+          dataAos="zoom-in"
+          dataAosDuration={1200}
+        />
 
         <Text fz="xl" mt="sm" data-aos="fade-right" data-aos-duration="1200">
           <p>
@@ -50,6 +55,7 @@ const Journey = () => {
           <p>{translate("paragraph")}</p>
         </Text>
         <GlobalTitle title={translate("timeline")} width={205} />
+        <MyTimeline />
       </Box>
     </>
   );
