@@ -26,7 +26,38 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const Journey = () => {
+const journey2018 = [
+  {
+    title: "Começo de tudo Ingresso do ensino médio.",
+    description:
+      "Comecei a estudar Logica de Programação no canal Curso em Video.",
+    date: "Janeiro a dois anos atras.",
+    dataAos: "fade-left",
+  },
+  {
+    title: "Começei a estudar Lógica de Programação.",
+    description:
+      "Comecei a estudar Logica de Programação no canal Curso em Video.",
+    date: "Janeiro a dois anos atras.",
+    dataAos: "fade-right",
+  },
+  {
+    title: "Começei a estudar Lógica de Programação.",
+    description:
+      "Comecei a estudar Logica de Programação no canal Curso em Video.",
+    date: "Janeiro a dois anos atras.",
+    dataAos: "fade-left",
+  },
+  {
+    title: "Começei a estudar Lógica de Programação.",
+    description:
+      "Comecei a estudar Logica de Programação no canal Curso em Video.",
+    date: "Janeiro a dois anos atras.",
+    dataAos: "fade-right",
+  },
+];
+
+export default function Journey() {
   const { pathname } = useRouter();
   const { t: translate } = useTranslation("journey");
   const { classes } = useStyles();
@@ -57,10 +88,8 @@ const Journey = () => {
           <p>{translate("paragraph")}</p>
         </Text>
         <GlobalTitle title={translate("timeline")} width={205} />
-        <MyTimeline />
+        <MyTimeline myJourney={journey2018} />
       </Box>
     </>
   );
-};
-
-export default Journey;
+}

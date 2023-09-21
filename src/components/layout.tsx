@@ -72,6 +72,7 @@ export default function Layout({ children }: LayoutProps) {
         { label: "2022", link: "Pascoal" },
         { label: "2021", link: "Pascoal" },
         { label: "2020", link: "Pascoal" },
+        { label: "2019", link: "Pascoal" },
       ],
     },
   ];
