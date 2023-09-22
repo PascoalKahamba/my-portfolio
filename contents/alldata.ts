@@ -70,51 +70,21 @@ export default function Alldata() {
         dataAos: "fade-left",
       },
       {
-        title: "Começei a estudar Lógica de Programação.",
+        title: "Estudando Profundamente em casa.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-right",
       },
       {
-        title: "Começei a estudar Lógica de Programação.",
+        title: "Relaxar com meu amigos.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
       },
       {
-        title: "Começei a estudar Lógica de Programação.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
-        dataAos: "fade-right",
-      },
-    ],
-    [
-      {
-        title: "Começo de tudo Ingresso do ensino médio.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
-        dataAos: "fade-left",
-      },
-      {
-        title: "Começei a estudar Lógica de Programação.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
-        dataAos: "fade-right",
-      },
-      {
-        title: "Começei a estudar Lógica de Programação.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
-        dataAos: "fade-left",
-      },
-      {
-        title: "Começei a estudar Lógica de Programação.",
+        title: "Estudar Ingles.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
@@ -123,58 +93,28 @@ export default function Alldata() {
     ],
     [
       {
-        title: "Começo de tudo Ingresso do ensino médio.",
+        title: "Mais Informacoes em breve.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
       },
       {
-        title: "Começei a estudar Lógica de Programação.",
+        title: "Pascoal Kahamba.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-right",
       },
       {
-        title: "Começei a estudar Lógica de Programação.",
+        title: "Domingas Samba.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
       },
       {
-        title: "Começei a estudar Lógica de Programação.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
-        dataAos: "fade-right",
-      },
-    ],
-    [
-      {
-        title: "Começo de tudo Ingresso do ensino médio.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
-        dataAos: "fade-left",
-      },
-      {
-        title: "Começei a estudar Lógica de Programação.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
-        dataAos: "fade-right",
-      },
-      {
-        title: "Começei a estudar Lógica de Programação.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
-        dataAos: "fade-left",
-      },
-      {
-        title: "Começei a estudar Lógica de Programação.",
+        title: "Melhorando minhas habilidades.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
@@ -183,28 +123,28 @@ export default function Alldata() {
     ],
     [
       {
-        title: "Começo de tudo Ingresso do ensino médio.",
+        title: "Tudo sobre mim.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
       },
       {
-        title: "Começei a estudar Lógica de Programação.",
+        title: "Desenvolvendo o projeto.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-right",
       },
       {
-        title: "Começei a estudar Lógica de Programação.",
+        title: "Paulina Dos Santos.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
       },
       {
-        title: "Começei a estudar Lógica de Programação.",
+        title: "Lernado da Cruz.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
@@ -213,7 +153,37 @@ export default function Alldata() {
     ],
     [
       {
-        title: "Começo de tudo Ingresso do ensino médio.",
+        title: "Teste na Aplicacao.",
+        description:
+          "Comecei a estudar Logica de Programação no canal Curso em Video.",
+        date: "Janeiro a dois anos atras.",
+        dataAos: "fade-left",
+      },
+      {
+        title: "Mudando o texto do projeto.",
+        description:
+          "Comecei a estudar Logica de Programação no canal Curso em Video.",
+        date: "Janeiro a dois anos atras.",
+        dataAos: "fade-right",
+      },
+      {
+        title: "Melhorando os estilos do projeto.",
+        description:
+          "Comecei a estudar Logica de Programação no canal Curso em Video.",
+        date: "Janeiro a dois anos atras.",
+        dataAos: "fade-left",
+      },
+      {
+        title: "Modificando os textos do projeto.",
+        description:
+          "Comecei a estudar Logica de Programação no canal Curso em Video.",
+        date: "Janeiro a dois anos atras.",
+        dataAos: "fade-right",
+      },
+    ],
+    [
+      {
+        title: "Daniel Moco.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
@@ -227,14 +197,44 @@ export default function Alldata() {
         dataAos: "fade-right",
       },
       {
-        title: "Começei a estudar Lógica de Programação.",
+        title: "Adriano Gunga.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
       },
       {
-        title: "Começei a estudar Lógica de Programação.",
+        title: "Ruben Ngonga.",
+        description:
+          "Comecei a estudar Logica de Programação no canal Curso em Video.",
+        date: "Janeiro a dois anos atras.",
+        dataAos: "fade-right",
+      },
+    ],
+    [
+      {
+        title: "Feliciano Ndumbo.",
+        description:
+          "Comecei a estudar Logica de Programação no canal Curso em Video.",
+        date: "Janeiro a dois anos atras.",
+        dataAos: "fade-left",
+      },
+      {
+        title: "Estuda no Universidade Publica.",
+        description:
+          "Comecei a estudar Logica de Programação no canal Curso em Video.",
+        date: "Janeiro a dois anos atras.",
+        dataAos: "fade-right",
+      },
+      {
+        title: "Engenheiro Riso.",
+        description:
+          "Comecei a estudar Logica de Programação no canal Curso em Video.",
+        date: "Janeiro a dois anos atras.",
+        dataAos: "fade-left",
+      },
+      {
+        title: "Tudo sobre o projeto.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
