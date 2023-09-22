@@ -7,6 +7,8 @@ import MainTitle from "../components/mainTitle";
 import Link from "next/link";
 import GlobalTitle from "../components/globalTitle";
 import MyTimeline from "../components/myTimeline";
+import Alldata from "../../contents/alldata";
+import useTimeline from "../hooks/useTimeline";
 
 const useStyles = createStyles((theme) => ({
   description: {
@@ -26,40 +28,11 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const journey2018 = [
-  {
-    title: "Começo de tudo Ingresso do ensino médio.",
-    description:
-      "Comecei a estudar Logica de Programação no canal Curso em Video.",
-    date: "Janeiro a dois anos atras.",
-    dataAos: "fade-left",
-  },
-  {
-    title: "Começei a estudar Lógica de Programação.",
-    description:
-      "Comecei a estudar Logica de Programação no canal Curso em Video.",
-    date: "Janeiro a dois anos atras.",
-    dataAos: "fade-right",
-  },
-  {
-    title: "Começei a estudar Lógica de Programação.",
-    description:
-      "Comecei a estudar Logica de Programação no canal Curso em Video.",
-    date: "Janeiro a dois anos atras.",
-    dataAos: "fade-left",
-  },
-  {
-    title: "Começei a estudar Lógica de Programação.",
-    description:
-      "Comecei a estudar Logica de Programação no canal Curso em Video.",
-    date: "Janeiro a dois anos atras.",
-    dataAos: "fade-right",
-  },
-];
-
 export default function Journey() {
   const { t: translate } = useTranslation("journey");
   const { classes } = useStyles();
+  const { allJourney } = Alldata();
+  const currentJourney = useTimeline(allJourney);
 
   return (
     <>
@@ -86,7 +59,7 @@ export default function Journey() {
           <p>{translate("paragraph")}</p>
         </Text>
         <GlobalTitle title={translate("timeline")} width={205} />
-        <MyTimeline myJourney={journey2018} />
+        <MyTimeline myJourney={currentJourney} />
       </Box>
     </>
   );

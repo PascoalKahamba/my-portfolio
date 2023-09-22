@@ -1,10 +1,9 @@
 import { useAtom } from "jotai";
-import React from "react";
 import { countYearAtom } from "../atoms";
 
-type CurrentYear = string[] | "";
-
-export default function useTimeline() {
+export default function useTimeline<T>(yarOrTimeline: T[]) {
   const [countYear] = useAtom(countYearAtom);
-  return {};
+  const currentYearOrTimeline = yarOrTimeline[countYear];
+
+  return currentYearOrTimeline;
 }

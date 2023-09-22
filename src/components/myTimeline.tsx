@@ -1,6 +1,8 @@
 import { Timeline, Text, createStyles, Box, Title, rem } from "@mantine/core";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import YearTitle from "./yearTitle";
+import Alldata from "../../contents/alldata";
+import useTimeline from "../hooks/useTimeline";
 
 const useStyles = createStyles((theme) => ({
   timeline: {
@@ -22,6 +24,8 @@ interface MyTimelineProps {
 
 export default function MyTimeline({ myJourney }: MyTimelineProps) {
   const { classes } = useStyles();
+  const { allYears } = Alldata();
+  const currentYear = useTimeline(allYears);
 
   const timelineItems = myJourney.map(
     ({ date, description, title, dataAos }) => (
@@ -38,7 +42,7 @@ export default function MyTimeline({ myJourney }: MyTimelineProps) {
 
   return (
     <Box component="section" className={classes.timeline}>
-      <YearTitle year="2018" />
+      <YearTitle year={currentYear} />
       <Timeline bulletSize={24} lineWidth={5} align="right">
         {timelineItems}
       </Timeline>
