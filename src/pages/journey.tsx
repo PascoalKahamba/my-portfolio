@@ -32,7 +32,7 @@ export default function Journey() {
   const { t: translate } = useTranslation("journey");
   const { classes } = useStyles();
   const { allJourney } = Alldata();
-  const currentJourney = useTimeline(allJourney);
+  const currentTimeline = useTimeline(allJourney);
 
   return (
     <>
@@ -59,7 +59,7 @@ export default function Journey() {
           <p>{translate("paragraph")}</p>
         </Text>
         <GlobalTitle title={translate("timeline")} width={205} />
-        <MyTimeline myJourney={currentJourney} />
+        <MyTimeline myTimeline={currentTimeline} />
       </Box>
     </>
   );

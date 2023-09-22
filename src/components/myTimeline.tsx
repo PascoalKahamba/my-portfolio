@@ -14,7 +14,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 interface MyTimelineProps {
-  myJourney: {
+  myTimeline: {
     title: string;
     description: string;
     date: string;
@@ -22,12 +22,12 @@ interface MyTimelineProps {
   }[];
 }
 
-export default function MyTimeline({ myJourney }: MyTimelineProps) {
+export default function MyTimeline({ myTimeline }: MyTimelineProps) {
   const { classes } = useStyles();
   const { allYears } = Alldata();
   const currentYear = useTimeline(allYears);
 
-  const timelineItems = myJourney.map(
+  const timelineItems = myTimeline.map(
     ({ date, description, title, dataAos }) => (
       <Timeline.Item key={title} title={title} data-aos={dataAos}>
         <Text c="dimmed" size="sm">
