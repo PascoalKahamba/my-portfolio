@@ -1,7 +1,7 @@
 import { createStyles, rem } from "@mantine/core";
 import { useAtom } from "jotai";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
-import { currentYearAtom } from "../atoms";
+import { countYearAtom } from "../atoms";
 import React from "react";
 
 const useStyles = createStyles((theme) => ({
@@ -26,13 +26,19 @@ interface YearTitleProps {
 }
 
 export default function YearTitle({ year }: YearTitleProps) {
-  const [currentYear, setCurrentYear] = useAtom(currentYearAtom);
+  const [_, setCountYear] = useAtom(countYearAtom);
   const { classes } = useStyles();
   return (
     <div className={classes.year}>
-      <ArrowLeftIcon className={classes.icon} />
+      <ArrowLeftIcon
+        className={classes.icon}
+        onClick={() => setCountYear((countYear) => countYear - 1)}
+      />
       <h1>{year}</h1>
-      <ArrowRightIcon className={classes.icon} />
+      <ArrowRightIcon
+        className={classes.icon}
+        onClick={() => setCountYear((countYear) => countYear + 1)}
+      />
     </div>
   );
 }

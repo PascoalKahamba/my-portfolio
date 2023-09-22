@@ -12,6 +12,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
+import Alldata from "../../contents/alldata";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -137,13 +138,6 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface FooterLinksProps {
-  data: {
-    title: string;
-    links: { label: string; link: string }[];
-  }[];
-}
-
 const socialMedia = [
   {
     Icon: FaWhatsapp,
@@ -159,11 +153,12 @@ const socialMedia = [
   },
 ];
 
-export default function FooterLinks({ data }: FooterLinksProps) {
+export default function FooterLinks() {
   const { classes } = useStyles();
   const { t: translate } = useTranslation("common");
+  const { footerData } = Alldata();
 
-  const groups = data.map((group) => {
+  const groups = footerData.map((group) => {
     const links = group.links.map((link, index) => (
       <Link key={index} href={link.link}>
         <Text<"a"> className={classes.link} component="a" href={link.link}>

@@ -13,6 +13,7 @@ import UserButton from "./userButton";
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
+import Alldata from "../../contents/alldata";
 
 const useStyles = createStyles((theme) => ({
   headerElement: {
@@ -70,14 +71,11 @@ interface LinkProps {
   link: string;
 }
 
-interface HeaderMegaMenuProps {
-  mainLinks: LinkProps[];
-}
-
-export default function HeaderMegaMenu({ mainLinks }: HeaderMegaMenuProps) {
+export default function HeaderMegaMenu() {
   const { classes, cx } = useStyles();
   const { pathname } = useRouter();
   const { t: translate } = useTranslation("common");
+  const { mainLinks } = Alldata();
 
   const mainItems = mainLinks.map((item) => (
     <Link key={item.label} href={item.link}>

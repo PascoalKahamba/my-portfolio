@@ -1,5 +1,5 @@
 import { atom } from "jotai";
 
-const currentYearAtom = atom(0);
+const countYearAtom = atom(0);
 
-export { currentYearAtom };
+export { countYearAtom };
