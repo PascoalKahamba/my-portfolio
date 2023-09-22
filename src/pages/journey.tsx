@@ -58,10 +58,8 @@ const journey2018 = [
 ];
 
 export default function Journey() {
-  const { pathname } = useRouter();
   const { t: translate } = useTranslation("journey");
   const { classes } = useStyles();
-  console.log(pathname);
 
   return (
     <>
