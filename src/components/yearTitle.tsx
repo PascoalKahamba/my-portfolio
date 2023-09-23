@@ -15,6 +15,7 @@ import {
   HiOutlineArrowNarrowLeft,
   HiOutlineArrowNarrowRight,
 } from "react-icons/hi";
+import { scrollToThePlace } from "./scrollControl";
 const useStyles = createStyles((theme) => ({
   upYear: {
     display: "flex",
@@ -68,20 +69,22 @@ export default function YearTitle({ kindOfTitle }: YearTitleProps) {
   const { allYears } = Alldata();
   const currentYear = useTimeline(allYears);
   const { classes } = useStyles();
+  const firstYear = isDisable(0);
+  const lastYear = isDisable(5);
 
   function isDisable(maximumOrMinimum: number) {
     const disable = count === maximumOrMinimum;
     return disable;
   }
-  const firstYear = isDisable(0);
-  const lastYear = isDisable(5);
-
   function nextTimeline() {
     setCountYear((countYear) => countYear + 1);
+    scrollToThePlace(200);
   }
   function previousTimeline() {
     setCountYear((countYear) => countYear - 1);
+    scrollToThePlace(200);
   }
+
   return (
     <>
       {kindOfTitle === "upTitle" ? (
