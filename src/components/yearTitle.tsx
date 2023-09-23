@@ -63,27 +63,31 @@ export default function YearTitle({ kindOfTitle }: YearTitleProps) {
   const { allYears } = Alldata();
   const currentYear = useTimeline(allYears);
   const { classes } = useStyles();
+
+  function nextTimeline() {
+    setCountYear((countYear) => countYear + 1);
+  }
+  function previousTimeline() {
+    setCountYear((countYear) => countYear - 1);
+  }
   return (
     <>
       {kindOfTitle === "upTitle" ? (
         <div className={classes.upYear}>
-          <ArrowLeftIcon
-            className={classes.upIcon}
-            onClick={() => setCountYear((countYear) => countYear - 1)}
-          />
+          <ArrowLeftIcon className={classes.upIcon} onClick={nextTimeline} />
           <h1>{currentYear}</h1>
           <ArrowRightIcon
             className={classes.upIcon}
-            onClick={() => setCountYear((countYear) => countYear + 1)}
+            onClick={previousTimeline}
           />
         </div>
       ) : (
         <div className={classes.downYear}>
-          <div className={classes.flexIcon}>
+          <div className={classes.flexIcon} onClick={nextTimeline}>
             <HiOutlineArrowNarrowLeft size="1rem" /> Anterior
           </div>
 
-          <div className={classes.flexIcon}>
+          <div className={classes.flexIcon} onClick={previousTimeline}>
             Proximo
             <HiOutlineArrowNarrowRight size="1rem" />
           </div>
