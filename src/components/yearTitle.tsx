@@ -19,6 +19,7 @@ const useStyles = createStyles((theme) => ({
   upYear: {
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
     gap: rem(180),
   },
 
@@ -52,6 +53,10 @@ const useStyles = createStyles((theme) => ({
       textDecoration: "underline",
     },
   },
+  disableIcon: {
+    pointerEvents: "none",
+    opacity: 0.5,
+  },
 }));
 
 interface YearTitleProps {
@@ -59,10 +64,17 @@ interface YearTitleProps {
 }
 
 export default function YearTitle({ kindOfTitle }: YearTitleProps) {
-  const [_, setCountYear] = useAtom(countYearAtom);
+  const [count, setCountYear] = useAtom(countYearAtom);
   const { allYears } = Alldata();
   const currentYear = useTimeline(allYears);
   const { classes } = useStyles();
+
+  function isDisable(maximumOrMinimum: number) {
+    const disable = count === maximumOrMinimum;
+    return disable;
+  }
+  const firstYear = isDisable(0);
+  const lastYear = isDisable(5);
 
   function nextTimeline() {
     setCountYear((countYear) => countYear + 1);
@@ -74,20 +86,31 @@ export default function YearTitle({ kindOfTitle }: YearTitleProps) {
     <>
       {kindOfTitle === "upTitle" ? (
         <div className={classes.upYear}>
-          <ArrowLeftIcon className={classes.upIcon} onClick={nextTimeline} />
+          <ArrowLeftIcon
+            className={`${classes.upIcon} ${firstYear && classes.disableIcon}`}
+            onClick={previousTimeline}
+          />
           <h1>{currentYear}</h1>
           <ArrowRightIcon
-            className={classes.upIcon}
-            onClick={previousTimeline}
+            className={`${classes.upIcon} ${lastYear && classes.disableIcon}`}
+            onClick={nextTimeline}
           />
         </div>
       ) : (
         <div className={classes.downYear}>
-          <div className={classes.flexIcon} onClick={nextTimeline}>
+          <div
+            className={`${classes.flexIcon} ${
+              firstYear && classes.disableIcon
+            }`}
+            onClick={previousTimeline}
+          >
             <HiOutlineArrowNarrowLeft size="1rem" /> Anterior
           </div>
 
-          <div className={classes.flexIcon} onClick={previousTimeline}>
+          <div
+            className={`${classes.flexIcon} ${lastYear && classes.disableIcon}`}
+            onClick={nextTimeline}
+          >
             Proximo
             <HiOutlineArrowNarrowRight size="1rem" />
           </div>
