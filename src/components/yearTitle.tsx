@@ -72,17 +72,23 @@ export default function YearTitle({ kindOfTitle }: YearTitleProps) {
   const firstYear = isDisable(0);
   const lastYear = isDisable(5);
 
+  const currentMonth = new Date().getMonth() + 1;
+  const actuallyYear = new Date().getFullYear();
+  console.log("current " + currentMonth);
+  console.log("last " + actuallyYear);
+  console.log(Math.abs(20 - 200));
+
   function isDisable(maximumOrMinimum: number) {
     const disable = count === maximumOrMinimum;
     return disable;
   }
   function nextTimeline() {
     setCountYear((countYear) => countYear + 1);
-    scrollToThePlace(200);
+    scrollToThePlace(400);
   }
   function previousTimeline() {
     setCountYear((countYear) => countYear - 1);
-    scrollToThePlace(200);
+    scrollToThePlace(400);
   }
 
   return (
