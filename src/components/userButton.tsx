@@ -4,7 +4,6 @@ import {
   Group,
   Avatar,
   Text,
-  px,
   createStyles,
 } from "@mantine/core";
 

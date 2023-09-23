@@ -58,6 +58,66 @@ export default function Alldata() {
     },
   ];
 
+  const frontEndSkiils = [
+    {
+      icon: "/html5.svg",
+      name: "HTML5",
+      aosDuration: 1800,
+      description: translate("HTMLdesc"),
+    },
+    {
+      icon: "/css.svg",
+      name: "CSS3",
+      aosDuration: 1600,
+      description: translate("CSS3desc"),
+    },
+    {
+      icon: "/js.svg",
+      name: "JavaScript",
+      aosDuration: 1400,
+      description: translate("javascript"),
+    },
+    {
+      icon: "/typescript.svg",
+      name: "TypeScript",
+      aosDuration: 1200,
+      description: translate("typescript"),
+    },
+    {
+      icon: "/react.svg",
+      name: "Reactjs",
+      aosDuration: 100,
+      description: translate("reactjs"),
+    },
+    {
+      icon: "/nextjs-line.svg",
+      name: "Nextjs",
+      aosDuration: 800,
+      description: translate("nextjs"),
+    },
+  ];
+
+  const otherTechnologies: typeof frontEndSkiils = [
+    {
+      name: "VS Code",
+      icon: "/vscode.svg",
+      aosDuration: 1800,
+      description: translate("vscode"),
+    },
+    {
+      name: "Photoshop",
+      icon: "/photoshop.svg",
+      aosDuration: 1600,
+      description: translate("photoshop"),
+    },
+    {
+      name: "Vercel",
+      icon: "/vercel.png",
+      aosDuration: 1400,
+      description: translate("vercel"),
+    },
+  ];
+
   const allYears = ["2018", "2019", "2020", "2021", "2022", "2023"];
 
   const allJourney = [
@@ -243,5 +303,12 @@ export default function Alldata() {
     ],
   ];
 
-  return { mainLinks, footerData, allJourney, allYears };
+  return {
+    mainLinks,
+    footerData,
+    allJourney,
+    allYears,
+    frontEndSkiils,
+    otherTechnologies,
+  };
 }

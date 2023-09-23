@@ -12,6 +12,7 @@ import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import translations from "../../locales/en/useExternalLink";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -103,7 +104,7 @@ const useStyles = createStyles((theme) => ({
 export default function IndexPage() {
   const { classes } = useStyles();
   const { locale } = useRouter();
-
+  const { frontEnd, github, javascript, typescript } = translations;
   const { t: translate } = useTranslation("home");
 
   return (
@@ -143,19 +144,19 @@ export default function IndexPage() {
             data-aos-duration="1600"
           >
             {translate("description")}{" "}
-            <Link href="https://www.alura.com.br/artigos/o-que-e-front-end-e-back-end">
+            <Link href={frontEnd}>
               <a className={classes.links} target="_blank">
                 {translate("my-skill")}
               </a>
             </Link>
             . {translate("short-description")}{" "}
-            <Link href="https://pt.wikipedia.org/wiki/JavaScript">
+            <Link href={javascript}>
               <a className={classes.links} target="_blank">
                 JavaScript
               </a>
             </Link>{" "}
             /
-            <Link href="https://pt.wikipedia.org/wiki/TypeScript">
+            <Link href={typescript}>
               <a className={classes.links} target="_blank">
                 TypeScript
               </a>
@@ -185,7 +186,7 @@ export default function IndexPage() {
             <Button
               component="a"
               target="_blank"
-              href="https://github.com/PascoalKahamba"
+              href={github}
               size="xl"
               variant="default"
               data-aos="fade-left"

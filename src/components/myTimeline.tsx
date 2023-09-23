@@ -46,6 +46,7 @@ export default function MyTimeline({ myTimeline }: MyTimelineProps) {
       <Timeline bulletSize={24} lineWidth={5} align="right">
         {timelineItems}
       </Timeline>
+      <YearTitle year={currentYear} />
     </Box>
   );
 }

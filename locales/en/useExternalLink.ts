@@ -21,6 +21,8 @@ const translations = {
     "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox",
 
   typescript: "https://en.wikipedia.org/wiki/TypeScript",
+  github: "https://github.com/PascoalKahamba",
+  frontEnd: "https://www.alura.com.br/artigos/o-que-e-front-end-e-back-end",
   mysql: "https://en.wikipedia.org/wiki/MySQL",
   crud: "https://en.wikipedia.org/wiki/CRUD",
   git: "https://en.wikipedia.org/wiki/Git",

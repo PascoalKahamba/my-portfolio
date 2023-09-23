@@ -6,6 +6,7 @@ import {
   Button,
   Group,
   Image,
+  Skeleton,
   Text,
   createStyles,
   px,
@@ -18,6 +19,8 @@ import { useEffect, useState } from "react";
 import translations from "../../locales/en/useExternalLink";
 import Technologias from "../components/technologies";
 import MainTitle from "../components/mainTitle";
+import useMounted from "../hooks/useMounted";
+import Alldata from "../../contents/alldata";
 
 const useStyles = createStyles((theme) => ({
   flexContenier: {
@@ -98,67 +101,7 @@ const About = () => {
   const { classes } = useStyles();
   const { t: translate } = useTranslation("about");
   const { locale } = useRouter();
-
-  const frontEndSkiils = [
-    {
-      icon: "/html5.svg",
-      name: "HTML5",
-      aosDuration: 1800,
-      description: translate("HTMLdesc"),
-    },
-    {
-      icon: "/css.svg",
-      name: "CSS3",
-      aosDuration: 1600,
-      description: translate("CSS3desc"),
-    },
-    {
-      icon: "/js.svg",
-      name: "JavaScript",
-      aosDuration: 1400,
-      description: translate("javascript"),
-    },
-    {
-      icon: "/typescript.svg",
-      name: "TypeScript",
-      aosDuration: 1200,
-      description: translate("typescript"),
-    },
-    {
-      icon: "/react.svg",
-      name: "Reactjs",
-      aosDuration: 100,
-      description: translate("reactjs"),
-    },
-    {
-      icon: "/nextjs-line.svg",
-      name: "Nextjs",
-      aosDuration: 800,
-      description: translate("nextjs"),
-    },
-  ];
-
-  const otherTechnologies: typeof frontEndSkiils = [
-    {
-      name: "VS Code",
-      icon: "/vscode.svg",
-      aosDuration: 1800,
-      description: translate("vscode"),
-    },
-    {
-      name: "Photoshop",
-      icon: "/photoshop.svg",
-      aosDuration: 1600,
-      description: translate("photoshop"),
-    },
-    {
-      name: "Vercel",
-      icon: "/vercel.png",
-      aosDuration: 1400,
-      description: translate("vercel"),
-    },
-  ];
-
+  const { frontEndSkiils, otherTechnologies } = Alldata();
   const currentYear = new Date().getFullYear();
   const myAge = currentYear - 2002;
   const {

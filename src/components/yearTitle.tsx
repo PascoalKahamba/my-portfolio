@@ -25,6 +25,8 @@ interface YearTitleProps {
   year: string;
 }
 
+const elem = Symbol.for('id')
+
 export default function YearTitle({ year }: YearTitleProps) {
   const [_, setCountYear] = useAtom(countYearAtom);
   const { classes } = useStyles();

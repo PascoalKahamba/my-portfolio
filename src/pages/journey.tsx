@@ -1,4 +1,4 @@
-import { Box, Text, createStyles, rem } from "@mantine/core";
+import { Box, Skeleton, Text, createStyles, rem } from "@mantine/core";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -9,6 +9,7 @@ import GlobalTitle from "../components/globalTitle";
 import MyTimeline from "../components/myTimeline";
 import Alldata from "../../contents/alldata";
 import useTimeline from "../hooks/useTimeline";
+import useMounted from "../hooks/useMounted";
 
 const useStyles = createStyles((theme) => ({
   description: {
@@ -33,6 +34,7 @@ export default function Journey() {
   const { classes } = useStyles();
   const { allJourney } = Alldata();
   const currentTimeline = useTimeline(allJourney);
+  const mounted = useMounted();
 
   return (
     <>
@@ -40,11 +42,13 @@ export default function Journey() {
         <title>{translate("page-title")} | Pascoal Kahamba</title>
       </Head>
       <Box component="section">
-        <MainTitle
-          title={translate("page-title")}
-          dataAos="zoom-in"
-          dataAosDuration={1200}
-        />
+        <Skeleton visible={!mounted}>
+          <MainTitle
+            title={translate("page-title")}
+            dataAos="zoom-in"
+            dataAosDuration={1200}
+          />
+        </Skeleton>
 
         <Text fz="xl" mt="sm" data-aos="fade-right" data-aos-duration="1200">
           <p>
