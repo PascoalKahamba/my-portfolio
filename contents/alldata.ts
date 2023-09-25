@@ -1,4 +1,5 @@
 import useTranslation from "next-translate/useTranslation";
+import useDate from "../src/hooks/useDate";
 
 export default function Alldata() {
   const { t: translate } = useTranslation("common");
@@ -119,14 +120,16 @@ export default function Alldata() {
   ];
 
   const allYears = ["2018", "2019", "2020", "2021", "2022", "2023"];
+  const { amountMonth, amountYear, monthOrYear, theYear } = useDate(4, 2018);
+  console.log(theYear);
 
   const allJourney = [
     [
       {
-        title: "Começo de tudo Ingresso do ensino médio.",
+        title: "Começo de tudo Ingresso no ensino médio.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+        date: `Janeiro mais de ${amountYear} anos.`,
         dataAos: "fade-left",
       },
       {
@@ -267,7 +270,7 @@ export default function Alldata() {
         title: "Ruben Ngonga.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+        date: `Abril a proxidamente ${amountMonth} ${monthOrYear}.`,
         dataAos: "fade-right",
       },
     ],

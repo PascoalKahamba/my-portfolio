@@ -1,30 +1,35 @@
-import { useAtom } from "jotai";
-import { countYearAtom } from "../atoms";
-import Alldata from "../../contents/alldata";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 type Year = "2018" | "2019" | "2020" | "2021" | "2022" | "2023";
+const MORE_ONE_MONTH = 1;
 
 export default function useDate(monthNumber: number, year: number) {
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = new Date().getMonth();
   const currentYear = new Date().getFullYear();
-  const [count] = useAtom(countYearAtom);
-  const { allYears } = Alldata();
-  const lastyear = allYears[count];
-  const theTime = currentMonth + monthNumber;
+  const [isYear, setIsYear] = useState(false);
+  const amountMonth = currentMonth + monthNumber;
+  const amountYear = Math.abs(currentYear - year);
+  const monthOrYear = getMonthOrYear(amountMonth);
+  const theYear = isYear && "anos";
 
   useEffect(() => {
-    // Aqui começa o trabalho da implementação da lógica de obter a data
-  }, [currentMonth, currentYear]);
-
-  function getYear(year: Year) {
-    let currentYear = "";
-    switch (year) {
-      case "2018":
-        currentYear = "mes";
-        break;
+    if (amountMonth >= 12) {
+      setIsYear(true);
     }
+
+    return () => setIsYear(false);
+  }, [amountMonth]);
+
+  function getMonthOrYear(amountMonth: number) {
+    let monthOrYear = "";
+    if (amountMonth >= 12) {
+      monthOrYear = "anos";
+      return monthOrYear;
+    }
+
+    monthOrYear = "mes";
+    return monthOrYear;
   }
 
-  return theTime;
+  return { amountMonth, amountYear, monthOrYear, theYear };
 }
