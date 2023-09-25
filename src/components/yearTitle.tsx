@@ -64,6 +64,8 @@ interface YearTitleProps {
   kindOfTitle: "upTitle" | "downTitle";
 }
 
+const SCROLL_TO_A_LOCAL_PAGE = 400;
+
 export default function YearTitle({ kindOfTitle }: YearTitleProps) {
   const [count, setCountYear] = useAtom(countYearAtom);
   const { allYears } = Alldata();
@@ -84,11 +86,11 @@ export default function YearTitle({ kindOfTitle }: YearTitleProps) {
   }
   function nextTimeline() {
     setCountYear((countYear) => countYear + 1);
-    scrollToThePlace(400);
+    scrollToThePlace(SCROLL_TO_A_LOCAL_PAGE);
   }
   function previousTimeline() {
     setCountYear((countYear) => countYear - 1);
-    scrollToThePlace(400);
+    scrollToThePlace(SCROLL_TO_A_LOCAL_PAGE);
   }
 
   return (
