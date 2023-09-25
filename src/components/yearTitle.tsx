@@ -65,14 +65,16 @@ interface YearTitleProps {
 }
 
 const SCROLL_TO_A_LOCAL_PAGE = 400;
+const FIRST_TIMELINE_YEAR = 0;
+const LAST_TIMELINE_YEAR = 5;
 
 export default function YearTitle({ kindOfTitle }: YearTitleProps) {
   const [count, setCountYear] = useAtom(countYearAtom);
   const { allYears } = Alldata();
   const currentYear = useTimeline(allYears);
   const { classes } = useStyles();
-  const firstYear = isDisable(0);
-  const lastYear = isDisable(5);
+  const firstYear = isDisable(FIRST_TIMELINE_YEAR);
+  const lastYear = isDisable(LAST_TIMELINE_YEAR);
 
   const currentMonth = new Date().getMonth() + 1;
   const actuallyYear = new Date().getFullYear();
