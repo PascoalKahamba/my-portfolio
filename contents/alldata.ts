@@ -4,6 +4,7 @@ import Link from "next/link";
 
 const FEBRUARY = 2;
 const MARCH = 3;
+const JANUARY = 6;
 
 export default function Alldata() {
   const { t: translate } = useTranslation("common");
@@ -126,21 +127,20 @@ export default function Alldata() {
   const allYears = ["2018", "2019", "2020", "2021", "2022", "2023"];
   const [_, amountYear, monthOrYear] = useDate(FEBRUARY, 2018);
   const [marchMonth, marchYear, noUse] = useDate(MARCH, 2019);
+  const [januaryMonth, januaryYear, yet] = useDate(JANUARY, 2020);
 
   const allJourney = [
     [
       {
         title: "Ingresso no Ensino Médio.",
-        description:
-          "Começei a minha jornada no ensino médio no curso de Informatica de Gestão no Instituto Politécnico de Administração e Gestão da Catumbela (IPAG). Foi no ensino médio que os meus sonhos começaram a ser constuídos.",
+        description: "",
         date: `Fevereiro há mais de ${amountYear} anos.`,
         dataAos: "fade-left",
         textLink: "Ensino Medio",
       },
       {
         title: "Começei a estudar Lógica de Programação.",
-        description:
-          "Meu primeiro contato com a programação estudei no canal Curso em Video sensacional me ajudou muito a minha maneira de pensar.",
+        description: " ",
         date: `Maio há mais ${amountYear} anos.`,
         dataAos: "fade-right",
         textLink: "Curso em Video",
@@ -157,24 +157,21 @@ export default function Alldata() {
     [
       {
         title: "Começei a estudar C# na escola.",
-        description:
-          "C# foi a primeira Linguagem de Programação da minha carreira foi boa a experiência pude aprender comandos voltado ao back-end por meios dos estudos escolares.",
+        description: "",
         date: `Março há mais ${marchYear} anos.`,
         dataAos: "fade-right",
         textLink: "C#",
       },
       {
         title: "Primeiro contato com a Web.",
-        description:
-          "Eu bem que já me sentia confortável com HTML e CSS, mas ainda precisava aprimorar no meu CSS, então dei uma chance pra esse curso. Foi bom tê-lo feito, lembro que na época, me ensinou a trabalhar com float e position do CSS, antes desse curso não entendia muito bem essas propriedades. Hoje em dia já não recomendo esse curso, Flexbox e Grid Layout não eram realidade nessa época.",
+        description: " ",
         date: `Agosto há mais ${marchYear} anos.`,
         dataAos: "fade-left",
         textLink: "HTML e CSS",
       },
       {
         title: "Fiz o curso de Javascript.",
-        description:
-          "Então ficando encantado com as tecnilogias voltadas a web fiz o curso de Javasript no canal curso em video até agora o melhor que já fiz aprendi muito pode melhorar minhas habilidades e dar os meus primeiros passos na Linguagem.",
+        description: "",
         date: `Novembro há mais ${marchYear} anos.`,
         dataAos: "fade-right",
         textLink: "javascript",
@@ -182,16 +179,15 @@ export default function Alldata() {
     ],
     [
       {
-        title: "Tudo sobre mim.",
+        title: "Me cadastrei no GitHub.",
         description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+          "Desde então passei a publicar os meus projetos no GitHub.",
+        date: `Janeiro há mais ${januaryYear} anos.`,
         dataAos: "fade-left",
-
-        textLink: "Pascoal",
+        textLink: "github",
       },
       {
-        title: "Desenvolvendo o projeto.",
+        title: "Fiz o projeto Acha-5.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
@@ -199,7 +195,7 @@ export default function Alldata() {
         textLink: "Pascoal",
       },
       {
-        title: "Paulina Dos Santos.",
+        title: "Fiz um CRUD.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
@@ -208,7 +204,7 @@ export default function Alldata() {
         textLink: "Pascoal",
       },
       {
-        title: "Lernado da Cruz.",
+        title: "Fiz o projeto Estatisticas do aluno.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",

@@ -51,6 +51,7 @@ export default function MyTimeline() {
     html5,
     web,
     css3,
+    github,
     cSharp,
     gridlayout,
   } = translations;
@@ -65,6 +66,19 @@ export default function MyTimeline() {
             Gestão da Catumbela (IPAG).
           </strong>{" "}
           Foi no ensino médio que os meus sonhos começaram a ser constuídos.
+        </Text>
+      );
+    }
+    if (textLink === "github") {
+      return (
+        <Text c="dimmed" size="sm">
+          Desde então passei a publicar os meus projetos no{" "}
+          <Link href={github}>
+            <a className={classes.links} target="_blank">
+              GitHub
+            </a>
+          </Link>
+          .
         </Text>
       );
     }
