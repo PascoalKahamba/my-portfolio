@@ -1,5 +1,6 @@
 import useTranslation from "next-translate/useTranslation";
 import useDate from "../src/hooks/useDate";
+import Link from "next/link";
 
 export default function Alldata() {
   const { t: translate } = useTranslation("common");
@@ -123,21 +124,25 @@ export default function Alldata() {
   const { amountMonth, amountYear, monthOrYear, theYear } = useDate(4, 2018);
   console.log(theYear);
 
+  const courseInVideo = `canal Curso em Video`;
+
   const allJourney = [
     [
       {
         title: "Começo de tudo Ingresso no ensino médio.",
         description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: `Janeiro mais de ${amountYear} anos.`,
+          "Foi este ano que ingressei no Ensino Médio então os meus sonhos começaram a ser construídos.",
+        date: `Fevereiro há mais de ${amountYear} anos.`,
         dataAos: "fade-left",
+
+        textLink: "Kahamba",
       },
       {
-        title: "Estudando Profundamente em casa.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+        title: "Começei a estudar Lógica de Programação.",
+        description: `Meu primeiro contato com a programação estudei no ${courseInVideo} sensacional me ajudou muito a minha maneira de pensar.`,
+        date: `Maio há mais ${amountYear} anos.`,
         dataAos: "fade-right",
+        textLink: "Ndondi",
       },
       {
         title: "Relaxar com meu amigos.",
@@ -145,6 +150,8 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
+
+        textLink: "Pascoal",
       },
       {
         title: "Estudar Ingles.",
@@ -152,6 +159,7 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-right",
+        textLink: "Pascoal",
       },
     ],
     [
@@ -161,6 +169,8 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
+
+        textLink: "Pascoal",
       },
       {
         title: "Pascoal Kahamba.",
@@ -168,6 +178,7 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-right",
+        textLink: "Pascoal",
       },
       {
         title: "Domingas Samba.",
@@ -175,6 +186,8 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
+
+        textLink: "Pascoal",
       },
       {
         title: "Melhorando minhas habilidades.",
@@ -182,6 +195,7 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-right",
+        textLink: "Pascoal",
       },
     ],
     [
@@ -191,6 +205,8 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
+
+        textLink: "Pascoal",
       },
       {
         title: "Desenvolvendo o projeto.",
@@ -198,6 +214,7 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-right",
+        textLink: "Pascoal",
       },
       {
         title: "Paulina Dos Santos.",
@@ -205,6 +222,8 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
+
+        textLink: "Pascoal",
       },
       {
         title: "Lernado da Cruz.",
@@ -212,6 +231,7 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-right",
+        textLink: "Pascoal",
       },
     ],
     [
@@ -221,6 +241,8 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
+
+        textLink: "Pascoal",
       },
       {
         title: "Mudando o texto do projeto.",
@@ -228,6 +250,7 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-right",
+        textLink: "Pascoal",
       },
       {
         title: "Melhorando os estilos do projeto.",
@@ -235,6 +258,8 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
+
+        textLink: "Pascoal",
       },
       {
         title: "Modificando os textos do projeto.",
@@ -242,6 +267,7 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-right",
+        textLink: "Pascoal",
       },
     ],
     [
@@ -251,6 +277,8 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
+
+        textLink: "Pascoal",
       },
       {
         title: "Começei a estudar Lógica de Programação.",
@@ -258,6 +286,7 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-right",
+        textLink: "Pascoal",
       },
       {
         title: "Adriano Gunga.",
@@ -265,6 +294,8 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
+
+        textLink: "Pascoal",
       },
       {
         title: "Ruben Ngonga.",
@@ -272,6 +303,7 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: `Abril a proxidamente ${amountMonth} ${monthOrYear}.`,
         dataAos: "fade-right",
+        textLink: "Pascoal",
       },
     ],
     [
@@ -281,6 +313,8 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
+
+        textLink: "Pascoal",
       },
       {
         title: "Estuda no Universidade Publica.",
@@ -288,6 +322,7 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-right",
+        textLink: "Pascoal",
       },
       {
         title: "Engenheiro Riso.",
@@ -295,6 +330,8 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
+
+        textLink: "Pascoal",
       },
       {
         title: "Tudo sobre o projeto.",
@@ -302,6 +339,7 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-right",
+        textLink: "Pascoal",
       },
     ],
   ];
