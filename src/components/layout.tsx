@@ -13,6 +13,10 @@ const useStyles = createStyles((theme) => ({
   layout: {
     padding: "0px 6rem",
     overflowX: "hidden",
+
+    [theme.fn.smallerThan("sm")]: {
+      padding: "0px 2rem",
+    },
   },
 }));
 

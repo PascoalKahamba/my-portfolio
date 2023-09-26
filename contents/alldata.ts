@@ -2,6 +2,8 @@ import useTranslation from "next-translate/useTranslation";
 import useDate from "../src/hooks/useDate";
 import Link from "next/link";
 
+const FEBRUARY = 2;
+
 export default function Alldata() {
   const { t: translate } = useTranslation("common");
 
@@ -121,56 +123,44 @@ export default function Alldata() {
   ];
 
   const allYears = ["2018", "2019", "2020", "2021", "2022", "2023"];
-  const { amountMonth, amountYear, monthOrYear, theYear } = useDate(4, 2018);
+  const [_, amountYear, monthOrYear, theYear] = useDate(FEBRUARY, 2018);
   console.log(theYear);
-
-  const courseInVideo = `canal Curso em Video`;
 
   const allJourney = [
     [
       {
-        title: "Começo de tudo Ingresso no ensino médio.",
+        title: "Ingresso no Ensino Médio.",
         description:
-          "Foi este ano que ingressei no Ensino Médio então os meus sonhos começaram a ser construídos.",
+          "Começei a minha jornada no ensino médio no curso de Informatica de Gestão no Instituto Politécnico de Administração e Gestão da Catumbela (IPAG). Foi no ensino médio que os meus sonhos começaram a ser constuídos.",
         date: `Fevereiro há mais de ${amountYear} anos.`,
         dataAos: "fade-left",
-
-        textLink: "Kahamba",
+        textLink: "Ensino Medio",
       },
       {
         title: "Começei a estudar Lógica de Programação.",
-        description: `Meu primeiro contato com a programação estudei no ${courseInVideo} sensacional me ajudou muito a minha maneira de pensar.`,
+        description:
+          "Meu primeiro contato com a programação estudei no canal Curso em Video sensacional me ajudou muito a minha maneira de pensar.",
         date: `Maio há mais ${amountYear} anos.`,
         dataAos: "fade-right",
-        textLink: "Ndondi",
+        textLink: "Curso em Video",
       },
       {
-        title: "Relaxar com meu amigos.",
+        title: "Primeiros códigos da minha carreira.",
         description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+          "Desde então passei a fazer os exercícios proposto pelo curso acima referido e fui melhorando a minha maneira de pensar.",
+        date: `Julho há mais ${amountYear} anos.`,
         dataAos: "fade-left",
-
-        textLink: "Pascoal",
-      },
-      {
-        title: "Estudar Ingles.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
-        dataAos: "fade-right",
-        textLink: "Pascoal",
+        textLink: "Primeiros codigos",
       },
     ],
     [
       {
-        title: "Mais Informacoes em breve.",
+        title: "Primeiro contato com a Wed.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
-
-        textLink: "Pascoal",
+        textLink: "HTML e CSS",
       },
       {
         title: "Pascoal Kahamba.",
@@ -301,7 +291,7 @@ export default function Alldata() {
         title: "Ruben Ngonga.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: `Abril a proxidamente ${amountMonth} ${monthOrYear}.`,
+        date: `Abril a proxidamente  ${monthOrYear}.`,
         dataAos: "fade-right",
         textLink: "Pascoal",
       },

@@ -7,7 +7,6 @@ import {
 } from "lucide-react";
 import { BsDiscord } from "react-icons/bs";
 import Link from "next/link";
-import useMounted from "../hooks/useMounted";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -64,6 +63,10 @@ const useStyles = createStyles((theme) => ({
     width: rem(5),
     height: "100vh",
     zIndex: 666,
+
+    [theme.fn.smallerThan("sm")]: {
+      display: "none",
+    },
   },
 
   navbar: {
@@ -109,7 +112,6 @@ interface KindOfNavbarProps {
 
 export default function NavbarMinimal({ kindOfNavbar }: KindOfNavbarProps) {
   const { classes } = useStyles();
-  const mounted = useMounted();
 
   return (
     <Box

@@ -7,6 +7,8 @@ const translations = {
   programmingLogic: "https://en.wikipedia.org/wiki/Logic_programming",
   visualg: "https://pt.wikipedia.org/wiki/Visualg",
   fullStack: "https://en.wikipedia.org/wiki/Full_stack",
+  cursoEmVideoProgrammingLogic:
+    "https://www.youtube.com/playlist?list=PLHz_AreHm4dmSj0MHol_aoNYCSGFqvfXV",
   algorithms: "https://en.wikipedia.org/wiki/Algorithm_engineering",
   prompt: "https://en.wikipedia.org/wiki/Prompt",
   catumbela: "https://en.wikipedia.org/wiki/Catumbela",

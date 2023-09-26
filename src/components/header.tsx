@@ -25,6 +25,9 @@ const useStyles = createStyles((theme) => ({
 
   mainLinks: {
     marginRight: `calc(${theme.spacing.sm} * -1)`,
+    [theme.fn.smallerThan("sm")]: {
+      display: "none",
+    },
   },
 
   mainLink: {

@@ -22,6 +22,10 @@ const useStyles = createStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     gap: rem(180),
+
+    [theme.fn.smallerThan("sm")]: {
+      gap: rem(80),
+    },
   },
 
   downYear: {
