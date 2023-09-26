@@ -31,5 +31,5 @@ export default function useDate(monthNumber: number, year: number) {
     return monthOrYear;
   }
 
-  return [amountMonth, amountYear, monthOrYear, theYear];
+  return [amountMonth, amountYear, monthOrYear];
 }

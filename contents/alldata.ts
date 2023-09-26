@@ -3,6 +3,7 @@ import useDate from "../src/hooks/useDate";
 import Link from "next/link";
 
 const FEBRUARY = 2;
+const MARCH = 3;
 
 export default function Alldata() {
   const { t: translate } = useTranslation("common");
@@ -123,8 +124,8 @@ export default function Alldata() {
   ];
 
   const allYears = ["2018", "2019", "2020", "2021", "2022", "2023"];
-  const [_, amountYear, monthOrYear, theYear] = useDate(FEBRUARY, 2018);
-  console.log(theYear);
+  const [_, amountYear, monthOrYear] = useDate(FEBRUARY, 2018);
+  const [marchMonth, marchYear, noUse] = useDate(MARCH, 2019);
 
   const allJourney = [
     [
@@ -155,37 +156,28 @@ export default function Alldata() {
     ],
     [
       {
-        title: "Primeiro contato com a Wed.",
+        title: "Começei a estudar C# na escola.",
         description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+          "C# foi a primeira Linguagem de Programação da minha carreira foi boa a experiência pude aprender comandos voltado ao back-end por meios dos estudos escolares.",
+        date: `Março há mais ${marchYear} anos.`,
+        dataAos: "fade-right",
+        textLink: "C#",
+      },
+      {
+        title: "Primeiro contato com a Web.",
+        description:
+          "Eu bem que já me sentia confortável com HTML e CSS, mas ainda precisava aprimorar no meu CSS, então dei uma chance pra esse curso. Foi bom tê-lo feito, lembro que na época, me ensinou a trabalhar com float e position do CSS, antes desse curso não entendia muito bem essas propriedades. Hoje em dia já não recomendo esse curso, Flexbox e Grid Layout não eram realidade nessa época.",
+        date: `Agosto há mais ${marchYear} anos.`,
         dataAos: "fade-left",
         textLink: "HTML e CSS",
       },
       {
-        title: "Pascoal Kahamba.",
+        title: "Fiz o curso de Javascript.",
         description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+          "Então ficando encantado com as tecnilogias voltadas a web fiz o curso de Javasript no canal curso em video até agora o melhor que já fiz aprendi muito pode melhorar minhas habilidades e dar os meus primeiros passos na Linguagem.",
+        date: `Novembro há mais ${marchYear} anos.`,
         dataAos: "fade-right",
-        textLink: "Pascoal",
-      },
-      {
-        title: "Domingas Samba.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
-        dataAos: "fade-left",
-
-        textLink: "Pascoal",
-      },
-      {
-        title: "Melhorando minhas habilidades.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
-        dataAos: "fade-right",
-        textLink: "Pascoal",
+        textLink: "javascript",
       },
     ],
     [

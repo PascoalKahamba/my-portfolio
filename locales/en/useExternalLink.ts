@@ -7,6 +7,9 @@ const translations = {
   programmingLogic: "https://en.wikipedia.org/wiki/Logic_programming",
   visualg: "https://pt.wikipedia.org/wiki/Visualg",
   fullStack: "https://en.wikipedia.org/wiki/Full_stack",
+  web: "https://www.significados.com.br/web/",
+  cursodejavascript:
+    "https://www.youtube.com/playlist?list=PLntvgXM11X6pi7mW0O4ZmfUI1xDSIbmTm",
   cursoEmVideoProgrammingLogic:
     "https://www.youtube.com/playlist?list=PLHz_AreHm4dmSj0MHol_aoNYCSGFqvfXV",
   algorithms: "https://en.wikipedia.org/wiki/Algorithm_engineering",
@@ -34,6 +37,8 @@ const translations = {
   poo: "https://en.wikipedia.org/wiki/Object-oriented_programming",
   modelbd: "https://en.wikipedia.org/wiki/Data_modeling",
   sql: "https://en.wikipedia.org/wiki/SQL",
+  cursodehtmlecss:
+    "https://www.youtube.com/playlist?list=PLHz_AreHm4dlAnJ_jJtV29RFxnPHDuk9o",
   laravel: "https://en.wikipedia.org/wiki/Laravel",
   typescriptdocs: "https://www.typescriptlang.org/docs/handbook/",
   designpatterns: "https://en.wikipedia.org/wiki/Design_Patterns",
