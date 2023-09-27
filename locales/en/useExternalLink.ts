@@ -28,6 +28,8 @@ const translations = {
   typescript: "https://en.wikipedia.org/wiki/TypeScript",
   projetocrud: "https://project-crud.vercel.app/",
   cursodereact: "https://www.youtube.com/watch?v=iIQOtwsWXqU&t=28s",
+  reactdoc: "https://react.dev/",
+  projetoestatisticasdosalunos: "https://student-statistics.vercel.app/",
   projetoacha5: "https://project-acha5.vercel.app/",
   github: "https://github.com/PascoalKahamba",
   frontEnd: "https://www.alura.com.br/artigos/o-que-e-front-end-e-back-end",

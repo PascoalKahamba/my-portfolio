@@ -50,6 +50,10 @@ export default function MyTimeline() {
     cursodehtmlecss,
     projetoacha5,
     projetocrud,
+    reactdoc,
+    projetoestatisticasdosalunos,
+    cursodereact,
+    reactjs,
     html5,
     web,
     css3,
@@ -141,6 +145,54 @@ export default function MyTimeline() {
             </a>
           </Link>{" "}
           sensacional me ajudou muito a minha maneira de pensar.
+        </Text>
+      );
+    }
+    if (textLink === "estatisticasdosalunos") {
+      return (
+        <Text c="dimmed" size="sm">
+          Desenvolvi o projeto{" "}
+          <Link href={projetoestatisticasdosalunos}>
+            <a className={classes.links} target="_blank">
+              Estatisticas dos Alunos
+            </a>
+          </Link>{" "}
+          para melhorar as minhas habilidades em React.
+        </Text>
+      );
+    }
+    if (textLink === "reactdoc") {
+      return (
+        <Text c="dimmed" size="sm">
+          Já entendendo o fluxo como o React funciona decidi ir mais a fundo na
+          tecnologia estudando na{" "}
+          <Link href={reactdoc}>
+            <a className={classes.links} target="_blank">
+              documentação do react
+            </a>
+          </Link>{" "}
+          conceitos mais avançados.
+        </Text>
+      );
+    }
+    if (textLink === "react") {
+      return (
+        <Text c="dimmed" size="sm">
+          Desde então com o objeto de aumentar as minhas habilidades fiz o curso
+          de{" "}
+          <Link href={reactjs}>
+            <a className={classes.links} target="_blank">
+              React
+            </a>
+          </Link>{" "}
+          no canal da{" "}
+          <Link href={cursodereact}>
+            <a className={classes.links} target="_blank">
+              Origamid
+            </a>
+          </Link>{" "}
+          , sendo hoje a minha habilidade principal. sensacional me ajudou muito
+          a minha maneira de pensar.
         </Text>
       );
     }

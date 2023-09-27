@@ -4,8 +4,9 @@ import Link from "next/link";
 
 const FEBRUARY = 2;
 const MARCH = 3;
-const JANUARY = 6;
+const JANUARY = 1;
 const APRIL = 4;
+const JUNE = 6;
 
 export default function Alldata() {
   const { t: translate } = useTranslation("common");
@@ -206,24 +207,21 @@ export default function Alldata() {
     [
       {
         title: "Fiz o curso de React.",
-        description:
-          "Desde então com o objeto de aumentar as minhas habilidades fiz o curso de React no canal da Origamid, sendo hoje a minha habilidade principal.",
+        description: "",
         date: `Junho há mais ${aprilYear} anos.`,
         dataAos: "fade-left",
         textLink: "react",
       },
       {
         title: "Crie o projeto Estatisticas dos Alunos.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
+        description: "",
         date: `Setembro há mais ${aprilYear} anos.`,
         dataAos: "fade-right",
         textLink: "estatisticasdosalunos",
       },
       {
         title: "Aprofundei os meus conhecimentos em React na sua documentação.",
-        description:
-          "Já entendendo o fluxo como o React funciona decidi ir mais afundo na tecnologia estudando na sua documentação conceitos mais avançados.",
+        description: "",
         date: `Novembro há mais ${aprilYear} anos.`,
         dataAos: "fade-left",
         textLink: "reactdoc",
@@ -231,9 +229,9 @@ export default function Alldata() {
     ],
     [
       {
-        title: "Daniel Moco.",
+        title: "Primeiro contato com o Typescript.",
         description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
+          "Finalmente dei uma chance ao Typescript para melhorar o meu codigo tornando ele mais claro e seguro tipando ele ponta á ponta.",
         date: "Janeiro a dois anos atras.",
         dataAos: "fade-left",
 
