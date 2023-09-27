@@ -8,6 +8,8 @@ const translations = {
   visualg: "https://pt.wikipedia.org/wiki/Visualg",
   fullStack: "https://en.wikipedia.org/wiki/Full_stack",
   web: "https://www.significados.com.br/web/",
+  styledcomponentsdocs: "https://styled-components.com/docs",
+  materialui: "https://mui.com/",
   cursodejavascript:
     "https://www.youtube.com/playlist?list=PLntvgXM11X6pi7mW0O4ZmfUI1xDSIbmTm",
   cursoEmVideoProgrammingLogic:
@@ -29,6 +31,7 @@ const translations = {
   projetocrud: "https://project-crud.vercel.app/",
   cursodereact: "https://www.youtube.com/watch?v=iIQOtwsWXqU&t=28s",
   reactdoc: "https://react.dev/",
+  projetogestorfinanceiro: "https://financial-manager-lemon.vercel.app/",
   projetoestatisticasdosalunos: "https://student-statistics.vercel.app/",
   projetoacha5: "https://project-acha5.vercel.app/",
   github: "https://github.com/PascoalKahamba",

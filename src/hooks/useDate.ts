@@ -6,19 +6,18 @@ const MORE_ONE_MONTH = 1;
 export default function useDate(monthNumber: number, year: number) {
   const currentMonth = new Date().getMonth();
   const currentYear = new Date().getFullYear();
-  const [isYear, setIsYear] = useState(false);
-  const amountMonth = currentMonth + monthNumber;
+  const [amountMonth, setAmountMonth] = useState(monthNumber);
+  // const [isYear, setIsYear] = useState(false);
+  // const amountMonth = currentMonth + amountMonth;
   const amountYear = Math.abs(currentYear - year);
   const monthOrYear = getMonthOrYear(amountMonth);
-  const theYear = isYear && "anos";
+  // const theYear = isYear && "anos";
 
   useEffect(() => {
-    if (amountMonth >= 12) {
-      setIsYear(true);
-    }
-
-    return () => setIsYear(false);
-  }, [amountMonth]);
+    setTimeout(() => {
+      setAmountMonth((amountMonth) => amountMonth + 1);
+    }, 2592000);
+  }, []);
 
   function getMonthOrYear(amountMonth: number) {
     let monthOrYear = "";

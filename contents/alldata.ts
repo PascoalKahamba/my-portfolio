@@ -6,7 +6,7 @@ const FEBRUARY = 2;
 const MARCH = 3;
 const JANUARY = 1;
 const APRIL = 4;
-const JUNE = 6;
+const AMOUNTMONTHDECEMBER = 9;
 
 export default function Alldata() {
   const { t: translate } = useTranslation("common");
@@ -131,20 +131,24 @@ export default function Alldata() {
   const [marchMonth, marchYear, noUse] = useDate(MARCH, 2019);
   const [januaryMonth, januaryYear, yet] = useDate(JANUARY, 2020);
   const [aprilMonth, aprilYear, all] = useDate(APRIL, 2021);
+  const [deceemberMonth, novemberYear, almost] = useDate(
+    AMOUNTMONTHDECEMBER,
+    2022
+  );
 
   const allJourney = [
     [
       {
         title: "Ingresso no Ensino Médio.",
         description: "",
-        date: `Fevereiro há mais de ${amountYear} anos.`,
+        date: `Fevereiro há mais de $ de {amountYear} anos.`,
         dataAos: "fade-left",
         textLink: "Ensino Medio",
       },
       {
         title: "Começei a estudar Lógica de Programação.",
         description: " ",
-        date: `Maio há mais ${amountYear} anos.`,
+        date: `Maio há mais $ de {amountYear} anos.`,
         dataAos: "fade-right",
         textLink: "Curso em Video",
       },
@@ -152,7 +156,7 @@ export default function Alldata() {
         title: "Primeiros códigos da minha carreira.",
         description:
           "Desde então passei a fazer os exercícios proposto pelo curso acima referido e fui melhorando a minha maneira de pensar.",
-        date: `Julho há mais ${amountYear} anos.`,
+        date: `Julho há mais $ de {amountYear} anos.`,
         dataAos: "fade-left",
         textLink: "Primeiros codigos",
       },
@@ -161,21 +165,21 @@ export default function Alldata() {
       {
         title: "Começei a estudar C# na escola.",
         description: "",
-        date: `Março há mais ${marchYear} anos.`,
+        date: `Março há mais  de ${marchYear} anos.`,
         dataAos: "fade-right",
         textLink: "C#",
       },
       {
         title: "Primeiro contato com a Web.",
         description: " ",
-        date: `Agosto há mais ${marchYear} anos.`,
+        date: `Agosto há mais  de ${marchYear} anos.`,
         dataAos: "fade-left",
         textLink: "HTML e CSS",
       },
       {
         title: "Fiz o curso de Javascript.",
         description: "",
-        date: `Novembro há mais ${marchYear} anos.`,
+        date: `Novembro há mais  de ${marchYear} anos.`,
         dataAos: "fade-right",
         textLink: "javascript",
       },
@@ -185,21 +189,21 @@ export default function Alldata() {
         title: "Me cadastrei no GitHub.",
         description:
           "Desde então passei a publicar os meus projetos no GitHub.",
-        date: `Janeiro há mais ${januaryYear} anos.`,
+        date: `Janeiro há mais de ${januaryYear} anos.`,
         dataAos: "fade-left",
         textLink: "github",
       },
       {
         title: "Crie um CRUD.",
         description: "",
-        date: `Março há mais ${januaryYear} anos.`,
+        date: `Março há mais de ${januaryYear} anos.`,
         dataAos: "fade-left",
         textLink: "crud",
       },
       {
         title: "Fiz o projeto Acha-5.",
         description: "",
-        date: `Fevereiro há mais ${januaryYear} anos.`,
+        date: `Fevereiro há mais de ${januaryYear} anos.`,
         dataAos: "fade-right",
         textLink: "acha5",
       },
@@ -208,21 +212,21 @@ export default function Alldata() {
       {
         title: "Fiz o curso de React.",
         description: "",
-        date: `Junho há mais ${aprilYear} anos.`,
+        date: `Junho há mais de ${aprilYear} anos.`,
         dataAos: "fade-left",
         textLink: "react",
       },
       {
         title: "Crie o projeto Estatisticas dos Alunos.",
         description: "",
-        date: `Setembro há mais ${aprilYear} anos.`,
+        date: `Setembro há mais de ${aprilYear} anos.`,
         dataAos: "fade-right",
         textLink: "estatisticasdosalunos",
       },
       {
         title: "Aprofundei os meus conhecimentos em React na sua documentação.",
         description: "",
-        date: `Novembro há mais ${aprilYear} anos.`,
+        date: `Novembro há mais de ${aprilYear} anos.`,
         dataAos: "fade-left",
         textLink: "reactdoc",
       },
@@ -231,53 +235,59 @@ export default function Alldata() {
       {
         title: "Primeiro contato com o Typescript.",
         description:
-          "Finalmente dei uma chance ao Typescript para melhorar o meu codigo tornando ele mais claro e seguro tipando ele ponta á ponta.",
-        date: "Janeiro a dois anos atras.",
+          "Finalmente dei uma chance ao Typescript para melhorar o meu codigo tornando ele mais claro e seguro tipando ele ponta á ponta. Basicamente aprendi Typecript na documentação.",
+        date: `Junho aproximadamente ${novemberYear} ano.`,
         dataAos: "fade-left",
-
-        textLink: "Pascoal",
+        textLink: "typescript",
       },
       {
-        title: "Começei a estudar Lógica de Programação.",
+        title: "Crie um CRUD mais moderno.",
         description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+          "Este projeto (CRUD) foi desenvolvido especialmente para o teste de uma entrevista que fiz da empresa coopast com a finalidade de conseguir uma vaga como Frond-End Developer.",
+        date: `Agosto aproximadamente ${novemberYear} ano.`,
         dataAos: "fade-right",
-        textLink: "Pascoal",
+        textLink: "newcrud",
       },
       {
-        title: "Adriano Gunga.",
+        title: "Aprendi Styles-Components.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+        date: `Outubro aproximadamente ${novemberYear} ano.`,
         dataAos: "fade-left",
-
-        textLink: "Pascoal",
+        textLink: "typescriptdoc",
       },
       {
-        title: "Ruben Ngonga.",
+        title: "Aprendi Meterial-UI.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: `Abril a proxidamente  ${monthOrYear}.`,
+        date: `Novembro aproximadamente ${novemberYear} ano.`,
+        dataAos: "fade-left",
+        textLink: "typescriptdoc",
+      },
+      {
+        title: "Crie um gestor Financeiro.",
+        description:
+          "Crie um Gestor Financeiro com outras tecnologias tornando o projeto mais elegante com a finalidade de melhorar as minhas habilidades nas tecnologias utilizadas.",
+        date: `Desembro há ${deceemberMonth} mês.`,
         dataAos: "fade-right",
         textLink: "Pascoal",
       },
     ],
     [
       {
-        title: "Feliciano Ndumbo.",
+        title: "Começei a estudar Next.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+        date: "Ja de neiro a dois anos atras.",
         dataAos: "fade-left",
 
         textLink: "Pascoal",
       },
       {
-        title: "Estuda no Universidade Publica.",
+        title: "Finalmente crie um meu Portfolio.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+        date: "Ja de neiro a dois anos atras.",
         dataAos: "fade-right",
         textLink: "Pascoal",
       },
@@ -285,7 +295,7 @@ export default function Alldata() {
         title: "Engenheiro Riso.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+        date: "Ja de neiro a dois anos atras.",
         dataAos: "fade-left",
 
         textLink: "Pascoal",
@@ -294,7 +304,7 @@ export default function Alldata() {
         title: "Tudo sobre o projeto.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+        date: "Ja de neiro a dois anos atras.",
         dataAos: "fade-right",
         textLink: "Pascoal",
       },
