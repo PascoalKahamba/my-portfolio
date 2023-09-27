@@ -24,7 +24,7 @@ const useStyles = createStyles((theme) => ({
     gap: rem(180),
 
     [theme.fn.smallerThan("sm")]: {
-      gap: rem(80),
+      gap: rem(100),
     },
   },
 
@@ -81,12 +81,6 @@ export default function YearTitle({ kindOfTitle }: YearTitleProps) {
   const firstYear = isDisable(FIRST_TIMELINE_YEAR);
   const lastYear = isDisable(LAST_TIMELINE_YEAR);
 
-  const currentMonth = new Date().getMonth() + MORE_ONE_MONTH;
-  const actuallyYear = new Date().getFullYear();
-  console.log("current " + currentMonth);
-  console.log("last " + actuallyYear);
-  console.log(Math.abs(20 - 200));
-
   function isDisable(firstYearOrLastYear: number) {
     const disable = count === firstYearOrLastYear;
     return disable;
@@ -129,7 +123,7 @@ export default function YearTitle({ kindOfTitle }: YearTitleProps) {
             className={`${classes.flexIcon} ${lastYear && classes.disableIcon}`}
             onClick={nextTimeline}
           >
-            Proximo
+            Próximo
             <HiOutlineArrowNarrowRight size="1rem" />
           </div>
         </div>

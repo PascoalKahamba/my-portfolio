@@ -26,6 +26,9 @@ const translations = {
     "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox",
 
   typescript: "https://en.wikipedia.org/wiki/TypeScript",
+  projetocrud: "https://project-crud.vercel.app/",
+  cursodereact: "https://www.youtube.com/watch?v=iIQOtwsWXqU&t=28s",
+  projetoacha5: "https://project-acha5.vercel.app/",
   github: "https://github.com/PascoalKahamba",
   frontEnd: "https://www.alura.com.br/artigos/o-que-e-front-end-e-back-end",
   mysql: "https://en.wikipedia.org/wiki/MySQL",

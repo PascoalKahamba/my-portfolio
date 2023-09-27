@@ -17,14 +17,15 @@ const useStyles = createStyles((theme) => ({
         ? theme.colors.dark[0]
         : theme.colors.gray[7],
   },
+  [theme.fn.smallerThan("sm")]: {
+    width: rem(50),
+  },
 }));
 
 interface GlobalTitleProps {
   title: string;
   width: number;
 }
-
-const otherTechnologies = "OUTRAS-TECNOLOGIAS" || "eie";
 
 export default function GlobalTitle({ title, width }: GlobalTitleProps) {
   const { classes } = useStyles();

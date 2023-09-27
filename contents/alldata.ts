@@ -5,6 +5,7 @@ import Link from "next/link";
 const FEBRUARY = 2;
 const MARCH = 3;
 const JANUARY = 6;
+const APRIL = 4;
 
 export default function Alldata() {
   const { t: translate } = useTranslation("common");
@@ -128,6 +129,7 @@ export default function Alldata() {
   const [_, amountYear, monthOrYear] = useDate(FEBRUARY, 2018);
   const [marchMonth, marchYear, noUse] = useDate(MARCH, 2019);
   const [januaryMonth, januaryYear, yet] = useDate(JANUARY, 2020);
+  const [aprilMonth, aprilYear, all] = useDate(APRIL, 2021);
 
   const allJourney = [
     [
@@ -187,65 +189,44 @@ export default function Alldata() {
         textLink: "github",
       },
       {
-        title: "Fiz o projeto Acha-5.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
-        dataAos: "fade-right",
-        textLink: "Pascoal",
-      },
-      {
-        title: "Fiz um CRUD.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+        title: "Crie um CRUD.",
+        description: "",
+        date: `Março há mais ${januaryYear} anos.`,
         dataAos: "fade-left",
-
-        textLink: "Pascoal",
+        textLink: "crud",
       },
       {
-        title: "Fiz o projeto Estatisticas do aluno.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+        title: "Fiz o projeto Acha-5.",
+        description: "",
+        date: `Fevereiro há mais ${januaryYear} anos.`,
         dataAos: "fade-right",
-        textLink: "Pascoal",
+        textLink: "acha5",
       },
     ],
     [
       {
-        title: "Teste na Aplicacao.",
+        title: "Fiz o curso de React.",
         description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+          "Desde então com o objeto de aumentar as minhas habilidades fiz o curso de React no canal da Origamid, sendo hoje a minha habilidade principal.",
+        date: `Junho há mais ${aprilYear} anos.`,
         dataAos: "fade-left",
-
-        textLink: "Pascoal",
+        textLink: "react",
       },
       {
-        title: "Mudando o texto do projeto.",
+        title: "Crie o projeto Estatisticas dos Alunos.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+        date: `Setembro há mais ${aprilYear} anos.`,
         dataAos: "fade-right",
-        textLink: "Pascoal",
+        textLink: "estatisticasdosalunos",
       },
       {
-        title: "Melhorando os estilos do projeto.",
+        title: "Aprofundei os meus conhecimentos em React na sua documentação.",
         description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
+          "Já entendendo o fluxo como o React funciona decidi ir mais afundo na tecnologia estudando na sua documentação conceitos mais avançados.",
+        date: `Novembro há mais ${aprilYear} anos.`,
         dataAos: "fade-left",
-
-        textLink: "Pascoal",
-      },
-      {
-        title: "Modificando os textos do projeto.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Janeiro a dois anos atras.",
-        dataAos: "fade-right",
-        textLink: "Pascoal",
+        textLink: "reactdoc",
       },
     ],
     [

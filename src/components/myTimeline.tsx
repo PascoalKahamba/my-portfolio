@@ -48,6 +48,8 @@ export default function MyTimeline() {
     cursodejavascript,
     flexbox,
     cursodehtmlecss,
+    projetoacha5,
+    projetocrud,
     html5,
     web,
     css3,
@@ -79,6 +81,33 @@ export default function MyTimeline() {
             </a>
           </Link>
           .
+        </Text>
+      );
+    }
+    if (textLink === "acha5") {
+      return (
+        <Text c="dimmed" size="sm">
+          Para fins de melhorar as minhas habilidades fins vários projetos como
+          o{" "}
+          <Link href={projetoacha5}>
+            <a className={classes.links} target="_blank">
+              Acha-5
+            </a>
+          </Link>
+          .
+        </Text>
+      );
+    }
+    if (textLink === "crud") {
+      return (
+        <Text c="dimmed" size="sm">
+          Sento um projeto desafiador desenvolvi um{" "}
+          <Link href={projetocrud}>
+            <a className={classes.links} target="_blank">
+              CRUD
+            </a>
+          </Link>{" "}
+          para fins de estudos.
         </Text>
       );
     }
