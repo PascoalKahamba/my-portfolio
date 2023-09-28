@@ -6,7 +6,7 @@ const FEBRUARY = 2;
 const MARCH = 3;
 const JANUARY = 1;
 const APRIL = 4;
-const AMOUNTMONTHDECEMBER = 9;
+const AMOUNTMONTHDECEMBER = 10;
 
 export default function Alldata() {
   const { t: translate } = useTranslation("common");
@@ -141,14 +141,14 @@ export default function Alldata() {
       {
         title: "Ingresso no Ensino Médio.",
         description: "",
-        date: `Fevereiro há mais de $ de {amountYear} anos.`,
+        date: `Fevereiro há mais de ${amountYear} anos.`,
         dataAos: "fade-left",
         textLink: "Ensino Medio",
       },
       {
         title: "Começei a estudar Lógica de Programação.",
         description: " ",
-        date: `Maio há mais $ de {amountYear} anos.`,
+        date: `Maio há mais de ${amountYear} anos.`,
         dataAos: "fade-right",
         textLink: "Curso em Video",
       },
@@ -156,7 +156,7 @@ export default function Alldata() {
         title: "Primeiros códigos da minha carreira.",
         description:
           "Desde então passei a fazer os exercícios proposto pelo curso acima referido e fui melhorando a minha maneira de pensar.",
-        date: `Julho há mais $ de {amountYear} anos.`,
+        date: `Julho há mais de ${amountYear} anos.`,
         dataAos: "fade-left",
         textLink: "Primeiros codigos",
       },
@@ -233,44 +233,46 @@ export default function Alldata() {
     ],
     [
       {
+        title: "Terminei o Ensino Médio.",
+        description: "",
+        date: `Abril aproximadamente ${novemberYear} ano.`,
+        dataAos: "fade-left",
+        textLink: "finalensinomedio",
+      },
+      {
         title: "Primeiro contato com o Typescript.",
-        description:
-          "Finalmente dei uma chance ao Typescript para melhorar o meu codigo tornando ele mais claro e seguro tipando ele ponta á ponta. Basicamente aprendi Typecript na documentação.",
+        description: "",
         date: `Junho aproximadamente ${novemberYear} ano.`,
         dataAos: "fade-left",
         textLink: "typescript",
       },
       {
         title: "Crie um CRUD mais moderno.",
-        description:
-          "Este projeto (CRUD) foi desenvolvido especialmente para o teste de uma entrevista que fiz da empresa coopast com a finalidade de conseguir uma vaga como Frond-End Developer.",
+        description: "",
         date: `Agosto aproximadamente ${novemberYear} ano.`,
         dataAos: "fade-right",
         textLink: "newcrud",
       },
       {
         title: "Aprendi Styles-Components.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: `Outubro aproximadamente ${novemberYear} ano.`,
+        description: "",
+        date: `Setembro aproximadamente ${novemberYear} ano.`,
         dataAos: "fade-left",
-        textLink: "typescriptdoc",
+        textLink: "styledcomponents",
       },
       {
         title: "Aprendi Meterial-UI.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: `Novembro aproximadamente ${novemberYear} ano.`,
+        description: "",
+        date: `Outobro aproximadamente ${novemberYear} ano.`,
         dataAos: "fade-left",
-        textLink: "typescriptdoc",
+        textLink: "materialui",
       },
       {
         title: "Crie um gestor Financeiro.",
-        description:
-          "Crie um Gestor Financeiro com outras tecnologias tornando o projeto mais elegante com a finalidade de melhorar as minhas habilidades nas tecnologias utilizadas.",
+        description: "",
         date: `Desembro há ${deceemberMonth} mês.`,
         dataAos: "fade-right",
-        textLink: "Pascoal",
+        textLink: "gestorfinanceiro",
       },
     ],
     [
@@ -280,19 +282,10 @@ export default function Alldata() {
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Ja de neiro a dois anos atras.",
         dataAos: "fade-left",
-
         textLink: "Pascoal",
       },
       {
-        title: "Finalmente crie um meu Portfolio.",
-        description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Ja de neiro a dois anos atras.",
-        dataAos: "fade-right",
-        textLink: "Pascoal",
-      },
-      {
-        title: "Engenheiro Riso.",
+        title: "Aprendi Tailwind.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Ja de neiro a dois anos atras.",
@@ -301,7 +294,23 @@ export default function Alldata() {
         textLink: "Pascoal",
       },
       {
-        title: "Tudo sobre o projeto.",
+        title: "Aprendi Jotai.",
+        description:
+          "Comecei a estudar Logica de Programação no canal Curso em Video.",
+        date: "Ja de neiro a dois anos atras.",
+        dataAos: "fade-right",
+        textLink: "Pascoal",
+      },
+      {
+        title: "Aprendi Mantine.",
+        description:
+          "Comecei a estudar Logica de Programação no canal Curso em Video.",
+        date: "Ja de neiro a dois anos atras.",
+        dataAos: "fade-right",
+        textLink: "Pascoal",
+      },
+      {
+        title: "Finalmente crie um meu Portfolio.",
         description:
           "Comecei a estudar Logica de Programação no canal Curso em Video.",
         date: "Ja de neiro a dois anos atras.",

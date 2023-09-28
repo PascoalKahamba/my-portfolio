@@ -9,7 +9,7 @@ const translations = {
   fullStack: "https://en.wikipedia.org/wiki/Full_stack",
   web: "https://www.significados.com.br/web/",
   styledcomponentsdocs: "https://styled-components.com/docs",
-  materialui: "https://mui.com/",
+  materialuidocs: "https://mui.com/",
   cursodejavascript:
     "https://www.youtube.com/playlist?list=PLntvgXM11X6pi7mW0O4ZmfUI1xDSIbmTm",
   cursoEmVideoProgrammingLogic:
@@ -29,6 +29,8 @@ const translations = {
 
   typescript: "https://en.wikipedia.org/wiki/TypeScript",
   projetocrud: "https://project-crud.vercel.app/",
+  codeleapwebsite: "https://codeleap.co.uk/",
+  projetonewcrud: "https://project-engineering-test.vercel.app/",
   cursodereact: "https://www.youtube.com/watch?v=iIQOtwsWXqU&t=28s",
   reactdoc: "https://react.dev/",
   projetogestorfinanceiro: "https://financial-manager-lemon.vercel.app/",

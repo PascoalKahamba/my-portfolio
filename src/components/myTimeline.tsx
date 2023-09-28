@@ -50,6 +50,14 @@ export default function MyTimeline() {
     cursodehtmlecss,
     projetoacha5,
     projetocrud,
+    typescript,
+    frontEnd,
+    materialuidocs,
+    styledcomponentsdocs,
+    projetonewcrud,
+    codeleapwebsite,
+    projetogestorfinanceiro,
+    typescriptdocs,
     reactdoc,
     projetoestatisticasdosalunos,
     cursodereact,
@@ -72,6 +80,107 @@ export default function MyTimeline() {
             Gestão da Catumbela (IPAG).
           </strong>{" "}
           Foi no ensino médio que os meus sonhos começaram a ser constuídos.
+        </Text>
+      );
+    }
+    if (textLink === "finalensinomedio") {
+      return (
+        <Text c="dimmed" size="sm">
+          Depois de uma jornada de 4 anos terminei o ensino médio no{" "}
+          <strong>
+            Instituto Politécnico de Administração e Gestão da Catumbela (IPAG)
+          </strong>{" "}
+          tendo adquirido o grau como{" "}
+          <strong>Tecnico médio de Informatica de Gestão</strong>.
+        </Text>
+      );
+    }
+    if (textLink === "styledcomponents") {
+      return (
+        <Text c="dimmed" size="sm">
+          Com a finalidade de melhorar as minhas habilidades no que toca aos
+          estilos aprendi Styled-Components na sua{" "}
+          <Link href={styledcomponentsdocs}>
+            <a className={classes.links} target="_blank">
+              documentação
+            </a>
+          </Link>
+          .
+        </Text>
+      );
+    }
+    if (textLink === "gestorfinanceiro") {
+      return (
+        <Text c="dimmed" size="sm">
+          Crie um{" "}
+          <Link href={projetogestorfinanceiro}>
+            <a className={classes.links} target="_blank">
+              Gestor Financeiro
+            </a>
+          </Link>{" "}
+          com outras tecnologias tornando o projeto mais elegante com a
+          finalidade de melhorar as minhas habilidades nas tecnologias
+          utilizadas.
+        </Text>
+      );
+    }
+    if (textLink === "materialui") {
+      return (
+        <Text c="dimmed" size="sm">
+          Sendo uma biblioteca de componentes do React bem popular dei uma
+          change ao{" "}
+          <Link href={materialuidocs}>
+            <a className={classes.links} target="_blank">
+              Material-UI
+            </a>
+          </Link>{" "}
+          para aumentar as minhas habilidades.
+        </Text>
+      );
+    }
+    if (textLink === "newcrud") {
+      return (
+        <Text c="dimmed" size="sm">
+          Este{" "}
+          <Link href={projetonewcrud}>
+            <a className={classes.links} target="_blank">
+              projeto (CRUD)
+            </a>
+          </Link>{" "}
+          foi desenvolvido especialmente para o teste de uma entrevista que fiz
+          da empresa{" "}
+          <Link href={codeleapwebsite}>
+            <a className={classes.links} target="_blank">
+              Codeleap
+            </a>
+          </Link>{" "}
+          com a finalidade de conseguir uma vaga como{" "}
+          <Link href={frontEnd}>
+            <a className={classes.links} target="_blank">
+              Frond-End Developer
+            </a>
+          </Link>{" "}
+          .
+        </Text>
+      );
+    }
+    if (textLink === "typescript") {
+      return (
+        <Text c="dimmed" size="sm">
+          Finalmente dei uma chance ao{" "}
+          <Link href={typescript}>
+            <a className={classes.links} target="_blank">
+              Typescript
+            </a>
+          </Link>{" "}
+          para melhorar o meu codigo tornando ele mais claro e seguro tipando
+          ele ponta á ponta. Basicamente aprendi Typecript na sua{" "}
+          <Link href={typescriptdocs}>
+            <a className={classes.links} target="_blank">
+              documentação
+            </a>
+          </Link>
+          .
         </Text>
       );
     }
