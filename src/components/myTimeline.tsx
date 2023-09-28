@@ -5,6 +5,7 @@ import useTimeline from "../hooks/useTimeline";
 import Alldata from "../../contents/alldata";
 import { CalendarCheck } from "lucide-react";
 import translations from "../../locales/en/useExternalLink";
+import useTranslation from "next-translate/useTranslation";
 
 const useStyles = createStyles((theme) => ({
   timeline: {
@@ -75,17 +76,14 @@ export default function MyTimeline() {
     cSharp,
     gridlayout,
   } = translations;
+  const { t: translate } = useTranslation("common");
 
   function addLinkOnText(textLink: string, description: string) {
     if (textLink === "Ensino Medio") {
       return (
         <Text c="dimmed" size="sm">
-          Começei a minha jornada no ensino médio no curso de{" "}
-          <strong>
-            Informatica de Gestão no Instituto Politécnico de Administração e
-            Gestão da Catumbela (IPAG).
-          </strong>{" "}
-          Foi no ensino médio que os meus sonhos começaram a ser constuídos.
+          {translate("start-journey")} <strong>{translate("my-school")}</strong>{" "}
+          {translate("start-journey2")}{" "}
         </Text>
       );
     }
@@ -335,13 +333,13 @@ export default function MyTimeline() {
     if (textLink === "Curso em Video") {
       return (
         <Text c="dimmed" size="sm">
-          Meu primeiro contato com a programação estudei no{" "}
+          {translate("first-studies")}{" "}
           <Link href={cursoEmVideoProgrammingLogic}>
             <a className={classes.links} target="_blank">
-              canal curso em video
+              {translate("video-course")},
             </a>
           </Link>{" "}
-          sensacional me ajudou muito a minha maneira de pensar.
+          {translate("video-course2")}
         </Text>
       );
     }

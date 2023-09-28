@@ -134,48 +134,32 @@ export default function Alldata() {
   const [marchMonth, marchYear] = useDate(MARCH, 2019);
   const [januaryMonth, januaryYear] = useDate(JANUARY, 2020);
   const [aprilMonth, aprilYear] = useDate(APRIL, 2021);
-  const [decemberMonth, decemberYear, monthorYearDecember] = useDate(
-    AMOUNTMONTHDECEMBER,
-    2022
-  );
-  const [amountMarchMonth, amountMarchYear, monthorYearMarch] = useDate(
-    AMOUNTMONTHMARCH,
-    2023
-  );
-  const [amountJuneMonth, amountJuneYear, monthorYearJune] = useDate(
-    AMOUNTMONTHJUNE,
-    2023
-  );
-  const [amountJulyMonth, amountJulyYear, monthorYearJuly] = useDate(
-    AMOUNTMONTHJULY,
-    2023
-  );
-  const [amountMayMonth, amountMayYear, monthorYearMay] = useDate(
-    AMOUNTMONTHMAY,
-    2023
-  );
+  const [decemberMonth, decemberYear] = useDate(AMOUNTMONTHDECEMBER, 2022);
+  const [amountMarchMonth] = useDate(AMOUNTMONTHMARCH, 2023);
+  const [amountJuneMonth] = useDate(AMOUNTMONTHJUNE, 2023);
+  const [amountJulyMonth] = useDate(AMOUNTMONTHJULY, 2023);
+  const [amountMayMonth] = useDate(AMOUNTMONTHMAY, 2023);
 
   const allJourney = [
     [
       {
-        title: "Ingresso no Ensino Médio.",
+        title: translate("entrance-school"),
         description: "",
-        date: `Fevereiro há mais de ${amountYear} anos.`,
+        date: `${translate("february")} ${amountYear} ${translate("years")}.`,
         dataAos: "fade-left",
         textLink: "Ensino Medio",
       },
       {
-        title: "Começei a estudar Lógica de Programação.",
+        title: translate("started-logic"),
         description: " ",
-        date: `Maio há mais de ${amountYear} anos.`,
+        date: `${translate("may")} ${amountYear} ${translate("years")}.`,
         dataAos: "fade-right",
         textLink: "Curso em Video",
       },
       {
-        title: "Primeiros códigos da minha carreira.",
-        description:
-          "Desde então passei a fazer os exercícios proposto pelo curso acima referido e fui melhorando a minha maneira de pensar.",
-        date: `Julho há mais de ${amountYear} anos.`,
+        title: translate("first-code"),
+        description: translate("first-code-desc"),
+        date: `${translate("june")} ${amountYear} ${translate("years")}.`,
         dataAos: "fade-left",
         textLink: "Primeiros codigos",
       },
@@ -289,7 +273,7 @@ export default function Alldata() {
       {
         title: "Crie um gestor Financeiro.",
         description: "",
-        date: `Desembro há ${decemberMonth} ${monthorYearDecember}.`,
+        date: `Desembro há ${decemberMonth} mês.`,
         dataAos: "fade-right",
         textLink: "gestorfinanceiro",
       },
@@ -298,35 +282,35 @@ export default function Alldata() {
       {
         title: "Começei a estudar Next.",
         description: "",
-        date: `Março há ${amountMarchMonth} ${monthorYearMarch}.`,
+        date: `Março há ${amountMarchMonth} mês.`,
         dataAos: "fade-left",
         textLink: "next",
       },
       {
         title: "Aprendi Tailwindcss.",
         description: "",
-        date: `Maio há ${amountMayMonth} ${monthorYearMay}.`,
+        date: `Maio há ${amountMayMonth} mês.`,
         dataAos: "fade-left",
         textLink: "tailwindcss",
       },
       {
         title: "Aprendi Jotai.",
         description: "",
-        date: `Junho há ${amountJuneMonth} ${monthorYearJune}.`,
+        date: `Junho há ${amountJuneMonth} mês.`,
         dataAos: "fade-right",
         textLink: "jotai",
       },
       {
         title: "Aprendi Mantine.",
-        description: "",
-        date: `Junho há ${amountJuneMonth} ${monthorYearJune}.`,
+        description: " ",
+        date: `Junho há ${amountJuneMonth} mês.`,
         dataAos: "fade-left",
         textLink: "mantine",
       },
       {
         title: "Finalmente crie o meu Portfolio.",
-        description: "",
-        date: `Julho há ${amountJulyMonth} ${monthorYearJuly}.`,
+        description: " ",
+        date: `Julho há ${amountJulyMonth} mês.`,
         dataAos: "fade-right",
         textLink: "portfolio",
       },
