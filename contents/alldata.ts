@@ -279,43 +279,42 @@ export default function Alldata() {
       {
         title: "Começei a estudar Next.",
         description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Ja de neiro a dois anos atras.",
+          "Sabendo que é o framework do react mais querido da comunidade aprendi o next na documentação sento agora a minha principal ferramenta de desenvolvimento que utilizo nos meus projetos.",
+        date: `Março há ${novemberYear} mês.`,
         dataAos: "fade-left",
-        textLink: "Pascoal",
+        textLink: "next",
       },
       {
-        title: "Aprendi Tailwind.",
+        title: "Aprendi Tailwindcss.",
         description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Ja de neiro a dois anos atras.",
+          "O Tailwindcss é um framework de estilos bem interessante e simples de utilizar por tal motivo decidi estudar ele para ser mais umas das minhas habilidades.",
+        date: `Maio há ${deceemberMonth} mês.`,
         dataAos: "fade-left",
-
-        textLink: "Pascoal",
+        textLink: "tailwindcss",
       },
       {
         title: "Aprendi Jotai.",
         description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
+          "Já dominando Context-API decide procurar outras maineiras de lidar com estados globais então estudai Jotai que por mim é muito simples desde então uso ele em meus projetos.",
         date: "Ja de neiro a dois anos atras.",
-        dataAos: "fade-right",
-        textLink: "Pascoal",
+        dataAos: `Junho há ${deceemberMonth} mês.`,
+        textLink: "jotai",
       },
       {
         title: "Aprendi Mantine.",
         description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
+          "Com a finalidade de aumentar nas minhas ferramentas de desenvolvimento voltadas aos estilos aprendi a biblioteca de components Matine foi sensecinal.",
         date: "Ja de neiro a dois anos atras.",
-        dataAos: "fade-right",
-        textLink: "Pascoal",
+        dataAos: `Junho há ${deceemberMonth} mês.`,
+        textLink: "mantine",
       },
       {
-        title: "Finalmente crie um meu Portfolio.",
+        title: "Finalmente crie o meu Portfolio.",
         description:
-          "Comecei a estudar Logica de Programação no canal Curso em Video.",
-        date: "Ja de neiro a dois anos atras.",
+          "Depois de ter adiado por alguns tempos finalmente desenvolvi o meu portfolio abordando a minha jornada, habilidades tudo a respeito do meu potencial.",
+        date: `Julho há ${deceemberMonth} mês.`,
         dataAos: "fade-right",
-        textLink: "Pascoal",
+        textLink: "portfolio",
       },
     ],
   ];
