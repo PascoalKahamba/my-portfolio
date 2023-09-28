@@ -58,7 +58,7 @@ const translations = {
   jotaidocs: "https://jotai.org/",
   reactcontextapidocs: "https://react.dev/reference/react/useContext",
   tailwindcssdocs: "https://tailwindcss.com/",
-  matinedocs: "https://mantine.dev/",
+  mantinedocs: "https://mantine.dev/",
   tmdb: "https://moviedatabase.fandom.com/wiki/Movie_Database_Wiki",
   myportfolio: "https://my-portfolio-five-beige.vercel.app/pt",
   redux: "https://en.wikipedia.org/wiki/Redux_(JavaScript_library)",

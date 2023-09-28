@@ -59,11 +59,17 @@ export default function MyTimeline() {
     projetogestorfinanceiro,
     typescriptdocs,
     reactdoc,
+    nextjsdocs,
     projetoestatisticasdosalunos,
     cursodereact,
     reactjs,
     html5,
     web,
+    mantinedocs,
+    jotaidocs,
+    reactcontextapidocs,
+    tailwindcssdocs,
+    myportfolio,
     css3,
     github,
     cSharp,
@@ -106,6 +112,88 @@ export default function MyTimeline() {
             </a>
           </Link>
           .
+        </Text>
+      );
+    }
+    if (textLink === "tailwindcss") {
+      return (
+        <Text c="dimmed" size="sm">
+          <Link href={tailwindcssdocs}>
+            <a className={classes.links} target="_blank">
+              Tailwindcss
+            </a>
+          </Link>{" "}
+          é um framework de estilos bem interessante e simples de utilizar por
+          tal motivo decidi estudar ele para ser mais umas das minhas
+          habilidades.
+        </Text>
+      );
+    }
+    if (textLink === "mantine") {
+      return (
+        <Text c="dimmed" size="sm">
+          Com a finalidade de aumentar nas minhas ferramentas de desenvolvimento
+          voltadas aos estilos aprendi a biblioteca de components{" "}
+          <Link href={mantinedocs}>
+            <a className={classes.links} target="_blank">
+              Matine
+            </a>
+          </Link>{" "}
+          foi sensecinal.
+        </Text>
+      );
+    }
+    if (textLink === "portfolio") {
+      return (
+        <Text c="dimmed" size="sm">
+          Depois de ter adiado por alguns tempos finalmente desenvolvi o meu{" "}
+          <Link href={myportfolio}>
+            <a className={classes.links} target="_blank">
+              portfolio
+            </a>
+          </Link>{" "}
+          abordando a minha jornada, habilidades tudo a respeito do meu
+          potêncial.
+        </Text>
+      );
+    }
+    if (textLink === "jotai") {
+      return (
+        <Text c="dimmed" size="sm">
+          Já dominando{" "}
+          <Link href={reactcontextapidocs}>
+            <a className={classes.links} target="_blank">
+              Context-API
+            </a>
+          </Link>{" "}
+          decide procurar outras maineiras de lidar com estados globais então
+          estudai{" "}
+          <Link href={jotaidocs}>
+            <a className={classes.links} target="_blank">
+              Jotai
+            </a>
+          </Link>{" "}
+          que por mim é muito simples desde então uso ele em meus projetos.
+        </Text>
+      );
+    }
+    if (textLink === "next") {
+      return (
+        <Text c="dimmed" size="sm">
+          Sabendo que é o framework do{" "}
+          <Link href={reactjs}>
+            <a className={classes.links} target="_blank">
+              react
+            </a>
+          </Link>{" "}
+          mais querido da comunidade aprendi{" "}
+          <Link href={nextjsdocs}>
+            <a className={classes.links} target="_blank">
+              next na documentação
+            </a>
+          </Link>{" "}
+          sento agora a minha principal ferramenta de desenvolvimento que
+          utilizo nos meus projetos.
         </Text>
       );
     }
