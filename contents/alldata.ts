@@ -134,11 +134,26 @@ export default function Alldata() {
   const [marchMonth, marchYear] = useDate(MARCH, 2019);
   const [januaryMonth, januaryYear] = useDate(JANUARY, 2020);
   const [aprilMonth, aprilYear] = useDate(APRIL, 2021);
-  const [decemberMonth, decemberYear] = useDate(AMOUNTMONTHDECEMBER, 2022);
-  const [amountMarchMonth, amountMarchYear] = useDate(AMOUNTMONTHMARCH, 2023);
-  const [amountJuneMonth, amountJuneYear] = useDate(AMOUNTMONTHJUNE, 2023);
-  const [amountJulyMonth, amountJulyYear] = useDate(AMOUNTMONTHJULY, 2023);
-  const [amountMayMonth, amountMayYear] = useDate(AMOUNTMONTHMAY, 2023);
+  const [decemberMonth, decemberYear, monthorYearDecember] = useDate(
+    AMOUNTMONTHDECEMBER,
+    2022
+  );
+  const [amountMarchMonth, amountMarchYear, monthorYearMarch] = useDate(
+    AMOUNTMONTHMARCH,
+    2023
+  );
+  const [amountJuneMonth, amountJuneYear, monthorYearJune] = useDate(
+    AMOUNTMONTHJUNE,
+    2023
+  );
+  const [amountJulyMonth, amountJulyYear, monthorYearJuly] = useDate(
+    AMOUNTMONTHJULY,
+    2023
+  );
+  const [amountMayMonth, amountMayYear, monthorYearMay] = useDate(
+    AMOUNTMONTHMAY,
+    2023
+  );
 
   const allJourney = [
     [
@@ -274,7 +289,7 @@ export default function Alldata() {
       {
         title: "Crie um gestor Financeiro.",
         description: "",
-        date: `Desembro há ${decemberMonth} mês.`,
+        date: `Desembro há ${decemberMonth} ${monthorYearDecember}.`,
         dataAos: "fade-right",
         textLink: "gestorfinanceiro",
       },
@@ -283,35 +298,35 @@ export default function Alldata() {
       {
         title: "Começei a estudar Next.",
         description: "",
-        date: `Março há ${amountMarchMonth} mês.`,
+        date: `Março há ${amountMarchMonth} ${monthorYearMarch}.`,
         dataAos: "fade-left",
         textLink: "next",
       },
       {
         title: "Aprendi Tailwindcss.",
         description: "",
-        date: `Maio há ${amountMayMonth} mês.`,
+        date: `Maio há ${amountMayMonth} ${monthorYearMay}.`,
         dataAos: "fade-left",
         textLink: "tailwindcss",
       },
       {
         title: "Aprendi Jotai.",
         description: "",
-        date: `Junho há ${amountJuneMonth} mês.`,
+        date: `Junho há ${amountJuneMonth} ${monthorYearJune}.`,
         dataAos: "fade-right",
         textLink: "jotai",
       },
       {
         title: "Aprendi Mantine.",
         description: "",
-        date: `Junho há ${amountJuneMonth} mês.`,
+        date: `Junho há ${amountJuneMonth} ${monthorYearJune}.`,
         dataAos: "fade-left",
         textLink: "mantine",
       },
       {
         title: "Finalmente crie o meu Portfolio.",
         description: "",
-        date: `Julho há ${amountJulyMonth} mês.`,
+        date: `Julho há ${amountJulyMonth} ${monthorYearJuly}.`,
         dataAos: "fade-right",
         textLink: "portfolio",
       },
