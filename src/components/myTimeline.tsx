@@ -393,21 +393,20 @@ export default function MyTimeline() {
     if (textLink === "javascript") {
       return (
         <Text c="dimmed" size="sm">
-          Então ficando encantado com as tecnologias voltadas a{" "}
+          {translate("first-javascript")} {translate("technologies")}{" "}
+          {translate("then")}{" "}
           <Link href={web}>
             <a className={classes.links} target="_blank">
               Web
             </a>
           </Link>{" "}
-          fiz o curso de{" "}
+          {translate("took")}{" "}
           <Link href={cursodejavascript}>
             <a className={classes.links} target="_blank">
-              Javasript no canal curso em video
+              {translate("javascript-course2")}
             </a>
           </Link>{" "}
-          até agora o melhor que já fiz aprendi muito pode melhorar minhas
-          habilidades e dar os meus primeiros passos na Linguagem. sensacional
-          me ajudou muito a minha maneira de pensar.
+          {translate("end-javascript")}
         </Text>
       );
     }
