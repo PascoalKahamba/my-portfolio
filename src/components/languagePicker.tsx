@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useInsertionEffect } from "react";
 import {
   createStyles,
   UnstyledButton,
@@ -32,6 +32,18 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
     fontSize: theme.fontSizes.sm,
   },
 
+  currentLanguage: {
+    textAlign: "center",
+    pointerEvents: "none",
+    opacity: 0.5,
+  },
+
+  isNotCurrentLanguage: {
+    textAlign: "center",
+    pointerEvents: "painted",
+    opacity: 1,
+  },
+
   icon: {
     transition: "transform 150ms ease",
     transform: opened ? "rotate(180deg)" : "rotate(0deg)",
@@ -49,6 +61,8 @@ export default function LanguagePicker() {
     image: localeImage,
   });
 
+  useInsertionEffect(() => {});
+
   const items = data.map((item) => (
     <Menu.Item
       icon={
@@ -59,11 +73,11 @@ export default function LanguagePicker() {
         onChangeLanguage(item.label);
       }}
       key={item.label}
-      sx={{
-        textAlign: "center",
-        pointerEvents: item.label === selected.label ? "none" : "painted",
-        opacity: item.label === selected.label ? 0.5 : 1,
-      }}
+      className={
+        item.label === selected.label
+          ? classes.currentLanguage
+          : classes.isNotCurrentLanguage
+      }
     >
       {item.label}
     </Menu.Item>

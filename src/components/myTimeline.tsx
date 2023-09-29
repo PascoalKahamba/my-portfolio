@@ -319,14 +319,13 @@ export default function MyTimeline() {
               C#
             </a>
           </Link>{" "}
-          foi a primeira Linguagem de Programação da minha carreira foi boa a
-          experiência pude aprender comandos voltado ao{" "}
+          {translate("c#")}{" "}
           <Link href={frontendAndbackend}>
             <a className={classes.links} target="_blank">
               back-end
             </a>
           </Link>{" "}
-          por meios dos estudos escolares
+          {translate("text-c#")}{" "}
         </Text>
       );
     }
@@ -415,42 +414,41 @@ export default function MyTimeline() {
     if (textLink === "HTML e CSS") {
       return (
         <Text c="dimmed" size="sm">
-          Mesmo já confortável com{" "}
+          {translate("first-HTML")}{" "}
           <Link href={html5}>
             <a className={classes.links} target="_blank">
               HTML
             </a>
           </Link>{" "}
-          e{" "}
+          {translate("and")}{" "}
           <Link href={css3}>
             <a className={classes.links} target="_blank">
               CSS
             </a>
           </Link>{" "}
-          , mas ainda precisava aprimorar no meu CSS, então dei uma chance pra
-          esse{" "}
+          , {translate("sencod-HTML")}{" "}
           <Link href={cursodehtmlecss}>
             <a className={classes.links} target="_blank">
-              curso de html e css
+              {translate("HTML-course")} de html e css
             </a>
-          </Link>
-          . Foi bom tê-lo feito, lembro que na época, me ensinou a trabalhar com
-          <strong> float</strong> e <strong>position </strong> do CSS, antes
-          desse curso não entendia muito bem essas propriedades.
+          </Link>{" "}
+          {translate("text-try")}. {translate("text-after-try")}
+          <strong> float</strong> {translate("and")} <strong>position</strong>{" "}
+          {translate("of-CSS")} {translate("text-CSS")}
           <p>
-            Hoje em dia já não recomendo esse curso,{" "}
+            {translate("nowadays")}{" "}
             <Link href={flexbox}>
               <a className={classes.links} target="_blank">
                 Flexbox
               </a>
             </Link>{" "}
-            e{" "}
+            {translate("and")}{" "}
             <Link href={gridlayout}>
               <a className={classes.links} target="_blank">
                 Grid
               </a>
             </Link>{" "}
-            Layout não eram realidade nessa época.
+            {translate("end-CSS")}{" "}
           </p>
         </Text>
       );
