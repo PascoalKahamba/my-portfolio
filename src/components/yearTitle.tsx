@@ -1,16 +1,11 @@
 import { createStyles, rem } from "@mantine/core";
 import { useAtom } from "jotai";
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  LucideArrowRight,
-  LucideArrowLeft,
-} from "lucide-react";
+import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import { countYearAtom } from "../atoms";
+import useTranslation from "next-translate/useTranslation";
 import React from "react";
 import Alldata from "../../contents/alldata";
 import useTimeline from "../hooks/useTimeline";
-import { MdArrowRightAlt } from "react-icons/md";
 import {
   HiOutlineArrowNarrowLeft,
   HiOutlineArrowNarrowRight,
@@ -78,6 +73,7 @@ export default function YearTitle({ kindOfTitle }: YearTitleProps) {
   const { allYears } = Alldata();
   const currentYear = useTimeline(allYears);
   const { classes } = useStyles();
+  const { t: translate } = useTranslation("common");
   const firstYear = isDisable(FIRST_TIMELINE_YEAR);
   const lastYear = isDisable(LAST_TIMELINE_YEAR);
 
@@ -116,14 +112,14 @@ export default function YearTitle({ kindOfTitle }: YearTitleProps) {
             }`}
             onClick={previousTimeline}
           >
-            <HiOutlineArrowNarrowLeft size="1rem" /> Anterior
+            <HiOutlineArrowNarrowLeft size="1rem" /> {translate("previous")}
           </div>
 
           <div
             className={`${classes.flexIcon} ${lastYear && classes.disableIcon}`}
             onClick={nextTimeline}
           >
-            Próximo
+            {translate("next")}
             <HiOutlineArrowNarrowRight size="1rem" />
           </div>
         </div>

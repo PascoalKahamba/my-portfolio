@@ -344,27 +344,25 @@ export default function MyTimeline() {
     if (textLink === "estatisticasdosalunos") {
       return (
         <Text c="dimmed" size="sm">
-          Desenvolvi o projeto{" "}
+          {translate("about-statistics-student")}{" "}
           <Link href={projetoestatisticasdosalunos}>
             <a className={classes.links} target="_blank">
-              Estatisticas dos Alunos
+              {translate("project-statistics-student")}
             </a>
           </Link>{" "}
-          para melhorar as minhas habilidades em React.
+          {translate("proj-statistics-student")}
         </Text>
       );
     }
     if (textLink === "reactdoc") {
       return (
         <Text c="dimmed" size="sm">
-          Já entendendo o fluxo como o React funciona decidi ir mais a fundo na
-          tecnologia estudando na{" "}
+          {translate("about-reactdocs")}{" "}
           <Link href={reactdoc}>
             <a className={classes.links} target="_blank">
-              documentação do react
+              {translate("reactdocs")}
             </a>
           </Link>{" "}
-          conceitos mais avançados.
         </Text>
       );
     }
