@@ -273,7 +273,7 @@ export default function MyTimeline() {
     if (textLink === "github") {
       return (
         <Text c="dimmed" size="sm">
-          Desde então passei a publicar os meus projetos no{" "}
+          {translate("github-account")}{" "}
           <Link href={github}>
             <a className={classes.links} target="_blank">
               GitHub
@@ -286,11 +286,10 @@ export default function MyTimeline() {
     if (textLink === "acha5") {
       return (
         <Text c="dimmed" size="sm">
-          Para fins de melhorar as minhas habilidades fins vários projetos como
-          o{" "}
+          {translate("about-acha-5")}{" "}
           <Link href={projetoacha5}>
             <a className={classes.links} target="_blank">
-              Acha-5
+              {translate("title-acha-5")}
             </a>
           </Link>
           .
@@ -300,13 +299,13 @@ export default function MyTimeline() {
     if (textLink === "crud") {
       return (
         <Text c="dimmed" size="sm">
-          Sento um projeto desafiador desenvolvi um{" "}
+          {translate("about-CRUD")}{" "}
           <Link href={projetocrud}>
             <a className={classes.links} target="_blank">
               CRUD
             </a>
           </Link>{" "}
-          para fins de estudos.
+          {translate("end-CRUD")}
         </Text>
       );
     }
@@ -372,21 +371,19 @@ export default function MyTimeline() {
     if (textLink === "react") {
       return (
         <Text c="dimmed" size="sm">
-          Desde então com o objeto de aumentar as minhas habilidades fiz o curso
-          de{" "}
+          {translate("about-react")}{" "}
           <Link href={reactjs}>
             <a className={classes.links} target="_blank">
               React
             </a>
           </Link>{" "}
-          no canal da{" "}
+          {translate("react")}{" "}
           <Link href={cursodereact}>
             <a className={classes.links} target="_blank">
-              Origamid
+              {translate("origamid-channel")}
             </a>
           </Link>{" "}
-          , sendo hoje a minha habilidade principal. sensacional me ajudou muito
-          a minha maneira de pensar.
+          {translate("end-origamid")}
         </Text>
       );
     }
