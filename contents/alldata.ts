@@ -147,14 +147,14 @@ export default function Alldata() {
         description: "",
         date: `${translate("february")} ${amountYear} ${translate("years")}.`,
         dataAos: "fade-left",
-        textLink: "Ensino Medio",
+        textLink: "ensinomedio",
       },
       {
         title: translate("started-logic"),
         description: " ",
         date: `${translate("may")} ${amountYear} ${translate("years")}.`,
         dataAos: "fade-right",
-        textLink: "Curso em Video",
+        textLink: "cursoemvideo",
       },
       {
         title: translate("first-code"),
@@ -177,7 +177,7 @@ export default function Alldata() {
         description: " ",
         date: `${translate("august")} ${marchYear} ${translate("years")}.`,
         dataAos: "fade-left",
-        textLink: "HTML e CSS",
+        textLink: "htmlecss",
       },
       {
         title: translate("javacript-course"),

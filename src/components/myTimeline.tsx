@@ -79,7 +79,7 @@ export default function MyTimeline() {
   const { t: translate } = useTranslation("common");
 
   function addLinkOnText(textLink: string, description: string) {
-    if (textLink === "Ensino Medio") {
+    if (textLink === "ensinomedio") {
       return (
         <Text c="dimmed" size="sm">
           {translate("start-journey")} <strong>{translate("my-school")}</strong>{" "}
@@ -310,7 +310,7 @@ export default function MyTimeline() {
         </Text>
       );
     }
-    if (textLink === "Curso em Video") {
+    if (textLink === "cursoemvideo") {
       return (
         <Text c="dimmed" size="sm">
           {translate("first-studies")}{" "}
@@ -387,7 +387,7 @@ export default function MyTimeline() {
         </Text>
       );
     }
-    if (textLink === "HTML e CSS") {
+    if (textLink === " htmlecss") {
       return (
         <Text c="dimmed" size="sm">
           {translate("first-HTML")}{" "}
