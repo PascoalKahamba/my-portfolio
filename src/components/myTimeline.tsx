@@ -387,7 +387,7 @@ export default function MyTimeline() {
         </Text>
       );
     }
-    if (textLink === " htmlecss") {
+    if (textLink === "htmlecss") {
       return (
         <Text c="dimmed" size="sm">
           {translate("first-HTML")}{" "}
