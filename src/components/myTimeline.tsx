@@ -90,26 +90,21 @@ export default function MyTimeline() {
     if (textLink === "finalensinomedio") {
       return (
         <Text c="dimmed" size="sm">
-          Depois de uma jornada de 4 anos terminei o ensino médio no{" "}
-          <strong>
-            Instituto Politécnico de Administração e Gestão da Catumbela (IPAG)
-          </strong>{" "}
-          tendo adquirido o grau como{" "}
-          <strong>Tecnico médio de Informatica de Gestão</strong>.
+          {translate("about-school")} <strong> {translate("school")} </strong>
+          {translate("more-about-school")}
+          <strong> {translate("my-course-degree")}</strong>
         </Text>
       );
     }
     if (textLink === "styledcomponents") {
       return (
         <Text c="dimmed" size="sm">
-          Com a finalidade de melhorar as minhas habilidades no que toca aos
-          estilos aprendi Styled-Components na sua{" "}
+          {translate("about-styled-componentsdocs")}{" "}
           <Link href={styledcomponentsdocs}>
             <a className={classes.links} target="_blank">
-              documentação
+              {translate("styled-componentsdocs")}
             </a>
           </Link>
-          .
         </Text>
       );
     }
@@ -198,75 +193,68 @@ export default function MyTimeline() {
     if (textLink === "gestorfinanceiro") {
       return (
         <Text c="dimmed" size="sm">
-          Crie um{" "}
+          {translate("created")}{" "}
           <Link href={projetogestorfinanceiro}>
             <a className={classes.links} target="_blank">
-              Gestor Financeiro
+              {translate("financial-manager")}
             </a>
           </Link>{" "}
-          com outras tecnologias tornando o projeto mais elegante com a
-          finalidade de melhorar as minhas habilidades nas tecnologias
-          utilizadas.
+          {translate("about-financial-manager")}
         </Text>
       );
     }
     if (textLink === "materialui") {
       return (
         <Text c="dimmed" size="sm">
-          Sendo uma biblioteca de componentes do React bem popular dei uma
-          change ao{" "}
+          {translate("about-material-ui")}{" "}
           <Link href={materialuidocs}>
             <a className={classes.links} target="_blank">
               Material-UI
             </a>
           </Link>{" "}
-          para aumentar as minhas habilidades.
+          {translate("text-try")} {translate("skill-material-ui")}
         </Text>
       );
     }
     if (textLink === "newcrud") {
       return (
         <Text c="dimmed" size="sm">
-          Este{" "}
+          {translate("this")}{" "}
           <Link href={projetonewcrud}>
             <a className={classes.links} target="_blank">
-              projeto (CRUD)
+              {translate("project-CRUD")}
             </a>
           </Link>{" "}
-          foi desenvolvido especialmente para o teste de uma entrevista que fiz
-          da empresa{" "}
+          {translate("about-project-CRUD")}{" "}
           <Link href={codeleapwebsite}>
             <a className={classes.links} target="_blank">
               Codeleap
             </a>
           </Link>{" "}
-          com a finalidade de conseguir uma vaga como{" "}
+          {translate("before-profile")}{" "}
           <Link href={frontEnd}>
             <a className={classes.links} target="_blank">
-              Frond-End Developer
+              {translate("front-end-developer")}
             </a>
-          </Link>{" "}
-          .
+          </Link>
         </Text>
       );
     }
     if (textLink === "typescript") {
       return (
         <Text c="dimmed" size="sm">
-          Finalmente dei uma chance ao{" "}
+          {translate("second-typescript")}{" "}
           <Link href={typescript}>
             <a className={classes.links} target="_blank">
               Typescript
             </a>
           </Link>{" "}
-          para melhorar o meu codigo tornando ele mais claro e seguro tipando
-          ele ponta á ponta. Basicamente aprendi Typecript na sua{" "}
+          {translate("text-try")} {translate("about-typescript")}{" "}
           <Link href={typescriptdocs}>
             <a className={classes.links} target="_blank">
-              documentação
+              {translate("typescriptdocs")}
             </a>
           </Link>
-          .
         </Text>
       );
     }

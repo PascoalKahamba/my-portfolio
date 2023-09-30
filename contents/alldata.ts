@@ -235,44 +235,48 @@ export default function Alldata() {
     ],
     [
       {
-        title: "Terminei o Ensino Médio.",
+        title: translate("finished-school"),
         description: "",
-        date: `Abril aproximadamente ${decemberYear} ano.`,
+        date: `${translate("april")} ${decemberYear} ${translate("years")}.`,
         dataAos: "fade-left",
         textLink: "finalensinomedio",
       },
       {
-        title: "Primeiro contato com o Typescript.",
+        title: translate("first-typescript"),
         description: "",
-        date: `Junho aproximadamente ${decemberYear} ano.`,
+        date: `${translate("june")} ${decemberYear} ${translate("years")}.`,
         dataAos: "fade-left",
         textLink: "typescript",
       },
       {
-        title: "Crie um CRUD mais moderno.",
+        title: translate("created-CRUD"),
         description: "",
-        date: `Agosto aproximadamente ${decemberYear} ano.`,
+        date: `${translate("august")} ${decemberYear} ${translate("years")}.`,
         dataAos: "fade-right",
         textLink: "newcrud",
       },
       {
-        title: "Aprendi Styles-Components.",
+        title: translate("about-styled-components"),
         description: "",
-        date: `Setembro aproximadamente ${decemberYear} ano.`,
+        date: `${translate("september")} ${decemberYear} ${translate(
+          "years"
+        )}.`,
         dataAos: "fade-left",
         textLink: "styledcomponents",
       },
       {
-        title: "Aprendi Meterial-UI.",
+        title: translate("about-Material-UI"),
         description: "",
-        date: `Outobro aproximadamente ${decemberYear} ano.`,
+        date: `${translate("october")} ${decemberYear} ${translate("years")}.`,
         dataAos: "fade-left",
         textLink: "materialui",
       },
       {
-        title: "Crie um gestor Financeiro.",
+        title: translate("created-financial-manager"),
         description: "",
-        date: `Desembro há ${decemberMonth} mês.`,
+        date: `${translate("december")} ${decemberMonth} ${translate(
+          "month"
+        )}.`,
         dataAos: "fade-right",
         textLink: "gestorfinanceiro",
       },
