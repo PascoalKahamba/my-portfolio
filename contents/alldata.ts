@@ -140,6 +140,9 @@ export default function Alldata() {
   const [amountJulyMonth] = useDate(AMOUNTMONTHJULY, 2023);
   const [amountMayMonth] = useDate(AMOUNTMONTHMAY, 2023);
 
+  const number = 0b11111;
+  const anyNumber = (230293).toString(36);
+
   const allJourney = [
     [
       {

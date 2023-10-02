@@ -7,7 +7,7 @@ import {
   Stack,
 } from "@mantine/core";
 import { CalendarDaysIcon, PhoneCallIcon } from "lucide-react";
-import UserButton from "./userButton";
+import UserButton from "./userProfile";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/router";

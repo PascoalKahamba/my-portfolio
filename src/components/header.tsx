@@ -9,7 +9,7 @@ import {
 } from "@mantine/core";
 import LanguagePicker from "./languagePicker";
 import ActionToggle from "./actionToggle";
-import UserButton from "./userButton";
+import UserProfile from "./userProfile";
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
@@ -33,11 +33,11 @@ const useStyles = createStyles((theme) => ({
   mainLink: {
     fontSize: rem(13),
     color: theme.colorScheme === "dark" ? theme.white : theme.colors.gray[6],
-    padding: `${rem(20)} ${theme.spacing.sm}`,
+    padding: `${rem(8)} ${theme.spacing.sm}`,
     fontWeight: 500,
     borderBottom: `${rem(1)} solid transparent`,
     transition: "border-color 100ms ease, color 100ms ease",
-
+    borderRadius: rem(5),
     "&:hover": {
       color: theme.colorScheme === "dark" ? theme.white : theme.black,
       backgroundColor:
@@ -50,8 +50,13 @@ const useStyles = createStyles((theme) => ({
 
   mainLinkActive: {
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
-    borderBottomColor:
+    backgroundColor:
       theme.colors[theme.primaryColor][theme.colorScheme === "dark" ? 5 : 6],
+
+    "&:hover": {
+      backgroundColor:
+        theme.colors[theme.primaryColor][theme.colorScheme === "dark" ? 5 : 6],
+    },
   },
 
   headerChild: {
@@ -102,7 +107,7 @@ export default function HeaderMegaMenu() {
           sx={{ height: "100%" }}
           className={classes.headerChild}
         >
-          <UserButton
+          <UserProfile
             name="Pascoal Kahamba"
             image="/my-photo.jpg"
             skill={translate("my-skill")}
