@@ -1,4 +1,4 @@
-import { Box, Text, createStyles } from "@mantine/core";
+import { Box, Text, createStyles, rem } from "@mantine/core";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 
@@ -12,6 +12,8 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    flexDirection: "column",
+    gap: rem(30),
   },
 }));
 
@@ -31,15 +33,10 @@ const Projects = () => {
           dataAosDuration={1200}
         />
         <Text fz="xl" mt="sm" data-aos="fade-right" data-aos-duration="1200">
-          Durante minha trajetória, desenvolvi diversos projetos profissionais,
-          sempre buscando alavancar minha carreira por meio da utilização das
-          mais recentes tecnologias do mercado. Abaixo, apresento alguns dos
-          meus projetos.{" "}
+          {translate("about-project")}
         </Text>
         <GlobalTitle title={translate("page-title")} width={300} />
-        <div className={classes.projects}>
-          <ProjectCard />
-        </div>
+        <div className={classes.projects}>{/* <ProjectCard /> */}</div>
       </Box>{" "}
     </>
   );

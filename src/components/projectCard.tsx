@@ -1,72 +1,69 @@
-import { HeartIcon } from "lucide-react";
-import {
-  Card,
-  Image,
-  Text,
-  Group,
-  Badge,
-  Button,
-  ActionIcon,
-} from "@mantine/core";
+import { Image, Card, Text, Group, Button, rem } from "@mantine/core";
+import { Carousel } from "@mantine/carousel";
+import { StarsIcon } from "lucide-react";
 import classes from "../styles/projectCard.module.css";
 
-const mockdata = {
-  image: "/my-photo.jpg",
-  title: "Verudela Beach",
-  country: "Croatia",
-  description:
-    "Completely renovated for the season 2020, Arena Verudela Bech Apartments are fully equipped and modernly furnished 4-star self-service apartments located on the Adriatic coastline by one of the most beautiful beaches in Pula.",
-  badges: [
-    { emoji: "☀️", label: "Sunny weather" },
-    { emoji: "🦓", label: "Onsite zoo" },
-    { emoji: "🌊", label: "Sea" },
-    { emoji: "🌲", label: "Nature" },
-    { emoji: "🤽", label: "Water sports" },
-  ],
-};
+const images = [
+  "/my-photo.jpg",
+  "/my-photo.jpg",
+  "/my-photo.jpg",
+  "/my-photo.jpg",
+];
 
 export default function ProjectCard() {
-  const { image, title, description, country, badges } = mockdata;
-  const features = badges.map((badge) => (
-    <Badge variant="light" key={badge.label} leftSection={badge.emoji}>
-      {badge.label}
-    </Badge>
+  const slides = images.map((image) => (
+    <Carousel.Slide key={image}>
+      <Image src={image} height={220} alt="picture-project" />
+    </Carousel.Slide>
   ));
 
   return (
-    <Card withBorder radius="md" p="md" className={classes.card}>
+    <Card radius="md" withBorder padding="xl">
       <Card.Section>
-        <Image src={image} alt={title} height={180} />
+        <Carousel
+          withIndicators
+          loop
+          classNames={{
+            root: classes.carousel,
+            controls: classes.carouselControls,
+            indicator: classes.carouselIndicator,
+          }}
+        >
+          {slides}
+        </Carousel>
       </Card.Section>
 
-      <Card.Section className={classes.section} mt="md">
+      <Group mt="lg">
+        <Text fw={500} fz="lg">
+          Forde, Norway
+        </Text>
+
         <Group>
-          <Text fz="lg" fw={500}>
-            {title}
+          <StarsIcon style={{ width: rem(16), height: rem(16) }} />
+          <Text fz="xs" fw={500}>
+            4.78
           </Text>
-          <Badge size="sm" variant="light">
-            {country}
-          </Badge>
         </Group>
-        <Text fz="sm" mt="xs">
-          {description}
-        </Text>
-      </Card.Section>
+      </Group>
 
-      <Card.Section className={classes.section}>
-        <Text mt="md" className={classes.label} c="dimmed">
-          Perfect for you, if you enjoy
-        </Text>
-        <Group>{features}</Group>
-      </Card.Section>
+      <Text fz="sm" c="dimmed" mt="sm">
+        Relax, rejuvenate and unplug in this unique contemporary Birdbox. Feel
+        close to nature in ultimate comfort. Enjoy the view of the epic mountain
+        range of Blegja and the Førdefjord.
+      </Text>
 
-      <Group mt="xs">
-        <Button radius="md" style={{ flex: 1 }}>
-          Show details
-        </Button>
-        <ActionIcon variant="default" radius="md" size={36}>
-          <HeartIcon className={classes.like} />
-        </ActionIcon>
+      <Group mt="md">
+        <div>
+          <Text fz="xl" span fw={500} className={classes.price}>
+            397$
+          </Text>
+          <Text span fz="sm" c="dimmed">
+            {" "}
+            / night
+          </Text>
+        </div>
+
+        <Button radius="md">Book now</Button>
       </Group>
     </Card>
   );

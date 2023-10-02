@@ -51,20 +51,20 @@ export default function Alldata() {
     {
       title: translate("tecnologies"),
       links: [
-        { label: "JavaScript", link: "Pascoal" },
-        { label: "TypeScript", link: "Pascoal" },
-        { label: "React.js", link: "Pascoal" },
-        { label: "Next.js", link: "Pascoal" },
+        { label: "JavaScript", link: "/journey" },
+        { label: "TypeScript", link: "/journey" },
+        { label: "React.js", link: "/journey" },
+        { label: "Next.js", link: "/journey" },
       ],
     },
     {
       title: translate("journey"),
       links: [
-        { label: "2023", link: "Pascoal" },
-        { label: "2022", link: "Pascoal" },
-        { label: "2021", link: "Pascoal" },
-        { label: "2020", link: "Pascoal" },
-        { label: "2019", link: "Pascoal" },
+        { label: "2023", link: "/journey" },
+        { label: "2022", link: "/journey" },
+        { label: "2021", link: "/journey" },
+        { label: "2020", link: "/journey" },
+        { label: "2019", link: "/journey" },
       ],
     },
   ];
@@ -139,9 +139,6 @@ export default function Alldata() {
   const [amountJuneMonth] = useDate(AMOUNTMONTHJUNE, 2023);
   const [amountJulyMonth] = useDate(AMOUNTMONTHJULY, 2023);
   const [amountMayMonth] = useDate(AMOUNTMONTHMAY, 2023);
-
-  const number = 0b11111;
-  const anyNumber = (230293).toString(36);
 
   const allJourney = [
     [

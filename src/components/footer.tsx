@@ -10,9 +10,12 @@ import { CalendarDaysIcon, PhoneCallIcon } from "lucide-react";
 import UserButton from "./userProfile";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import Alldata from "../../contents/alldata";
+import { scrollToThePlace } from "./scrollControl";
+import { useRouter } from "next/router";
+import { useAtom } from "jotai";
+import { countYearAtom } from "../atoms";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -152,16 +155,32 @@ const socialMedia = [
     link: "https://calendly.com/pascoalkahamba",
   },
 ];
+const SCROLL_TO_A_LOCAL_PAGE = 400;
 
 export default function FooterLinks() {
   const { classes } = useStyles();
   const { t: translate } = useTranslation("common");
+  const [_, setCount] = useAtom(countYearAtom);
   const { footerData } = Alldata();
+  const { pathname, isReady } = useRouter();
+
+  function goToEspecialTimeline(timeline: string) {
+    if ( isReady) {
+      scrollToThePlace(SCROLL_TO_A_LOCAL_PAGE);
+
+      console.log(timeline);
+    }
+  }
 
   const groups = footerData.map((group) => {
     const links = group.links.map((link, index) => (
       <Link key={index} href={link.link}>
-        <Text<"a"> className={classes.link} component="a" href={link.link}>
+        <Text<"a">
+          className={classes.link}
+          component="a"
+          href={link.link}
+          onClick={() => goToEspecialTimeline(link.label)}
+        >
           {link.label}
         </Text>
       </Link>
