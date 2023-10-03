@@ -16,6 +16,7 @@ import { scrollToThePlace } from "./scrollControl";
 import { useAtom } from "jotai";
 import { countYearAtom, nameDeveloperAtom } from "../atoms";
 import Journey from "../pages/journey";
+import { useRouter } from "next/router";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -156,8 +157,9 @@ const socialMedia = [
   },
 ];
 interface QueryProps {
-  year: string;
+  tecnologiesOrYear: string;
 }
+
 const SCROLL_TO_A_LOCAL_PAGE = 400;
 
 export default function FooterLinks() {
@@ -167,23 +169,43 @@ export default function FooterLinks() {
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { footerData } = Alldata();
 
+  function choseThisTimeline(tecnologiesOrYear: string) {
+    if (tecnologiesOrYear === "JavaScript" || tecnologiesOrYear === "2019") {
+      setCount(1);
+      return;
+    }
+    if (tecnologiesOrYear === "TypeScript" || tecnologiesOrYear === "2022") {
+      setCount(4);
+      return;
+    }
+    if (tecnologiesOrYear === "Next.js" || tecnologiesOrYear === "2023") {
+      setCount(5);
+      return;
+    }
+    if (tecnologiesOrYear === "React.js" || tecnologiesOrYear === "2021") {
+      setCount(3);
+      return;
+    }
+
+    setCount(2);
+  }
+
   function goToEspecialTimeline(timeline: string, title: string) {
     if (
       title === translate("tecnologies") ||
       title !== translate("navigation")
     ) {
+      choseThisTimeline(timeline);
       setTimeout(() => {
-        setCount(3);
         scrollToThePlace(SCROLL_TO_A_LOCAL_PAGE);
         console.log(timeline);
       }, 2000);
-      return;
     }
   }
 
   const groups = footerData.map((group) => {
     const links = group.links.map((link, index) => (
-      <Link key={index} href={`${link.link}?year=${link.label}`}>
+      <Link key={index} href={link.link}>
         <Text<"a">
           className={classes.link}
           component="a"
