@@ -17,6 +17,7 @@ import { useAtom } from "jotai";
 import { countYearAtom, nameDeveloperAtom } from "../atoms";
 import Journey from "../pages/journey";
 import { useRouter } from "next/router";
+import { format, formatDistance } from "date-fns";
 
 const useStyles = createStyles((theme) => ({
   footer: {

@@ -1,15 +1,37 @@
 import useTranslation from "next-translate/useTranslation";
 import useDate from "../src/hooks/useDate";
+import { formatDistance } from "date-fns";
 
 const FEBRUARY = 2;
 const MARCH = 3;
 const JANUARY = 1;
 const APRIL = 4;
+const MAY = 3;
+const DECEMBER = 12;
+const JUNE = 6;
+const JULY = 7;
+const OCTOBER = 10;
+const NOVEMBER = 11;
+const SEPTEMBER = 9;
+const AUGUST = 8;
 const AMOUNTMONTHDECEMBER = 10;
 const AMOUNTMONTHMARCH = 8;
 const AMOUNTMONTHJUNE = 5;
 const AMOUNTMONTHMAY = 6;
 const AMOUNTMONTHJULY = 4;
+
+function getDate(year: number, month: number, day: number) {
+  const currentYear = new Date().getFullYear();
+  const currentMonth = new Date().getMonth();
+  const currentDay = new Date().getDay();
+
+  const result = formatDistance(
+    new Date(year, month, day),
+    new Date(currentYear, currentMonth, currentDay)
+  );
+
+  return result;
+}
 
 export default function Alldata() {
   const { t: translate } = useTranslation("common");
@@ -140,49 +162,59 @@ export default function Alldata() {
   const [amountJulyMonth] = useDate(AMOUNTMONTHJULY, 2023);
   const [amountMayMonth] = useDate(AMOUNTMONTHMAY, 2023);
 
+  const dateWentOnSchool = getDate(2018, FEBRUARY, 2);
+  const dateStartedLogic = getDate(2018, MAY, 11);
+  const dateFirstCode = getDate(2018, JUNE, 5);
+  const dateStartedCSharp = getDate(2019, MARCH, 19);
+  const dateFirstWeb = getDate(2019, AUGUST, 30);
+  const dateJavascriptCourse = getDate(2019, NOVEMBER, 14);
+  const dateGithub = getDate(2020, JANUARY, 21);
+  const dateCreatedCRUD = getDate(2020, MARCH, 22);
+  const dateCreatedFindFive = getDate(2020, FEBRUARY, 8);
+
   const allJourney = [
     [
       {
         title: translate("entrance-school"),
         description: "",
-        date: `${translate("february")} ${amountYear} ${translate("years")}.`,
+        date: dateWentOnSchool,
         dataAos: "fade-left",
         textLink: "ensinomedio",
       },
       {
         title: translate("started-logic"),
         description: " ",
-        date: `${translate("may")} ${amountYear} ${translate("years")}.`,
+        date: dateStartedLogic,
         dataAos: "fade-right",
         textLink: "cursoemvideo",
       },
       {
         title: translate("first-code"),
         description: translate("first-code-desc"),
-        date: `${translate("june")} ${amountYear} ${translate("years")}.`,
+        date: dateFirstCode,
         dataAos: "fade-left",
-        textLink: "Primeiros codigos",
+        textLink: "firstCode",
       },
     ],
     [
       {
         title: translate("start-c#"),
         description: "",
-        date: `${translate("march")} ${marchYear} ${translate("years")}.`,
+        date: dateStartedCSharp,
         dataAos: "fade-right",
         textLink: "C#",
       },
       {
         title: translate("first-web"),
         description: " ",
-        date: `${translate("august")} ${marchYear} ${translate("years")}.`,
+        date: dateFirstWeb,
         dataAos: "fade-left",
         textLink: "htmlecss",
       },
       {
         title: translate("javacript-course"),
         description: "",
-        date: `${translate("november")} ${marchYear} ${translate("years")}.`,
+        date: dateJavascriptCourse,
         dataAos: "fade-right",
         textLink: "javascript",
       },
@@ -191,21 +223,21 @@ export default function Alldata() {
       {
         title: translate("github"),
         description: "",
-        date: `${translate("january")} ${januaryYear} ${translate("years")}.`,
+        date: dateGithub,
         dataAos: "fade-left",
         textLink: "github",
       },
       {
         title: translate("CRUD"),
         description: "",
-        date: `${translate("march")} ${januaryYear} ${translate("years")}.`,
+        date: dateCreatedCRUD,
         dataAos: "fade-left",
         textLink: "crud",
       },
       {
         title: translate("acha-5"),
         description: "",
-        date: `${translate("february")} ${januaryYear} ${translate("years")}.`,
+        date: dateCreatedFindFive,
         dataAos: "fade-right",
         textLink: "acha5",
       },
