@@ -161,6 +161,11 @@ interface QueryProps {
 }
 
 const SCROLL_TO_A_LOCAL_PAGE = 400;
+const TIMELINE_2020 = 2;
+const TIMELINE_2023 = 5;
+const TIMELINE_2021 = 3;
+const TIMELINE_2019 = 1;
+const TIMELINE_2022 = 4;
 
 export default function FooterLinks() {
   const { classes } = useStyles();
@@ -171,23 +176,23 @@ export default function FooterLinks() {
 
   function choseThisTimeline(tecnologiesOrYear: string) {
     if (tecnologiesOrYear === "JavaScript" || tecnologiesOrYear === "2019") {
-      setCount(1);
+      setCount(TIMELINE_2019);
       return;
     }
     if (tecnologiesOrYear === "TypeScript" || tecnologiesOrYear === "2022") {
-      setCount(4);
+      setCount(TIMELINE_2022);
       return;
     }
     if (tecnologiesOrYear === "Next.js" || tecnologiesOrYear === "2023") {
-      setCount(5);
+      setCount(TIMELINE_2023);
       return;
     }
     if (tecnologiesOrYear === "React.js" || tecnologiesOrYear === "2021") {
-      setCount(3);
+      setCount(TIMELINE_2021);
       return;
     }
 
-    setCount(2);
+    setCount(TIMELINE_2020);
   }
 
   function goToEspecialTimeline(timeline: string, title: string) {
