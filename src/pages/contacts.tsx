@@ -4,16 +4,21 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 import MainTitle from "../components/mainTitle";
+import { nameDeveloperAtom } from "../atoms";
+import { useAtom } from "jotai";
 
 const Contact = () => {
   const { pathname } = useRouter();
+  const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("contacts");
   console.log(pathname);
 
   return (
     <>
       <Head>
-        <title>{translate("page-title")} | Pascoal Kahamba</title>
+        <title>
+          {translate("page-title")} | {nameDeveloper}
+        </title>
       </Head>
       <Box component="section">
         <MainTitle

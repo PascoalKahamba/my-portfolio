@@ -6,6 +6,8 @@ import React from "react";
 import MainTitle from "../components/mainTitle";
 import GlobalTitle from "../components/globalTitle";
 import ProjectCard from "../components/projectCard";
+import { nameDeveloperAtom } from "../atoms";
+import { useAtom } from "jotai";
 
 const useStyles = createStyles((theme) => ({
   projects: {
@@ -19,12 +21,15 @@ const useStyles = createStyles((theme) => ({
 
 const Projects = () => {
   const { classes } = useStyles();
+  const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("projects");
 
   return (
     <>
       <Head>
-        <title>{translate("page-title")} | Pascoal Kahamba</title>
+        <title>
+          {translate("page-title")} | {nameDeveloper}
+        </title>
       </Head>
       <Box component="section">
         <MainTitle

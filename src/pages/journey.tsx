@@ -9,6 +9,8 @@ import GlobalTitle from "../components/globalTitle";
 import MyTimeline from "../components/myTimeline";
 import Alldata from "../../contents/alldata";
 import useTimeline from "../hooks/useTimeline";
+import { useAtom } from "jotai";
+import { nameDeveloperAtom } from "../atoms";
 
 const useStyles = createStyles((theme) => ({
   description: {
@@ -30,12 +32,15 @@ const useStyles = createStyles((theme) => ({
 
 export default function Journey() {
   const { t: translate } = useTranslation("journey");
+  const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { classes } = useStyles();
 
   return (
     <>
       <Head>
-        <title>{translate("page-title")} | Pascoal Kahamba</title>
+        <title>
+          {translate("page-title")} | {nameDeveloper}
+        </title>
       </Head>
       <Box component="section">
         <MainTitle

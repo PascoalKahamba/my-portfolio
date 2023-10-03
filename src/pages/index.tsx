@@ -13,6 +13,7 @@ import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import translations from "../../locales/en/useExternalLink";
+import { nameDeveloperAtom } from "../atoms";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -104,13 +105,16 @@ const useStyles = createStyles((theme) => ({
 export default function IndexPage() {
   const { classes } = useStyles();
   const { locale } = useRouter();
+  const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { frontEnd, github, javascript, typescript } = translations;
   const { t: translate } = useTranslation("home");
 
   return (
     <>
       <Head>
-        <title>{translate("page-title")} | Pascoal Kahamba</title>
+        <title>
+          {translate("page-title")} | {nameDeveloper}
+        </title>
       </Head>
       <div className={classes.wrapper}>
         <Container size={700} className={classes.inner}>

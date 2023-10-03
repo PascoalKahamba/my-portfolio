@@ -14,6 +14,8 @@ import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import Alldata from "../../contents/alldata";
+import { nameDeveloperAtom } from "../atoms";
+import { useAtom } from "jotai";
 
 const useStyles = createStyles((theme) => ({
   headerElement: {
@@ -82,6 +84,7 @@ interface LinkProps {
 export default function HeaderMegaMenu() {
   const { classes, cx } = useStyles();
   const { pathname } = useRouter();
+  const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("common");
   const { mainLinks } = Alldata();
 
@@ -108,7 +111,7 @@ export default function HeaderMegaMenu() {
           className={classes.headerChild}
         >
           <UserProfile
-            name="Pascoal Kahamba"
+            name={nameDeveloper}
             image="/my-photo.jpg"
             skill={translate("my-skill")}
           />

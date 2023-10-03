@@ -21,6 +21,8 @@ import Technologias from "../components/technologies";
 import MainTitle from "../components/mainTitle";
 import useMounted from "../hooks/useMounted";
 import Alldata from "../../contents/alldata";
+import { nameDeveloperAtom } from "../atoms";
+import { useAtom } from "jotai";
 
 const useStyles = createStyles((theme) => ({
   flexContenier: {
@@ -101,6 +103,7 @@ const About = () => {
   const { classes } = useStyles();
   const { t: translate } = useTranslation("about");
   const { locale } = useRouter();
+  const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { frontEndSkiils, otherTechnologies } = Alldata();
   const currentYear = new Date().getFullYear();
   const myAge = currentYear - 2002;
@@ -117,7 +120,9 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>{translate("page-title")} | Pascoal Kahamba</title>
+        <title>
+          {translate("page-title")} | {nameDeveloper}
+        </title>
       </Head>
       <Box component="section" className={classes.flexContenier}>
         <div className={classes.aboutMe}>

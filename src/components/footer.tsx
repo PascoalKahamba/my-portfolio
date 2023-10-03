@@ -15,7 +15,7 @@ import Alldata from "../../contents/alldata";
 import { scrollToThePlace } from "./scrollControl";
 import { useRouter } from "next/router";
 import { useAtom } from "jotai";
-import { countYearAtom } from "../atoms";
+import { countYearAtom, nameDeveloperAtom } from "../atoms";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -161,11 +161,12 @@ export default function FooterLinks() {
   const { classes } = useStyles();
   const { t: translate } = useTranslation("common");
   const [_, setCount] = useAtom(countYearAtom);
+  const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { footerData } = Alldata();
-  const { pathname, isReady } = useRouter();
+  const { pathname, isReady, query } = useRouter();
 
   function goToEspecialTimeline(timeline: string) {
-    if ( isReady) {
+    if (isReady) {
       scrollToThePlace(SCROLL_TO_A_LOCAL_PAGE);
 
       console.log(timeline);
@@ -199,7 +200,7 @@ export default function FooterLinks() {
       <Container className={classes.inner}>
         <div className={classes.logo}>
           <UserButton
-            name="Pascoal Kahamba"
+            name={nameDeveloper}
             image="/my-photo.jpg"
             skill={translate("my-skill")}
           />
