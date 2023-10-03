@@ -13,9 +13,9 @@ import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 import Alldata from "../../contents/alldata";
 import { scrollToThePlace } from "./scrollControl";
-import { useRouter } from "next/router";
 import { useAtom } from "jotai";
 import { countYearAtom, nameDeveloperAtom } from "../atoms";
+import Journey from "../pages/journey";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -155,6 +155,9 @@ const socialMedia = [
     link: "https://calendly.com/pascoalkahamba",
   },
 ];
+interface QueryProps {
+  year: string;
+}
 const SCROLL_TO_A_LOCAL_PAGE = 400;
 
 export default function FooterLinks() {
@@ -163,24 +166,29 @@ export default function FooterLinks() {
   const [_, setCount] = useAtom(countYearAtom);
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { footerData } = Alldata();
-  const { pathname, isReady, query } = useRouter();
 
-  function goToEspecialTimeline(timeline: string) {
-    if (isReady) {
-      scrollToThePlace(SCROLL_TO_A_LOCAL_PAGE);
-
-      console.log(timeline);
+  function goToEspecialTimeline(timeline: string, title: string) {
+    if (
+      title === translate("tecnologies") ||
+      title !== translate("navigation")
+    ) {
+      setTimeout(() => {
+        setCount(3);
+        scrollToThePlace(SCROLL_TO_A_LOCAL_PAGE);
+        console.log(timeline);
+      }, 2000);
+      return;
     }
   }
 
   const groups = footerData.map((group) => {
     const links = group.links.map((link, index) => (
-      <Link key={index} href={link.link}>
+      <Link key={index} href={`${link.link}?year=${link.label}`}>
         <Text<"a">
           className={classes.link}
           component="a"
           href={link.link}
-          onClick={() => goToEspecialTimeline(link.label)}
+          onClick={() => goToEspecialTimeline(link.label, group.title)}
         >
           {link.label}
         </Text>
