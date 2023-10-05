@@ -1,5 +1,4 @@
 import useTranslation from "next-translate/useTranslation";
-import useDate from "../src/hooks/useDate";
 import { formatDistance } from "date-fns";
 import { useRouter } from "next/router";
 import { pt, enUS } from "date-fns/locale";
@@ -8,7 +7,7 @@ const FEBRUARY = 2;
 const MARCH = 3;
 const JANUARY = 1;
 const APRIL = 4;
-const MAY = 3;
+const MAY = 5;
 const DECEMBER = 12;
 const JUNE = 6;
 const JULY = 7;
@@ -16,11 +15,6 @@ const OCTOBER = 10;
 const NOVEMBER = 11;
 const SEPTEMBER = 9;
 const AUGUST = 8;
-const AMOUNTMONTHDECEMBER = 10;
-const AMOUNTMONTHMARCH = 8;
-const AMOUNTMONTHJUNE = 5;
-const AMOUNTMONTHMAY = 6;
-const AMOUNTMONTHJULY = 4;
 
 export default function Alldata() {
   const { t: translate } = useTranslation("common");
@@ -174,15 +168,6 @@ export default function Alldata() {
   ];
 
   const allYears = ["2018", "2019", "2020", "2021", "2022", "2023"];
-  const [_, amountYear] = useDate(FEBRUARY, 2018);
-  const [marchMonth, marchYear] = useDate(MARCH, 2019);
-  const [januaryMonth, januaryYear] = useDate(JANUARY, 2020);
-  const [aprilMonth, aprilYear] = useDate(APRIL, 2021);
-  const [decemberMonth, decemberYear] = useDate(AMOUNTMONTHDECEMBER, 2022);
-  const [amountMarchMonth] = useDate(AMOUNTMONTHMARCH, 2023);
-  const [amountJuneMonth] = useDate(AMOUNTMONTHJUNE, 2023);
-  const [amountJulyMonth] = useDate(AMOUNTMONTHJULY, 2023);
-  const [amountMayMonth] = useDate(AMOUNTMONTHMAY, 2023);
 
   const dateWentOnSchool = getDate(2018, FEBRUARY, 2);
   const dateStartedLogic = getDate(2018, MAY, 11);
@@ -202,6 +187,11 @@ export default function Alldata() {
   const dateLearnStyledComponents = getDate(2022, SEPTEMBER, 10);
   const dateLearnMaterialUI = getDate(2022, OCTOBER, 25);
   const dateCreatedFinancialManager = getDate(2022, DECEMBER, 16);
+  const dateLearnNext = getDate(2023, MARCH, 8);
+  const dateLearnTailwindcss = getDate(2023, MAY, 20);
+  const dateLearnJotai = getDate(2023, JUNE, 10);
+  const dateLearnMantine = getDate(2023, JUNE, 20);
+  const dateCreatedMyPortfolio = getDate(2023, JULY, 26);
 
   const allJourney = [
     [
@@ -344,37 +334,35 @@ export default function Alldata() {
       {
         title: translate("learned-next"),
         description: "",
-        date: `${translate("march")} ${amountMarchMonth} ${translate(
-          "month"
-        )}.`,
+        date: `${translate("march")} - ${dateLearnNext}`,
         dataAos: "fade-left",
         textLink: "next",
       },
       {
         title: translate("learned-tailwindcss"),
         description: "",
-        date: `${translate("may")} ${amountMayMonth} ${translate("month")}.`,
+        date: `${translate("may")} - ${dateLearnTailwindcss}`,
         dataAos: "fade-left",
         textLink: "tailwindcss",
       },
       {
         title: translate("learned-jotai"),
         description: "",
-        date: `${translate("june")} ${amountJuneMonth} ${translate("month")}.`,
+        date: `${translate("june")} - ${dateLearnJotai}`,
         dataAos: "fade-right",
         textLink: "jotai",
       },
       {
         title: translate("learned-mantine"),
         description: " ",
-        date: `${translate("june")} ${amountJuneMonth} ${translate("month")}.`,
+        date: `${translate("june")} - ${dateLearnMantine}`,
         dataAos: "fade-left",
         textLink: "mantine",
       },
       {
         title: translate("created-my-portfolio"),
         description: " ",
-        date: `${translate("july")} ${amountJulyMonth} ${translate("month")}.`,
+        date: `${translate("july")} - ${dateCreatedMyPortfolio}`,
         dataAos: "fade-right",
         textLink: "portfolio",
       },
