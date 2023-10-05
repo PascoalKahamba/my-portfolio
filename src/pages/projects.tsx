@@ -1,4 +1,4 @@
-import { Box, Text, createStyles, rem } from "@mantine/core";
+import { Box, Text, rem, createStyles } from "@mantine/core";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 
@@ -19,7 +19,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const Projects = () => {
+export default function Projects() {
   const { classes } = useStyles();
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("projects");
@@ -42,9 +42,7 @@ const Projects = () => {
         </Text>
         <GlobalTitle title={translate("page-title")} width={300} />
         <div className={classes.projects}>{/* <ProjectCard /> */}</div>
-      </Box>{" "}
+      </Box>
     </>
   );
-};
-
-export default Projects;
+}
