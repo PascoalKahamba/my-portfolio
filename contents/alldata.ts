@@ -1,6 +1,8 @@
 import useTranslation from "next-translate/useTranslation";
 import useDate from "../src/hooks/useDate";
 import { formatDistance } from "date-fns";
+import { useRouter } from "next/router";
+import { pt, enUS } from "date-fns/locale";
 
 const FEBRUARY = 2;
 const MARCH = 3;
@@ -20,22 +22,42 @@ const AMOUNTMONTHJUNE = 5;
 const AMOUNTMONTHMAY = 6;
 const AMOUNTMONTHJULY = 4;
 
-function getDate(year: number, month: number, day: number) {
-  const currentYear = new Date().getFullYear();
-  const currentMonth = new Date().getMonth();
-  const currentDay = new Date().getDay();
-
-  const result = formatDistance(
-    new Date(year, month, day),
-    new Date(currentYear, currentMonth, currentDay)
-  );
-
-  return result;
-}
-
 export default function Alldata() {
   const { t: translate } = useTranslation("common");
+  const { locale } = useRouter();
 
+  function fullDateWhenAreMonths(distanceBetweenDate: string) {
+    let fullDate = "";
+    const months = locale === "en" ? "months" : "meses";
+
+    distanceBetweenDate.split(" ").forEach((date) => {
+      if (date.includes(months)) {
+        locale === "en"
+          ? (fullDate = `${distanceBetweenDate} ago`)
+          : (fullDate = `há ${distanceBetweenDate}`);
+      } else {
+        fullDate = distanceBetweenDate;
+      }
+    });
+
+    return fullDate;
+  }
+
+  function getDate(year: number, month: number, day: number) {
+    const currentYear = new Date().getFullYear();
+    const currentMonth = new Date().getMonth();
+    const currentDay = new Date().getDay();
+
+    const date = formatDistance(
+      new Date(year, month, day),
+      new Date(currentYear, currentMonth, currentDay),
+      { locale: locale === "pt" ? pt : enUS }
+    );
+
+    const distanceBetweenDate = fullDateWhenAreMonths(date);
+
+    return distanceBetweenDate;
+  }
   const mainLinks = [
     {
       label: translate("home"),
@@ -171,27 +193,36 @@ export default function Alldata() {
   const dateGithub = getDate(2020, JANUARY, 21);
   const dateCreatedCRUD = getDate(2020, MARCH, 22);
   const dateCreatedFindFive = getDate(2020, FEBRUARY, 8);
+  const dateReactCourse = getDate(2021, JUNE, 22);
+  const dateCreatedStatisticsStudent = getDate(2021, SEPTEMBER, 20);
+  const dateDeeplyReact = getDate(2021, NOVEMBER, 1);
+  const dateFinishedSchool = getDate(2022, APRIL, 30);
+  const dateFirstTypescript = getDate(2022, JUNE, 14);
+  const dateCreatedNewCRUD = getDate(2022, AUGUST, 5);
+  const dateLearnStyledComponents = getDate(2022, SEPTEMBER, 10);
+  const dateLearnMaterialUI = getDate(2022, OCTOBER, 25);
+  const dateCreatedFinancialManager = getDate(2022, DECEMBER, 16);
 
   const allJourney = [
     [
       {
         title: translate("entrance-school"),
         description: "",
-        date: dateWentOnSchool,
+        date: `${translate("february")} - ${dateWentOnSchool}`,
         dataAos: "fade-left",
         textLink: "ensinomedio",
       },
       {
         title: translate("started-logic"),
         description: " ",
-        date: dateStartedLogic,
+        date: `${translate("may")} - ${dateStartedLogic}`,
         dataAos: "fade-right",
         textLink: "cursoemvideo",
       },
       {
         title: translate("first-code"),
         description: translate("first-code-desc"),
-        date: dateFirstCode,
+        date: `${translate("june")} - ${dateFirstCode}`,
         dataAos: "fade-left",
         textLink: "firstCode",
       },
@@ -200,21 +231,21 @@ export default function Alldata() {
       {
         title: translate("start-c#"),
         description: "",
-        date: dateStartedCSharp,
+        date: `${translate("march")} - ${dateStartedCSharp}`,
         dataAos: "fade-right",
         textLink: "C#",
       },
       {
         title: translate("first-web"),
         description: " ",
-        date: dateFirstWeb,
+        date: `${translate("august")} - ${dateFirstWeb}`,
         dataAos: "fade-left",
         textLink: "htmlecss",
       },
       {
         title: translate("javacript-course"),
         description: "",
-        date: dateJavascriptCourse,
+        date: `${translate("november")} - ${dateJavascriptCourse}`,
         dataAos: "fade-right",
         textLink: "javascript",
       },
@@ -223,21 +254,21 @@ export default function Alldata() {
       {
         title: translate("github"),
         description: "",
-        date: dateGithub,
+        date: `${translate("january")} - ${dateGithub}`,
         dataAos: "fade-left",
         textLink: "github",
       },
       {
         title: translate("CRUD"),
         description: "",
-        date: dateCreatedCRUD,
+        date: `${translate("march")} - ${dateCreatedCRUD}`,
         dataAos: "fade-left",
         textLink: "crud",
       },
       {
         title: translate("acha-5"),
         description: "",
-        date: dateCreatedFindFive,
+        date: `${translate("february")} - ${dateCreatedFindFive}`,
         dataAos: "fade-right",
         textLink: "acha5",
       },
@@ -246,21 +277,21 @@ export default function Alldata() {
       {
         title: translate("react-course"),
         description: "",
-        date: `${translate("june")} ${aprilYear} ${translate("years")}.`,
+        date: `${translate("june")} - ${dateReactCourse}`,
         dataAos: "fade-left",
         textLink: "react",
       },
       {
         title: translate("statistics-student"),
         description: "",
-        date: `${translate("september")} ${aprilYear} ${translate("years")}.`,
+        date: `${translate("september")} - ${dateCreatedStatisticsStudent}`,
         dataAos: "fade-right",
         textLink: "estatisticasdosalunos",
       },
       {
         title: translate("deeply-react"),
         description: "",
-        date: `${translate("november")} ${aprilYear} ${translate("years")}.`,
+        date: `${translate("november")} - ${dateDeeplyReact}`,
         dataAos: "fade-left",
         textLink: "reactdoc",
       },
@@ -269,46 +300,42 @@ export default function Alldata() {
       {
         title: translate("finished-school"),
         description: "",
-        date: `${translate("april")} ${decemberYear} ${translate("years")}.`,
+        date: `${translate("april")} - ${dateFinishedSchool}`,
         dataAos: "fade-left",
         textLink: "finalensinomedio",
       },
       {
         title: translate("first-typescript"),
         description: "",
-        date: `${translate("june")} ${decemberYear} ${translate("years")}.`,
+        date: `${translate("june")} - ${dateFirstTypescript}`,
         dataAos: "fade-left",
         textLink: "typescript",
       },
       {
         title: translate("created-CRUD"),
         description: "",
-        date: `${translate("august")} ${decemberYear} ${translate("years")}.`,
+        date: `${translate("august")} - ${dateCreatedNewCRUD}`,
         dataAos: "fade-right",
         textLink: "newcrud",
       },
       {
         title: translate("about-styled-components"),
         description: "",
-        date: `${translate("september")} ${decemberYear} ${translate(
-          "years"
-        )}.`,
+        date: `${translate("september")} - ${dateLearnStyledComponents}`,
         dataAos: "fade-left",
         textLink: "styledcomponents",
       },
       {
         title: translate("about-Material-UI"),
         description: "",
-        date: `${translate("october")} ${decemberYear} ${translate("years")}.`,
+        date: `${translate("october")} - ${dateLearnMaterialUI}`,
         dataAos: "fade-left",
         textLink: "materialui",
       },
       {
         title: translate("created-financial-manager"),
         description: "",
-        date: `${translate("december")} ${decemberMonth} ${translate(
-          "month"
-        )}.`,
+        date: `${translate("december")} - ${dateCreatedFinancialManager}`,
         dataAos: "fade-right",
         textLink: "gestorfinanceiro",
       },

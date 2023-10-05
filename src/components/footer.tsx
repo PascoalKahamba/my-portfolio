@@ -157,9 +157,6 @@ const socialMedia = [
     link: "https://calendly.com/pascoalkahamba",
   },
 ];
-interface QueryProps {
-  tecnologiesOrYear: string;
-}
 
 const SCROLL_TO_A_LOCAL_PAGE = 400;
 const TIMELINE_2020 = 2;
@@ -174,6 +171,7 @@ export default function FooterLinks() {
   const [_, setCount] = useAtom(countYearAtom);
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { footerData } = Alldata();
+  const currentYear = new Date().getFullYear();
 
   function choseThisTimeline(tecnologiesOrYear: string) {
     if (tecnologiesOrYear === "JavaScript" || tecnologiesOrYear === "2019") {
@@ -204,7 +202,6 @@ export default function FooterLinks() {
       choseThisTimeline(timeline);
       setTimeout(() => {
         scrollToThePlace(SCROLL_TO_A_LOCAL_PAGE);
-        console.log(timeline);
       }, 2000);
     }
   }
@@ -249,7 +246,7 @@ export default function FooterLinks() {
 
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">
-          © 2023 - {translate("2023")}
+          © {currentYear} - {translate("2023")}
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>

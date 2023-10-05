@@ -7,6 +7,7 @@ import {
   rem,
   px,
 } from "@mantine/core";
+import { useMemo, useCallback } from "react";
 import { GithubIcon, DownloadIcon } from "lucide-react";
 import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
@@ -14,6 +15,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import translations from "../../locales/en/useExternalLink";
 import { nameDeveloperAtom } from "../atoms";
+import { useAtom } from "jotai";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -108,6 +110,12 @@ export default function IndexPage() {
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { frontEnd, github, javascript, typescript } = translations;
   const { t: translate } = useTranslation("home");
+
+  const catcheValue = useMemo(() => {
+    return {};
+  }, []);
+
+  const callbackValue = useCallback((name: string, age: number) => {}, []);
 
   return (
     <>
