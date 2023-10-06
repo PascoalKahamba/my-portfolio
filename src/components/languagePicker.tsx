@@ -1,4 +1,4 @@
-import { useEffect, useState, useInsertionEffect } from "react";
+import { useEffect, useState, useInsertionEffect, useMemo } from "react";
 import {
   createStyles,
   UnstyledButton,
@@ -60,28 +60,28 @@ export default function LanguagePicker() {
     label: localeLanguage,
     image: localeImage,
   });
+  const { label } = selected;
+  const { isNotCurrentLanguage, currentLanguage } = classes;
 
-  useInsertionEffect(() => {});
-
-  const items = data.map((item) => (
-    <Menu.Item
-      icon={
-        <Image src={item.image} width={20} height={12} alt="language-image" />
-      }
-      onClick={() => {
-        setSelected(item);
-        onChangeLanguage(item.label);
-      }}
-      key={item.label}
-      className={
-        item.label === selected.label
-          ? classes.currentLanguage
-          : classes.isNotCurrentLanguage
-      }
-    >
-      {item.label}
-    </Menu.Item>
-  ));
+  const items = useMemo(() => {
+    return data.map((item) => (
+      <Menu.Item
+        icon={
+          <Image src={item.image} width={20} height={12} alt="language-image" />
+        }
+        onClick={() => {
+          setSelected(item);
+          onChangeLanguage(item.label);
+        }}
+        key={item.label}
+        className={
+          item.label === label ? currentLanguage : isNotCurrentLanguage
+        }
+      >
+        {item.label}
+      </Menu.Item>
+    ));
+  }, [label, isNotCurrentLanguage, currentLanguage]);
 
   async function onChangeLanguage(language: string) {
     const locale = language === "English" ? "en" : "pt";
