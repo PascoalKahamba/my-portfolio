@@ -1,4 +1,4 @@
-import { Box } from "@mantine/core";
+import { Box, Text } from "@mantine/core";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -6,6 +6,8 @@ import React from "react";
 import MainTitle from "../components/mainTitle";
 import { nameDeveloperAtom } from "../atoms";
 import { useAtom } from "jotai";
+import GlobalTitle from "../components/globalTitle";
+import ElementsOfContacts from "../components/elementsOfContacts";
 
 const Contact = () => {
   const { pathname } = useRouter();
@@ -26,7 +28,12 @@ const Contact = () => {
           dataAos="zoom-in"
           dataAosDuration={1200}
         />
-      </Box>{" "}
+        <Text fz="xl" mt="sm" data-aos="fade-right" data-aos-duration="1200">
+          {translate("about-contacts")}
+        </Text>
+        <GlobalTitle title={translate("page-title")} width={300} />
+        <ElementsOfContacts />
+      </Box>
     </>
   );
 };

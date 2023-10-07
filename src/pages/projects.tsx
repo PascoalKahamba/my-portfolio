@@ -1,7 +1,6 @@
 import { Box, Text, rem, createStyles } from "@mantine/core";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
-
 import React from "react";
 import MainTitle from "../components/mainTitle";
 import GlobalTitle from "../components/globalTitle";
