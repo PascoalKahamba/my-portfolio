@@ -1,0 +1,10 @@
+.contacts {
+  width: 100%;
+}
+
+@media (min-width: 50rem) {
+  .contacts {
+    width: 50rem;
+    margin: 0 auto;
+  }
+}

@@ -3,6 +3,8 @@
     var(--mantine-color-gray-0),
     var(--mantine-color-dark-6)
   );
+  margin: 0 auto;
+  width: 40rem;
 }
 
 .title {
@@ -31,4 +33,10 @@
 .item:hover {
   box-shadow: 0 6px 14px 1px rgb(0 0 0 / 20%);
   transform: scale(1.05);
+}
+
+@media (max-width: 40rem) {
+  .card {
+    width: 100%;
+  }
 }
