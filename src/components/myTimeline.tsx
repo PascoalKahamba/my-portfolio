@@ -39,43 +39,45 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+const {
+  cursoEmVideoProgrammingLogic,
+  frontendAndbackend,
+  cursodejavascript,
+  flexbox,
+  cursodehtmlecss,
+  projetoacha5,
+  projetocrud,
+  typescript,
+  frontEnd,
+  materialuidocs,
+  styledcomponentsdocs,
+  projetonewcrud,
+  codeleapwebsite,
+  projetogestorfinanceiro,
+  typescriptdocs,
+  reactdoc,
+  nextjsdocs,
+  projetoestatisticasdosalunos,
+  cursodereact,
+  reactjs,
+  html5,
+  web,
+  mantinedocs,
+  jotaidocs,
+  reactcontextapidocs,
+  tailwindcssdocs,
+  myportfolio,
+  css3,
+  github,
+  cSharp,
+  gridlayout,
+} = translations;
+
+const { allJourney } = Alldata();
+
 export default function MyTimeline() {
   const { classes } = useStyles();
-  const { allJourney } = Alldata();
   const myTimeline = useTimeline(allJourney);
-  const {
-    cursoEmVideoProgrammingLogic,
-    frontendAndbackend,
-    cursodejavascript,
-    flexbox,
-    cursodehtmlecss,
-    projetoacha5,
-    projetocrud,
-    typescript,
-    frontEnd,
-    materialuidocs,
-    styledcomponentsdocs,
-    projetonewcrud,
-    codeleapwebsite,
-    projetogestorfinanceiro,
-    typescriptdocs,
-    reactdoc,
-    nextjsdocs,
-    projetoestatisticasdosalunos,
-    cursodereact,
-    reactjs,
-    html5,
-    web,
-    mantinedocs,
-    jotaidocs,
-    reactcontextapidocs,
-    tailwindcssdocs,
-    myportfolio,
-    css3,
-    github,
-    cSharp,
-    gridlayout,
-  } = translations;
   const { t: translate } = useTranslation("common");
 
   function addLinkOnText(textLink: string, description: string) {

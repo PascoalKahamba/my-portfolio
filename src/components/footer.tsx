@@ -148,29 +148,30 @@ const TIMELINE_2021 = 3;
 const TIMELINE_2019 = 1;
 const TIMELINE_2022 = 4;
 
+const { whatsapp, cellphone, calendly } = translations;
+
+const socialMedia = [
+  {
+    Icon: FaWhatsapp,
+    link: whatsapp,
+  },
+  {
+    Icon: PhoneCallIcon,
+    link: cellphone,
+  },
+  {
+    Icon: CalendarDaysIcon,
+    link: calendly,
+  },
+];
+
 export default function FooterLinks() {
   const { classes } = useStyles();
   const { t: translate } = useTranslation("common");
   const [_, setCount] = useAtom(countYearAtom);
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { footerData } = Alldata();
-  const { whatsapp, cellphone, calendly } = translations;
   const currentYear = new Date().getFullYear();
-
-  const socialMedia = [
-    {
-      Icon: FaWhatsapp,
-      link: whatsapp,
-    },
-    {
-      Icon: PhoneCallIcon,
-      link: cellphone,
-    },
-    {
-      Icon: CalendarDaysIcon,
-      link: calendly,
-    },
-  ];
 
   function choseThisTimeline(tecnologiesOrYear: string) {
     if (tecnologiesOrYear === "JavaScript" || tecnologiesOrYear === "2019") {
@@ -253,7 +254,10 @@ export default function FooterLinks() {
             <div className={classes.socialMedia}>
               {socialMedia.map(({ Icon, link }) => (
                 <Link href={link} key={link}>
-                  <a target="_blank" className={classes.eachSocial}>
+                  <a
+                    target={link === cellphone ? "_parent" : "_blank"}
+                    className={classes.eachSocial}
+                  >
                     <Icon size="1.05rem" />
                   </a>
                 </Link>

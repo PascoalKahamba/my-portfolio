@@ -104,11 +104,12 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+const { frontEnd, github, javascript, typescript } = translations;
+
 export default function IndexPage() {
   const { classes } = useStyles();
   const { locale } = useRouter();
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
-  const { frontEnd, github, javascript, typescript } = translations;
   const { t: translate } = useTranslation("home");
 
   const catcheValue = useMemo(() => {

@@ -100,20 +100,21 @@ interface KindOfNavbarProps {
   kindOfNavbar: "email" | "socialMedia";
 }
 
+const { github, linkedin, facebook, discord, email, instagram } = translations;
+
+const mockdata = [
+  { Icon: GithubIcon, link: github },
+  {
+    Icon: LinkedinIcon,
+    link: linkedin,
+  },
+  { Icon: FacebookIcon, link: facebook },
+  { Icon: InstagramIcon, link: instagram },
+  { Icon: BsDiscord, link: discord },
+];
+
 export default function NavbarMinimal({ kindOfNavbar }: KindOfNavbarProps) {
   const { classes } = useStyles();
-  const { github, linkedin, facebook, discord, email } = translations;
-
-  const mockdata = [
-    { Icon: GithubIcon, link: "https://github.com/PascoalKahamba" },
-    {
-      Icon: LinkedinIcon,
-      link: "https://www.linkedin.com/in/pascoal-kahamba-7b43bb233/",
-    },
-    { Icon: FacebookIcon, link: "https://web.facebook.com/PascoalKahamba/" },
-    { Icon: InstagramIcon, link: "https://www.instagram.com/pascoalkahamba/" },
-    { Icon: BsDiscord, link: "https://discord.com/channels/@me" },
-  ];
 
   return (
     <Box
@@ -148,10 +149,8 @@ export default function NavbarMinimal({ kindOfNavbar }: KindOfNavbarProps) {
         <Navbar p="ls" className={classes.email}>
           <Navbar.Section mt={80}>
             <Stack justify="center" spacing={0}>
-              <Link href="mailto://pascoalkahamba25@gmail.com">
-                <a target="_blank" className={classes.emailChild}>
-                  pascoalkahamba25@gmail.com
-                </a>
+              <Link href={email}>
+                <a className={classes.emailChild}>pascoalkahamba25@gmail.com</a>
               </Link>
             </Stack>
           </Navbar.Section>

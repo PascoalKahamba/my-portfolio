@@ -99,7 +99,17 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const About = () => {
+const {
+  frontendAndbackend,
+  javascript,
+  programmingLogic,
+  html5,
+  css3,
+  catumbela,
+  visualg,
+} = translations;
+
+export default function About() {
   const { classes } = useStyles();
   const { t: translate } = useTranslation("about");
   const { locale } = useRouter();
@@ -107,15 +117,6 @@ const About = () => {
   const { frontEndSkiils, otherTechnologies } = Alldata();
   const currentYear = new Date().getFullYear();
   const myAge = currentYear - 2002;
-  const {
-    frontendAndbackend,
-    javascript,
-    programmingLogic,
-    html5,
-    css3,
-    catumbela,
-    visualg,
-  } = translations;
 
   return (
     <>
@@ -269,6 +270,4 @@ const About = () => {
       </Box>
     </>
   );
-};
-
-export default About;
+}
