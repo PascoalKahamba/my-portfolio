@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { BsDiscord } from "react-icons/bs";
 import Link from "next/link";
+import translations from "../../locales/en/useExternalLink";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -95,23 +96,24 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const mockdata = [
-  { Icon: GithubIcon, link: "https://github.com/PascoalKahamba" },
-  {
-    Icon: LinkedinIcon,
-    link: "https://www.linkedin.com/in/pascoal-kahamba-7b43bb233/",
-  },
-  { Icon: FacebookIcon, link: "https://web.facebook.com/PascoalKahamba/" },
-  { Icon: InstagramIcon, link: "https://www.instagram.com/pascoalkahamba/" },
-  { Icon: BsDiscord, link: "https://discord.com/channels/@me" },
-];
-
 interface KindOfNavbarProps {
   kindOfNavbar: "email" | "socialMedia";
 }
 
 export default function NavbarMinimal({ kindOfNavbar }: KindOfNavbarProps) {
   const { classes } = useStyles();
+  const { github, linkedin, facebook, discord, email } = translations;
+
+  const mockdata = [
+    { Icon: GithubIcon, link: "https://github.com/PascoalKahamba" },
+    {
+      Icon: LinkedinIcon,
+      link: "https://www.linkedin.com/in/pascoal-kahamba-7b43bb233/",
+    },
+    { Icon: FacebookIcon, link: "https://web.facebook.com/PascoalKahamba/" },
+    { Icon: InstagramIcon, link: "https://www.instagram.com/pascoalkahamba/" },
+    { Icon: BsDiscord, link: "https://discord.com/channels/@me" },
+  ];
 
   return (
     <Box

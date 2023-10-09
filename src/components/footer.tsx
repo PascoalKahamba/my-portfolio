@@ -15,9 +15,7 @@ import Alldata from "../../contents/alldata";
 import { scrollToThePlace } from "./scrollControl";
 import { useAtom } from "jotai";
 import { countYearAtom, nameDeveloperAtom } from "../atoms";
-import Journey from "../pages/journey";
-import { useRouter } from "next/router";
-import { format, formatDistance } from "date-fns";
+import translations from "../../locales/en/useExternalLink";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -143,21 +141,6 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const socialMedia = [
-  {
-    Icon: FaWhatsapp,
-    link: "https://api.whatsapp.com/send?phone=941900324",
-  },
-  {
-    Icon: PhoneCallIcon,
-    link: "tel://941900324",
-  },
-  {
-    Icon: CalendarDaysIcon,
-    link: "https://calendly.com/pascoalkahamba",
-  },
-];
-
 const SCROLL_TO_A_LOCAL_PAGE = 400;
 const TIMELINE_2020 = 2;
 const TIMELINE_2023 = 5;
@@ -171,7 +154,23 @@ export default function FooterLinks() {
   const [_, setCount] = useAtom(countYearAtom);
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { footerData } = Alldata();
+  const { whatsapp, cellphone, calendly } = translations;
   const currentYear = new Date().getFullYear();
+
+  const socialMedia = [
+    {
+      Icon: FaWhatsapp,
+      link: whatsapp,
+    },
+    {
+      Icon: PhoneCallIcon,
+      link: cellphone,
+    },
+    {
+      Icon: CalendarDaysIcon,
+      link: calendly,
+    },
+  ];
 
   function choseThisTimeline(tecnologiesOrYear: string) {
     if (tecnologiesOrYear === "JavaScript" || tecnologiesOrYear === "2019") {

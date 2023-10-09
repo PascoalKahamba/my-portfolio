@@ -1,7 +1,6 @@
-import { Box, Text, createStyles, rem } from "@mantine/core";
+import { Box, Text } from "@mantine/core";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import React from "react";
 import MainTitle from "../components/mainTitle";
 import { nameDeveloperAtom } from "../atoms";
@@ -11,10 +10,8 @@ import ElementsOfContacts from "../components/elementsOfContacts";
 import classes from "../styles/contacts.module.css";
 
 const Contact = () => {
-  const { pathname } = useRouter();
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("contacts");
-  console.log(pathname);
 
   return (
     <>

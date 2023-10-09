@@ -64,6 +64,14 @@ const translations = {
   redux: "https://en.wikipedia.org/wiki/Redux_(JavaScript_library)",
   tictactoe: "https://en.wikipedia.org/wiki/Tic-tac-toe",
   datilography: "https://en.wikipedia.org/wiki/Typing",
+  whatsapp: "https://api.whatsapp.com/send?phone=941900324",
+  cellphone: "tel://941900324",
+  email: "mailto://pascoalkahamba25@gmail.com",
+  linkedin: "https://www.linkedin.com/in/pascoal-kahamba-7b43bb233/",
+  facebook: "https://web.facebook.com/PascoalKahamba/",
+  calendly: "https://calendly.com/pascoalkahamba",
+  instagram: "https://www.instagram.com/pascoalkahamba/",
+  discord: "https://discord.com/channels/@me",
 };
 
 export default translations;
