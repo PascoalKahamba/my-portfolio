@@ -1,4 +1,4 @@
-import { Box, Text, rem, createStyles } from "@mantine/core";
+import { Box, Text } from "@mantine/core";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 import React from "react";
@@ -7,19 +7,9 @@ import GlobalTitle from "../components/globalTitle";
 import ProjectCard from "../components/projectCard";
 import { nameDeveloperAtom } from "../atoms";
 import { useAtom } from "jotai";
-
-const useStyles = createStyles((theme) => ({
-  projects: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
-    gap: rem(30),
-  },
-}));
+import classes from "../styles/projects.module.css";
 
 export default function Projects() {
-  const { classes } = useStyles();
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("projects");
 

@@ -2,9 +2,9 @@
   width: 100%;
 }
 
-@media (min-width: 50rem) {
+/* @media (min-width: 50rem) {
   .contacts {
-    width: 50rem;
+    width: 60rem;
     margin: 0 auto;
   }
-}
+} */

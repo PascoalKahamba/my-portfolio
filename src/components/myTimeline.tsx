@@ -73,10 +73,9 @@ const {
   gridlayout,
 } = translations;
 
-const { allJourney } = Alldata();
-
 export default function MyTimeline() {
   const { classes } = useStyles();
+  const { allJourney } = Alldata();
   const myTimeline = useTimeline(allJourney);
   const { t: translate } = useTranslation("common");
 
