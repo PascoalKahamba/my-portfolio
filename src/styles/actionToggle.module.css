@@ -1,0 +1,6 @@
+.actionToggle {
+  background-color: light-dark(
+    var(--mantine-white-0),
+    var(--mantine-color-gray-6)
+  );
+}

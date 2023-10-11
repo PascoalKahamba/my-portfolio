@@ -59,7 +59,7 @@
   padding-top: rem(3px);
   padding-bottom: rem(3px);
 
-  &:hover {
+  .eachSocial:hover {
     text-decoration: underline;
   }
 }
@@ -99,13 +99,12 @@
   padding: 1rem;
   color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
 
-  &:hover {
-    color: light-dark(var(--mantine-color-blue-5), var(--mantine-color-blue-3));
-  }
-
   .social {
     @media (max-width: 40rem) {
       margin-top: var(--mantine-spacing-xs);
     }
   }
+}
+.eachSocial:hover {
+  color: light-dark(var(--mantine-color-blue-5), var(--mantine-color-blue-3));
 }

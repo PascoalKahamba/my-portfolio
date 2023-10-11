@@ -1,0 +1,12 @@
+.user {
+  display: block;
+  cursor: context-menu;
+  text-align: right;
+  color: light-dark(var(--mantine-white-0), var(--mantine-color-gray-6));
+}
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6;
+}

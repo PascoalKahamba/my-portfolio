@@ -1,26 +1,6 @@
-import { createStyles, rem } from "@mantine/core";
+import { rem } from "@mantine/core";
 import React from "react";
-
-const useStyles = createStyles((theme) => ({
-  flexTitle: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: rem(17),
-  },
-
-  line: {
-    height: rem(3),
-    // flex: " 1 1 40rem",
-    backgroundColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[0]
-        : theme.colors.gray[7],
-  },
-  [theme.fn.smallerThan("sm")]: {
-    width: rem(50),
-  },
-}));
+import classes from "../styles/globalTitle.module.css";
 
 interface GlobalTitleProps {
   title: string;
@@ -28,7 +8,6 @@ interface GlobalTitleProps {
 }
 
 export default function GlobalTitle({ title, width }: GlobalTitleProps) {
-  const { classes } = useStyles();
   return (
     <div
       className={classes.flexTitle}

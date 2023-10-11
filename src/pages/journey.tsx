@@ -1,4 +1,4 @@
-import { Box, Skeleton, Text, createStyles, rem } from "@mantine/core";
+import { Box, Text } from "@mantine/core";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 
@@ -9,31 +9,13 @@ import GlobalTitle from "../components/globalTitle";
 import MyTimeline from "../components/myTimeline";
 import Alldata from "../../contents/alldata";
 import useTimeline from "../hooks/useTimeline";
+import classes from "../styles/journey.module.css";
 import { useAtom } from "jotai";
 import { nameDeveloperAtom } from "../atoms";
-
-const useStyles = createStyles((theme) => ({
-  description: {
-    width: rem(750),
-    margin: "0 auto",
-    whiteSpace: "normal",
-  },
-
-  links: {
-    color: theme.colors.blue[4],
-    textDecoration: "none",
-    display: "inline-block",
-
-    "&:hover": {
-      textDecoration: "underline",
-    },
-  },
-}));
 
 export default function Journey() {
   const { t: translate } = useTranslation("journey");
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
-  const { classes } = useStyles();
 
   return (
     <>

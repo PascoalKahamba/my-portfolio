@@ -4,23 +4,8 @@ import {
   Group,
   Avatar,
   Text,
-  createStyles,
 } from "@mantine/core";
-
-const useStyles = createStyles((theme) => ({
-  user: {
-    display: "block",
-    cursor: "context-menu",
-    textAlign: "right",
-    color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
-  },
-  profile: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    gap: 6,
-  },
-}));
+import classes from "../styles/userProfile.module.css";
 
 interface UserButtonProps extends UnstyledButtonProps {
   image: string;
@@ -34,8 +19,6 @@ export default function UserProfile({
   skill,
   ...others
 }: UserButtonProps) {
-  const { classes } = useStyles();
-
   return (
     <UnstyledButton className={classes.user} {...others}>
       <Group className={classes.profile}>
