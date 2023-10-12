@@ -1,4 +1,4 @@
-import { Group, Box, rem, useStyles, useMantineTheme } from "@mantine/core";
+import { Group, Box, useMantineTheme } from "@mantine/core";
 import LanguagePicker from "./languagePicker";
 import ActionToggle from "./actionToggle";
 import UserProfile from "./userProfile";

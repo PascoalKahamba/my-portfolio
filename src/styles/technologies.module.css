@@ -20,11 +20,11 @@
     var(--mantine-white-0),
     var(--mantine-color-dark-5)
   );
-  &:hover {
-    cursor: pointer;
-    box-shadow: 0 6px 14px 1px rgb(0 0 0 / 20%);
-  }
 }
+.icon:hover {
+   cursor: pointer;
+   box-shadow: 0 6px 14px 1px rgb(0 0 0 / 20%);
+ }
 
 .flexLenged {
   width: 230rem;

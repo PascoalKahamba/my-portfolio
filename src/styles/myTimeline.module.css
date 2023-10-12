@@ -22,8 +22,7 @@
   color: var(--mantine-color-blue-4);
   text-decoration: none;
   display: inline-block;
-
-  &:hover {
-    text-decoration: underline;
-  }
+}
+.links:hover {
+  text-decoration: underline;
 }

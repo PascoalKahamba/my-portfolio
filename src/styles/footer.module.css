@@ -58,10 +58,10 @@
   font-size: var(--mantine-font-size-sm);
   padding-top: rem(3px);
   padding-bottom: rem(3px);
+}
 
-  .eachSocial:hover {
-    text-decoration: underline;
-  }
+.eachSocial:hover {
+  text-decoration: underline;
 }
 
 .title {
