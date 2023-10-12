@@ -2,7 +2,7 @@ import { rem } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 
-export default function CaroucelElement() {
+export default function CarouselElement() {
   return (
     <Carousel
       height={180}
