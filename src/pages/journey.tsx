@@ -10,7 +10,8 @@ import MyTimeline from "../components/myTimeline";
 import Alldata from "../../contents/alldata";
 import useTimeline from "../hooks/useTimeline";
 import { useAtom } from "jotai";
-import { nameDeveloperAtom } from "../atoms";
+import { countYearAtom, nameDeveloperAtom } from "../atoms";
+import { scrollToThePlace } from "../components/scrollControl";
 
 const useStyles = createStyles((theme) => ({
   description: {
@@ -29,11 +30,19 @@ const useStyles = createStyles((theme) => ({
     },
   },
 }));
+const SCROLL_TO_A_LOCAL_PAGE = 400;
+const TIMELINE_2018 = 0;
 
 export default function Journey() {
   const { t: translate } = useTranslation("journey");
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
+  const [_, setCountYear] = useAtom(countYearAtom);
   const { classes } = useStyles();
+
+  function goToTimeline2018() {
+    setCountYear(TIMELINE_2018);
+    scrollToThePlace(SCROLL_TO_A_LOCAL_PAGE);
+  }
 
   return (
     <>
@@ -52,10 +61,8 @@ export default function Journey() {
         <Text fz="xl" mt="sm" data-aos="fade-right" data-aos-duration="1200">
           <p>
             {translate("short-journey")}{" "}
-            <Link href="">
-              <a className={classes.links} target="_blank">
-                2018
-              </a>
+            <Link href="" onClick={goToTimeline2018}>
+              <a className={classes.links}>2018</a>
             </Link>{" "}
             , {translate("more-journey")}
           </p>

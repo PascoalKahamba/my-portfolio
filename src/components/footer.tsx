@@ -168,30 +168,30 @@ const socialMedia = [
 export default function FooterLinks() {
   const { classes } = useStyles();
   const { t: translate } = useTranslation("common");
-  const [_, setCount] = useAtom(countYearAtom);
+  const [_, setCountYear] = useAtom(countYearAtom);
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { footerData } = Alldata();
   const currentYear = new Date().getFullYear();
 
   function choseThisTimeline(tecnologiesOrYear: string) {
     if (tecnologiesOrYear === "JavaScript" || tecnologiesOrYear === "2019") {
-      setCount(TIMELINE_2019);
+      setCountYear(TIMELINE_2019);
       return;
     }
     if (tecnologiesOrYear === "TypeScript" || tecnologiesOrYear === "2022") {
-      setCount(TIMELINE_2022);
+      setCountYear(TIMELINE_2022);
       return;
     }
     if (tecnologiesOrYear === "Next.js" || tecnologiesOrYear === "2023") {
-      setCount(TIMELINE_2023);
+      setCountYear(TIMELINE_2023);
       return;
     }
     if (tecnologiesOrYear === "React.js" || tecnologiesOrYear === "2021") {
-      setCount(TIMELINE_2021);
+      setCountYear(TIMELINE_2021);
       return;
     }
 
-    setCount(TIMELINE_2020);
+    setCountYear(TIMELINE_2020);
   }
 
   function goToEspecialTimeline(timeline: string, title: string) {
