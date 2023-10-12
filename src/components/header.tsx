@@ -16,6 +16,8 @@ import Link from "next/link";
 import Alldata from "../../contents/alldata";
 import { nameDeveloperAtom } from "../atoms";
 import { useAtom } from "jotai";
+import { useState } from "react";
+import useMedia from "../hooks/useMedia";
 
 const useStyles = createStyles((theme) => ({
   headerElement: {
@@ -86,7 +88,9 @@ export default function HeaderMegaMenu() {
   const { pathname } = useRouter();
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("common");
+  const [mobileMenu, setMobileMenu] = useState(false);
   const { mainLinks } = Alldata();
+  const mobile = useMedia("(max-width:40rem)");
 
   const mainItems = mainLinks.map((item) => (
     <Link key={item.label} href={item.link}>
@@ -103,25 +107,33 @@ export default function HeaderMegaMenu() {
   ));
 
   return (
-    <Box pb={90}>
-      <Header height={60} px="md" className={classes.headerElement}>
-        <Group
-          position="apart"
-          sx={{ height: "100%" }}
-          className={classes.headerChild}
-        >
-          <UserProfile
-            name={nameDeveloper}
-            image="/my-photo.jpg"
-            skill={translate("my-skill")}
-          />
-          <Group className={classes.mainLinks}>{mainItems}</Group>
-          <Group className={classes.hiddenMobile}>
-            <LanguagePicker />
-            <ActionToggle />
+    <>
+      {mobile && (
+        <button
+          aria-label="menu-mobile"
+          onClick={() => setMobileMenu(!mobileMenu)}
+        ></button>
+      )}
+      <Box pb={90}>
+        <Header height={60} px="md" className={classes.headerElement}>
+          <Group
+            position="apart"
+            sx={{ height: "100%" }}
+            className={classes.headerChild}
+          >
+            <UserProfile
+              name={nameDeveloper}
+              image="/my-photo.jpg"
+              skill={translate("my-skill")}
+            />
+            <Group className={classes.mainLinks}>{mainItems}</Group>
+            <Group className={classes.hiddenMobile}>
+              <LanguagePicker />
+              <ActionToggle />
+            </Group>
           </Group>
-        </Group>
-      </Header>
-    </Box>
+        </Header>
+      </Box>
+    </>
   );
 }
