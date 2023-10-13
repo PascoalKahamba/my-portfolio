@@ -6,6 +6,7 @@ import {
   Box,
   rem,
   px,
+  Burger,
 } from "@mantine/core";
 import LanguagePicker from "./languagePicker";
 import ActionToggle from "./actionToggle";
@@ -18,6 +19,7 @@ import { nameDeveloperAtom } from "../atoms";
 import { useAtom } from "jotai";
 import { useState } from "react";
 import useMedia from "../hooks/useMedia";
+import { useDisclosure } from "@mantine/hooks";
 
 const useStyles = createStyles((theme) => ({
   headerElement: {
@@ -50,6 +52,9 @@ const useStyles = createStyles((theme) => ({
           : theme.colors.gray[0],
       textDecoration: "none",
     },
+  },
+  mobileButton: {
+    backgroundColor: theme.colors.blue[5],
   },
 
   mainLinkActive: {
@@ -86,6 +91,7 @@ interface LinkProps {
 export default function HeaderMegaMenu() {
   const { classes, cx } = useStyles();
   const { pathname } = useRouter();
+  const [opened, { toggle }] = useDisclosure(false);
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("common");
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -111,8 +117,11 @@ export default function HeaderMegaMenu() {
       {mobile && (
         <button
           aria-label="menu-mobile"
+          className={classes.mobileButton}
           onClick={() => setMobileMenu(!mobileMenu)}
-        ></button>
+        >
+          Menu Mobile
+        </button>
       )}
       <Box pb={90}>
         <Header height={60} px="md" className={classes.headerElement}>
@@ -126,6 +135,7 @@ export default function HeaderMegaMenu() {
               image="/my-photo.jpg"
               skill={translate("my-skill")}
             />
+            {mobile && <Burger opened={opened} onClick={toggle} size="sm" />}
             <Group className={classes.mainLinks}>{mainItems}</Group>
             <Group className={classes.hiddenMobile}>
               <LanguagePicker />

@@ -24,6 +24,7 @@ const useStyles = createStyles((theme) => ({
     color: theme.colors.blue[4],
     textDecoration: "none",
     display: "inline-block",
+    cursor: "pointer",
 
     "&:hover": {
       textDecoration: "underline",
@@ -61,9 +62,9 @@ export default function Journey() {
         <Text fz="xl" mt="sm" data-aos="fade-right" data-aos-duration="1200">
           <p>
             {translate("short-journey")}{" "}
-            <Link href="" onClick={goToTimeline2018}>
-              <a className={classes.links}>2018</a>
-            </Link>{" "}
+            <span className={classes.links} onClick={goToTimeline2018}>
+              2018
+            </span>{" "}
             , {translate("more-journey")}
           </p>
           <p>{translate("paragraph")}</p>
