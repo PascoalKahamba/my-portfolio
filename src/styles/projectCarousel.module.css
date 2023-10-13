@@ -1,7 +1,3 @@
-.price {
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-}
-
 .carouselControls {
   transition: opacity 150ms ease;
   opacity: 0;
@@ -10,25 +6,5 @@
 .carousel:hover {
   .carouselControls {
     opacity: 1;
-  }
-}
-
-.carouselIndicator {
-  width: rem(4px);
-  height: rem(4px);
-  transition: width 250ms ease;
-
-  /* &[data-active] {
-    width: rem(16px);
-  } */
-}
-
-.card {
-  width: 45rem;
-}
-
-@media (max-width: 50rem) {
-  .card {
-    width: 100%;
   }
 }

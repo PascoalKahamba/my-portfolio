@@ -13,7 +13,7 @@ const useStyles = createStyles((theme) => ({
     border: "none",
     outline: "none",
     borderRadius: theme.spacing.sm,
-    color: theme.white,
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
     position: "fixed",
     left: rem(4),
     bottom: rem(6),

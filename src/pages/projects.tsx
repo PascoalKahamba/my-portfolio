@@ -42,6 +42,8 @@ export default function Projects() {
         <GlobalTitle title={translate("page-title")} width={300} />
         <div className={classes.projects}>
           <ProjectCarousel />
+          <ProjectCarousel />
+          <ProjectCarousel />
         </div>
       </Box>
     </>

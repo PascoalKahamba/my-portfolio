@@ -1,32 +1,96 @@
-import { Image, Card, Text, Group, Button, rem } from "@mantine/core";
+import {
+  Image,
+  Card,
+  Text,
+  Group,
+  Button,
+  rem,
+  createStyles,
+  px,
+} from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 import { StarIcon } from "lucide-react";
-import classes from "../styles/projectCarousel.module.css";
+import classs from "../styles/projectCarousel.module.css";
+import Link from "next/link";
+import { GithubIcon } from "lucide-react";
+import { TbBrandVercel } from "react-icons/tb";
 
 const images = [
-  "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
-  "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
-  "https://images.unsplash.com/photo-1605774337664-7a846e9cdf17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
-  "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
-  "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
+  "/projectPictures/financialProject.PNG",
+  "/projectPictures/financialProject02.PNG",
+  "/projectPictures/financialProject03.PNG",
+  "/projectPictures/financialProject04.PNG",
+  "/projectPictures/financialProject05.PNG",
 ];
 
+const useStyles = createStyles((theme) => ({
+  technologies: {
+    backgroundColor: theme.colors.blue[5],
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
+    borderRadius: theme.spacing.xs,
+    padding: "5px 0.5rem",
+  },
+  links: {
+    backgroundColor: theme.colors.blue[5],
+    padding: rem(5),
+    borderRadius: theme.spacing.xs,
+    textDecoration: "none",
+    display: "inline-block",
+
+    "&:hover": {
+      textDecoration: "underline",
+    },
+  },
+  icons: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  icon: {
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
+    display: "flex",
+    gap: rem(10),
+    alignItems: "center",
+  },
+
+  carouselIndicator: {
+    width: "rem(4px)",
+    height: "rem(4px)",
+    transition: " width 250ms ease",
+  },
+
+  card: {
+    width: rem(600),
+    [theme.fn.smallerThan("sm")]: {
+      width: "100%",
+    },
+  },
+}));
+
 export default function ProjectCarousel() {
+  const { classes } = useStyles();
   const slides = images.map((image) => (
     <Carousel.Slide key={image}>
-      <Image src={image} height={220} alt="" />
+      <Image src={image} height={220} alt="project picture" />
     </Carousel.Slide>
   ));
 
   return (
-    <Card radius="md" withBorder padding="xl" className={classes.card}>
+    <Card
+      radius="md"
+      withBorder
+      padding="xl"
+      className={classes.card}
+      data-aos="fade-right"
+      data-aos-duration="1400"
+    >
       <Card.Section>
         <Carousel
           withIndicators
           loop
           classNames={{
-            root: classes.carousel,
-            controls: classes.carouselControls,
+            root: classs.carousel,
+            controls: classs.carouselControls,
             indicator: classes.carouselIndicator,
           }}
         >
@@ -36,35 +100,38 @@ export default function ProjectCarousel() {
 
       <Group mt="lg">
         <Text fw={500} fz="lg">
-          Forde, Norway
+          Gestor Financeiro
         </Text>
 
         <Group>
-          <StarIcon style={{ width: rem(16), height: rem(16) }} />
-          <Text fz="xs" fw={500}>
-            4.78
+          <Text fz="xs" className={classes.technologies} fw={500}>
+            TypeScript
+          </Text>
+          <Text fz="xs" className={classes.technologies} fw={500}>
+            React
+          </Text>
+          <Text fz="xs" className={classes.technologies} fw={500}>
+            Material-UI
           </Text>
         </Group>
       </Group>
 
-      <Text fz="sm" c="dimmed" mt="sm">
-        Relax, rejuvenate and unplug in this unique contemporary Birdbox. Feel
-        close to nature in ultimate comfort. Enjoy the view of the epic mountain
-        range of Blegja and the Førdefjord.
-      </Text>
-
-      <Group mt="md">
-        <div>
-          <Text fz="xl" span fw={500} className={classes.price}>
-            397$
-          </Text>
-          <Text span fz="sm" c="dimmed">
-            {" "}
-            / night
-          </Text>
+      <Group mt="md" className={classes.icons}>
+        <div className={classes.icon}>
+          <Link href="">
+            <a className={classes.links} target="_blank">
+              <GithubIcon size="1.5rem" />
+            </a>
+          </Link>
+          <Link href="">
+            <a className={classes.links} target="_blank">
+              <TbBrandVercel size="1.5rem" />
+            </a>
+          </Link>
         </div>
-
-        <Button radius="md">Book now</Button>
+        <Text fz="xs" className={classes.technologies} fw={500}>
+          Concluido
+        </Text>
       </Group>
     </Card>
   );
