@@ -279,12 +279,12 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@mantine/carousel@^5.4.2":
-  version "5.10.5"
-  resolved "https://registry.yarnpkg.com/@mantine/carousel/-/carousel-5.10.5.tgz#0735228c62e934dabd5f14521ae83d5cd56b6a15"
-  integrity sha512-r7KSNqGia/HHvZGSeOqcV2ptOpk/ljrgm6L92DE03i4DgUNT1y8QlF3hCK865xHecyj6nTRYDnoBLAuBufe/Yw==
+"@mantine/carousel@^6.0.21":
+  version "6.0.21"
+  resolved "https://registry.npmjs.org/@mantine/carousel/-/carousel-6.0.21.tgz#3e2a77e365014b314f90e8b474b350432c926640"
+  integrity sha512-cQAQ5RlVhSrYA8aez/euzs5nQKcGcwxVTS/gf46GEZ0gcDJXlymZPbc2OopH/WDczEaMWOF7wz8R9+uG1hYNCg==
   dependencies:
-    "@mantine/utils" "5.10.5"
+    "@mantine/utils" "6.0.21"
 
 "@mantine/core@^6.0.19":
   version "6.0.21"
@@ -341,11 +341,6 @@
   dependencies:
     clsx "1.1.1"
     csstype "3.0.9"
-
-"@mantine/utils@5.10.5":
-  version "5.10.5"
-  resolved "https://registry.yarnpkg.com/@mantine/utils/-/utils-5.10.5.tgz#ad620d714e545c6efb7f69d94ce46e3fd2fe01fb"
-  integrity sha512-FGMq4dGs5HhDAtI0z46uzxzKKPmZ3h5uKUyKg1ZHoFR1mBtcUMbB6FylFmHqKFRWlJ5IXqX9dwmiVrLYUOfTmA==
 
 "@mantine/utils@6.0.21":
   version "6.0.21"

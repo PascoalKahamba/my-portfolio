@@ -4,10 +4,9 @@ import Head from "next/head";
 import React from "react";
 import MainTitle from "../components/mainTitle";
 import GlobalTitle from "../components/globalTitle";
-import ProjectCard from "../components/projectCard";
 import { nameDeveloperAtom } from "../atoms";
 import { useAtom } from "jotai";
-import CarouselElement from "../components/carousel";
+import ProjectCarousel from "../components/projectCarousel";
 
 const useStyles = createStyles((theme) => ({
   projects: {
@@ -41,7 +40,9 @@ export default function Projects() {
           {translate("about-project")}
         </Text>
         <GlobalTitle title={translate("page-title")} width={300} />
-        <div className={classes.projects}>{/* <CarouselElement /> */}</div>
+        <div className={classes.projects}>
+          <ProjectCarousel />
+        </div>
       </Box>
     </>
   );
