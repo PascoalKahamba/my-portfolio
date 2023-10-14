@@ -7,6 +7,8 @@ import GlobalTitle from "../components/globalTitle";
 import { nameDeveloperAtom } from "../atoms";
 import { useAtom } from "jotai";
 import ProjectCarousel from "../components/projectCarousel";
+import Alldata from "../../contents/alldata";
+import translations from "../../locales/en/useExternalLink";
 
 const useStyles = createStyles((theme) => ({
   projects: {
@@ -18,10 +20,13 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+const { projetogestorfinanceiro, github } = translations;
+
 export default function Projects() {
   const { classes } = useStyles();
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("projects");
+  const { financialImages, financialTechnologies } = Alldata();
 
   return (
     <>
@@ -41,9 +46,33 @@ export default function Projects() {
         </Text>
         <GlobalTitle title={translate("page-title")} width={300} />
         <div className={classes.projects}>
-          <ProjectCarousel />
-          <ProjectCarousel />
-          <ProjectCarousel />
+          <ProjectCarousel
+            vercelLink={projetogestorfinanceiro}
+            githubLink={github}
+            name="Gestor Financeiro"
+            status="Concluido"
+            technologies={financialTechnologies}
+            images={financialImages}
+            dataAos="fade-right"
+          />
+          <ProjectCarousel
+            vercelLink={projetogestorfinanceiro}
+            githubLink={github}
+            name="Gestor Financeiro"
+            status="Concluido"
+            technologies={financialTechnologies}
+            images={financialImages}
+            dataAos="fade-right"
+          />
+          <ProjectCarousel
+            vercelLink={projetogestorfinanceiro}
+            githubLink={github}
+            name="Gestor Financeiro"
+            status="Concluido"
+            technologies={financialTechnologies}
+            images={financialImages}
+            dataAos="fade-right"
+          />
         </div>
       </Box>
     </>

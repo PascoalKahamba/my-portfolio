@@ -368,8 +368,18 @@ export default function Alldata() {
       },
     ],
   ];
+  const financialImages = [
+    "/projectPictures/financialProject.PNG",
+    "/projectPictures/financialProject02.PNG",
+    "/projectPictures/financialProject03.PNG",
+    "/projectPictures/financialProject04.PNG",
+    "/projectPictures/financialProject05.PNG",
+  ];
+  const financialTechnologies = ["TypeScript", "React", "Material-UI"];
 
   return {
+    financialImages,
+    financialTechnologies,
     mainLinks,
     footerData,
     allJourney,

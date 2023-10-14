@@ -15,14 +15,6 @@ import Link from "next/link";
 import { GithubIcon } from "lucide-react";
 import { TbBrandVercel } from "react-icons/tb";
 
-const images = [
-  "/projectPictures/financialProject.PNG",
-  "/projectPictures/financialProject02.PNG",
-  "/projectPictures/financialProject03.PNG",
-  "/projectPictures/financialProject04.PNG",
-  "/projectPictures/financialProject05.PNG",
-];
-
 const useStyles = createStyles((theme) => ({
   technologies: {
     backgroundColor: theme.colors.blue[5],
@@ -67,7 +59,25 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function ProjectCarousel() {
+interface ProjectCarouselProps {
+  images: string[];
+  technologies: string[];
+  name: string;
+  githubLink: string;
+  vercelLink: string;
+  dataAos: string;
+  status: string;
+}
+
+export default function ProjectCarousel({
+  dataAos,
+  images,
+  name,
+  technologies,
+  status,
+  githubLink,
+  vercelLink,
+}: ProjectCarouselProps) {
   const { classes } = useStyles();
   const slides = images.map((image) => (
     <Carousel.Slide key={image}>
@@ -81,7 +91,7 @@ export default function ProjectCarousel() {
       withBorder
       padding="xl"
       className={classes.card}
-      data-aos="fade-right"
+      data-aos={dataAos}
       data-aos-duration="1400"
     >
       <Card.Section>
@@ -100,37 +110,38 @@ export default function ProjectCarousel() {
 
       <Group mt="lg">
         <Text fw={500} fz="lg">
-          Gestor Financeiro
+          {name}
         </Text>
 
         <Group>
-          <Text fz="xs" className={classes.technologies} fw={500}>
-            TypeScript
-          </Text>
-          <Text fz="xs" className={classes.technologies} fw={500}>
-            React
-          </Text>
-          <Text fz="xs" className={classes.technologies} fw={500}>
-            Material-UI
-          </Text>
+          {technologies.map((technologie) => (
+            <Text
+              fz="xs"
+              key={technologie}
+              className={classes.technologies}
+              fw={500}
+            >
+              {technologie}
+            </Text>
+          ))}
         </Group>
       </Group>
 
       <Group mt="md" className={classes.icons}>
         <div className={classes.icon}>
-          <Link href="">
+          <Link href={githubLink}>
             <a className={classes.links} target="_blank">
               <GithubIcon size="1.5rem" />
             </a>
           </Link>
-          <Link href="">
+          <Link href={vercelLink}>
             <a className={classes.links} target="_blank">
               <TbBrandVercel size="1.5rem" />
             </a>
           </Link>
         </div>
         <Text fz="xs" className={classes.technologies} fw={500}>
-          Concluido
+          {status}
         </Text>
       </Group>
     </Card>
