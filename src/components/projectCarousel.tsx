@@ -84,6 +84,9 @@ export default function ProjectCarousel({
       <Image src={image} height={220} alt="project picture" />
     </Carousel.Slide>
   ));
+  const developerName = "Pascoal";
+
+  console.log(developerName.lastIndexOf("o"));
 
   return (
     <Card

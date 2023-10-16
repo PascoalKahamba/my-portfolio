@@ -30,12 +30,19 @@ const translations = {
   typescript: "https://en.wikipedia.org/wiki/TypeScript",
   projetocrud: "https://project-crud.vercel.app/",
   codeleapwebsite: "https://codeleap.co.uk/",
-  projetonewcrud: "https://project-engineering-test.vercel.app/",
+  projectnewcrudvercel: "https://project-engineering-test.vercel.app/",
+  projectnewcrudgithub:
+    "https://github.com/PascoalKahamba/Project-Engineering-Test",
   cursodereact: "https://www.youtube.com/watch?v=iIQOtwsWXqU&t=28s",
   reactdoc: "https://react.dev/",
-  projetogestorfinanceiro: "https://financial-manager-lemon.vercel.app/",
-  projetoestatisticasdosalunos: "https://student-statistics.vercel.app/",
-  projetoacha5: "https://project-acha5.vercel.app/",
+  projectfinancialmanagervercel: "https://financial-manager-lemon.vercel.app/",
+  projectfinancialmanagergithub:
+    "https://github.com/PascoalKahamba/financial-manager",
+  projectstudentstatisticsvercel: "https://student-statistics.vercel.app/",
+  projectstudentstatisticsgithub:
+    "https://github.com/PascoalKahamba/student-Statistics",
+  projectfindfivevercel: "https://project-acha5.vercel.app/",
+  projectfindfivegithub: "https://github.com/PascoalKahamba/project_acha5",
   github: "https://github.com/PascoalKahamba",
   frontEnd: "https://www.alura.com.br/artigos/o-que-e-front-end-e-back-end",
   mysql: "https://en.wikipedia.org/wiki/MySQL",

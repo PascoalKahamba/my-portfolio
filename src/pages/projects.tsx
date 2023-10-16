@@ -4,7 +4,7 @@ import Head from "next/head";
 import React from "react";
 import MainTitle from "../components/mainTitle";
 import GlobalTitle from "../components/globalTitle";
-import { nameDeveloperAtom } from "../atoms";
+import { nameDeveloperAtom } from "../../atoms";
 import { useAtom } from "jotai";
 import ProjectCarousel from "../components/projectCarousel";
 import Alldata from "../../contents/alldata";
@@ -20,7 +20,16 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const { projetogestorfinanceiro, github } = translations;
+const {
+  projectfinancialmanagervercel,
+  projectfinancialmanagergithub,
+  projectstudentstatisticsvercel,
+  projectnewcrudvercel,
+  projectfindfivegithub,
+  projectfindfivevercel,
+  projectstudentstatisticsgithub,
+  projectnewcrudgithub,
+} = translations;
 
 export default function Projects() {
   const { classes } = useStyles();
@@ -47,8 +56,8 @@ export default function Projects() {
         <GlobalTitle title={translate("page-title")} width={300} />
         <div className={classes.projects}>
           <ProjectCarousel
-            vercelLink={projetogestorfinanceiro}
-            githubLink={github}
+            vercelLink={projectfinancialmanagervercel}
+            githubLink={projectfinancialmanagergithub}
             name="Gestor Financeiro"
             status="Concluido"
             technologies={financialTechnologies}
@@ -56,22 +65,31 @@ export default function Projects() {
             dataAos="fade-right"
           />
           <ProjectCarousel
-            vercelLink={projetogestorfinanceiro}
-            githubLink={github}
-            name="Gestor Financeiro"
+            vercelLink={projectnewcrudvercel}
+            githubLink={projectnewcrudgithub}
+            name="CRUD Moderno"
+            status="Concluido"
+            technologies={financialTechnologies}
+            images={financialImages}
+            dataAos="fade-left"
+          />
+          <ProjectCarousel
+            vercelLink={projectstudentstatisticsvercel}
+            githubLink={projectstudentstatisticsgithub}
+            name="Estatisticas dos Alunos"
             status="Concluido"
             technologies={financialTechnologies}
             images={financialImages}
             dataAos="fade-right"
           />
           <ProjectCarousel
-            vercelLink={projetogestorfinanceiro}
-            githubLink={github}
-            name="Gestor Financeiro"
+            vercelLink={projectfindfivevercel}
+            githubLink={projectfindfivegithub}
+            name="Acha-5"
             status="Concluido"
             technologies={financialTechnologies}
             images={financialImages}
-            dataAos="fade-right"
+            dataAos="fade-left"
           />
         </div>
       </Box>

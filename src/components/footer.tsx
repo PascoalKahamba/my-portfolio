@@ -14,7 +14,7 @@ import useTranslation from "next-translate/useTranslation";
 import Alldata from "../../contents/alldata";
 import { scrollToThePlace } from "./scrollControl";
 import { useAtom } from "jotai";
-import { countYearAtom, nameDeveloperAtom } from "../atoms";
+import { countYearAtom, nameDeveloperAtom } from "../../atoms";
 import translations from "../../locales/en/useExternalLink";
 
 const useStyles = createStyles((theme) => ({

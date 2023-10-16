@@ -15,7 +15,7 @@ import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import Alldata from "../../contents/alldata";
-import { nameDeveloperAtom } from "../atoms";
+import { nameDeveloperAtom } from "../../atoms";
 import { useAtom } from "jotai";
 import { useState } from "react";
 import useMedia from "../hooks/useMedia";

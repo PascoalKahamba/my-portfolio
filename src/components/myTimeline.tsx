@@ -45,19 +45,19 @@ const {
   cursodejavascript,
   flexbox,
   cursodehtmlecss,
-  projetoacha5,
+  projectfindfivevercel,
   projetocrud,
   typescript,
   frontEnd,
   materialuidocs,
   styledcomponentsdocs,
-  projetonewcrud,
+  projectnewcrudvercel,
   codeleapwebsite,
-  projetogestorfinanceiro,
+  projectfinancialmanagervercel,
   typescriptdocs,
   reactdoc,
   nextjsdocs,
-  projetoestatisticasdosalunos,
+  projectstudentstatisticsvercel,
   cursodereact,
   reactjs,
   html5,
@@ -72,7 +72,6 @@ const {
   cSharp,
   gridlayout,
 } = translations;
-
 
 export default function MyTimeline() {
   const { classes } = useStyles();
@@ -190,7 +189,7 @@ export default function MyTimeline() {
       return (
         <Text c="dimmed" size="sm">
           {translate("created")}{" "}
-          <Link href={projetogestorfinanceiro}>
+          <Link href={projectfinancialmanagervercel}>
             <a className={classes.links} target="_blank">
               {translate("financial-manager")}
             </a>
@@ -216,7 +215,7 @@ export default function MyTimeline() {
       return (
         <Text c="dimmed" size="sm">
           {translate("this")}{" "}
-          <Link href={projetonewcrud}>
+          <Link href={projectnewcrudvercel}>
             <a className={classes.links} target="_blank">
               {translate("project-CRUD")}
             </a>
@@ -271,7 +270,7 @@ export default function MyTimeline() {
       return (
         <Text c="dimmed" size="sm">
           {translate("about-acha-5")}{" "}
-          <Link href={projetoacha5}>
+          <Link href={projectfindfivevercel}>
             <a className={classes.links} target="_blank">
               {translate("title-acha-5")}
             </a>
@@ -329,7 +328,7 @@ export default function MyTimeline() {
       return (
         <Text c="dimmed" size="sm">
           {translate("about-statistics-student")}{" "}
-          <Link href={projetoestatisticasdosalunos}>
+          <Link href={projectstudentstatisticsvercel}>
             <a className={classes.links} target="_blank">
               {translate("project-statistics-student")}
             </a>

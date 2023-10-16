@@ -10,7 +10,7 @@ import {
   ColorSchemeProvider,
 } from "@mantine/core";
 import { NotificationsProvider } from "@mantine/notifications";
-import { rtlCache } from "../rtl-cache";
+import { rtlCache } from "../../rtl-cache";
 import Layout from "../components/layout";
 import AOS from "aos";
 import "aos/dist/aos.css";

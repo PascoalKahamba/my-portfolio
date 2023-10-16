@@ -1,6 +1,6 @@
 import Document, { DocumentContext } from "next/document";
 import { ServerStyles, createStylesServer } from "@mantine/next";
-import { rtlCache } from "../rtl-cache";
+import { rtlCache } from "../../rtl-cache";
 
 const stylesServer = createStylesServer(rtlCache);
 
