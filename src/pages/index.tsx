@@ -14,7 +14,7 @@ import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import translations from "../../locales/en/useExternalLink";
-import { nameDeveloperAtom } from "../atoms";
+import { nameDeveloperAtom } from "../../atoms";
 import { useAtom } from "jotai";
 
 const useStyles = createStyles((theme) => ({
@@ -111,12 +111,6 @@ export default function IndexPage() {
   const { locale } = useRouter();
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("home");
-
-  const catcheValue = useMemo(() => {
-    return {};
-  }, []);
-
-  const callbackValue = useCallback((name: string, age: number) => {}, []);
 
   return (
     <>

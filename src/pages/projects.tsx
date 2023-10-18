@@ -35,7 +35,16 @@ export default function Projects() {
   const { classes } = useStyles();
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("projects");
-  const { financialImages, financialTechnologies } = Alldata();
+  const {
+    financialImages,
+    financialTechnologies,
+    crudTechnologies,
+    crudImages,
+    findFiveImages,
+    findFiveTechnologies,
+    studentStatisticsImages,
+    studentStatisticsTechnologies,
+  } = Alldata();
 
   return (
     <>
@@ -69,8 +78,8 @@ export default function Projects() {
             githubLink={projectnewcrudgithub}
             name="CRUD Moderno"
             status="Concluido"
-            technologies={financialTechnologies}
-            images={financialImages}
+            technologies={crudTechnologies}
+            images={crudImages}
             dataAos="fade-left"
           />
           <ProjectCarousel
@@ -78,8 +87,8 @@ export default function Projects() {
             githubLink={projectstudentstatisticsgithub}
             name="Estatisticas dos Alunos"
             status="Concluido"
-            technologies={financialTechnologies}
-            images={financialImages}
+            technologies={studentStatisticsTechnologies}
+            images={studentStatisticsImages}
             dataAos="fade-right"
           />
           <ProjectCarousel
@@ -87,8 +96,8 @@ export default function Projects() {
             githubLink={projectfindfivegithub}
             name="Acha-5"
             status="Concluido"
-            technologies={financialTechnologies}
-            images={financialImages}
+            technologies={findFiveTechnologies}
+            images={findFiveImages}
             dataAos="fade-left"
           />
         </div>

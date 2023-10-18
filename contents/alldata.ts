@@ -369,20 +369,53 @@ export default function Alldata() {
     ],
   ];
   const financialImages = [
-    "/projectPictures/financialProject.PNG",
-    "/projectPictures/financialProject02.PNG",
-    "/projectPictures/financialProject03.PNG",
-    "/projectPictures/financialProject04.PNG",
-    "/projectPictures/financialProject05.PNG",
+    "/projectFinancial/financialProject.PNG",
+    "/projectFinancial/financialProject02.PNG",
+    "/projectFinancial/financialProject03.PNG",
+    "/projectFinancial/financialProject04.PNG",
+    "/projectFinancial/financialProject05.PNG",
+  ];
+
+  const crudImages = [
+    "/projectCrud/crud0.PNG",
+    "/projectCrud/crud1.PNG",
+    "/projectCrud/crud02.PNG",
+    "/projectCrud/crud03.PNG",
+    "/projectCrud/crud.PNG",
+  ];
+
+  const studentStatisticsImages = [
+    "/projectStudentStatistics/student01.PNG",
+    "/projectStudentStatistics/student02.PNG",
+    "/projectStudentStatistics/student03.PNG",
+    "/projectStudentStatistics/student04.PNG",
+    "/projectStudentStatistics/student05.PNG",
+  ];
+
+  const findFiveImages = [
+    "/projectFindFive/findFive01.PNG",
+    "/projectFindFive/findFive02.PNG",
+    "/projectFindFive/findFive03.PNG",
+    "/projectFindFive/findFive04.PNG",
+    "/projectFindFive/findFive05.PNG",
   ];
   const financialTechnologies = ["TypeScript", "React", "Material-UI"];
+  const studentStatisticsTechnologies = ["TypeScript", "React", "Material-UI"];
+  const crudTechnologies = ["TypeScript", "React", "Styled-Components"];
+  const findFiveTechnologies = ["TypeScript", "React", "Styled-Components"];
 
   return {
     financialImages,
     financialTechnologies,
     mainLinks,
     footerData,
+    studentStatisticsImages,
+    studentStatisticsTechnologies,
+    findFiveImages,
+    findFiveTechnologies,
     allJourney,
+    crudImages,
+    crudTechnologies,
     allYears,
     frontEndSkiils,
     otherTechnologies,
