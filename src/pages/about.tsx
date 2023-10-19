@@ -21,7 +21,7 @@ import Technologias from "../components/technologies";
 import MainTitle from "../components/mainTitle";
 import useMounted from "../hooks/useMounted";
 import Alldata from "../../contents/alldata";
-import { nameDeveloperAtom } from "../atoms";
+import { nameDeveloperAtom } from "../../atoms";
 import { useAtom } from "jotai";
 
 const useStyles = createStyles((theme) => ({

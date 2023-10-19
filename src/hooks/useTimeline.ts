@@ -1,5 +1,5 @@
 import { useAtom } from "jotai";
-import { countYearAtom } from "../atoms";
+import { countYearAtom } from "../../atoms";
 
 export default function useTimeline<T>(yarOrTimeline: T[]) {
   const [countYear] = useAtom(countYearAtom);

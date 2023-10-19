@@ -10,7 +10,7 @@ import MyTimeline from "../components/myTimeline";
 import Alldata from "../../contents/alldata";
 import useTimeline from "../hooks/useTimeline";
 import { useAtom } from "jotai";
-import { countYearAtom, nameDeveloperAtom } from "../atoms";
+import { countYearAtom, nameDeveloperAtom } from "../../atoms";
 import { scrollToThePlace } from "../components/scrollControl";
 
 const useStyles = createStyles((theme) => ({

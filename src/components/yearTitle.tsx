@@ -1,7 +1,7 @@
 import { createStyles, rem } from "@mantine/core";
 import { useAtom } from "jotai";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
-import { countYearAtom } from "../atoms";
+import { countYearAtom } from "../../atoms";
 import useTranslation from "next-translate/useTranslation";
 import React from "react";
 import Alldata from "../../contents/alldata";

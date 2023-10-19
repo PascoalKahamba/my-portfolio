@@ -76,6 +76,13 @@ const useStyles = createStyles((theme) => ({
     with: "100%",
   },
 
+  elementMobile: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: rem(6),
+  },
+
   hiddenMobile: {
     [theme.fn.smallerThan("sm")]: {
       display: "none",
@@ -96,7 +103,7 @@ export default function HeaderMegaMenu() {
   const { t: translate } = useTranslation("common");
   const [mobileMenu, setMobileMenu] = useState(false);
   const { mainLinks } = Alldata();
-  const mobile = useMedia("(max-width:40rem)");
+  const mobile = useMedia("(max-width:48rem)");
 
   const mainItems = mainLinks.map((item) => (
     <Link key={item.label} href={item.link}>
@@ -114,15 +121,6 @@ export default function HeaderMegaMenu() {
 
   return (
     <>
-      {mobile && (
-        <button
-          aria-label="menu-mobile"
-          className={classes.mobileButton}
-          onClick={() => setMobileMenu(!mobileMenu)}
-        >
-          Menu Mobile
-        </button>
-      )}
       <Box pb={90}>
         <Header height={60} px="md" className={classes.headerElement}>
           <Group
@@ -135,7 +133,12 @@ export default function HeaderMegaMenu() {
               image="/my-photo.jpg"
               skill={translate("my-skill")}
             />
-            {mobile && <Burger opened={opened} onClick={toggle} size="sm" />}
+            {mobile && (
+              <div className={classes.elementMobile}>
+                <Burger opened={opened} onClick={toggle} size="sm" />
+                <ActionToggle />
+              </div>
+            )}
             <Group className={classes.mainLinks}>{mainItems}</Group>
             <Group className={classes.hiddenMobile}>
               <LanguagePicker />
