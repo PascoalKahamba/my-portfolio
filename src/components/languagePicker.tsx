@@ -25,6 +25,15 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
     alignItems: "center",
     padding: `${theme.spacing.md} ${theme.spacing.lg}`,
     transition: "background-color 150ms ease",
+
+    [theme.fn.smallerThan("sm")]: {
+      width: rem(60),
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      padding: `${theme.spacing.md} ${theme.spacing.xs}`,
+      transition: "background-color 150ms ease",
+    },
   },
 
   label: {
@@ -50,7 +59,11 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
   },
 }));
 
-export default function LanguagePicker() {
+interface LanguagePickerProps {
+  kindOfLayout: "mobile" | "computer";
+}
+
+export default function LanguagePicker({ kindOfLayout }: LanguagePickerProps) {
   const [opened, setOpened] = useState(false);
   const { classes } = useStyles({ opened });
   const { locale } = useRouter();
@@ -78,10 +91,10 @@ export default function LanguagePicker() {
           item.label === label ? currentLanguage : isNotCurrentLanguage
         }
       >
-        {item.label}
+        {kindOfLayout === "computer" && item.label}
       </Menu.Item>
     ));
-  }, [label, isNotCurrentLanguage, currentLanguage]);
+  }, [label, isNotCurrentLanguage, currentLanguage, kindOfLayout]);
 
   async function onChangeLanguage(language: string) {
     const locale = language === "English" ? "en" : "pt";
@@ -106,7 +119,9 @@ export default function LanguagePicker() {
               height={12}
               alt="language-image"
             />
-            <span className={classes.label}>{selected.label}</span>
+            {kindOfLayout === "computer" && (
+              <span className={classes.label}>{selected.label}</span>
+            )}
           </Group>
 
           <ChevronDownIcon size="1rem" className={classes.icon} />

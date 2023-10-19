@@ -20,13 +20,14 @@ import { useAtom } from "jotai";
 import { useState } from "react";
 import useMedia from "../hooks/useMedia";
 import { useDisclosure } from "@mantine/hooks";
+import MenuMobile from "./menuMobile";
 
 const useStyles = createStyles((theme) => ({
   headerElement: {
     position: "fixed",
     with: "100%",
     top: px(0),
-    zIndex: 100,
+    zIndex: 9999,
   },
 
   mainLinks: {
@@ -80,7 +81,7 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    gap: rem(6),
+    gap: rem(5),
   },
 
   hiddenMobile: {
@@ -89,11 +90,6 @@ const useStyles = createStyles((theme) => ({
     },
   },
 }));
-
-interface LinkProps {
-  label: string;
-  link: string;
-}
 
 export default function HeaderMegaMenu() {
   const { classes, cx } = useStyles();
@@ -136,16 +132,18 @@ export default function HeaderMegaMenu() {
             {mobile && (
               <div className={classes.elementMobile}>
                 <Burger opened={opened} onClick={toggle} size="sm" />
+                <LanguagePicker kindOfLayout="mobile" />
                 <ActionToggle />
               </div>
             )}
             <Group className={classes.mainLinks}>{mainItems}</Group>
             <Group className={classes.hiddenMobile}>
-              <LanguagePicker />
+              <LanguagePicker kindOfLayout="computer" />
               <ActionToggle />
             </Group>
           </Group>
         </Header>
+        {opened && <MenuMobile toggle={toggle} />}
       </Box>
     </>
   );
