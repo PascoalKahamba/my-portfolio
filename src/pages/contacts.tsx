@@ -3,7 +3,7 @@ import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 import React from "react";
 import MainTitle from "../components/mainTitle";
-import { nameDeveloperAtom } from "../atoms";
+import { nameDeveloperAtom } from "../../atoms";
 import { useAtom } from "jotai";
 import GlobalTitle from "../components/globalTitle";
 import ElementsOfContacts from "../components/elementsOfContacts";
