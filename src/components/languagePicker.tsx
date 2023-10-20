@@ -53,6 +53,12 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
     pointerEvents: "painted",
     opacity: 1,
   },
+  dropdownMobile: {
+    position: "fixed",
+    zIndex: 999999,
+    height: rem(10),
+    // width: rem(10),
+  },
 
   icon: {
     transition: "transform 150ms ease",
@@ -93,10 +99,10 @@ export default function LanguagePicker({ kindOfLayout }: LanguagePickerProps) {
           item.label === label ? currentLanguage : isNotCurrentLanguage
         }
       >
-        {kindOfLayout === "computer" && item.label}
+        {item.label}
       </Menu.Item>
     ));
-  }, [label, isNotCurrentLanguage, currentLanguage, kindOfLayout]);
+  }, [label, isNotCurrentLanguage, currentLanguage]);
 
   async function onChangeLanguage(language: string) {
     const locale = language === "English" ? "en" : "pt";
@@ -113,9 +119,7 @@ export default function LanguagePicker({ kindOfLayout }: LanguagePickerProps) {
       withinPortal
     >
       <Menu.Target>
-        <UnstyledButton
-          className={`${classes.control} ${mobile && classes.controlMobile}`}
-        >
+        <UnstyledButton className={classes.control}>
           <Group spacing="xs">
             <Image
               src={selected.image}
@@ -123,9 +127,8 @@ export default function LanguagePicker({ kindOfLayout }: LanguagePickerProps) {
               height={12}
               alt="language-image"
             />
-            {kindOfLayout === "computer" && (
-              <span className={classes.label}>{selected.label}</span>
-            )}
+
+            <span className={classes.label}>{selected.label}</span>
           </Group>
 
           <ChevronDownIcon size="1rem" className={classes.icon} />

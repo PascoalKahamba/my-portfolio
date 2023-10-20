@@ -17,7 +17,7 @@ import Link from "next/link";
 import Alldata from "../../contents/alldata";
 import { nameDeveloperAtom } from "../../atoms";
 import { useAtom } from "jotai";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useMedia from "../hooks/useMedia";
 import { useDisclosure } from "@mantine/hooks";
 import MenuMobile from "./menuMobile";
@@ -94,9 +94,12 @@ export default function HeaderMegaMenu() {
   const [opened, { toggle }] = useDisclosure(false);
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("common");
-  const [mobileMenu, setMobileMenu] = useState(false);
   const { mainLinks } = Alldata();
   const mobile = useMedia("(max-width:56rem)");
+
+  useEffect(() => {
+    if (mobile === false && opened === true) toggle();
+  }, [mobile, toggle, opened]);
 
   const mainItems = mainLinks.map((item) => (
     <Link key={item.label} href={item.link}>
@@ -129,7 +132,6 @@ export default function HeaderMegaMenu() {
             {mobile && (
               <div className={classes.elementMobile}>
                 <Burger opened={opened} onClick={toggle} size="sm" />
-                <LanguagePicker kindOfLayout="mobile" />
                 <ActionToggle />
               </div>
             )}
@@ -148,7 +150,7 @@ export default function HeaderMegaMenu() {
             </Group>
           </Group>
         </Header>
-        {opened && <MenuMobile toggle={toggle} />}
+        {mobile && opened && <MenuMobile toggle={toggle} />}
       </Box>
     </>
   );
