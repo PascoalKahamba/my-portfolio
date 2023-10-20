@@ -54,9 +54,6 @@ const useStyles = createStyles((theme) => ({
       textDecoration: "none",
     },
   },
-  mobileButton: {
-    backgroundColor: theme.colors.blue[5],
-  },
 
   mainLinkActive: {
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
@@ -99,7 +96,7 @@ export default function HeaderMegaMenu() {
   const { t: translate } = useTranslation("common");
   const [mobileMenu, setMobileMenu] = useState(false);
   const { mainLinks } = Alldata();
-  const mobile = useMedia("(max-width:48rem)");
+  const mobile = useMedia("(max-width:56rem)");
 
   const mainItems = mainLinks.map((item) => (
     <Link key={item.label} href={item.link}>
@@ -136,8 +133,16 @@ export default function HeaderMegaMenu() {
                 <ActionToggle />
               </div>
             )}
-            <Group className={classes.mainLinks}>{mainItems}</Group>
-            <Group className={classes.hiddenMobile}>
+            <Group
+              className={classes.mainLinks}
+              sx={{ display: mobile ? "none" : "flex" }}
+            >
+              {mainItems}
+            </Group>
+            <Group
+              className={classes.hiddenMobile}
+              sx={{ display: mobile ? "none" : "flex" }}
+            >
               <LanguagePicker kindOfLayout="computer" />
               <ActionToggle />
             </Group>

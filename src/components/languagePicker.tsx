@@ -11,6 +11,7 @@ import { ChevronDownIcon } from "lucide-react";
 import { useRouter } from "next/router";
 import setLanguage from "next-translate/setLanguage";
 import { persistLocaleCookie } from "../../helpers/persistLocaleCookie";
+import useMedia from "../hooks/useMedia";
 
 const data = [
   { label: "Portuguese", image: "/portuguese.jpg" },
@@ -25,20 +26,20 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
     alignItems: "center",
     padding: `${theme.spacing.md} ${theme.spacing.lg}`,
     transition: "background-color 150ms ease",
-
-    [theme.fn.smallerThan("sm")]: {
-      width: rem(60),
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      padding: `${theme.spacing.md} ${theme.spacing.xs}`,
-      transition: "background-color 150ms ease",
-    },
   },
 
   label: {
     fontWeight: 500,
     fontSize: theme.fontSizes.sm,
+  },
+
+  controlMobile: {
+    width: rem(60),
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: `${theme.spacing.md} ${theme.spacing.xs}`,
+    transition: "background-color 150ms ease",
   },
 
   currentLanguage: {
@@ -75,6 +76,7 @@ export default function LanguagePicker({ kindOfLayout }: LanguagePickerProps) {
   });
   const { label } = selected;
   const { isNotCurrentLanguage, currentLanguage } = classes;
+  const mobile = useMedia("(max-width:56rem)");
 
   const items = useMemo(() => {
     return data.map((item) => (
@@ -111,7 +113,9 @@ export default function LanguagePicker({ kindOfLayout }: LanguagePickerProps) {
       withinPortal
     >
       <Menu.Target>
-        <UnstyledButton className={classes.control}>
+        <UnstyledButton
+          className={`${classes.control} ${mobile && classes.controlMobile}`}
+        >
           <Group spacing="xs">
             <Image
               src={selected.image}
