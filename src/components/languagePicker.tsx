@@ -1,4 +1,4 @@
-import { useEffect, useState, useInsertionEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import {
   createStyles,
   UnstyledButton,

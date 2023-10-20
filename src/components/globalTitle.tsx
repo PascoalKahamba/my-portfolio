@@ -11,8 +11,9 @@ const useStyles = createStyles((theme) => ({
   },
 
   titleMobile: {
+    margin: "1rem auto",
     flexDirection: "column",
-    gap: rem(3),
+    gap: rem(2),
   },
 
   line: {
