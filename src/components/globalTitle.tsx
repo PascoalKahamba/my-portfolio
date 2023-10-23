@@ -42,7 +42,7 @@ interface GlobalTitleProps {
 
 export default function GlobalTitle({ title, width }: GlobalTitleProps) {
   const { classes } = useStyles();
-  const mobile = useMedia("(max-width:56rem)");
+  const mobile = useMedia("(max-width:52rem)");
 
   return (
     <div

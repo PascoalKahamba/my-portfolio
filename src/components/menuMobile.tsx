@@ -1,4 +1,4 @@
-import { Anchor, createStyles, rem } from "@mantine/core";
+import { Anchor, Box, createStyles, rem } from "@mantine/core";
 import React from "react";
 import Alldata from "../../contents/alldata";
 import Link from "next/link";
@@ -12,7 +12,7 @@ const useStyles = createStyles((theme) => ({
     alignItems: "center",
     flexDirection: "column",
     gap: rem(2),
-    zIndex: 999,
+    zIndex: 9999,
     top: rem(60),
     left: 0,
     right: 0,
@@ -100,15 +100,16 @@ export default function MenuMobile({ toggle }: MenuMobileProps) {
     </Link>
   ));
   return (
-    <section
+    <Box
+      component="section"
       className={classes.contanier}
       data-aos="fade-down"
       data-aos-duration="1200"
     >
       <div className={classes.main}>{mainItems}</div>
       <div className={classes.chooseLanguage}>
-        <LanguagePicker kindOfLayout="computer" />
+        <LanguagePicker />
       </div>
-    </section>
+    </Box>
   );
 }

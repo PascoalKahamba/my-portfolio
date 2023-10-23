@@ -57,7 +57,8 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
     position: "fixed",
     zIndex: 999999,
     height: rem(10),
-    // width: rem(10),
+    top: rem(70),
+    width: "100%",
   },
 
   icon: {
@@ -66,11 +67,7 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
   },
 }));
 
-interface LanguagePickerProps {
-  kindOfLayout: "mobile" | "computer";
-}
-
-export default function LanguagePicker({ kindOfLayout }: LanguagePickerProps) {
+export default function LanguagePicker() {
   const [opened, setOpened] = useState(false);
   const { classes } = useStyles({ opened });
   const { locale } = useRouter();

@@ -15,11 +15,9 @@ import {
 import { DownloadIcon, PhoneCall } from "lucide-react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import translations from "../../locales/en/useExternalLink";
 import Technologias from "../components/technologies";
 import MainTitle from "../components/mainTitle";
-import useMounted from "../hooks/useMounted";
 import Alldata from "../../contents/alldata";
 import { nameDeveloperAtom } from "../../atoms";
 import { useAtom } from "jotai";

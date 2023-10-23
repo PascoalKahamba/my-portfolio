@@ -27,7 +27,7 @@ const useStyles = createStyles((theme) => ({
     position: "fixed",
     with: "100%",
     top: px(0),
-    zIndex: 9999,
+    zIndex: 999,
   },
 
   mainLinks: {
@@ -146,7 +146,7 @@ export default function HeaderMegaMenu() {
               className={classes.hiddenMobile}
               sx={{ display: mobile ? "none" : "flex" }}
             >
-              <LanguagePicker kindOfLayout="computer" />
+              <LanguagePicker />
               <ActionToggle />
             </Group>
           </Group>
