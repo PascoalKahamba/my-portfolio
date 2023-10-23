@@ -234,6 +234,7 @@ export default function FooterLinks() {
         <div className={classes.logo}>
           <UserButton
             name={nameDeveloper}
+            kindOfUser="footer"
             image="/my-photo.jpg"
             skill={translate("my-skill")}
           />

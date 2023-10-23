@@ -95,7 +95,7 @@ export default function HeaderMegaMenu() {
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("common");
   const { mainLinks } = Alldata();
-  const mobile = useMedia("(max-width:56rem)");
+  const mobile = useMedia("(max-width:48rem)");
 
   useEffect(() => {
     if (mobile === false && opened === true) toggle();
@@ -125,6 +125,7 @@ export default function HeaderMegaMenu() {
             className={classes.headerChild}
           >
             <UserProfile
+              kindOfUser="header"
               name={nameDeveloper}
               image="/my-photo.jpg"
               skill={translate("my-skill")}

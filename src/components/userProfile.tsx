@@ -6,6 +6,7 @@ import {
   Text,
   createStyles,
 } from "@mantine/core";
+import useMedia from "../hooks/useMedia";
 
 const useStyles = createStyles((theme) => ({
   user: {
@@ -26,18 +27,28 @@ interface UserButtonProps extends UnstyledButtonProps {
   image: string;
   name: string;
   skill: string;
+  kindOfUser: "header" | "footer";
 }
 
 export default function UserProfile({
   image,
   name,
   skill,
-  ...others
+  kindOfUser,
 }: UserButtonProps) {
   const { classes } = useStyles();
+  const offMobile = useMedia("(max-width:56rem)");
+  const onMobile = useMedia("(max-width:48rem)");
 
   return (
-    <UnstyledButton className={classes.user} {...others}>
+    <UnstyledButton
+      className={classes.user}
+      sx={
+        kindOfUser === "header"
+          ? { display: offMobile === onMobile ? "flex" : "none" }
+          : { display: "flex" }
+      }
+    >
       <Group className={classes.profile}>
         <Avatar src={image} radius="xl" size={40} />
 
