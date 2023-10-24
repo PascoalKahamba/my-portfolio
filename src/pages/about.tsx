@@ -6,7 +6,6 @@ import {
   Button,
   Group,
   Image,
-  Skeleton,
   Text,
   createStyles,
   px,
@@ -19,8 +18,9 @@ import translations from "../../locales/en/useExternalLink";
 import Technologias from "../components/technologies";
 import MainTitle from "../components/mainTitle";
 import Alldata from "../../contents/alldata";
-import { nameDeveloperAtom } from "../../atoms";
+import { countYearAtom, nameDeveloperAtom } from "../../atoms";
 import { useAtom } from "jotai";
+import { scrollToThePlace } from "../components/scrollControl";
 
 const useStyles = createStyles((theme) => ({
   flexContenier: {
@@ -207,10 +207,8 @@ export default function About() {
               </a>
             </Link>
             . {translate("start-study")}{" "}
-            <Link href={javascript}>
-              <a className={classes.links} target="_blank">
-                2018
-              </a>
+            <Link href="/journey">
+              <a className={classes.links}>2018</a>
             </Link>
             , {translate("during")} <strong>{translate("high-school")}</strong>{" "}
             {translate("when-college")}{" "}

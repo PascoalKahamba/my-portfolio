@@ -67,7 +67,7 @@ export default function Projects() {
           <ProjectCarousel
             vercelLink={projectfinancialmanagervercel}
             githubLink={projectfinancialmanagergithub}
-            name="Gestor Financeiro"
+            name={translate("financial-manager")}
             status="Concluido"
             technologies={financialTechnologies}
             images={financialImages}
@@ -76,7 +76,7 @@ export default function Projects() {
           <ProjectCarousel
             vercelLink={projectnewcrudvercel}
             githubLink={projectnewcrudgithub}
-            name="CRUD Moderno"
+            name={translate("crud")}
             status="Concluido"
             technologies={crudTechnologies}
             images={crudImages}
@@ -85,7 +85,7 @@ export default function Projects() {
           <ProjectCarousel
             vercelLink={projectstudentstatisticsvercel}
             githubLink={projectstudentstatisticsgithub}
-            name="Estatisticas dos Alunos"
+            name={translate("students-statistics")}
             status="Concluido"
             technologies={studentStatisticsTechnologies}
             images={studentStatisticsImages}
@@ -94,7 +94,7 @@ export default function Projects() {
           <ProjectCarousel
             vercelLink={projectfindfivevercel}
             githubLink={projectfindfivegithub}
-            name="Acha-5"
+            name={translate("find-5")}
             status="Concluido"
             technologies={findFiveTechnologies}
             images={findFiveImages}
