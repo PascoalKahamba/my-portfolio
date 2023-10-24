@@ -235,7 +235,7 @@ export default function FooterLinks() {
           <UserButton
             name={nameDeveloper}
             kindOfUser="footer"
-            image="/my-photo.jpg"
+            image="/developer-photo.png"
             skill={translate("my-skill")}
           />
           <Text size="xs" color="dimmed" className={classes.description}>

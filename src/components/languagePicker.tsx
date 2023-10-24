@@ -33,15 +33,6 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
     fontSize: theme.fontSizes.sm,
   },
 
-  controlMobile: {
-    width: rem(60),
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: `${theme.spacing.md} ${theme.spacing.xs}`,
-    transition: "background-color 150ms ease",
-  },
-
   currentLanguage: {
     textAlign: "center",
     pointerEvents: "none",
