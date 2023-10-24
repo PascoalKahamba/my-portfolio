@@ -11,7 +11,53 @@ import {
   HiOutlineArrowNarrowRight,
 } from "react-icons/hi";
 import { scrollToThePlace } from "./scrollControl";
-import classes from "../styles/yearTitle.module.css";
+const useStyles = createStyles((theme) => ({
+  upYear: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: rem(180),
+
+    [theme.fn.smallerThan("sm")]: {
+      gap: rem(100),
+    },
+  },
+
+  downYear: {
+    display: "flex",
+    marginTop: rem(20),
+    alignItems: "center",
+    justifyContent: "center",
+    gap: rem(60),
+  },
+
+  upIcon: {
+    cursor: "pointer",
+    translate: "3s",
+
+    "&:hover": {
+      backgroundColor: theme.colors.gray[3],
+    },
+  },
+  flexIcon: {
+    color: theme.colors.blue[5],
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "end",
+    gap: rem(2),
+    cursor: "pointer",
+    fontSize: theme.spacing.md,
+    translate: "3s",
+
+    "&:hover": {
+      textDecoration: "underline",
+    },
+  },
+  disableIcon: {
+    pointerEvents: "none",
+    opacity: 0.5,
+  },
+}));
 
 interface YearTitleProps {
   kindOfTitle: "upTitle" | "downTitle";
@@ -26,7 +72,7 @@ export default function YearTitle({ kindOfTitle }: YearTitleProps) {
   const [count, setCountYear] = useAtom(countYearAtom);
   const { allYears } = Alldata();
   const currentYear = useTimeline(allYears);
-
+  const { classes } = useStyles();
   const { t: translate } = useTranslation("common");
   const firstYear = isDisable(FIRST_TIMELINE_YEAR);
   const lastYear = isDisable(LAST_TIMELINE_YEAR);

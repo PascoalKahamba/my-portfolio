@@ -45,18 +45,18 @@ export default function ElementsOfContacts() {
   const { t: translate } = useTranslation("common");
 
   const mockdata = [
-    { link: email, title: "Email", icon: AiOutlineMail, color: "indigo" },
-    { link: github, title: "Github", icon: GithubIcon, color: "violet" },
+    { link: email, title: "Email", icon: AiOutlineMail, color: "violet" },
+    { link: github, title: "Github", icon: GithubIcon, color: "indigo" },
     { link: linkedin, title: " LinkEdin", icon: LinkedinIcon, color: "blue" },
     {
       link: instagram,
       title: "Instagram",
       icon: InstagramIcon,
-      color: "pink",
+      color: "green",
     },
-    { link: facebook, title: "Facebook", icon: FacebookIcon, color: "blue" },
+    { link: facebook, title: "Facebook", icon: FacebookIcon, color: "teal" },
     { link: discord, title: "Discord", icon: BsDiscord, color: "cyan" },
-    { link: whatsapp, title: "WhatSapp", icon: FaWhatsapp, color: "green" },
+    { link: whatsapp, title: "WhatSapp", icon: FaWhatsapp, color: "pink" },
     {
       link: cellphone,
       title: translate("cellphone"),

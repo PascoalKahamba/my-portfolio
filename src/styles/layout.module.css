@@ -1,8 +1,0 @@
-.layout {
-  padding: 0px 6rem;
-  overflow-x: hidden;
-
-  @media (max-width: 40rem) {
-    padding: 0px 2rem;
-  }
-}

@@ -1,20 +1,14 @@
-import { Box, Text } from "@mantine/core";
+import { Box, Text, createStyles, rem } from "@mantine/core";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
-
 import React from "react";
 import MainTitle from "../components/mainTitle";
-import Link from "next/link";
 import GlobalTitle from "../components/globalTitle";
 import MyTimeline from "../components/myTimeline";
-import Alldata from "../../contents/alldata";
-import useTimeline from "../hooks/useTimeline";
-import classes from "../styles/journey.module.css";
 import { useAtom } from "jotai";
 import { countYearAtom, nameDeveloperAtom } from "../../atoms";
 import { scrollToThePlace } from "../components/scrollControl";
 
-<<<<<<< HEAD
 const useStyles = createStyles((theme) => ({
   description: {
     width: rem(750),
@@ -41,11 +35,6 @@ export default function Journey() {
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const [_, setCountYear] = useAtom(countYearAtom);
   const { classes } = useStyles();
-=======
-export default function Journey() {
-  const { t: translate } = useTranslation("journey");
-  const [nameDeveloper] = useAtom(nameDeveloperAtom);
->>>>>>> 1f8b706ae6cf18456ff092049ff487a1ef195cd3
 
   function goToTimeline2018() {
     setCountYear(TIMELINE_2018);

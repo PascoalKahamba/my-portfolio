@@ -6,7 +6,38 @@ import Alldata from "../../contents/alldata";
 import { CalendarCheck } from "lucide-react";
 import translations from "../../locales/en/useExternalLink";
 import useTranslation from "next-translate/useTranslation";
-import classes from "../styles/myTimeline.module.css";
+
+const useStyles = createStyles((theme) => ({
+  timeline: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  description: {
+    width: rem(470),
+    whiteSpace: "normal",
+
+    [theme.fn.smallerThan("sm")]: {
+      width: "100%",
+    },
+  },
+  date: {
+    display: "flex",
+    alignItems: "center",
+    gap: rem(5),
+  },
+  links: {
+    color: theme.colors.blue[4],
+    textDecoration: "none",
+    display: "inline-block",
+
+    "&:hover": {
+      textDecoration: "underline",
+    },
+  },
+}));
 
 const {
   cursoEmVideoProgrammingLogic,
@@ -43,10 +74,7 @@ const {
 } = translations;
 
 export default function MyTimeline() {
-<<<<<<< HEAD
   const { classes } = useStyles();
-=======
->>>>>>> 1f8b706ae6cf18456ff092049ff487a1ef195cd3
   const { allJourney } = Alldata();
   const myTimeline = useTimeline(allJourney);
   const { t: translate } = useTranslation("common");

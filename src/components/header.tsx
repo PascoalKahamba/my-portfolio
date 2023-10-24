@@ -8,7 +8,6 @@ import {
   px,
   Burger,
 } from "@mantine/core";
-
 import LanguagePicker from "./languagePicker";
 import ActionToggle from "./actionToggle";
 import UserProfile from "./userProfile";
@@ -16,9 +15,7 @@ import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import Alldata from "../../contents/alldata";
-
 import { nameDeveloperAtom } from "../../atoms";
-
 import { useAtom } from "jotai";
 import { useCallback, useEffect, useState } from "react";
 import useMedia from "../hooks/useMedia";
@@ -92,8 +89,8 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function HeaderMegaMenu() {
-  const { pathname } = useRouter();
   const { classes, cx } = useStyles();
+  const { pathname } = useRouter();
   const [opened, { toggle }] = useDisclosure(false);
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("common");
@@ -106,9 +103,15 @@ export default function HeaderMegaMenu() {
 
   const mainItems = mainLinks.map((item) => (
     <Link key={item.label} href={item.link}>
-      <a href={item.link} data-active={item.link === pathname || undefined}>
+      <Anchor<"a">
+        href={item.link}
+        component="a"
+        className={cx(classes.mainLink, {
+          [classes.mainLinkActive]: item.link === pathname,
+        })}
+      >
         {item.label}
-      </a>{" "}
+      </Anchor>
     </Link>
   ));
 
