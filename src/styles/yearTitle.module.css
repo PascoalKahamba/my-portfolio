@@ -1,0 +1,43 @@
+.upYear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 180rem;
+
+  @media (max-width: 40rem) {
+    gap: 100rem;
+  }
+}
+
+.downYear {
+  display: flex;
+  margin-top: 20rem;
+  align-items: center;
+  justify-content: center;
+  gap: 60rem;
+}
+
+.upIcon {
+  cursor: pointer;
+  translate: 3s;
+}
+.upIcon:hover {
+  background-color: var(--mantine-color-gray-3);
+}
+.flexIcon {
+  color: var(--mantine-color-blue-4);
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 2rem;
+  cursor: pointer;
+  font-size: var(--mantine-spacing-md);
+  translate: 3s;
+}
+.flexIcon:hover {
+  text-decoration: underline;
+}
+.disableIcon {
+  pointer-events: none;
+  opacity: 0.5;
+}

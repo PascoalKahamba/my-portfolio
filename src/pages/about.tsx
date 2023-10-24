@@ -8,7 +8,6 @@ import {
   Image,
   Skeleton,
   Text,
-  createStyles,
   px,
   rem,
 } from "@mantine/core";
@@ -19,83 +18,13 @@ import translations from "../../locales/en/useExternalLink";
 import Technologias from "../components/technologies";
 import MainTitle from "../components/mainTitle";
 import Alldata from "../../contents/alldata";
+<<<<<<< HEAD
 import { nameDeveloperAtom } from "../../atoms";
+=======
+import { nameDeveloperAtom } from "../atoms";
+import classes from "../styles/about.module.css";
+>>>>>>> 1f8b706ae6cf18456ff092049ff487a1ef195cd3
 import { useAtom } from "jotai";
-
-const useStyles = createStyles((theme) => ({
-  flexContenier: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: 5,
-  },
-
-  aboutMe: {
-    display: "flex",
-    justifyContent: "center",
-    gap: 20,
-    flexWrap: "wrap",
-  },
-
-  controls: {
-    marginTop: `calc(${theme.spacing.xl} * 2)`,
-
-    [theme.fn.smallerThan("sm")]: {
-      marginTop: theme.spacing.xl,
-    },
-  },
-
-  control: {
-    height: rem(34),
-    paddingLeft: rem(28),
-    paddingRight: rem(28),
-
-    [theme.fn.smallerThan("sm")]: {
-      height: rem(54),
-      paddingLeft: rem(18),
-      paddingRight: rem(18),
-      flex: 1,
-    },
-  },
-
-  links: {
-    color: theme.colors.blue[4],
-    textDecoration: "none",
-    display: "inline-block",
-
-    "&:hover": {
-      textDecoration: "underline",
-    },
-  },
-
-  pictureDad: {
-    width: rem(250),
-  },
-  picture: {
-    width: "100%",
-    border: `double .7rem ${theme.colors.gray[3]}`,
-    borderRadius: px(6),
-  },
-
-  buttonIcon: {
-    marginLeft: px(6),
-  },
-  contactButton: {
-    display: "flex",
-    justifyContent: "center",
-    textDecoration: "none",
-    alignItems: "center",
-  },
-
-  briefDeveloper: {
-    flex: "0 1 25rem",
-  },
-
-  description: {
-    color: theme.white[0],
-  },
-}));
 
 const {
   frontendAndbackend,
@@ -108,7 +37,6 @@ const {
 } = translations;
 
 export default function About() {
-  const { classes } = useStyles();
   const { t: translate } = useTranslation("about");
   const { locale } = useRouter();
   const [nameDeveloper] = useAtom(nameDeveloperAtom);

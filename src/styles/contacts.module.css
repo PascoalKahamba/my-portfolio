@@ -2,9 +2,13 @@
   width: 100%;
 }
 
-@media (min-width: 50rem) {
+/* @media (min-width: 50rem) {
   .contacts {
+<<<<<<< HEAD
     width: 46rem;
+=======
+    width: 60rem;
+>>>>>>> 1f8b706ae6cf18456ff092049ff487a1ef195cd3
     margin: 0 auto;
   }
-}
+} */

@@ -1,0 +1,61 @@
+.headerElement {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  height: 20rem;
+  z-index: 100;
+}
+
+.mainLinks {
+  margin-right: calc(var(--mantine-spacing-sm) * -1);
+
+  @media (max-width: 40rem) {
+    display: none;
+  }
+}
+
+.mainLink {
+  font-size: 13rem;
+  color: light-dark(var(--mantine-white-0), var(--mantine-color-gray-6));
+  padding: 8rem var(--mantine-spacing-sm);
+  font-weight: 500;
+  border-bottom: 1rem solid transparent;
+  transition: border-color 100ms ease, color 100ms ease;
+  border-radius: rem(5);
+}
+.mainLink:hover {
+  color: light-dark(var(--mantine-white), var(--mantine-dark));
+  background-color: light-dark(
+    var(--mantine-color-dark-6),
+    var(--mantine-color-gray-0)
+  );
+  text-decoration: none;
+}
+
+.mainLinkActive {
+  color: light-dark(var(--mantine-white), var(--mantine-dark));
+  background-color: light-dark(
+    var(--mantine-color-dark-6),
+    var(--mantine-color-dark-5)
+  );
+}
+
+.mainLinkActive:hover {
+  background-color: light-dark(
+    var(--mantine-color-dark-6),
+    var(--mantine-color-dark-5)
+  );
+}
+.headerChild {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.hiddenMobile {
+  @media (max-width: 40rem) {
+    display: none;
+  }
+}

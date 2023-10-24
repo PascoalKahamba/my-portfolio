@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowUpIcon } from "lucide-react";
+<<<<<<< HEAD
 import { createStyles, rem } from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
@@ -20,6 +21,9 @@ const useStyles = createStyles((theme) => ({
     Zindex: 1000,
   },
 }));
+=======
+import classes from "../styles/scrollControl.module.css";
+>>>>>>> 1f8b706ae6cf18456ff092049ff487a1ef195cd3
 
 const SCROLL_TO_TOP_PAGE = 0;
 
@@ -30,7 +34,6 @@ export function scrollToThePlace(placeNumber: number) {
 
 export default function ScrollControl() {
   const [scroll, SetScroll] = useState(0);
-  const { classes } = useStyles();
 
   useEffect(() => {
     window.addEventListener("scroll", () => SetScroll(window.scrollY));

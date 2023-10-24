@@ -4,24 +4,13 @@ import FooterLinks from "./footer";
 import NavbarMinimal from "./navbarMinimal";
 import ScrollControl from "./scrollControl";
 import useMounted from "../hooks/useMounted";
+import classes from "../styles/layout.module.css";
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-const useStyles = createStyles((theme) => ({
-  layout: {
-    padding: "0px 6rem",
-    overflowX: "hidden",
-
-    [theme.fn.smallerThan("sm")]: {
-      padding: "0px 2rem",
-    },
-  },
-}));
-
 export default function Layout({ children }: LayoutProps) {
-  const { classes } = useStyles();
   const mounted = useMounted();
 
   return (

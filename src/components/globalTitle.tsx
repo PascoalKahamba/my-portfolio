@@ -1,5 +1,6 @@
-import { createStyles, rem } from "@mantine/core";
+import { rem } from "@mantine/core";
 import React from "react";
+<<<<<<< HEAD
 import useMedia from "../hooks/useMedia";
 
 const useStyles = createStyles((theme) => ({
@@ -34,6 +35,9 @@ const useStyles = createStyles((theme) => ({
     },
   },
 }));
+=======
+import classes from "../styles/globalTitle.module.css";
+>>>>>>> 1f8b706ae6cf18456ff092049ff487a1ef195cd3
 
 interface GlobalTitleProps {
   title: string;
@@ -41,9 +45,12 @@ interface GlobalTitleProps {
 }
 
 export default function GlobalTitle({ title, width }: GlobalTitleProps) {
+<<<<<<< HEAD
   const { classes } = useStyles();
   const mobile = useMedia("(max-width:52rem)");
 
+=======
+>>>>>>> 1f8b706ae6cf18456ff092049ff487a1ef195cd3
   return (
     <div
       className={`${classes.flexTitle} ${mobile && classes.titleMobile}`}

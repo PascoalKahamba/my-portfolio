@@ -4,8 +4,8 @@ import {
   Group,
   Avatar,
   Text,
-  createStyles,
 } from "@mantine/core";
+<<<<<<< HEAD
 import useMedia from "../hooks/useMedia";
 
 const useStyles = createStyles((theme) => ({
@@ -22,6 +22,9 @@ const useStyles = createStyles((theme) => ({
     gap: 6,
   },
 }));
+=======
+import classes from "../styles/userProfile.module.css";
+>>>>>>> 1f8b706ae6cf18456ff092049ff487a1ef195cd3
 
 interface UserButtonProps extends UnstyledButtonProps {
   image: string;
@@ -36,10 +39,13 @@ export default function UserProfile({
   skill,
   kindOfUser,
 }: UserButtonProps) {
+<<<<<<< HEAD
   const { classes } = useStyles();
   const offMobile = useMedia("(max-width:56rem)");
   const onMobile = useMedia("(max-width:48rem)");
 
+=======
+>>>>>>> 1f8b706ae6cf18456ff092049ff487a1ef195cd3
   return (
     <UnstyledButton
       className={classes.user}

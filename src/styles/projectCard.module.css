@@ -1,0 +1,22 @@
+.price {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+}
+
+.carousel {
+  display: block;
+}
+
+.carouselControls {
+  transition: opacity 150ms ease;
+  opacity: 0;
+}
+
+.carouselIndicator {
+  width: 4rem;
+  height: 4rem;
+  transition: width 250ms ease;
+
+  /* &[data-active] {
+    width: rem(16px);
+  } */
+}

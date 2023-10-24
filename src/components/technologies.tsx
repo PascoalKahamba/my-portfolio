@@ -1,6 +1,7 @@
-import { createStyles, Box, Image, Tooltip, rem } from "@mantine/core";
+import { Box, Image, Tooltip, useMantineTheme } from "@mantine/core";
 import { AlertCircleIcon } from "lucide-react";
 import GlobalTitle from "./globalTitle";
+import classes from "../styles/technologies.module.css";
 
 interface TechnologiesProps {
   job: string;
@@ -13,51 +14,12 @@ interface TechnologiesProps {
   }[];
 }
 
-const useStyles = createStyles((theme) => ({
-  icons: {
-    display: "flex",
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-    flexWrap: "wrap",
-    gap: rem(10),
-  },
-
-  icon: {
-    display: "flex",
-    flex: "0 1 8rem",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: rem(5),
-    padding: "1rem 5px",
-    borderRadius: theme.spacing.xs,
-    backgroundColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[5]
-        : theme.colors.gray[2],
-    "&:hover": {
-      cursor: "pointer",
-      boxShadow: " 0 6px 14px 1px rgb(0 0 0 / 20%)",
-    },
-  },
-
-  flexLenged: {
-    width: rem(230),
-    whiteSpace: "normal",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: rem(8),
-  },
-}));
-
 export default function Technologias({
   job,
   skills,
   width,
 }: TechnologiesProps) {
-  const { classes } = useStyles();
+  const theme = useMantineTheme();
 
   const mySkills = skills.map(({ aosDuration, name, description, icon }) => (
     <Tooltip

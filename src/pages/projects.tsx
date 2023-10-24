@@ -1,4 +1,4 @@
-import { Box, Text, rem, createStyles } from "@mantine/core";
+import { Box, Text } from "@mantine/core";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 import React from "react";
@@ -6,6 +6,7 @@ import MainTitle from "../components/mainTitle";
 import GlobalTitle from "../components/globalTitle";
 import { nameDeveloperAtom } from "../../atoms";
 import { useAtom } from "jotai";
+<<<<<<< HEAD
 import ProjectCarousel from "../components/projectCarousel";
 import Alldata from "../../contents/alldata";
 import translations from "../../locales/en/useExternalLink";
@@ -19,6 +20,9 @@ const useStyles = createStyles((theme) => ({
     gap: rem(30),
   },
 }));
+=======
+import classes from "../styles/projects.module.css";
+>>>>>>> 1f8b706ae6cf18456ff092049ff487a1ef195cd3
 
 const {
   projectfinancialmanagervercel,
@@ -32,7 +36,6 @@ const {
 } = translations;
 
 export default function Projects() {
-  const { classes } = useStyles();
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
   const { t: translate } = useTranslation("projects");
   const {
