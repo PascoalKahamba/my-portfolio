@@ -99,9 +99,9 @@ export default function HeaderMegaMenu() {
 
   useEffect(() => {
     if (opened) {
-      window.document.body.style.overflowY = "hidden";
+      document.body.style.overflowY = "hidden";
     } else {
-      window.document.body.style.overflowY = "auto";
+      document.body.style.overflowY = "auto";
     }
     if (mobile === false && opened === true) {
       toggle();
