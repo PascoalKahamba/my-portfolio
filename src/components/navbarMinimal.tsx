@@ -63,7 +63,7 @@ const useStyles = createStyles((theme) => ({
     position: "fixed",
     width: rem(5),
     height: "100vh",
-    zIndex: 666,
+    zIndex: 9999,
 
     [theme.fn.smallerThan("sm")]: {
       display: "none",

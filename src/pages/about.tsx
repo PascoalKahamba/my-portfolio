@@ -21,6 +21,7 @@ import Alldata from "../../contents/alldata";
 import { countYearAtom, nameDeveloperAtom } from "../../atoms";
 import { useAtom } from "jotai";
 import { scrollToThePlace } from "../components/scrollControl";
+import useMedia from "../hooks/useMedia";
 
 const useStyles = createStyles((theme) => ({
   flexContenier: {
@@ -95,6 +96,11 @@ const useStyles = createStyles((theme) => ({
   description: {
     color: theme.white[0],
   },
+
+  bigScreen: {
+    maxWidth: rem(750),
+    margin: "0 auto",
+  },
 }));
 
 const {
@@ -115,6 +121,7 @@ export default function About() {
   const { frontEndSkiils, otherTechnologies } = Alldata();
   const currentYear = new Date().getFullYear();
   const myAge = currentYear - 2002;
+  const bigScreen = useMedia("(min-width:80rem)");
 
   return (
     <>
@@ -187,7 +194,7 @@ export default function About() {
           </div>
         </div>
         <div
-          className={classes.description}
+          className={`${classes.description} ${bigScreen && classes.bigScreen}`}
           data-aos="fade-up"
           data-aos-duration="1400"
         >
