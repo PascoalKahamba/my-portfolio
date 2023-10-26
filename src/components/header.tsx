@@ -20,7 +20,7 @@ import { useAtom } from "jotai";
 import { useEffect } from "react";
 import useMedia from "../hooks/useMedia";
 import { useDisclosure } from "@mantine/hooks";
-import MenuMobile from "./menuMobile";
+import MobileMenu from "./mobileMenu";
 
 const useStyles = createStyles((theme) => ({
   headerElement: {
@@ -150,7 +150,7 @@ export default function HeaderMegaMenu() {
           </Group>
         </Group>
       </Header>
-      {mobile && opened && <MenuMobile toggle={toggle} />}
+      {mobile && opened && <MobileMenu toggle={toggle} />}
     </Box>
   );
 }

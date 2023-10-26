@@ -81,7 +81,7 @@ interface MenuMobileProps {
   toggle: () => void;
 }
 
-export default function MenuMobile({ toggle }: MenuMobileProps) {
+export default function MobileMenu({ toggle }: MenuMobileProps) {
   const { mainLinks } = Alldata();
   const { classes, cx } = useStyles();
   const { pathname } = useRouter();
