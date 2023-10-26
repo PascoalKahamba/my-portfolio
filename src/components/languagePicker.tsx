@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import {
   createStyles,
   UnstyledButton,
@@ -70,7 +70,6 @@ export default function LanguagePicker() {
   });
   const { label } = selected;
   const { isNotCurrentLanguage, currentLanguage } = classes;
-  const mobile = useMedia("(max-width:56rem)");
 
   const items = useMemo(() => {
     return data.map((item) => (

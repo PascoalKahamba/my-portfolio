@@ -12,7 +12,7 @@ const useStyles = createStyles((theme) => ({
     alignItems: "center",
     flexDirection: "column",
     gap: rem(2),
-    zIndex: 999999,
+    zIndex: 290,
     top: rem(60),
     left: "0px",
     right: "0px",

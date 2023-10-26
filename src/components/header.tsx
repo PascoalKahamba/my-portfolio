@@ -17,7 +17,7 @@ import Link from "next/link";
 import Alldata from "../../contents/alldata";
 import { nameDeveloperAtom } from "../../atoms";
 import { useAtom } from "jotai";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect } from "react";
 import useMedia from "../hooks/useMedia";
 import { useDisclosure } from "@mantine/hooks";
 import MenuMobile from "./menuMobile";
@@ -27,7 +27,7 @@ const useStyles = createStyles((theme) => ({
     position: "fixed",
     with: "100%",
     top: px(0),
-    zIndex: 999,
+    zIndex: 99999,
   },
 
   mainLinks: {
@@ -116,43 +116,41 @@ export default function HeaderMegaMenu() {
   ));
 
   return (
-    <>
-      <Box pb={90}>
-        <Header height={60} px="md" className={classes.headerElement}>
-          <Group
-            position="apart"
-            sx={{ height: "100%" }}
-            className={classes.headerChild}
-          >
-            <UserProfile
-              kindOfUser="header"
-              name={nameDeveloper}
-              image="/developer-photo.png"
-              skill={translate("my-skill")}
-            />
-            {mobile && (
-              <div className={classes.elementMobile}>
-                <Burger opened={opened} onClick={toggle} size="sm" />
-                <ActionToggle />
-              </div>
-            )}
-            <Group
-              className={classes.mainLinks}
-              sx={{ display: mobile ? "none" : "flex" }}
-            >
-              {mainItems}
-            </Group>
-            <Group
-              className={classes.hiddenMobile}
-              sx={{ display: mobile ? "none" : "flex" }}
-            >
-              <LanguagePicker />
+    <Box pb={90}>
+      <Header height={60} px="md" className={classes.headerElement}>
+        <Group
+          position="apart"
+          sx={{ height: "100%" }}
+          className={classes.headerChild}
+        >
+          <UserProfile
+            kindOfUser="header"
+            name={nameDeveloper}
+            image="/developer-photo.png"
+            skill={translate("my-skill")}
+          />
+          {mobile && (
+            <div className={classes.elementMobile}>
+              <Burger opened={opened} onClick={toggle} size="sm" />
               <ActionToggle />
-            </Group>
+            </div>
+          )}
+          <Group
+            className={classes.mainLinks}
+            sx={{ display: mobile ? "none" : "flex" }}
+          >
+            {mainItems}
           </Group>
-        </Header>
-        {mobile && opened && <MenuMobile toggle={toggle} />}
-      </Box>
-    </>
+          <Group
+            className={classes.hiddenMobile}
+            sx={{ display: mobile ? "none" : "flex" }}
+          >
+            <LanguagePicker />
+            <ActionToggle />
+          </Group>
+        </Group>
+      </Header>
+      {mobile && opened && <MenuMobile toggle={toggle} />}
+    </Box>
   );
 }
