@@ -98,7 +98,14 @@ export default function HeaderMegaMenu() {
   const mobile = useMedia("(max-width:48rem)");
 
   useEffect(() => {
-    if (mobile === false && opened === true) toggle();
+    if (opened) {
+      window.document.body.style.overflowY = "hidden";
+    } else {
+      window.document.body.style.overflowY = "auto";
+    }
+    if (mobile === false && opened === true) {
+      toggle();
+    }
   }, [mobile, toggle, opened]);
 
   const mainItems = mainLinks.map((item) => (
