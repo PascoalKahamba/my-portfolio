@@ -28,6 +28,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   main: {
+    marginTop: rem(8),
     display: "flex",
     alignItems: "center",
     flexDirection: "column",
