@@ -11,7 +11,6 @@ import { ChevronDownIcon } from "lucide-react";
 import { useRouter } from "next/router";
 import setLanguage from "next-translate/setLanguage";
 import { persistLocaleCookie } from "../../helpers/persistLocaleCookie";
-import useMedia from "../hooks/useMedia";
 
 const data = [
   { label: "Portuguese", image: "/portuguese.jpg" },

@@ -187,7 +187,7 @@ export default function IndexPage() {
               data-aos="fade-right"
               data-aos-duration="1400"
             >
-              {translate("button-name")}{" "}
+              {translate("button-name")}
             </Button>
 
             <Button
