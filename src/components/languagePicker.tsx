@@ -43,13 +43,6 @@ const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
     pointerEvents: "painted",
     opacity: 1,
   },
-  dropdownMobile: {
-    position: "fixed",
-    zIndex: 999999,
-    height: rem(10),
-    top: rem(70),
-    width: "100%",
-  },
 
   icon: {
     transition: "transform 150ms ease",
