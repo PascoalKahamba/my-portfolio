@@ -63,6 +63,10 @@ export default function LanguagePicker() {
   const { label } = selected;
   const { isNotCurrentLanguage, currentLanguage } = classes;
 
+  const user = [1, 2];
+  const newUser= user.concat([3,4],[5,6])
+  console.log(newUser)
+
   const items = useMemo(() => {
     return data.map((item) => (
       <Menu.Item

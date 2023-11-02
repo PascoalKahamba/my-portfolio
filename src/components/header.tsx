@@ -103,7 +103,7 @@ export default function HeaderMegaMenu() {
     } else {
       document.body.style.overflowY = "auto";
     }
-    if (mobile === false && opened === true) {
+    if (mobile === false && opened) {
       toggle();
     }
   }, [mobile, toggle, opened]);
