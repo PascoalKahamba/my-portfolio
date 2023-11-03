@@ -29,7 +29,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
-    fontSize: rem(12),
+    fontSize: rem(25),
     [theme.fn.smallerThan("md")]: {
       fontSize: theme.spacing.lg,
     },
