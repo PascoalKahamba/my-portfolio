@@ -16,7 +16,6 @@ const useStyles = createStyles((theme) => ({
 
     [theme.fn.smallerThan("sm")]: {
       padding: "0px 2rem",
-      fontSize: theme.spacing.xs,
     },
   },
 }));
