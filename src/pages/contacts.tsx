@@ -20,14 +20,14 @@ const Contact = () => {
           {translate("page-title")} | {nameDeveloper}
         </title>
       </Head>
-      <Box component="section">
+      <Box component="section" className={classes.contanier}>
         <div className={classes.contacts}>
           <MainTitle
             title={translate("page-title")}
             dataAos="zoom-in"
             dataAosDuration={1200}
           />
-          <Text fz="xl" mt="sm" data-aos="fade-right" data-aos-duration="1200">
+          <Text mt="sm" data-aos="fade-right" data-aos-duration="1200">
             {translate("about-contacts")}
           </Text>
         </div>

@@ -18,9 +18,8 @@ import translations from "../../locales/en/useExternalLink";
 import Technologias from "../components/technologies";
 import MainTitle from "../components/mainTitle";
 import Alldata from "../../contents/alldata";
-import { countYearAtom, nameDeveloperAtom } from "../../atoms";
+import { nameDeveloperAtom } from "../../atoms";
 import { useAtom } from "jotai";
-import { scrollToThePlace } from "../components/scrollControl";
 import useMedia from "../hooks/useMedia";
 
 const useStyles = createStyles((theme) => ({
@@ -30,6 +29,12 @@ const useStyles = createStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     gap: 5,
+
+    fontSize: theme.spacing.lg,
+
+    [theme.fn.smallerThan("sm")]: {
+      fontSize: theme.spacing.md,
+    },
   },
 
   aboutMe: {
@@ -139,7 +144,7 @@ export default function About() {
           >
             <MainTitle title={translate("page-title")} />
             <div>
-              <Text fz="lg" mt="sm">
+              <Text mt="sm">
                 {translate("about-me")}
                 <Link href={frontendAndbackend}>
                   <a target="_blank" className={classes.links}>
@@ -198,7 +203,7 @@ export default function About() {
           data-aos="fade-up"
           data-aos-duration="1400"
         >
-          <Text fz="xl" mt="sm">
+          <Text mt="sm">
             {translate("my-name")} <strong>Pascoal Kahamba</strong>{" "}
             {translate("my-name1")}{" "}
             <Link href={frontendAndbackend}>

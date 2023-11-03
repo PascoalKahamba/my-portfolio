@@ -1,6 +1,15 @@
 .contacts {
   width: 100%;
 }
+.contanier {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 40rem) {
+  .contanier {
+    font-size: 1rem;
+  }
+}
 
 @media (min-width: 50rem) {
   .contacts {

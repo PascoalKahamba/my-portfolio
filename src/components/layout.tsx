@@ -1,4 +1,4 @@
-import { Box, createStyles } from "@mantine/core";
+import { Box, createStyles, rem } from "@mantine/core";
 import HeaderMegaMenu from "./header";
 import FooterLinks from "./footer";
 import NavbarMinimal from "./navbarMinimal";
@@ -16,6 +16,7 @@ const useStyles = createStyles((theme) => ({
 
     [theme.fn.smallerThan("sm")]: {
       padding: "0px 2rem",
+      fontSize: theme.spacing.xs,
     },
   },
 }));

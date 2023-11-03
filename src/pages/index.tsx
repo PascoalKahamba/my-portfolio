@@ -94,8 +94,10 @@ const useStyles = createStyles((theme) => ({
     height: rem(54),
     paddingLeft: rem(38),
     paddingRight: rem(38),
+    fontSize: theme.spacing.lg,
 
     [theme.fn.smallerThan("sm")]: {
+      fontSize: theme.spacing.md,
       height: rem(54),
       paddingLeft: rem(18),
       paddingRight: rem(18),

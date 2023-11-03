@@ -11,6 +11,13 @@ import { countYearAtom, nameDeveloperAtom } from "../../atoms";
 import { scrollToThePlace } from "../components/scrollControl";
 
 const useStyles = createStyles((theme) => ({
+  contanier: {
+    fontSize: theme.spacing.lg,
+
+    [theme.fn.smallerThan("sm")]: {
+      fontSize: theme.spacing.md,
+    },
+  },
   description: {
     width: rem(750),
     margin: "0 auto",
@@ -50,7 +57,7 @@ export default function Journey() {
           {translate("page-title")} | {nameDeveloper}
         </title>
       </Head>
-      <Box component="section">
+      <Box component="section" className={classes.contanier}>
         <div className={`${bigScreen && classes.description}`}>
           <MainTitle
             title={translate("page-title")}
@@ -58,7 +65,7 @@ export default function Journey() {
             dataAosDuration={1200}
           />
 
-          <Text fz="xl" mt="sm" data-aos="fade-right" data-aos-duration="1200">
+          <Text mt="sm" data-aos="fade-right" data-aos-duration="1200">
             <p>
               {translate("short-journey")}{" "}
               <span className={classes.links} onClick={goToTimeline2018}>

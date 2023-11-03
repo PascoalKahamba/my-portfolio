@@ -12,6 +12,13 @@ import translations from "../../locales/en/useExternalLink";
 import useMedia from "../hooks/useMedia";
 
 const useStyles = createStyles((theme) => ({
+  contanier: {
+    fontSize: theme.spacing.lg,
+
+    [theme.fn.smallerThan("sm")]: {
+      fontSize: theme.spacing.md,
+    },
+  },
   projects: {
     display: "flex",
     justifyContent: "center",
@@ -61,14 +68,14 @@ export default function Projects() {
           {translate("page-title")} | {nameDeveloper}
         </title>
       </Head>
-      <Box component="section">
+      <Box component="section" className={classes.contanier}>
         <div className={`${bigScreen && classes.description}`}>
           <MainTitle
             title={translate("page-title")}
             dataAos="zoom-in"
             dataAosDuration={1200}
           />
-          <Text fz="xl" mt="sm" data-aos="fade-right" data-aos-duration="1200">
+          <Text mt="sm" data-aos="fade-right" data-aos-duration="1200">
             {translate("about-project")}
           </Text>
         </div>

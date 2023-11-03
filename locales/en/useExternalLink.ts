@@ -67,7 +67,7 @@ const translations = {
   tailwindcssdocs: "https://tailwindcss.com/",
   mantinedocs: "https://mantine.dev/",
   tmdb: "https://moviedatabase.fandom.com/wiki/Movie_Database_Wiki",
-  myportfolio: "https://my-portfolio-five-beige.vercel.app/pt",
+  myportfolio: "https://pascoalkahamba.vercel.app/pt",
   redux: "https://en.wikipedia.org/wiki/Redux_(JavaScript_library)",
   tictactoe: "https://en.wikipedia.org/wiki/Tic-tac-toe",
   datilography: "https://en.wikipedia.org/wiki/Typing",
