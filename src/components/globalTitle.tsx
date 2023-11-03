@@ -1,4 +1,4 @@
-import { Title, createStyles, rem } from "@mantine/core";
+import { createStyles, rem } from "@mantine/core";
 import React from "react";
 import useMedia from "../hooks/useMedia";
 
@@ -29,6 +29,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
+    fontSize: rem(2),
     [theme.fn.smallerThan("md")]: {
       fontSize: theme.spacing.lg,
     },
@@ -51,9 +52,7 @@ export default function GlobalTitle({ title, width }: GlobalTitleProps) {
       data-aos-duration="1400"
     >
       <div className={classes.line} style={{ width: rem(width) }}></div>
-      <Title order={2} className={classes.title}>
-        {title}
-      </Title>
+      <h1 className={classes.title}>{title}</h1>
       <div className={classes.line} style={{ width: rem(width) }}></div>
     </div>
   );
