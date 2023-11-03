@@ -63,12 +63,6 @@ export default function LanguagePicker() {
   const { label } = selected;
   const { isNotCurrentLanguage, currentLanguage } = classes;
 
-  const numbers = [1, 2];
-
-  const userName = ["Pascoal", "Kahamba"];
-  const newNumbers = numbers.concat([3, 4], [5, 6]);
-  console.log(newNumbers);
-
   const items = useMemo(() => {
     return data.map((item) => (
       <Menu.Item
