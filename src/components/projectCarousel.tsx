@@ -43,6 +43,7 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
     gap: rem(10),
     alignItems: "center",
+    justifyContent: "center",
   },
 
   carouselIndicator: {
