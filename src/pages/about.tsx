@@ -123,7 +123,7 @@ export default function About() {
   const { t: translate } = useTranslation("about");
   const { locale } = useRouter();
   const [nameDeveloper] = useAtom(nameDeveloperAtom);
-  const { frontEndSkiils, otherTechnologies } = Alldata();
+  const { frontEndSkiils, otherTechnologies, backEndSkills } = Alldata();
   const currentYear = new Date().getFullYear();
   const myAge = currentYear - 2002;
   const bigScreen = useMedia("(min-width:80rem)");
@@ -270,6 +270,7 @@ export default function About() {
           </Text>
         </div>
         <Technologias job="FRONT-END" skills={frontEndSkiils} width={250} />
+        <Technologias job="BACK-END" skills={backEndSkills} width={250} />
         <Technologias
           job={translate("other-technologies")}
           skills={otherTechnologies}

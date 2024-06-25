@@ -107,6 +107,39 @@ export default function Alldata() {
     },
   ];
 
+  const backEndSkills = [
+    {
+      icon: "/nodejs.svg",
+      name: "Nodejs",
+      aosDuration: 1800,
+      description: translate("nodejs"),
+    },
+    {
+      icon: "/mongodb.svg",
+      name: "Mongodb",
+      aosDuration: 1800,
+      description: translate("mongodb"),
+    },
+    {
+      icon: "/mysql.svg",
+      name: "MYSQL",
+      aosDuration: 1800,
+      description: translate("mysql"),
+    },
+    {
+      icon: "/postgresql.svg",
+      name: "Postgresql",
+      aosDuration: 1800,
+      description: translate("postgres"),
+    },
+    {
+      icon: "/nodejsex.svg",
+      name: "Express",
+      aosDuration: 1800,
+      description: translate("express"),
+    },
+  ];
+
   const frontEndSkiils = [
     {
       icon: "/html5.svg",
@@ -165,9 +198,21 @@ export default function Alldata() {
       aosDuration: 1400,
       description: translate("vercel"),
     },
+    {
+      name: "phpmyadmin",
+      icon: "/phpmyadmin.svg",
+      aosDuration: 1400,
+      description: translate("phpmyadmin"),
+    },
+    {
+      name: "Insomnia",
+      icon: "/insomnia.svg",
+      aosDuration: 1400,
+      description: translate("insomnia"),
+    },
   ];
 
-  const allYears = ["2018", "2019", "2020", "2021", "2022", "2023"];
+  const allYears = ["2018", "2019", "2020", "2021", "2022", "2023", "2024"];
 
   const dateWentOnSchool = getDate(2018, FEBRUARY, 2);
   const dateStartedLogic = getDate(2018, MAY, 11);
@@ -425,6 +470,7 @@ export default function Alldata() {
     allJourney,
     crudImages,
     crudTechnologies,
+    backEndSkills,
     allYears,
     showDateBuiltProject,
     frontEndSkiils,
