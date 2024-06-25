@@ -238,14 +238,12 @@ export default function Alldata() {
   const dateLearnMantine = getDate(2023, JUNE, 20);
   const dateCreatedMyPortfolio = getDate(2023, JULY, 26);
 
-  function showDateBuiltProject(
+  const showDateBuiltProject = (
     month: string,
     year: number,
     months: number,
     day: number
-  ) {
-    return `${translate(month)} - ${getDate(year, months, day)}`;
-  }
+  ) => `${translate(month)} - ${getDate(year, months, day)}`;
 
   const allJourney = [
     [
