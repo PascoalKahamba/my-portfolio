@@ -56,6 +56,7 @@ export default function Projects() {
     crudTechnologies,
     crudImages,
     findFiveImages,
+    showDateBuiltProject,
     findFiveTechnologies,
     studentStatisticsImages,
     studentStatisticsTechnologies,
@@ -82,6 +83,7 @@ export default function Projects() {
         <GlobalTitle title={translate("page-title")} width={300} />
         <div className={classes.projects}>
           <ProjectCarousel
+            dateBuiltTheProject={showDateBuiltProject("may", 2022, 7, 15)}
             vercelLink={projectfinancialmanagervercel}
             githubLink={projectfinancialmanagergithub}
             name={translate("financial-manager")}
@@ -91,6 +93,7 @@ export default function Projects() {
             dataAos="fade-right"
           />
           <ProjectCarousel
+            dateBuiltTheProject={showDateBuiltProject("april", 2022, 2, 20)}
             vercelLink={projectnewcrudvercel}
             githubLink={projectnewcrudgithub}
             name={translate("crud")}
@@ -100,6 +103,7 @@ export default function Projects() {
             dataAos="fade-left"
           />
           <ProjectCarousel
+            dateBuiltTheProject={showDateBuiltProject("june", 2021, 5, 24)}
             vercelLink={projectstudentstatisticsvercel}
             githubLink={projectstudentstatisticsgithub}
             name={translate("students-statistics")}
@@ -109,6 +113,7 @@ export default function Projects() {
             dataAos="fade-right"
           />
           <ProjectCarousel
+            dateBuiltTheProject={showDateBuiltProject("march", 2021, 7, 12)}
             vercelLink={projectfindfivevercel}
             githubLink={projectfindfivegithub}
             name={translate("find-5")}

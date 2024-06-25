@@ -106,7 +106,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const { frontEnd, github, javascript, typescript } = translations;
+const { fullStack, github, javascript, typescript } = translations;
 
 export default function IndexPage() {
   const { classes } = useStyles();
@@ -153,7 +153,7 @@ export default function IndexPage() {
             data-aos-duration="1600"
           >
             {translate("description")}{" "}
-            <Link href={frontEnd}>
+            <Link href={fullStack}>
               <a className={classes.links} target="_blank">
                 {translate("my-skill")}
               </a>

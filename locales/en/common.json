@@ -1,7 +1,7 @@
 {
   "navigation": "Navigation",
   "tecnologies": "Tecnologies",
-  "my-skill": "Front-End Developer",
+  "my-skill": "Full-Stack Developer",
   "journey": "Journey",
   "about": "About",
   "entrance-school": "Entrance to High School.",
@@ -60,7 +60,7 @@
   "project-CRUD": "project (CRUD)",
   "about-project-CRUD": "was developed especially to test an interview I did with the company",
   "before-profile": "with the purpose of getting a position as a",
-  "front-end-developer": "Frond-End Developer.",
+  "full-stack-developer": "Full-Stack Developer.",
   "about-material-ui": "Being a very popular React component library I gave",
   "skill-material-ui": "to increase my skills.",
   "typescriptdocs": "documentation.",

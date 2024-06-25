@@ -9,7 +9,7 @@ import {
   px,
 } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
-import { StarIcon } from "lucide-react";
+import { CalendarCheck, StarIcon } from "lucide-react";
 import classs from "../styles/projectCarousel.module.css";
 import Link from "next/link";
 import { GithubIcon } from "lucide-react";
@@ -21,6 +21,12 @@ const useStyles = createStyles((theme) => ({
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
     borderRadius: theme.spacing.xs,
     padding: "5px 0.5rem",
+  },
+  statusAndDate: {
+    display: "flex",
+    justifyContent: "center",
+    alignContent: "center",
+    gap: "1rem",
   },
   links: {
     backgroundColor: theme.colors.blue[5],
@@ -37,6 +43,13 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+  },
+  showDate: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    fontSize: "1rem",
+    fontStyle: "italic",
   },
   icon: {
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
@@ -67,6 +80,7 @@ interface ProjectCarouselProps {
   githubLink: string;
   vercelLink: string;
   dataAos: string;
+  dateBuiltTheProject: string;
   status: string;
 }
 
@@ -78,6 +92,7 @@ export default function ProjectCarousel({
   status,
   githubLink,
   vercelLink,
+  dateBuiltTheProject,
 }: ProjectCarouselProps) {
   const { classes } = useStyles();
   const slides = images.map((image) => (
@@ -141,9 +156,12 @@ export default function ProjectCarousel({
             </a>
           </Link>
         </div>
-        <Text fz="xs" className={classes.technologies} fw={500}>
-          {status}
-        </Text>
+        <div className={classes.statusAndDate}>
+          <span className={classes.showDate}>{dateBuiltTheProject}</span>
+          <Text fz="xs" className={classes.technologies} fw={500}>
+            {status}
+          </Text>
+        </div>
       </Group>
     </Card>
   );

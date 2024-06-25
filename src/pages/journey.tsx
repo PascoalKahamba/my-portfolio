@@ -67,10 +67,10 @@ export default function Journey() {
 
           <Text mt="sm" data-aos="fade-right" data-aos-duration="1200">
             <p>
-              {translate("short-journey")}{" "}
+              {translate("short-journey")}
               <span className={classes.links} onClick={goToTimeline2018}>
                 2018
-              </span>{" "}
+              </span>
               , {translate("more-journey")}
             </p>
             <p>{translate("paragraph")}</p>
